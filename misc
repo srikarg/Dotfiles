@@ -1,0 +1,17 @@
+### Miscellaneous
+
+# Load NVM
+[[ -s ~/.nvm/nvm.sh ]] && source ~/.nvm/nvm.sh
+
+# Load z.sh (https://github.com/rupa/z)
+source ~/.z.sh
+
+# Load Python 2.7
+PATH="/System/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+
+# Load RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
