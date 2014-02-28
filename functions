@@ -65,6 +65,16 @@ function s() {
     fi
 }
 
+# `a` with no arguments opens the current directory in Github's Atom Text Editor, otherwise
+# opens the given location
+function a() {
+    if [ $# -eq 0 ]; then
+        open -a /Applications/Atom.app/ .
+    else
+        open -a /Applications/Atom.app/ "$@"
+    fi
+}
+
 # `v` with no arguments opens the current directory in Vim, otherwise opens the
 # given location
 function v() {
