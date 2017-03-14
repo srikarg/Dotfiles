@@ -16,7 +16,7 @@ for file in !(setup.sh); do
     #     mv "$HOME/.$file" $olddir
     # fi
     echo "Creating symbolic link to $file in home directory."
-    ln -s "$dir/$file" "$HOME/.$file"
+    ln -s "$dir/$file" "$HOME/$file"
 done
 
 source "$HOME/.bash_profile"
