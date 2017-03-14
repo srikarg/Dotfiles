@@ -3,9 +3,19 @@
 # Spotify controls (https://github.com/dronir/SpotifyControl)
 alias sp="osascript ~/.applescripts/SpotifyControl.scpt"
 
+# Clear alias
+alias cls="clear"
+
+# Tarring and untarring
+alias tarc="COPYFILE_DISABLE=1 tar -czf"
+alias tare="tar -xzf"
+
 # ls modifications
 alias la="ls -a"
 alias lsd="ls -d */"
+
+# Weather
+alias weather="curl wttr.in"
 
 # Quicker navigation
 alias ..="cd .."
@@ -13,8 +23,11 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-# Get OS X Software Updates, and update installed Ruby gems, npm, and their installed packages
-alias update="sudo softwareupdate -i -a; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update"
+# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+
+alias pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -39,17 +52,27 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Shortcuts to often used folders
-alias w="cd ~/Srikar\'s\ Files/Development/Web/"
-alias b="cd ~/Srikar\'s\ Files/Development/Web/srikarg.github.io/"
 alias d="cd ~/Desktop/"
 alias dl="cd ~/Downloads/"
+
+# Rutgers CS SSH Shortcut
+alias rucs="ssh svg42@cd.cs.rutgers.edu"
 
 # Enable aliases to be sudo'ed
 alias sudo='sudo '
 
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec $SHELL -l"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
 # Colored up cat!
 # You must install Pygments first - "sudo easy_install Pygments"
-alias c='pygmentize -O style=monokai -f console256 -g'
+# alias c='pygmentize -O style=monokai -f console256 -g'
 
 # Git
 # You must install Git first - ""
@@ -57,3 +80,6 @@ alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m' # requires you to type a commit message
 alias gp='git push'
+
+# Virtual Env
+alias vact='source ./bin/activate'

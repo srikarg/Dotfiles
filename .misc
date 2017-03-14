@@ -1,0 +1,33 @@
+### Miscellaneous
+
+# Load NVM
+
+export NVM_DIR="/Users/srikarg/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Don't create .pyc files
+
+PYTHONDONTWRITEBYTECODE=True
+export PYTHONDONTWRITEBYTECODE
+
+# Load z.sh (https://github.com/rupa/z)
+source ~/.z.sh
+
+# Load RVM
+
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0
+
+# Disable “natural” (Lion-style) scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+# Load MySQL
+export PATH="$PATH:/usr/local/bin/mysql"
+
+export PIP_REQUIRE_VIRTUALENV=true

@@ -1,13 +1,13 @@
-# Make Sublime Text the default editor
-export EDITOR="subl -w"
+# Make Visual Studio Code the default editor
+export EDITOR="code -w"
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoreboth:erasedups
 
 # Make some commands not show up in history
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+export HISTIGNORE="ls:clear:cd:cd -:pwd:exit:date:* --help:s:v:a"
 
 # Prefer US English and use UTF-8
 export LANG="en_US"
@@ -21,3 +21,5 @@ export MANPAGER="less -X"
 
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
+
+export PIP_REQUIRE_VIRTUALENV=true

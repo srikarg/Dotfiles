@@ -65,6 +65,25 @@ function s() {
     fi
 }
 
+function c() {
+    if [ $# -eq 0 ]; then
+        code .
+    else
+        code "$@"
+    fi
+}
+
+function venv() {
+    if [ $# -eq 0 ]; then
+        virtualenv ./
+        source ./bin/activate
+    else
+        mkd "$@"
+        virtualenv ./
+        source ./bin/activate
+    fi
+}
+
 # `a` with no arguments opens the current directory in Github's Atom Text Editor, otherwise
 # opens the given location
 function a() {
@@ -102,4 +121,8 @@ function vol() {
     else
         osascript -e "set volume output volume $1 --$1%"
     fi
+}
+
+function te() {
+	open "$@" -a textedit
 }
