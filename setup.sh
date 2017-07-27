@@ -10,13 +10,13 @@ shopt -s extglob
 # cd $dir
 
 # Backup existing dotfiles in home and then create symbolic link from home directory to this directory
-for file in !(setup.sh,.DS_Store,.gitignore,.git); do
+for file in !(setup.sh); do
     # if [[ -d "$HOME/.$file" ]] || [ -f "$HOME/.$file" ]; then
     #     echo "Backing up .$file to $olddir."
     #     mv "$HOME/.$file" $olddir
     # fi
-    echo "Creating symbolic link to $file in home directory."
-    ln -s "$dir/$file" "$HOME/$file"
+    echo "\nCreating symbolic link to $file in home directory.\n"
+    ln -Fis "$dir/$file" "$HOME/.$file"
 done
 
 source "$HOME/.bash_profile"
