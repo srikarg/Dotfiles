@@ -1,7 +1,7 @@
 #!/bin/bash
 
-dir=~/Dotfiles
-# olddir=~/Dotfiles_Old
+dir=~/.Dotfiles
+# olddir=~/.Dotfiles_Old
 
 shopt -s extglob
 
@@ -10,7 +10,7 @@ shopt -s extglob
 # cd $dir
 
 # Backup existing dotfiles in home and then create symbolic link from home directory to this directory
-for file in !(setup.sh); do
+for file in !(setup.sh,.DS_Store,.gitignore,.git); do
     # if [[ -d "$HOME/.$file" ]] || [ -f "$HOME/.$file" ]; then
     #     echo "Backing up .$file to $olddir."
     #     mv "$HOME/.$file" $olddir

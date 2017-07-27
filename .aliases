@@ -54,9 +54,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Shortcuts to often used folders
 alias d="cd ~/Desktop/"
 alias dl="cd ~/Downloads/"
-
-# Rutgers CS SSH Shortcut
-alias rucs="ssh svg42@cd.cs.rutgers.edu"
+alias work="cd ~/Dropbox/Work/"
 
 # Enable aliases to be sudo'ed
 alias sudo='sudo '

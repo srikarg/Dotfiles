@@ -18,6 +18,10 @@ source ~/.z.sh
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# Load Brew
+
+export PATH="/usr/local/sbin:$PATH"
+
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
@@ -29,5 +33,8 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Load MySQL
 export PATH="$PATH:/usr/local/bin/mysql"
+
+# Load Homebrew Python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 export PIP_REQUIRE_VIRTUALENV=true

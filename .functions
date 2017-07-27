@@ -32,6 +32,11 @@ function mkd() {
     mkdir -p "$@" && cd "$@"
 }
 
+# Rutgers CS SSH Shortcut
+function rucs() {
+    ssh svg42@"$@".cs.rutgers.edu
+}
+
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`
     cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
@@ -70,6 +75,17 @@ function c() {
         code .
     else
         code "$@"
+    fi
+}
+
+function venv3() {
+    if [ $# -eq 0 ]; then
+        virtualenv -p python3 ./
+        source ./bin/activate
+    else
+        mkd "$@"
+        virtualenv -p python3 ./
+        source ./bin/activate
     fi
 }
 
