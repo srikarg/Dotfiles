@@ -10,7 +10,7 @@ shopt -s extglob
 # cd $dir
 
 # Backup existing dotfiles in home and then create symbolic link from home directory to this directory
-for file in !(setup.sh|README.md); do
+for file in !(setup.sh|README.md|iterm2_profile); do
     # if [[ -d "$HOME/.$file" ]] || [ -f "$HOME/.$file" ]; then
     #     echo "Backing up .$file to $olddir."
     #     mv "$HOME/.$file" $olddir
@@ -20,3 +20,5 @@ for file in !(setup.sh|README.md); do
 done
 
 source "$HOME/.bash_profile"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dir/iterm2_profile"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
