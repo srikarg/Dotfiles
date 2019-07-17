@@ -2,8 +2,9 @@
 
 # Load NVM
 
-export NVM_DIR="/Users/srikarg/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Don't create .pyc files
 
@@ -36,5 +37,9 @@ export PATH="$PATH:/usr/local/bin/mysql"
 
 # Load Homebrew Python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# Add Visual Studio Code (code)
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 export PIP_REQUIRE_VIRTUALENV=true
