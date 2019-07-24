@@ -1,0 +1,18 @@
+# Load RVM
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Load Brew
+export PATH="/usr/local/sbin:$PATH"
+
+# Load MySQL
+export PATH="$PATH:/usr/local/bin/mysql"
+
+# Load Homebrew Python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Add GNU CoreUtils to PATH
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"

@@ -94,10 +94,10 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
-[user]
-	name = Srikar Gudipati
-	email = srikarvgudipati@gmail.com
 [filter "lfs"]
 	smudge = git-lfs smudge %f
 	required = true
 	clean = git-lfs clean %f
+[user]
+	name = Srikar Gudipati
+	email = srikarvgudipati@gmail.com
