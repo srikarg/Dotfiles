@@ -16,7 +16,7 @@ for file in !(.DS_Store|.git|setup.sh|brew.sh|README.md|iterm2_profile); do
     #     echo "Backing up $file to $olddir."
     #     mv "$HOME/$file" $olddir
     # fi
-    echo "Creating symbolic link to $file in home directory.\n"
+    echo "Creating symbolic link to $file in home directory."
     ln -Ffns "$dir/$file" "$HOME/$file"
 done
 
