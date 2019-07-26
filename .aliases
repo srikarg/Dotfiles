@@ -50,7 +50,7 @@ alias sudo='sudo '
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
-alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
 
 # IP addresses
