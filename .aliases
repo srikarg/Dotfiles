@@ -49,7 +49,7 @@ alias -- -="cd -"
 alias sudo='sudo '
 
 # Prettify All
-alias prettyall='prettier --write "**/*.js"'
+alias prettyall='prettier --write "**/*.+(js|jsx|json)"'
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
@@ -105,6 +105,22 @@ alias gp='git push'
 alias gco='git checkout'
 alias gcob='git checkout -B'
 alias gcb="git remote prune origin && git branch -vv | grep ': gone]'|  grep -v \"\*\" | awk '{ print $1; }' | xargs git branch -d"
+
+# Docker
+alias dps='docker ps -a'
+alias drm='docker rm $(docker ps -a -q)'
+
+# Docker Compose
+alias dco='docker-compose'
+alias dcb='docker-compose build'
+alias dcps='docker-compose ps'
+alias dcrestart='docker-compose restart'
+alias dcup='docker-compose up'
+alias dcupd='docker-compose up -d'
+alias dcdn='docker-compose down'
+
+# React
+alias cra='create-react-app'
 
 # Virtual Env
 alias vact='source ./bin/activate'

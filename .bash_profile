@@ -52,3 +52,4 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+if [ -x /Users/sgudipa5/.hyperion-manager-config.sh ] && . /Users/sgudipa5/.hyperion-manager-config.sh; then logger -t hyperion -p info -s 'Hyperion environment setup completed' >> /Users/sgudipa5/.hyperion-manager.log 2>&1; else logger -t hyperion -p error -s 'Unable to setup hyperion environment' >> /Users/sgudipa5/.hyperion-manager.log 2>&1; fi;
