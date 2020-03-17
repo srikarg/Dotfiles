@@ -53,6 +53,7 @@ brew install ack
 brew install git
 brew install git-lfs
 brew install imagemagick
+brew install ghostscript
 brew install lynx
 brew install p7zip
 brew install pigz

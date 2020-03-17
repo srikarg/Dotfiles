@@ -4,6 +4,8 @@
 <dict>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -66,15 +68,17 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>618 411 445 103 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>640 673 400 129 0 0 1680 1027 </string>
+	<string>640 449 400 129 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 476 620 392 0 0 1680 1027 </string>
+	<string>490 303 700 622 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>381 285 796 486 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1282 0 1276 1417 0 0 2560 1417 </string>
+	<string>0 464 730 563 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1 0 838 1027 0 0 1680 1027 </string>
+	<string>841 464 730 563 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>1 0 1390 1027 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -616,7 +620,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -784,7 +788,7 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -809,23 +813,25 @@
 		<string>3.3.4</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
-		<string>3.3.0</string>
-		<string>3.3.2</string>
+		<string>3.3.7</string>
+		<string>3.3.9</string>
 		<string>3.2.9</string>
+		<string>3.3.2</string>
+		<string>3.3.0</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{381, 822}</string>
+		<string>{372, 824}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>8C55BD34-5DDE-49C8-ADB1-22D328D7F43C</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>142</integer>
+	<integer>170</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1550,22 +1556,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSearchHistory</key>
-	<array>
-		<string>browse</string>
-		<string>;asldkfjla;dfasdkfadf</string>
-	</array>
-	<key>NoSyncSearchHistory2</key>
-	<array>
-		<string>.ini</string>
-		<string>ini</string>
-		<string>init</string>
-		<string>phpin</string>
-		<string>php</string>
-		<string>java</string>
-		<string>tree</string>
-		<string>flatten@</string>
-	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>584999149.69107997</real>
 	<key>PointerActions</key>
@@ -1614,7 +1604,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-11T15:06:25Z</date>
+	<date>2020-03-03T14:24:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -1634,6 +1624,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.6</string>
+	<string>3.3.9</string>
 </dict>
 </plist>

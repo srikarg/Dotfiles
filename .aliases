@@ -104,7 +104,7 @@ alias gc='git commit -m' # requires you to type a commit message
 alias gp='git push'
 alias gco='git checkout'
 alias gcob='git checkout -B'
-alias gcb="git remote prune origin && git branch -vv | grep ': gone]'|  grep -v \"\*\" | awk '{ print $1; }' | xargs git branch -d"
+alias gcb="git fetch -p && git branch --merged | grep -v '*' | grep -v 'master' | xargs git branch -d"
 
 # Docker
 alias dps='docker ps -a'
@@ -118,6 +118,10 @@ alias dcrestart='docker-compose restart'
 alias dcup='docker-compose up'
 alias dcupd='docker-compose up -d'
 alias dcdn='docker-compose down'
+
+# Kubernetes
+alias kb='kubectl'
+alias kbgp='kubectl get pods'
 
 # React
 alias cra='create-react-app'

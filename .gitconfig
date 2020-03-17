@@ -164,3 +164,14 @@ pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
 
 insteadOf = "gist:"
+
+[init]
+
+templatedir = ~/.git_template
+
+[filter "lfs"]
+
+required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
