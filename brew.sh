@@ -50,6 +50,8 @@ brew install woff2
 
 # Install other useful binaries.
 brew install ack
+brew install nvm
+brew install ripgrep
 brew install git
 brew install git-lfs
 brew install imagemagick

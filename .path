@@ -19,8 +19,12 @@ eval "$(jenv init -)"
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# This loads nvm
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && . "$(brew --prefix nvm)/nvm.sh"
+
+# This loads nvm bash_completion
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && . "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 
 if [ -x /Users/sgudipa5/.hyperion-manager-config.sh ] && . /Users/sgudipa5/.hyperion-manager-config.sh; then logger -t hyperion -p info -s 'Hyperion environment setup completed' >> /Users/sgudipa5/.hyperion-manager.log 2>&1; else logger -t hyperion -p error -s 'Unable to setup hyperion environment' >> /Users/sgudipa5/.hyperion-manager.log 2>&1; fi;
 

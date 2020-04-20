@@ -102,9 +102,12 @@ alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m' # requires you to type a commit message
 alias gp='git push'
+alias gpu='git pull'
 alias gco='git checkout'
 alias gcob='git checkout -B'
 alias gcb="git fetch -p && git branch --merged | grep -v '*' | grep -v 'master' | xargs git branch -d"
+alias gb='git branch'
+alias gl='git log --pretty=format:"%C(yellow)%h %C(cyan)%<(24)%ad %Cgreen%an%C(auto)%d%Creset: %s" -10 --date=local'
 
 # Docker
 alias dps='docker ps -a'
@@ -131,3 +134,5 @@ alias vact='source ./bin/activate'
 
 # The Fuck Alias
 eval "$(thefuck --alias f)"
+
+alias composer="php -d memory_limit=-1 /usr/local/bin/composer"
