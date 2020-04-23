@@ -54,7 +54,7 @@ alias prettyall='prettier --write "**/*.+(js|jsx|json|scss|css)"'
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
-alias pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U'
+alias pipup="pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -81,6 +81,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Shortcuts to often used folders
 alias d="cd ~/Desktop/"
+alias dotfiles="cd ~/.Dotfiles"
 alias dl="cd ~/Downloads/"
 alias p="cd ~/Projects/"
 
@@ -121,6 +122,8 @@ alias dcrestart='docker-compose restart'
 alias dcup='docker-compose up'
 alias dcupd='docker-compose up -d'
 alias dcdn='docker-compose down'
+alias dclf='docker-compose logs -f'
+alias dclft='docker-compose logs -ft'
 
 # Kubernetes
 alias kb='kubectl'

@@ -28,3 +28,6 @@ export PIP_REQUIRE_VIRTUALENV=true
 # Don't create .pyc files
 PYTHONDONTWRITEBYTECODE=True
 export PYTHONDONTWRITEBYTECODE
+
+GPG_TTY=$(tty)
+export GPG_TTY

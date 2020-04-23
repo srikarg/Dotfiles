@@ -16,10 +16,14 @@ for file in !(.DS_Store|.git|setup.sh|brew.sh|README.md|iterm2_profile); do
     #     echo "Backing up $file to $olddir."
     #     mv "$HOME/$file" $olddir
     # fi
-    echo "Creating symbolic link to $file in home directory."
+    echo "Creating symbolic link to $file in home directory...\n"
     ln -Ffns "$dir/$file" "$HOME/$file"
 done
 
-source "$HOME/.bash_profile"
+echo "Installing brew packages...\n"
+sh brew.sh
+
+source "$HOME/.zshrc"
+
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dir/iterm2_profile"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
