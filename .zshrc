@@ -25,6 +25,7 @@ antigen bundle git
 antigen bundle gitignore
 antigen bundle history
 antigen bundle history-substring-search
+antigen bundle kubectl
 antigen bundle node
 antigen bundle npm
 antigen bundle lukechilds/zsh-nvm

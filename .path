@@ -1,9 +1,6 @@
 # Load Brew
 export PATH="/usr/local/sbin:$PATH"
 
-# Load MySQL
-export PATH="$PATH:/usr/local/bin/mysql"
-
 # Load Homebrew Python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
@@ -20,3 +17,6 @@ eval "$(jenv init -)"
 # Load RVM
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Load kubectl Plugins
+export PATH="$PATH:$HOME/.kubectl-plugins"
