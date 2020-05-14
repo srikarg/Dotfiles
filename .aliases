@@ -104,7 +104,6 @@ alias ga='git add .'
 alias gc='git commit -m' # requires you to type a commit message
 alias gp='git push'
 alias gpu='git pull'
-alias gcof="git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout"
 alias gco='git checkout'
 alias gcob='git checkout -B'
 alias gcb="git fetch -p && git branch --merged | grep -v '*' | grep -v 'master' | xargs git branch -d"
