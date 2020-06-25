@@ -74,6 +74,7 @@ brew install vbindiff
 brew install zopfli
 brew install tldr
 brew install jenv
+brew install php-cs-fixer
 
 # Remove outdated versions from the cellar.
 brew cleanup

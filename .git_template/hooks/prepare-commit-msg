@@ -1,5 +1,7 @@
 #!/bin/sh
-#
+
+# Sourced from https://bitbucket.org/snippets/atlassian/qedp7d/
+
 # git prepare-commit-msg hook for automatically prepending an issue key
 # from the start of the current branch name to commit messages.
 
