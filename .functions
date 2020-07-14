@@ -1,6 +1,6 @@
 ### Custom Functions
 
-notes() {
+function notes() {
     echo "Please enter the name of the notes file:"
     read name
     local date=$(date +%Y-%m-%d)
@@ -10,13 +10,41 @@ notes() {
     c $file_path
 }
 
+function rename_branch() {
+    echo "What is the name of the old branch?"
+    read old_branch
+    echo "What is the new name for the branch?"
+    read new_branch
+    git checkout $old_branch
+    git branch -m $new_branch
+    git push origin -u $new_branch
+    git push origin --delete $old_branch
+    echo "Successfully renamed " $old_branch " to " $new_branch
+}
+
+# update node to latest lts version
+function update_node() {
+    local -r current_node_version=$(nvm current)
+    local -r next_node_version=$(nvm version-remote --lts)
+    if [ "$current_node_version" != "$next_node_version" ]; then
+        echo "Updating from $current_node_version to $next_node_version..."
+        local -r previous_node_version=$current_node_version
+        nvm install --lts
+        nvm reinstall-packages "$previous_node_version"
+        nvm uninstall "$previous_node_version"
+        nvm cache clear
+    else
+        echo "The current installed Node.js version $current_node_version is already the latest LTS release."
+    fi
+}
+
 # fzf history
-fh() {
+function fh() {
     print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
 }
 
 # fzf git branch - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
-fbr() {
+function fbr() {
     local branches branch
     branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
         branch=$(echo "$branches" |
@@ -25,7 +53,7 @@ fbr() {
 }
 
 # fzf git checkout - checkout git branch/tag
-fco() {
+function fco() {
     local tags branches target
     branches=$(
         git --no-pager branch --all \

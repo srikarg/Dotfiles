@@ -20,7 +20,6 @@ antigen bundle copyfile
 antigen bundle djui/alias-tips
 antigen bundle docker
 antigen bundle docker-compose
-antigen bundle dotenv
 antigen bundle git
 antigen bundle gitignore
 antigen bundle history
