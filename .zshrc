@@ -1,7 +1,7 @@
 source /usr/local/share/antigen/antigen.zsh
 
 # Settings for zsh-nvm (https://github.com/lukechilds/zsh-nvm)
-export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD=false
 export NVM_DIR="$HOME/.nvm"
 
 antigen use oh-my-zsh
