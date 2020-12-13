@@ -32,6 +32,7 @@ function update_node() {
         nvm install --lts
         nvm reinstall-packages "$previous_node_version"
         nvm uninstall "$previous_node_version"
+        nvm alias default "$(nvm current)"
         nvm cache clear
     else
         echo "The current installed Node.js version $current_node_version is already the latest LTS release."
@@ -56,7 +57,7 @@ function fbr() {
 function fco() {
     local tags branches target
     branches=$(
-        git --no-pager branch --all \
+        git --no-pager branch \
             --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" |
             sed '/^$/d'
     ) || return

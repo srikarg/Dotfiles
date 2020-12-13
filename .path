@@ -13,13 +13,5 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # Add GNU Sed to PATH
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
-# Load JENV
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-# Load RVM
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Load kubectl Plugins
 export PATH="$PATH:$HOME/.kubectl-plugins"

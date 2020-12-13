@@ -1,8 +1,9 @@
 source /usr/local/share/antigen/antigen.zsh
 
 # Settings for zsh-nvm (https://github.com/lukechilds/zsh-nvm)
-export NVM_LAZY_LOAD=false
+export NVM_LAZY_LOAD=true
 export NVM_DIR="$HOME/.nvm"
+export NVM_COMPLETION=false
 
 antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -12,9 +13,8 @@ antigen bundle zsh-users/zsh-completions
 autoload -Uz compinit
 compinit
 
-antigen bundle alias-finder
+antigen bundle lukechilds/zsh-nvm
 antigen bundle colored-man-pages
-antigen bundle colorize
 antigen bundle copydir
 antigen bundle copyfile
 antigen bundle djui/alias-tips
@@ -25,11 +25,8 @@ antigen bundle gitignore
 antigen bundle history
 antigen bundle history-substring-search
 antigen bundle kubectl
-antigen bundle node
 antigen bundle npm
-antigen bundle lukechilds/zsh-nvm
 antigen bundle osx
-antigen bundle thefuck
 antigen bundle z
 
 antigen bundle mafredri/zsh-async
