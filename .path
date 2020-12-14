@@ -15,3 +15,7 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # Load kubectl Plugins
 export PATH="$PATH:$HOME/.kubectl-plugins"
+
+# Load Java
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home -v 15.0.1)
