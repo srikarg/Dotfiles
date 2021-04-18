@@ -31,3 +31,10 @@ export PYTHONDONTWRITEBYTECODE
 
 GPG_TTY=$(tty)
 export GPG_TTY
+
+# FZF options
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="fd --hidden --follow --exclude \".git\" . $HOME"
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_ALT_C_COMMAND="fd -t d --hidden --follow --exclude \".git\" . $HOME"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"

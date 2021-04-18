@@ -6,8 +6,8 @@ function notes() {
     local date=$(date +%Y-%m-%d)
     local file_name=$date"_"$name".md"
     local file_path="$HOME/OneDrive - JNJ/Notes/Uncategorized/$file_name"
-    echo "---\ntitle: $name\ndate: $date\n---\n" >>$file_path
-    c $file_path
+    echo "---\ntitle: $name\ndate: $date\n---\n\n# Notes on $name\n" >>$file_path
+    c -n $file_path
 }
 
 function rename_branch() {
@@ -70,7 +70,9 @@ function fco() {
             echo "$tags"
         ) |
             fzf --no-hscroll --no-multi -n 2 \
-                --ansi
+                --ansi \
+                --preview="git --no-pager log --color=always --pretty=format:'%C(yellow)%h %C(cyan)%<(16)%ad %Cgreen%an%C(auto)%Creset: %s' -10 --date=relative '..{2}'" \
+                --preview-window=up
     ) || return
     git checkout $(awk '{print $2}' <<<"$target")
 }
@@ -104,7 +106,7 @@ function server() {
 
 # Create a new directory and enter it
 function mkd() {
-    mkdir -p "$@" && cd "$_";
+    mkdir -p "$@" && cd "$_"
 }
 
 # Change working directory to the top-most Finder window location

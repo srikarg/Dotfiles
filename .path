@@ -18,4 +18,10 @@ export PATH="$PATH:$HOME/.kubectl-plugins"
 
 # Load Java
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home -v 15.0.1)
+export JAVA_HOME=$(/usr/libexec/java_home -v 15.0.2)
+
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+fi

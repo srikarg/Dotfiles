@@ -28,6 +28,10 @@ brew install bash-completion2
 
 brew install zsh
 brew install antigen
+# http://www.andre-simon.de/doku/highlight/en/highlight.php
+brew install highlight
+# https://github.com/sharkdp/fd
+brew install fd
 brew install fzf
 
 # Switch to using brew-installed bash as default shell
@@ -60,6 +64,7 @@ brew install woff2
 # Install other useful binaries.
 brew install ack
 brew install ripgrep
+brew install awscli
 brew install git
 brew install git-lfs
 brew install gs

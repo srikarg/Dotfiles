@@ -1,7 +1,7 @@
 source /usr/local/share/antigen/antigen.zsh
 
 # Settings for zsh-nvm (https://github.com/lukechilds/zsh-nvm)
-export NVM_LAZY_LOAD=true
+export NVM_LAZY_LOAD=false
 export NVM_DIR="$HOME/.nvm"
 export NVM_COMPLETION=false
 
@@ -86,3 +86,11 @@ complete -W "NSGlobalDomain" defaults
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2>/dev/null
+
+# Key bindings
+# ------------
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"
