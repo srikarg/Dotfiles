@@ -20,6 +20,10 @@ export PATH="$PATH:$HOME/.kubectl-plugins"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home -v 15.0.2)
 
+# Load Volta
+VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then

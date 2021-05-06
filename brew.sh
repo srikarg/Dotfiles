@@ -83,6 +83,7 @@ brew install vbindiff
 brew install zopfli
 brew install tldr
 brew install php-cs-fixer
+brew install volta
 
 # Remove outdated versions from the cellar.
 brew cleanup

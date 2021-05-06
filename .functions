@@ -3,10 +3,11 @@
 function notes() {
     echo "Please enter the name of the notes file:"
     read name
+    local dir="$(fd --type d --base-directory "$HOME/OneDrive - JNJ/Notes" | fzf --prompt="Directory to store note in> ")"
     local date=$(date +%Y-%m-%d)
     local file_name=$date"_"$name".md"
-    local file_path="$HOME/OneDrive - JNJ/Notes/Uncategorized/$file_name"
-    echo "---\ntitle: $name\ndate: $date\n---\n\n# Notes on $name\n" >>$file_path
+    local file_path="$HOME/OneDrive - JNJ/Notes/$dir/$file_name"
+    echo "---\ntitle: $name\ndate: $date\nlast_updated: $date\n---\n\n# Notes on $name\n" >>$file_path
     c -n $file_path
 }
 
@@ -20,23 +21,6 @@ function rename_branch() {
     git push origin -u $new_branch
     git push origin --delete $old_branch
     echo "Successfully renamed " $old_branch " to " $new_branch
-}
-
-# update node to latest lts version
-function update_node() {
-    local -r current_node_version=$(nvm current)
-    local -r next_node_version=$(nvm version-remote --lts)
-    if [ "$current_node_version" != "$next_node_version" ]; then
-        echo "Updating from $current_node_version to $next_node_version..."
-        local -r previous_node_version=$current_node_version
-        nvm install --lts
-        nvm reinstall-packages "$previous_node_version"
-        nvm uninstall "$previous_node_version"
-        nvm alias default "$(nvm current)"
-        nvm cache clear
-    else
-        echo "The current installed Node.js version $current_node_version is already the latest LTS release."
-    fi
 }
 
 # fzf history
