@@ -28,8 +28,8 @@ function fh() {
     print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
 }
 
-# fzf git branch - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
-function fbr() {
+# fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
+fbr() {
     local branches branch
     branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
         branch=$(echo "$branches" |
@@ -37,11 +37,11 @@ function fbr() {
         git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-# fzf git checkout - checkout git branch/tag
-function fco() {
+# fco - checkout git branch/tag
+fco() {
     local tags branches target
     branches=$(
-        git --no-pager branch \
+        git --no-pager branch --all \
             --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" |
             sed '/^$/d'
     ) || return
@@ -138,32 +138,19 @@ function c() {
 
 function t() {
     if [ $# -eq 0 ]; then
-        tree -CL 2 -I node_modules
+        tree -aCL 2 -I '.git|node_modules|bower_components' --dirsfirst | less -FRNX
     else
-        tree -CL $1 -I node_modules
-    fi
-}
-
-function venv3() {
-    if [ $# -eq 0 ]; then
-        virtualenv -p python3 ./
-        source ./bin/activate
-    else
-        mkd "$@"
-        virtualenv -p python3 ./
-        source ./bin/activate
+        tree -aCL 2 -I '.git|node_modules|bower_components' --dirsfirst $1 | less -FRNX
     fi
 }
 
 function venv() {
     if [ $# -eq 0 ]; then
-        virtualenv ./
-        source ./bin/activate
+        python -m venv ./
     else
-        mkd "$@"
-        virtualenv ./
-        source ./bin/activate
+        python -m venv "$@"
     fi
+    source ./bin/activate
 }
 
 # `a` with no arguments opens the current directory in Github's Atom Text Editor, otherwise

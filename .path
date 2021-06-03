@@ -13,8 +13,8 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # Add GNU Sed to PATH
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
-# Load kubectl Plugins
-export PATH="$PATH:$HOME/.kubectl-plugins"
+# Add GNU FindUtils to PATH
+export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 
 # Load Java
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
@@ -29,3 +29,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
   export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
 fi
+
+# Load Krew Kubernetes Plugin Manager
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
