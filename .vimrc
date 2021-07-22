@@ -10,11 +10,10 @@ set smarttab
 set shiftwidth=4
 set softtabstop=4
 if version >= 700
-   set spl=en spell
-   set nospell
+  set spl=en spell
+  set nospell
 endif
 set number
-execute pathogen#infect()
 nnoremap <leader>f 1z=
 nnoremap <leader>s :set spell!
 vnoremap . :norm.<CR>

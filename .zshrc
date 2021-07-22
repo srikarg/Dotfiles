@@ -1,4 +1,4 @@
-source /usr/local/share/antigen/antigen.zsh
+source $(brew --prefix antigen)/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -19,6 +19,7 @@ antigen bundle gitignore
 antigen bundle history
 antigen bundle history-substring-search
 antigen bundle kubectl
+antigen bundle minikube
 antigen bundle npm
 antigen bundle osx
 antigen bundle z
@@ -71,8 +72,8 @@ if type _git &>/dev/null; then
   complete -o default -o nospace -F _git g
 fi
 
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh
+# Add tab completion for SSH hostnames based on $HOME/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" "$HOME/.ssh/config" | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
@@ -81,10 +82,8 @@ complete -W "NSGlobalDomain" defaults
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
 
-# Auto-completion
-# ---------------
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2>/dev/null
+# FZF Auto-completion
+[[ $- == *i* ]] && source "$(brew --prefix fzf)/shell/completion.zsh" 2>/dev/null
 
-# Key bindings
-# ------------
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+# FZF Key bindings
+source "$(brew --prefix fzf)/shell/key-bindings.zsh"

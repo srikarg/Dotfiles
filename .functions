@@ -1,197 +1,189 @@
 ### Custom Functions
 
 function notes() {
-    echo "Please enter the name of the notes file:"
-    read name
-    local dir="$(fd --type d --base-directory "$HOME/OneDrive - JNJ/Notes" | fzf --prompt="Directory to store note in> ")"
-    local date=$(date +%Y-%m-%d)
-    local file_name=$date"_"$name".md"
-    local file_path="$HOME/OneDrive - JNJ/Notes/$dir/$file_name"
-    echo "---\ntitle: $name\ndate: $date\nlast_updated: $date\n---\n\n# Notes on $name\n" >>$file_path
-    c -n $file_path
+  echo "Please enter the name of the notes file:"
+  read name
+  local dir="$(fd --type d --base-directory "$HOME/OneDrive - JNJ/Notes" | fzf --prompt="Directory to store note in> ")"
+  local date=$(date +%Y-%m-%d)
+  local file_name=$date"_"$name".md"
+  local file_path="$HOME/OneDrive - JNJ/Notes/$dir/$file_name"
+  echo "---\ntitle: $name\ndate: $date\nlast_updated: $date\n---\n\n# Notes on $name\n" >>$file_path
+  c -n $file_path
 }
 
 function rename_branch() {
-    echo "What is the name of the old branch?"
-    read old_branch
-    echo "What is the new name for the branch?"
-    read new_branch
-    git checkout $old_branch
-    git branch -m $new_branch
-    git push origin -u $new_branch
-    git push origin --delete $old_branch
-    echo "Successfully renamed " $old_branch " to " $new_branch
+  echo "What is the name of the old branch?"
+  read old_branch
+  echo "What is the new name for the branch?"
+  read new_branch
+  git checkout $old_branch
+  git branch -m $new_branch
+  git push origin -u $new_branch
+  git push origin --delete $old_branch
+  echo "Successfully renamed " $old_branch " to " $new_branch
 }
 
 # fzf history
 function fh() {
-    print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
 }
 
 # fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
 fbr() {
-    local branches branch
-    branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
-        branch=$(echo "$branches" |
-            fzf-tmux -d $((2 + $(wc -l <<<"$branches"))) +m) &&
-        git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+    branch=$(echo "$branches" |
+      fzf-tmux -d $((2 + $(wc -l <<<"$branches"))) +m) &&
+    git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
 # fco - checkout git branch/tag
 fco() {
-    local tags branches target
-    branches=$(
-        git --no-pager branch --all \
-            --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" |
-            sed '/^$/d'
-    ) || return
-    tags=$(
-        git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}'
-    ) || return
-    target=$(
-        (
-            echo "$branches"
-            echo "$tags"
-        ) |
-            fzf --no-hscroll --no-multi -n 2 \
-                --ansi \
-                --preview="git --no-pager log --color=always --pretty=format:'%C(yellow)%h %C(cyan)%<(16)%ad %Cgreen%an%C(auto)%Creset: %s' -10 --date=relative '..{2}'" \
-                --preview-window=up
-    ) || return
-    git checkout $(awk '{print $2}' <<<"$target")
+  local tags branches target
+  branches=$(
+    git --no-pager branch --all \
+      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" |
+      sed '/^$/d'
+  ) || return
+  tags=$(
+    git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}'
+  ) || return
+  target=$(
+    (
+      echo "$branches"
+      echo "$tags"
+    ) |
+      fzf --no-hscroll --no-multi -n 2 \
+        --ansi \
+        --preview="git --no-pager log --color=always --pretty=format:'%C(yellow)%h %C(cyan)%<(16)%ad %Cgreen%an%C(auto)%Creset: %s' -10 --date=relative '..{2}'" \
+        --preview-window=up
+  ) || return
+  git checkout $(awk '{print $2}' <<<"$target")
 }
 
 # Simple calculator
 function calc() {
-    local result=""
-    result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
-    #                       └─ default (when `--mathlib` is used) is 20
-    #
-    if [[ "$result" == *.* ]]; then
-        # improve the output for decimal numbers
-        printf "$result" |
-            sed -e 's/^\./0./' $(# add "0" for cases like ".5"` \
-                -e 's/^-\./-0./'
-            ) \
-                -e 's/0*$//;s/\.$//' # add "0" for cases like "-.5"`\
-        # remove trailing zeros
-    else
-        printf "$result"
-    fi
-    printf "\n"
+  local result=""
+  result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
+  #                       └─ default (when `--mathlib` is used) is 20
+  #
+  if [[ "$result" == *.* ]]; then
+    # improve the output for decimal numbers
+    printf "$result" |
+      sed -e 's/^\./0./' $(# add "0" for cases like ".5"` \
+        -e 's/^-\./-0./'
+      ) \
+        -e 's/0*$//;s/\.$//' # add "0" for cases like "-.5"`\
+    # remove trailing zeros
+  else
+    printf "$result"
+  fi
+  printf "\n"
 }
 
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
-    local port="${1:-8000}"
-    sleep 1 && open "http://localhost:${port}/" &
-    python -m http.server "$port"
+  local port="${1:-8000}"
+  sleep 1 && open "http://localhost:${port}/" &
+  python -m http.server "$port"
 }
 
 # Create a new directory and enter it
 function mkd() {
-    mkdir -p "$@" && cd "$_"
+  mkdir -p "$@" && cd "$_"
 }
 
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`
-    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
 }
 
 # Start a PHP server from a directory, optionally specifying the port
 # (Requires PHP 5.4.0+.)
 function phpserver() {
-    local port="${1:-4000}"
-    local ip=$(ipconfig getifaddr en1)
-    sleep 1 && open "http://${ip}:${port}/" &
-    php -S "${ip}:${port}"
+  local port="${1:-4000}"
+  local ip=$(ipconfig getifaddr en1)
+  sleep 1 && open "http://${ip}:${port}/" &
+  php -S "${ip}:${port}"
 }
 
 # Jekyll Shortcuts
 function j() {
-    if [ $1 == "b" ]; then
-        jekyll build .
-    elif [ $1 == "s" ]; then
-        jekyll serve --watch .
-    fi
+  if [ $1 == "b" ]; then
+    jekyll build .
+  elif [ $1 == "s" ]; then
+    jekyll serve --watch .
+  fi
 }
 
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
 # opens the given location
 function s() {
-    if [ $# -eq 0 ]; then
-        subl .
-    else
-        subl "$@"
-    fi
+  if [ $# -eq 0 ]; then
+    subl .
+  else
+    subl "$@"
+  fi
 }
 
 function c() {
-    if [ $# -eq 0 ]; then
-        code .
-    else
-        code "$@"
-    fi
+  if [ $# -eq 0 ]; then
+    code .
+  else
+    code "$@"
+  fi
 }
 
 # Tree function
 
 function t() {
-    if [ $# -eq 0 ]; then
-        tree -aCL 2 -I '.git|node_modules|bower_components' --dirsfirst | less -FRNX
-    else
-        tree -aCL 2 -I '.git|node_modules|bower_components' --dirsfirst $1 | less -FRNX
-    fi
+  if [ $# -eq 0 ]; then
+    tree -aNCL 2 -I '.git|node_modules|bower_components' --dirsfirst | less -FRNX
+  else
+    tree -aNCL 2 -I '.git|node_modules|bower_components' --dirsfirst $1 | less -FRNX
+  fi
 }
 
 function venv() {
-    if [ $# -eq 0 ]; then
-        python -m venv ./
-    else
-        python -m venv "$@"
-    fi
+  if [ $# -eq 0 ]; then
+    python -m venv ./
     source ./bin/activate
-}
-
-# `a` with no arguments opens the current directory in Github's Atom Text Editor, otherwise
-# opens the given location
-function a() {
-    if [ $# -eq 0 ]; then
-        open -a /Applications/Atom.app/ .
-    else
-        open -a /Applications/Atom.app/ "$@"
-    fi
+  else
+    python -m venv "$@"
+    source "$@"/bin/activate
+  fi
 }
 
 # `v` with no arguments opens the current directory in Vim, otherwise opens the
 # given location
 function v() {
-    if [ $# -eq 0 ]; then
-        vim .
-    else
-        vim "$@"
-    fi
+  if [ $# -eq 0 ]; then
+    vim .
+  else
+    vim "$@"
+  fi
 }
 
 # `o` with no arguments opens current directory, otherwise opens the given
 # location
 function o() {
-    if [ $# -eq 0 ]; then
-        open .
-    else
-        open "$@"
-    fi
+  if [ $# -eq 0 ]; then
+    open .
+  else
+    open "$@"
+  fi
 }
 
 # Set the volume with a number between 1 and 100
 function vol() {
-    if [ $# -eq 0 ]; then
-        osascript -e 'set volume output volume 0 --mute'
-    else
-        osascript -e "set volume output volume $1 --$1%"
-    fi
+  if [ $# -eq 0 ]; then
+    osascript -e 'set volume output volume 0 --mute'
+  else
+    osascript -e "set volume output volume $1 --$1%"
+  fi
 }
 
+# Opens the given location in TextEdit
 function te() {
-    open "$@" -a textedit
+  open "$@" -a textedit
 }

@@ -6,9 +6,6 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
-# Load z.sh (https://github.com/rupa/z)
-source ~/.z.sh
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
@@ -49,6 +46,8 @@ complete -W "NSGlobalDomain" defaults
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
 
-export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+# FZF Auto-completion
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2>/dev/null
 
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+# FZF Key bindings
+source "/usr/local/opt/fzf/shell/key-bindings.bash"

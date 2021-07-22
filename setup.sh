@@ -1,29 +1,39 @@
 #!/usr/bin/env bash
 
-dir=~/.Dotfiles
-# olddir=~/.Dotfiles_Old
+DOTFILES_DIR="$HOME/.Dotfiles"
+DOTFILES_BACKUP_DIR="$HOME/.Dotfiles_Old"
+SYSTEM_TYPE=$(uname -s)
 
-shopt -s extglob
-shopt -s dotglob
+function doIt() {
+  printf "Installing Dotfiles to $DOTFILES_DIR and backing up old Dotfiles to $DOTFILES_BACKUP_DIR...\n"
+  rsync --exclude ".git/" \
+    --exclude ".DS_Store" \
+    --exclude "setup.sh" \
+    --exclude "brew.sh" \
+    --exclude "README.md" \
+    -avP --no-perms --backup-dir=$DOTFILES_BACKUP_DIR $DOTFILES_DIR/ $HOME
+  source "$HOME/.exports" && source "$HOME/.path"
+  printf "Installing brew packages...\n"
+  . $DOTFILES_DIR/brew.sh
+  exec zsh
+}
 
-# echo "Making backup directory $olddir."
-# mkdir -p $olddir
-# cd $dir
+if [ "$1" == "--force" -o "$1" == "-f" ]; then
+  doIt
+else
+  read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
+  echo ""
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    doIt
+  fi
+fi
+unset doIt
 
-# Backup existing dotfiles in home and then create symbolic link from home directory to this directory
-for file in !(.DS_Store|.git|setup.sh|brew.sh|README.md|iterm2_profile); do
-    # if [[ -d "$HOME/$file" ]] || [ -f "$HOME/$file" ]; then
-    #     echo "Backing up $file to $olddir."
-    #     mv "$HOME/$file" $olddir
-    # fi
-    echo "Creating symbolic link to $file in home directory...\n"
-    ln -Ffns "$dir/$file" "$HOME/$file"
-done
-
-echo "Installing brew packages...\n"
-sh brew.sh
-
-source "$HOME/.zshrc"
-
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dir/iterm2_profile"
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+# Only set up iTerm2 on MacOS
+if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+  if [ -d "$HOME/.iterm2" ]; then
+    printf "Setting up iTerm2 preferences folder...\n"
+    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iterm2"
+    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+  fi
+fi

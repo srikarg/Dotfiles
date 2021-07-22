@@ -1,10 +1,42 @@
+SYSTEM_TYPE=$(uname -s)
+
 # Make Visual Studio Code the default editor
 export EDITOR="code -w"
 
-# Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE=32768
-export HISTFILESIZE=$HISTSIZE
-export HISTCONTROL=ignoreboth:erasedups
+# Homebrew
+# MacOS
+if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+  export HOMEBREW_PREFIX="/usr/local"
+  export HOMEBREW_CELLAR="/usr/local/Cellar"
+  export HOMEBREW_REPOSITORY="/usr/local/Homebrew"
+  export MANPATH="/usr/local/share/man${MANPATH+:$MANPATH}:"
+  export INFOPATH="/usr/local/share/info:${INFOPATH:-}"
+fi
+
+# Linux
+if [ "$SYSTEM_TYPE" = "Linux" ]; then
+  export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+  export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
+  export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
+  export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
+  export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
+fi
+
+# Enable persistent REPL history for `node`.
+export NODE_REPL_HISTORY=~/.node_history
+# Allow 32³ entries; the default is 1000.
+export NODE_REPL_HISTORY_SIZE='32768'
+# Use sloppy mode by default, matching web browsers.
+export NODE_REPL_MODE='sloppy'
+
+# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
+export PYTHONIOENCODING='UTF-8'
+
+# Increase Bash history size. Allow 32³ entries; the default is 500.
+export HISTSIZE='32768'
+export HISTFILESIZE="${HISTSIZE}"
+# Omit duplicates and commands that begin with a space from history.
+export HISTCONTROL='ignoreboth'
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:clear:cd:cd -:pwd:exit:date:* --help:s:v:a"
@@ -19,20 +51,18 @@ export LESS_TERMCAP_md="$ORANGE"
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
-# Always enable colored `grep` output
-export GREP_OPTIONS="--color=auto"
-
 # Require Virtual Environment before invoking pip
 export PIP_REQUIRE_VIRTUALENV=true
 
 # Don't create .pyc files
-PYTHONDONTWRITEBYTECODE=True
-export PYTHONDONTWRITEBYTECODE
+export PYTHONDONTWRITEBYTECODE=true
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
-GPG_TTY=$(tty)
-export GPG_TTY
+export GPG_TTY=$(tty)
+
+# Turn off Homebrew analytics
+export HOMEBREW_NO_ANALYTICS=1
 
 # FZF options
 export FZF_DEFAULT_COMMAND='fd --type f'
