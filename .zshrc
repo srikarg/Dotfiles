@@ -1,4 +1,8 @@
-source $(brew --prefix antigen)/share/antigen/antigen.zsh
+if command -v brew >/dev/null 2>&1; then
+  source $(brew --prefix antigen)/share/antigen/antigen.zsh
+else
+  source /usr/share/zsh-antigen/antigen.zsh
+fi
 
 antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -25,13 +29,14 @@ antigen bundle osx
 antigen bundle z
 
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+antigen bundle sindresorhus/pure --branch=main
 
 antigen apply
 
 ZSH_DOTENV_PROMPT=false
 DISABLE_MAGIC_FUNCTIONS=true
 
+fpath+=$HOME/.zsh/pure
 autoload -U promptinit
 promptinit
 
@@ -82,8 +87,10 @@ complete -W "NSGlobalDomain" defaults
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
 
-# FZF Auto-completion
-[[ $- == *i* ]] && source "$(brew --prefix fzf)/shell/completion.zsh" 2>/dev/null
+if command -v brew >/dev/null 2>&1; then
+  # FZF Auto-completion
+  [[ $- == *i* ]] && source "$(brew --prefix fzf)/shell/completion.zsh" 2>/dev/null
 
-# FZF Key bindings
-source "$(brew --prefix fzf)/shell/key-bindings.zsh"
+  # FZF Key bindings
+  source "$(brew --prefix fzf)/shell/key-bindings.zsh"
+fi

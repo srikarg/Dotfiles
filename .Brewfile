@@ -137,5 +137,3 @@ brew "zsh"
 
 # Development kit for the Java programming language
 cask "java"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"

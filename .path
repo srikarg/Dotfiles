@@ -5,34 +5,40 @@ SYSTEM_TYPE=$(uname -s)
 ### MacOS
 if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   export PATH="/usr/local/bin:/usr/local/sbin${PATH+:$PATH}"
+
+  # Add MacOS Visual Studio Code Binary (code) to PATH
+  export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 fi
 
 ### Linux
 if [ "$SYSTEM_TYPE" = "Linux" ]; then
   export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}"
+
+  # Add WSL Visual Studio Code Binary (code) to PATH
+  export PATH="$PATH:/mnt/c/Program\ Files/Microsoft\ VS\ Code/bin/code"
 fi
 
-## Add Homebrew Python to PATH
-export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
+# Only add Homebrew formulae to PATH if Homebrew is installed
+if command -v brew >/dev/null 2>&1; then
+  ## Add Homebrew Python to PATH
+  export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
 
-## Add Homebrew GNU CoreUtils to PATH
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  ## Add Homebrew GNU CoreUtils to PATH
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
-## Add Homebrew GNU Sed to PATH
-export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
+  ## Add Homebrew GNU Sed to PATH
+  export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
 
-## Add Homebrew GNU FindUtils to PATH
-export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
+  ## Add Homebrew GNU FindUtils to PATH
+  export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
 
-## Add Homebrew OpenJDK to PATH and set JAVA_HOME environment variable
-export PATH="$(brew --prefix openjdk)/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home -v 16.0.1)
+  ## Add Homebrew OpenJDK to PATH and set JAVA_HOME environment variable
+  export PATH="$(brew --prefix openjdk)/bin:$PATH"
+  export JAVA_HOME=$(/usr/libexec/java_home -v 16.0.1)
 
-# Add Homebrew fzf to PATH
-export PATH="$(brew --prefix fzf)/bin:$PATH"
-
-# Add Visual Studio Code (code)
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+  # Add Homebrew fzf to PATH
+  export PATH="$(brew --prefix fzf)/bin:$PATH"
+fi
 
 # Add Volta to PATH
 export PATH="$HOME/.volta/bin:$PATH"

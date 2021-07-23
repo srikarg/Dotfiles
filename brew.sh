@@ -3,7 +3,7 @@
 # Install Homebrew if it's missing
 if ! command -v brew >/dev/null 2>&1; then
   echo "Installing Homebrew"
-  yes '' | /bin/bash -c "$(curl -kfsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Install command-line tools using Homebrew.

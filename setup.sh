@@ -11,11 +11,9 @@ function doIt() {
     --exclude "setup.sh" \
     --exclude "brew.sh" \
     --exclude "README.md" \
+    --exclude "Dockerfile" \
     -avP --no-perms --backup-dir=$DOTFILES_BACKUP_DIR $DOTFILES_DIR/ $HOME
-  source "$HOME/.exports" && source "$HOME/.path"
-  printf "Installing brew packages...\n"
-  . $DOTFILES_DIR/brew.sh
-  exec zsh
+  exec zsh -l
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -31,6 +29,9 @@ unset doIt
 
 # Only set up iTerm2 on MacOS
 if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+  printf "Installing brew packages...\n"
+  . $DOTFILES_DIR/brew.sh
+
   if [ -d "$HOME/.iterm2" ]; then
     printf "Setting up iTerm2 preferences folder...\n"
     defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iterm2"

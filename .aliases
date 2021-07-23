@@ -105,6 +105,7 @@ alias g='git'
 alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m' # requires you to type a commit message
+alias gcamf='git commit --amend --no-edit && git push --force-with-lease'
 alias gp='git push'
 alias gpu='git pull'
 alias gco='git checkout'
