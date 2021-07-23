@@ -4,6 +4,8 @@ DOTFILES_DIR="$HOME/.Dotfiles"
 DOTFILES_BACKUP_DIR="$HOME/.Dotfiles_Old"
 SYSTEM_TYPE=$(uname -s)
 
+git submodule init && git submodule update
+
 function doIt() {
   printf "Installing Dotfiles to $DOTFILES_DIR and backing up old Dotfiles to $DOTFILES_BACKUP_DIR...\n"
   rsync --exclude ".git/" \

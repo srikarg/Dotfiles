@@ -26,7 +26,6 @@ antigen bundle kubectl
 antigen bundle minikube
 antigen bundle npm
 antigen bundle osx
-antigen bundle z
 
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure --branch=main
@@ -94,3 +93,5 @@ if command -v brew >/dev/null 2>&1; then
   # FZF Key bindings
   source "$(brew --prefix fzf)/shell/key-bindings.zsh"
 fi
+
+source "$HOME/.zsh/z/z.sh"
