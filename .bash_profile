@@ -46,8 +46,10 @@ complete -W "NSGlobalDomain" defaults
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
 
-# FZF Auto-completion
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2>/dev/null
+if command -v brew >/dev/null 2>&1; then
+  # FZF Auto-completion
+  [[ $- == *i* ]] && source "$(brew --prefix fzf)/shell/completion.bash" 2>/dev/null
 
-# FZF Key bindings
-source "/usr/local/opt/fzf/shell/key-bindings.bash"
+  # FZF Key bindings
+  source "$(brew --prefix fzf)/shell/key-bindings.bash"
+fi

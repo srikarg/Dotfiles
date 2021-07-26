@@ -41,9 +41,11 @@ export HISTCONTROL='ignoreboth'
 # Make some commands not show up in history
 export HISTIGNORE="ls:clear:cd:cd -:pwd:exit:date:* --help:s:v:a"
 
-# Prefer US English and use UTF-8
-export LANG="en_US"
-export LC_ALL="en_US.UTF-8"
+if [ "$SYSTEM_TYPE" = "Darwin" ]; then
+  # Prefer US English and use UTF-8
+  export LANG="en_US"
+  export LC_ALL="en_US.UTF-8"
+fi
 
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"

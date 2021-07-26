@@ -11,6 +11,7 @@ function doIt() {
   rsync --exclude ".git/" \
     --exclude ".DS_Store" \
     --exclude "setup.sh" \
+    --exclude "setupDevContainer.sh" \
     --exclude "brew.sh" \
     --exclude "README.md" \
     --exclude "Dockerfile" \

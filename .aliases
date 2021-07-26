@@ -139,7 +139,9 @@ alias cra='create-react-app'
 # Virtual Env
 alias vact='source ./bin/activate'
 
-# The Fuck Alias
-eval "$(thefuck --alias f)"
+if command -v thefuck >/dev/null 2>&1; then
+  # The Fuck Alias
+  eval "$(thefuck --alias f)"
+fi
 
 alias composer="php -d memory_limit=-1 /usr/local/bin/composer"
