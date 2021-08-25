@@ -134,6 +134,10 @@ function c() {
   fi
 }
 
+function zc() {
+  c $(z -e "$@")
+}
+
 # Tree function
 
 function t() {

@@ -34,7 +34,7 @@ if command -v brew >/dev/null 2>&1; then
 
   ## Add Homebrew OpenJDK to PATH and set JAVA_HOME environment variable
   export PATH="$(brew --prefix openjdk)/bin:$PATH"
-  export JAVA_HOME=$(/usr/libexec/java_home -v 16.0.1)
+  export JAVA_HOME=$(/usr/libexec/java_home -v 16.0.2)
 
   # Add Homebrew fzf to PATH
   export PATH="$(brew --prefix fzf)/bin:$PATH"
