@@ -5,6 +5,7 @@ DOTFILES_DIR="$HOME/.Dotfiles"
 git submodule init && git submodule update
 
 rsync --exclude ".git/" \
+  --exclude ".gitconfig" \
   --exclude ".DS_Store" \
   --exclude "setup.sh" \
   --exclude "setupDevContainer.sh" \

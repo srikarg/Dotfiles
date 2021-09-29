@@ -3,7 +3,6 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-
 # Plugin manager for zsh, inspired by oh-my-zsh and vundle
 brew "antigen"
 # Spell checker with better logic than ispell
@@ -14,8 +13,6 @@ brew "automake"
 brew "python@3.9"
 # Official Amazon AWS command-line interface
 brew "awscli"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -26,6 +23,8 @@ brew "bash-completion@2"
 brew "pkg-config"
 # Dependency Manager for PHP
 brew "composer"
+# GNU multiple precision arithmetic library
+brew "gmp"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -36,8 +35,6 @@ brew "dos2unix"
 brew "exiftool"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# GNU multiple precision arithmetic library
-brew "gmp"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # OpenType text shaping engine
@@ -74,8 +71,12 @@ brew "lua"
 brew "highlight"
 # Improved top (interactive process viewer)
 brew "htop"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Manage your Java environment
+brew "jenv"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Kubernetes command-line interface
@@ -90,8 +91,8 @@ brew "mysql"
 brew "nasm"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
-# OpenBSD freely-licensed SSH connectivity tools
-brew "openssh"
+# Development kit for the Java programming language
+brew "openjdk@8"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # General-purpose scripting language
@@ -124,6 +125,8 @@ brew "tldr"
 brew "tree"
 # Vi 'workalike' with many additional features
 brew "vim"
+# Image processing library
+brew "vips"
 # JavaScript toolchain manager for reproducible environments
 brew "volta"
 # Internet file retriever
@@ -134,6 +137,5 @@ brew "woff2"
 brew "zlib"
 # UNIX shell (command interpreter)
 brew "zsh"
-
 # Development kit for the Java programming language
 cask "java"
