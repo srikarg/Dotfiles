@@ -3,8 +3,6 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-# Plugin manager for zsh, inspired by oh-my-zsh and vundle
-brew "antigen"
 # Spell checker with better logic than ispell
 brew "aspell"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -133,6 +131,8 @@ brew "volta"
 brew "wget"
 # Utilities to create and convert Web Open Font File (WOFF) files
 brew "woff2"
+# YAML syntax highlighter to bring colours where only jq could
+brew "yh"
 # General-purpose lossless data-compression library
 brew "zlib"
 # UNIX shell (command interpreter)

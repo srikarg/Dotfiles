@@ -5,3 +5,23 @@ url = https://github.com/rupa/z
 [submodule ".zsh/pure"]
 path = .zsh/pure
 url = https://github.com/sindresorhus/pure.git
+
+[submodule ".zsh/ohmyzsh"]
+path = .zsh/ohmyzsh
+url = https://github.com/ohmyzsh/ohmyzsh/
+
+[submodule ".zsh/alias-tips"]
+path = .zsh/alias-tips
+url = https://github.com/djui/alias-tips
+
+[submodule ".zsh/zsh-users/zsh-syntax-highlighting"]
+path = .zsh/zsh-users/zsh-syntax-highlighting
+url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+
+[submodule ".zsh/zsh-users/zsh-autosuggestions"]
+path = .zsh/zsh-users/zsh-autosuggestions
+url = https://github.com/zsh-users/zsh-autosuggestions.git
+
+[submodule ".zsh/zsh-users/zsh-completions"]
+path = .zsh/zsh-users/zsh-completions
+url = https://github.com/zsh-users/zsh-completions.git

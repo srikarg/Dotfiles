@@ -2,6 +2,7 @@
 
 DOTFILES_DIR="$HOME/.Dotfiles"
 DOTFILES_BACKUP_DIR="$HOME/.Dotfiles_Old"
+ZSH_CACHE_DIR="$HOME/.cache/zsh"
 SYSTEM_TYPE=$(uname -s)
 
 git submodule init && git submodule update
@@ -16,6 +17,7 @@ function doIt() {
     --exclude "README.md" \
     --exclude "Dockerfile" \
     -avP --no-perms --backup-dir=$DOTFILES_BACKUP_DIR $DOTFILES_DIR/ $HOME
+  mkdir -p "$ZSH_CACHE_DIR"
   exec zsh -l
 }
 

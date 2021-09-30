@@ -1,41 +1,30 @@
-if command -v brew >/dev/null 2>&1; then
-  source $(brew --prefix antigen)/share/antigen/antigen.zsh
-else
-  source /usr/share/zsh-antigen/antigen.zsh
-fi
+source "$HOME/.zsh/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOME/.zsh/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-antigen use oh-my-zsh
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
+fpath+=$HOME/.zsh/ohmyzsh/plugins/docker
+fpath+=$HOME/.zsh/ohmyzsh/plugins/docker-compose
+fpath+=$HOME/.zsh/zsh-users/zsh-completions/src
+fpath+=$HOME/.zsh/pure
 
 autoload -Uz compinit
 compinit
 
-antigen bundle colored-man-pages
-antigen bundle copydir
-antigen bundle copyfile
-antigen bundle djui/alias-tips
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle git
-antigen bundle gitignore
-antigen bundle history
-antigen bundle history-substring-search
-antigen bundle kubectl
-antigen bundle minikube
-antigen bundle npm
-antigen bundle osx
+source "$HOME/.zsh/alias-tips/alias-tips.plugin.zsh"
 
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure --branch=main
-
-antigen apply
+source "$HOME/.zsh/ohmyzsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/copydir/copydir.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/copyfile/copyfile.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/docker-compose/docker-compose.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/git/git.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/gitignore/gitignore.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/history/history.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/history-substring-search/history-substring-search.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/npm/npm.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/osx/osx.plugin.zsh"
 
 ZSH_DOTENV_PROMPT=false
 DISABLE_MAGIC_FUNCTIONS=true
 
-fpath+=$HOME/.zsh/pure
 autoload -U promptinit
 promptinit
 
@@ -55,6 +44,9 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
+
+source "$HOME/.zsh/ohmyzsh/plugins/kubectl/kubectl.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/minikube/minikube.plugin.zsh"
 
 # History Setup
 HISTFILE=$HOME/.zsh_history

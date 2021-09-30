@@ -3,6 +3,10 @@ SYSTEM_TYPE=$(uname -s)
 # Make Visual Studio Code the default editor
 export EDITOR="code -w"
 
+# ZSH Cache Directory that some Oh My ZSH Plugins (Kubernetes, Minikube) use to
+# cache ZSH completion files
+export ZSH_CACHE_DIR="$HOME/.cache/zsh"
+
 # Homebrew
 # MacOS
 if [ "$SYSTEM_TYPE" = "Darwin" ]; then

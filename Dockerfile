@@ -41,8 +41,6 @@ RUN ln -s $(which fdfind) /usr/bin/fd
 
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git /root/.fzf
 
-RUN curl --create-dirs -o /usr/share/zsh-antigen/antigen.zsh -sL git.io/antigen
-
 RUN pip3 install thefuck
 
 RUN curl https://get.volta.sh | bash
