@@ -137,7 +137,7 @@ textconv = hexdump -v -C
 [help]
 
 # Automatically correct and execute mistyped commands.
-autocorrect = 1
+autocorrect = prompt
 
 [merge]
 

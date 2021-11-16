@@ -1,3 +1,4 @@
+tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
@@ -19,14 +20,24 @@ brew "bash"
 brew "bash-completion@2"
 # Manage compile and link flags for libraries
 brew "pkg-config"
-# Dependency Manager for PHP
-brew "composer"
-# GNU multiple precision arithmetic library
-brew "gmp"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# GNU multiple precision arithmetic library
+brew "gmp"
+# Postgres C API library
+brew "libpq"
+# General-purpose scripting language
+brew "php", restart_service: true
+# Dependency Manager for PHP
+brew "composer"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Isolated development environments using Docker
+brew "docker-compose"
+# macOS Credential Helper for Docker
+brew "docker-credential-helper"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
 # Perl lib for reading and writing EXIF metadata
@@ -34,7 +45,7 @@ brew "exiftool"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Validating, recursive, caching DNS resolver
-brew "unbound"
+brew "unbound", restart_service: true
 # OpenType text shaping engine
 brew "harfbuzz"
 # Subtitle renderer for the ASS/SSA subtitle format
@@ -84,17 +95,15 @@ brew "minikube"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
 # Open source relational database management system
-brew "mysql"
+brew "mysql", restart_service: true
 # Netwide Assembler (NASM) is an 80x86 assembler
 brew "nasm"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
-brew "nginx"
+brew "nginx", restart_service: true
 # Development kit for the Java programming language
-brew "openjdk@8"
+brew "openjdk@8", link: true
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-# General-purpose scripting language
-brew "php"
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
 # Programmer-oriented testing framework for PHP
@@ -117,6 +126,8 @@ brew "sops"
 brew "terminal-notifier"
 # Programmatically correct mistyped console commands
 brew "thefuck"
+# Define your dev environment as code. For microservice apps on Kubernetes
+brew "tilt"
 # Simplified and community-driven man pages
 brew "tldr"
 # Display directories as trees (with optional color/HTML output)
@@ -137,5 +148,7 @@ brew "yh"
 brew "zlib"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Terraform
+brew "hashicorp/tap/terraform"
 # Development kit for the Java programming language
 cask "java"

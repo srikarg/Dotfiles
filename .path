@@ -51,3 +51,6 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Add Rust to PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Add libpq executables to PATH
+export PATH="/usr/local/opt/libpq/bin:$PATH"
