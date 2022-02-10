@@ -86,6 +86,4 @@ if command -v brew >/dev/null 2>&1; then
   source "$(brew --prefix fzf)/shell/key-bindings.zsh"
 fi
 
-eval $(minikube docker-env)
-
 source "$HOME/.zsh/z/z.sh"

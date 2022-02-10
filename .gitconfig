@@ -143,6 +143,8 @@ autocorrect = prompt
 
 # Include summaries of merged commits in newly created merge commit messages
 log = true
+# Change conflict style for merges
+conflictstyle = zdiff3
 
 [push]
 

@@ -27,7 +27,7 @@ brew "gmp"
 # Postgres C API library
 brew "libpq"
 # General-purpose scripting language
-brew "php", restart_service: true
+brew "php"
 # Dependency Manager for PHP
 brew "composer"
 # GNU File, Shell, and Text utilities
@@ -45,7 +45,7 @@ brew "exiftool"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Validating, recursive, caching DNS resolver
-brew "unbound", restart_service: true
+brew "unbound"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Subtitle renderer for the ASS/SSA subtitle format
@@ -80,6 +80,8 @@ brew "lua"
 brew "highlight"
 # Improved top (interactive process viewer)
 brew "htop"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
 # Tools and libraries to manipulate images in many formats
@@ -90,16 +92,14 @@ brew "jenv"
 brew "jq"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
-# Run a Kubernetes cluster locally
-brew "minikube"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
 # Open source relational database management system
-brew "mysql", restart_service: true
+brew "mysql"
 # Netwide Assembler (NASM) is an 80x86 assembler
 brew "nasm"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
-brew "nginx", restart_service: true
+brew "nginx"
 # Development kit for the Java programming language
 brew "openjdk@8", link: true
 # Swiss-army knife of markup format conversion
