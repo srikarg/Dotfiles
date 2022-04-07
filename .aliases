@@ -52,7 +52,7 @@ alias -- -="cd -"
 alias sudo='sudo '
 
 # Prettify All
-alias prettyall='prettier --write "**/*.+(js|jsx|json|scss|css|md|markdown|html|svelte)"'
+alias prettyall='prettier --write .'
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'

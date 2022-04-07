@@ -7,7 +7,7 @@ function notes() {
   local date=$(date +%Y-%m-%d)
   local file_name=$date"_"$name".md"
   local file_path="$HOME/OneDrive - JNJ/Notes/$dir/$file_name"
-  echo "---\ntitle: $name\ndate: $date\nlast_updated: $date\n---\n\n# Notes on $name\n" >>$file_path
+  echo "---\ntitle: $name\ndate: $date\nlast_updated: $date\n---\n" >>$file_path
   c -n $file_path
 }
 
@@ -41,7 +41,7 @@ fbr() {
 fco() {
   local tags branches target
   branches=$(
-    git --no-pager branch --all \
+    git --no-pager branch \
       --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" |
       sed '/^$/d'
   ) || return

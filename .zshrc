@@ -12,7 +12,7 @@ compinit
 source "$HOME/.zsh/alias-tips/alias-tips.plugin.zsh"
 
 source "$HOME/.zsh/ohmyzsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh"
-source "$HOME/.zsh/ohmyzsh/plugins/copydir/copydir.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/copypath/copypath.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/copyfile/copyfile.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/docker-compose/docker-compose.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/git/git.plugin.zsh"
@@ -20,7 +20,7 @@ source "$HOME/.zsh/ohmyzsh/plugins/gitignore/gitignore.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/history/history.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/history-substring-search/history-substring-search.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/npm/npm.plugin.zsh"
-source "$HOME/.zsh/ohmyzsh/plugins/osx/osx.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/macos/macos.plugin.zsh"
 
 ZSH_DOTENV_PROMPT=false
 DISABLE_MAGIC_FUNCTIONS=true

@@ -54,3 +54,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Add libpq executables to PATH
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# Add Homebrew Ruby 3.1.0 to PATH
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.1.0/bin:$PATH"
