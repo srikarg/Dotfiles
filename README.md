@@ -1,8 +1,19 @@
 # Srikar's Dotfiles
 
-To install:
+## Installation
 
 1. Clone this repository into `~/.Dotfiles`
-2. Install [pure](https://github.com/sindresorhus/pure) ZSH prompt with `npm install -g pure-prompt`
+2. Install [pure](https://github.com/sindresorhus/pure) ZSH prompt with
+   `npm install -g pure-prompt`
 3. `cd` into the Dotfiles directory
 4. Run `./setup.sh` located in the directory
+
+## Common Tasks
+
+### Updating Homebrew Dump Bundle File
+
+`brew bundle dump --describe --force --file ~/.Dotfiles/.Brewfile`
+
+### Forcing Local State to Match Homebrew Dump Bundle File
+
+`brew bundle cleanup --force --file ~/.Dotfiles/.Brewfile`
