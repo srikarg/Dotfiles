@@ -8,8 +8,6 @@ tap "homebrew/services"
 brew "aspell"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Microsoft Azure CLI 2.0
@@ -20,6 +18,8 @@ brew "bash"
 brew "bash-completion@2"
 # Manage compile and link flags for libraries
 brew "pkg-config"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # GNU multiple precision arithmetic library
@@ -38,7 +38,7 @@ brew "dasel"
 brew "docker"
 # Isolated development environments using Docker
 brew "docker-compose"
-# macOS Credential Helper for Docker
+# Platform keystore credential helper for Docker
 brew "docker-credential-helper"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
@@ -138,6 +138,10 @@ brew "rsync"
 brew "ruby"
 # Terminal multiplexer with VT100/ANSI terminal emulation
 brew "screen"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Autoformat shell script source code
+brew "shfmt"
 # Editor of encrypted files
 brew "sops"
 # Send macOS User Notifications from the command-line
@@ -150,6 +154,8 @@ brew "tilt"
 brew "tldr"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Modern watch command
+brew "viddy"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Image processing library
