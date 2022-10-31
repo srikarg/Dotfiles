@@ -10,8 +10,6 @@ brew "aspell"
 brew "automake"
 # Official Amazon AWS command-line interface
 brew "awscli"
-# Microsoft Azure CLI 2.0
-brew "azure-cli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 4.2+
@@ -34,6 +32,8 @@ brew "composer"
 brew "coreutils"
 # JSON, YAML, TOML, XML, and CSV query and modification tool
 brew "dasel"
+# Tool for exploring each layer in a docker image
+brew "dive"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Isolated development environments using Docker
@@ -46,10 +46,10 @@ brew "dos2unix"
 brew "fd"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
-# Generate introspection data for GObject libraries
-brew "gobject-introspection"
 # OpenType text shaping engine
 brew "harfbuzz"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
 # Play, record, convert, and stream audio and video
@@ -70,10 +70,6 @@ brew "git-lfs"
 brew "gnu-sed"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Development kit for the Java programming language
-brew "openjdk"
-# Open-source build automation tool based on the Groovy and Kotlin DSL
-brew "gradle"
 # GNU grep, egrep and fgrep
 brew "grep"
 # Kubernetes package manager
@@ -104,22 +100,16 @@ brew "pango"
 brew "librsvg"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
-# Open source relational database management system
-brew "mysql"
-# Netwide Assembler (NASM) is an 80x86 assembler
-brew "nasm"
 # NCurses Disk Usage
 brew "ncdu"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
 # Development kit for the Java programming language
-brew "openjdk@8", link: true
+brew "openjdk"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
-# General-purpose scripting language
-brew "php@8.0"
 # Programmer-oriented testing framework for PHP
 brew "phpunit"
 # Cross-platform application and UI framework
@@ -168,8 +158,6 @@ brew "wget"
 brew "woff2"
 # YAML syntax highlighter to bring colours where only jq could
 brew "yh"
-# General-purpose lossless data-compression library
-brew "zlib"
 # UNIX shell (command interpreter)
 brew "zsh"
 # Terraform
@@ -182,5 +170,7 @@ cask "exifrenamer"
 cask "google-chrome"
 # Privacy-first, open-source platform for knowledge sharing and management
 cask "logseq"
+# System monitor for the menu bar
+cask "stats"
 # Real time file synchronization software
 cask "syncthing"
