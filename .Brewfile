@@ -1,9 +1,24 @@
+tap "fairwindsops/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Framework for layout and rendering of i18n text
+brew "pango"
+# Library to render SVG files using Cairo
+brew "librsvg"
+# Icons for the GNOME project
+brew "adwaita-icon-theme"
 # Spell checker with better logic than ispell
 brew "aspell"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -14,10 +29,6 @@ brew "awscli"
 brew "bash"
 # Programmable completion for Bash 4.2+
 brew "bash-completion@2"
-# Manage compile and link flags for libraries
-brew "pkg-config"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # GNU multiple precision arithmetic library
@@ -42,12 +53,14 @@ brew "docker-compose"
 brew "docker-credential-helper"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
+# Modern replacement for 'ls'
+brew "exa"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
-# OpenType text shaping engine
-brew "harfbuzz"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Subtitle renderer for the ASS/SSA subtitle format
@@ -58,8 +71,6 @@ brew "ffmpeg"
 brew "findutils"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Toolkit for image loading and pixel buffer manipulation
-brew "gdk-pixbuf"
 # Interpreter for PostScript and PDF
 brew "ghostscript"
 # Distributed revision control system
@@ -70,8 +81,12 @@ brew "git-lfs"
 brew "gnu-sed"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # GNU grep, egrep and fgrep
 brew "grep"
+# Toolkit for creating graphical user interfaces
+brew "gtk4"
 # Kubernetes package manager
 brew "helm"
 # Powerful, lightweight programming language
@@ -82,6 +97,8 @@ brew "highlight"
 brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
 # Tools and libraries to manipulate images in many formats
@@ -94,10 +111,6 @@ brew "jq"
 brew "kubernetes-cli"
 # I/O abstraction library for dealing with structured file formats
 brew "libgsf"
-# Framework for layout and rendering of i18n text
-brew "pango"
-# Library to render SVG files using Cairo
-brew "librsvg"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
 # NCurses Disk Usage
@@ -112,6 +125,8 @@ brew "pandoc"
 brew "php-cs-fixer"
 # Programmer-oriented testing framework for PHP
 brew "phpunit"
+# CLI tool to help discover deprecated apiVersions in Kubernetes
+brew "pluto"
 # Cross-platform application and UI framework
 brew "qt"
 # Rsync for cloud storage
@@ -122,6 +137,8 @@ brew "rename"
 brew "ripgrep"
 # Readline wrapper: adds readline support to tools that lack it
 brew "rlwrap"
+# Extremely fast tool to remove dupes and other lint from your filesystem
+brew "rmlint"
 # Utility that provides fast incremental file transfer
 brew "rsync"
 # Powerful, clean, object-oriented scripting language
@@ -162,6 +179,8 @@ brew "yh"
 brew "zsh"
 # Terraform
 brew "hashicorp/tap/terraform"
+# Compact TeX distribution as alternative to the full TeX Live / MacTeX
+cask "basictex"
 # Finds duplicate files in a computer system
 cask "dupeguru"
 # Tool to rename digital photos, movie- and audio-clips
