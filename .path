@@ -23,6 +23,9 @@ if command -v brew >/dev/null 2>&1; then
   ## Add Homebrew Python to PATH
   export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
 
+  ## Add Homebrew Curl to PATH
+  export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
+
   ## Add Homebrew GNU CoreUtils to PATH
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
