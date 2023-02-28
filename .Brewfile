@@ -1,3 +1,4 @@
+tap "azure/kubelogin"
 tap "fairwindsops/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
@@ -61,8 +62,8 @@ brew "exiftool"
 brew "fd"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
-# Generate introspection data for GObject libraries
-brew "gobject-introspection"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
 # Play, record, convert, and stream audio and video
@@ -79,10 +80,14 @@ brew "git"
 brew "git-lfs"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
+# GNU Ubiquitous Intelligent Language for Extensions
+brew "guile"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
 # GNU grep, egrep and fgrep
 brew "grep"
 # Toolkit for creating graphical user interfaces
@@ -107,6 +112,8 @@ brew "imagemagick"
 brew "jenv"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Handy way to save and run project-specific commands
+brew "just"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # I/O abstraction library for dealing with structured file formats
@@ -121,6 +128,8 @@ brew "nginx"
 brew "openjdk"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# General-purpose scripting language
+brew "php@8.1"
 # Tool to automatically fix PHP coding standards issues
 brew "php-cs-fixer"
 # Programmer-oriented testing framework for PHP
@@ -177,6 +186,8 @@ brew "woff2"
 brew "yh"
 # UNIX shell (command interpreter)
 brew "zsh"
+# A Kubernetes credential (exec) plugin implementing azure authentication
+brew "azure/kubelogin/kubelogin"
 # Terraform
 brew "hashicorp/tap/terraform"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
@@ -193,3 +204,5 @@ cask "logseq"
 cask "stats"
 # Real time file synchronization software
 cask "syncthing"
+# HTML to PDF renderer
+cask "wkhtmltopdf"

@@ -1,5 +1,8 @@
 ### Aliases
 
+# Find and open a folder in the current directory in VSCode
+alias oc='find . -maxdepth 1 -type d | fzf | xargs -r code'
+
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
 alias grep='grep --color=auto'
