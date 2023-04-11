@@ -1,5 +1,8 @@
 ### Aliases
 
+# Find npm package updates for current repository
+alias nu='npm-check-updates -i --format group,repo'
+
 # Find and open a folder in the current directory in VSCode
 alias oc='find . -maxdepth 1 -type d | fzf | xargs -r code'
 

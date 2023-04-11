@@ -148,7 +148,9 @@ conflictstyle = diff3
 
 [push]
 
-# https://git-scm.com/docs/git-config#git-config-pushdefault
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote
+autoSetupRemote = true
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushdefault
 default = simple
 # Make `git push` push relevant annotated tags when pushing branches out.
 followTags = true

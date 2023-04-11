@@ -1,4 +1,6 @@
 source "$HOME/.zsh/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source "$HOME/.zsh/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 fpath+=$HOME/.zsh/ohmyzsh/plugins/docker
@@ -6,6 +8,7 @@ fpath+=$HOME/.zsh/ohmyzsh/plugins/docker-compose
 fpath+=$HOME/.zsh/zsh-users/zsh-completions/src
 fpath+=$HOME/.zsh/pure
 
+rm -f ~/.zcompdump
 autoload -Uz compinit
 compinit
 

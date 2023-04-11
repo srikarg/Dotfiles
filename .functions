@@ -7,8 +7,8 @@ function notes() {
   local date=$(date +%Y-%m-%d)
   local file_name=$date"_"$name".md"
   local file_path="$HOME/OneDrive - JNJ/Notes/$dir/$file_name"
-  echo "---\ntitle: $name\ndate: $date\nlast_updated: $date\n---\n" >>$file_path
-  c -n $file_path
+  echo "---\ntitle: $name\ndate: $date\nlast_updated: $date\n---\n" >>"$file_path"
+  c -n "$file_path"
 }
 
 function rename_branch() {
@@ -16,11 +16,19 @@ function rename_branch() {
   read old_branch
   echo "What is the new name for the branch?"
   read new_branch
-  git checkout $old_branch
-  git branch -m $new_branch
-  git push origin -u $new_branch
-  git push origin --delete $old_branch
-  echo "Successfully renamed " $old_branch " to " $new_branch
+  git checkout "$old_branch"
+  git branch -m "$new_branch"
+  git push origin -u "$new_branch"
+  git push origin --delete "$old_branch"
+  echo "Successfully renamed " "$old_branch" " to " "$new_branch"
+}
+
+# fzf npm script
+function fns() {
+  local scripts=$(jq -r '.scripts' package.json)
+  local script=$(echo "$scripts" | jq -r '. | keys[]' | fzf --preview "echo '$scripts' | jq -r '.\"{}\"'")
+
+  npm run "$script"
 }
 
 # fzf history
@@ -29,7 +37,7 @@ function fh() {
 }
 
 # fbr - checkout git branch (including remote branches), sorted by most recent commit, limit 30 last branches
-fbr() {
+function fbr() {
   local branches branch
   branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
     branch=$(echo "$branches" |
@@ -38,7 +46,7 @@ fbr() {
 }
 
 # fco - checkout git branch/tag
-fco() {
+function fco() {
   local tags branches target
   branches=$(
     git --no-pager branch \
@@ -70,7 +78,7 @@ function calc() {
   if [[ "$result" == *.* ]]; then
     # improve the output for decimal numbers
     printf "$result" |
-      sed -e 's/^\./0./' $(# add "0" for cases like ".5"` \
+      sed -e 's/^\./0./' $( # add "0" for cases like ".5"` \
         -e 's/^-\./-0./'
       ) \
         -e 's/0*$//;s/\.$//' # add "0" for cases like "-.5"`\
@@ -90,12 +98,12 @@ function server() {
 
 # Create a new directory and enter it
 function mkd() {
-  mkdir -p "$@" && cd "$_"
+  mkdir -p "$@" && cd "$_" || exit
 }
 
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`
-  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || exit
 }
 
 # Start a PHP server from a directory, optionally specifying the port
@@ -107,25 +115,6 @@ function phpserver() {
   php -S "${ip}:${port}"
 }
 
-# Jekyll Shortcuts
-function j() {
-  if [ $1 == "b" ]; then
-    jekyll build .
-  elif [ $1 == "s" ]; then
-    jekyll serve --watch .
-  fi
-}
-
-# `s` with no arguments opens the current directory in Sublime Text, otherwise
-# opens the given location
-function s() {
-  if [ $# -eq 0 ]; then
-    subl .
-  else
-    subl "$@"
-  fi
-}
-
 function c() {
   if [ $# -eq 0 ]; then
     code .
@@ -135,7 +124,7 @@ function c() {
 }
 
 function zc() {
-  c $(z -e "$@")
+  c "$(z -e "$@")"
 }
 
 # Tree function
@@ -144,7 +133,7 @@ function t() {
   if [ $# -eq 0 ]; then
     tree -aNCL 2 -I '.git|node_modules|bower_components' --dirsfirst | less -FRNX
   else
-    tree -aNCL 2 -I '.git|node_modules|bower_components' --dirsfirst $1 | less -FRNX
+    tree -aNCL 2 -I '.git|node_modules|bower_components' --dirsfirst "$1" | less -FRNX
   fi
 }
 
