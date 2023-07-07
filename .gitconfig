@@ -78,6 +78,8 @@ sort = -committerdate
 
 [core]
 
+pager = delta
+
 # Use custom `.gitignore` and `.gitattributes`.
 excludesfile = ~/.gitignore
 attributesfile = ~/.gitattributes
@@ -128,6 +130,7 @@ untracked = cyan
 
 # Detect copies as well as renames.
 renames = copies
+colorMoved = default
 
 [diff "bin"]
 
@@ -185,6 +188,19 @@ insteadOf = "gist:"
 
 templatedir = ~/.git_template
 defaultBranch = main
+
+[interactive]
+
+diffFilter = delta --color-only
+
+[delta]
+
+navigate = true
+light = false
+line-numbers = true
+side-by-side = true
+hyperlinks = true
+hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 
 [filter "lfs"]
 

@@ -10,10 +10,20 @@
 
 ## Common Tasks
 
+### Update Git Submodules
+
+```bash
+git submodule update --recursive --remote
+```
+
 ### Updating Homebrew Dump Bundle File
 
-`brew bundle dump --describe --force --file ~/.Dotfiles/.Brewfile`
+```bash
+brew bundle dump --describe --force --file ~/.Dotfiles/.Brewfile
+```
 
 ### Forcing Local State to Match Homebrew Dump Bundle File
 
-`brew bundle cleanup --force --file ~/.Dotfiles/.Brewfile`
+```bash
+brew bundle cleanup --force --file ~/.Dotfiles/.Brewfile
+```

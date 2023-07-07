@@ -2,10 +2,10 @@ tap "azure/kubelogin"
 tap "fairwindsops/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
+# Software library to render fonts
+brew "freetype"
 # Manage compile and link flags for libraries
 brew "pkg-config"
 # Interpreted, interactive, object-oriented programming language
@@ -20,22 +20,30 @@ brew "pango"
 brew "librsvg"
 # Icons for the GNOME project
 brew "adwaita-icon-theme"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
 # Spell checker with better logic than ispell
 brew "aspell"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 4.2+
 brew "bash-completion@2"
-# Get a file from an HTTP, HTTPS or FTP server
-brew "curl"
 # GNU multiple precision arithmetic library
 brew "gmp"
-# Postgres C API library
-brew "libpq"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # General-purpose scripting language
 brew "php"
 # Dependency Manager for PHP
@@ -60,10 +68,6 @@ brew "exa"
 brew "exiftool"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
 # Play, record, convert, and stream audio and video
@@ -76,22 +80,26 @@ brew "fzf"
 brew "ghostscript"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
-# GNU Ubiquitous Intelligent Language for Extensions
-brew "guile"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
 # GNU grep, egrep and fgrep
 brew "grep"
 # Toolkit for creating graphical user interfaces
 brew "gtk4"
+# GNU Ubiquitous Intelligent Language for Extensions
+brew "guile"
 # Kubernetes package manager
 brew "helm"
 # Powerful, lightweight programming language
@@ -116,6 +124,8 @@ brew "jq"
 brew "just"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
+# Pager program similar to more
+brew "less"
 # I/O abstraction library for dealing with structured file formats
 brew "libgsf"
 # Collection of tools that nobody wrote when UNIX was young
@@ -130,8 +140,6 @@ brew "openjdk"
 brew "pandoc"
 # General-purpose scripting language
 brew "php@8.1"
-# Tool to automatically fix PHP coding standards issues
-brew "php-cs-fixer"
 # Programmer-oriented testing framework for PHP
 brew "phpunit"
 # CLI tool to help discover deprecated apiVersions in Kubernetes
@@ -158,6 +166,8 @@ brew "screen"
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
+# SMART hard drive monitoring
+brew "smartmontools"
 # Editor of encrypted files
 brew "sops"
 # Send macOS User Notifications from the command-line
@@ -178,6 +188,8 @@ brew "vim"
 brew "vips"
 # JavaScript toolchain manager for reproducible environments
 brew "volta"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
 # Internet file retriever
 brew "wget"
 # Utilities to create and convert Web Open Font File (WOFF) files
@@ -200,9 +212,97 @@ cask "exifrenamer"
 cask "google-chrome"
 # Privacy-first, open-source platform for knowledge sharing and management
 cask "logseq"
-# System monitor for the menu bar
-cask "stats"
 # Real time file synchronization software
 cask "syncthing"
 # HTML to PDF renderer
 cask "wkhtmltopdf"
+vscode "42Crunch.vscode-openapi"
+vscode "aaron-bond.better-comments"
+vscode "antfu.browse-lite"
+vscode "antfu.slidev"
+vscode "antfu.vite"
+vscode "arcticicestudio.nord-visual-studio-code"
+vscode "astro-build.astro-vscode"
+vscode "atlassian.atlascode"
+vscode "bierner.color-info"
+vscode "bierner.markdown-emoji"
+vscode "blackmist.LinkCheckMD"
+vscode "chouzz.vscode-better-align"
+vscode "christian-kohler.npm-intellisense"
+vscode "christian-kohler.path-intellisense"
+vscode "DavidAnson.vscode-markdownlint"
+vscode "dbaeumer.vscode-eslint"
+vscode "dkundel.vscode-new-file"
+vscode "eamodio.gitlens"
+vscode "emilast.LogFileHighlighter"
+vscode "enkia.tokyo-night"
+vscode "esbenp.prettier-vscode"
+vscode "ExodiusStudios.comment-anchors"
+vscode "firefox-devtools.vscode-firefox-debug"
+vscode "foxundermoon.shell-format"
+vscode "gencer.html-slim-scss-css-class-completion"
+vscode "hashicorp.terraform"
+vscode "hediet.vscode-drawio"
+vscode "herrmannplatz.npm-dependency-links"
+vscode "jsynowiec.vscode-insertdatestring"
+vscode "jtr.vscode-position"
+vscode "kyrcha.character-position"
+vscode "lunuan.kubernetes-templates"
+vscode "mattpocock.ts-error-translator"
+vscode "mdickin.markdown-shortcuts"
+vscode "meganrogge.template-string-converter"
+vscode "mhutchie.git-graph"
+vscode "mikestead.dotenv"
+vscode "mitchdenny.ecdc"
+vscode "mrmlnc.vscode-scss"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
+vscode "ms-python.black-formatter"
+vscode "ms-python.isort"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode-remote.remote-wsl"
+vscode "ms-vscode-remote.vscode-remote-extensionpack"
+vscode "ms-vscode.live-server"
+vscode "ms-vscode.remote-explorer"
+vscode "ms-vscode.remote-server"
+vscode "ms-vscode.sublime-keybindings"
+vscode "ms-vsliveshare.vsliveshare"
+vscode "naumovs.color-highlight"
+vscode "Orta.vscode-jest"
+vscode "ow.vscode-subword-navigation"
+vscode "pflannery.vscode-versionlens"
+vscode "PKief.material-icon-theme"
+vscode "pnp.polacode"
+vscode "redhat.vscode-commons"
+vscode "redhat.vscode-xml"
+vscode "redhat.vscode-yaml"
+vscode "remcohaszing.schemastore"
+vscode "rust-lang.rust-analyzer"
+vscode "sburg.vscode-javascript-booster"
+vscode "shd101wyy.markdown-preview-enhanced"
+vscode "SonarSource.sonarlint-vscode"
+vscode "stkb.rewrap"
+vscode "streetsidesoftware.code-spell-checker"
+vscode "stylelint.vscode-stylelint"
+vscode "tilt-dev.tiltfile"
+vscode "timonwong.shellcheck"
+vscode "tombonnike.vscode-status-bar-format-toggle"
+vscode "Tyriar.sort-lines"
+vscode "unifiedjs.vscode-mdx"
+vscode "usernamehw.errorlens"
+vscode "VisualStudioExptTeam.intellicode-api-usage-examples"
+vscode "VisualStudioExptTeam.vscodeintellicode"
+vscode "WallabyJs.quokka-vscode"
+vscode "wmaurer.change-case"
+vscode "xabikos.JavaScriptSnippets"
+vscode "yzhang.markdown-all-in-one"
+vscode "ZixuanChen.vitest-explorer"
