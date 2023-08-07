@@ -2,6 +2,7 @@ tap "azure/kubelogin"
 tap "fairwindsops/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
 # Software library to render fonts
@@ -82,6 +83,8 @@ brew "ghostscript"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Tcl/Tk UI for the git revision control system
+brew "git-gui"
 # Git extension for versioning large files
 brew "git-lfs"
 # GNU implementation of the famous stream editor
@@ -132,6 +135,8 @@ brew "libgsf"
 brew "moreutils"
 # NCurses Disk Usage
 brew "ncdu"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
 # Development kit for the Java programming language
@@ -190,6 +195,8 @@ brew "vips"
 brew "volta"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
+# Convert HTML to PDF
+brew "weasyprint"
 # Internet file retriever
 brew "wget"
 # Utilities to create and convert Web Open Font File (WOFF) files
@@ -208,12 +215,18 @@ cask "basictex"
 cask "dupeguru"
 # Tool to rename digital photos, movie- and audio-clips
 cask "exifrenamer"
+# Developer targeted fonts with a high number of glyphs
+cask "font-fira-code-nerd-font"
 # Web browser
 cask "google-chrome"
 # Privacy-first, open-source platform for knowledge sharing and management
 cask "logseq"
+# Shows the next meeting in the menu bar
+cask "meetingbar"
 # Real time file synchronization software
 cask "syncthing"
+# Customizable timing of breaks
+cask "time-out"
 # HTML to PDF renderer
 cask "wkhtmltopdf"
 vscode "42Crunch.vscode-openapi"
@@ -227,6 +240,7 @@ vscode "atlassian.atlascode"
 vscode "bierner.color-info"
 vscode "bierner.markdown-emoji"
 vscode "blackmist.LinkCheckMD"
+vscode "bradlc.vscode-tailwindcss"
 vscode "chouzz.vscode-better-align"
 vscode "christian-kohler.npm-intellisense"
 vscode "christian-kohler.path-intellisense"
@@ -241,9 +255,14 @@ vscode "ExodiusStudios.comment-anchors"
 vscode "firefox-devtools.vscode-firefox-debug"
 vscode "foxundermoon.shell-format"
 vscode "gencer.html-slim-scss-css-class-completion"
+vscode "golang.go"
+vscode "GraphQL.vscode-graphql"
+vscode "GraphQL.vscode-graphql-execution"
+vscode "GraphQL.vscode-graphql-syntax"
 vscode "hashicorp.terraform"
 vscode "hediet.vscode-drawio"
 vscode "herrmannplatz.npm-dependency-links"
+vscode "heybourn.headwind"
 vscode "jsynowiec.vscode-insertdatestring"
 vscode "jtr.vscode-position"
 vscode "kyrcha.character-position"
@@ -282,6 +301,7 @@ vscode "ow.vscode-subword-navigation"
 vscode "pflannery.vscode-versionlens"
 vscode "PKief.material-icon-theme"
 vscode "pnp.polacode"
+vscode "redhat.java"
 vscode "redhat.vscode-commons"
 vscode "redhat.vscode-xml"
 vscode "redhat.vscode-yaml"

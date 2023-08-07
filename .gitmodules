@@ -25,3 +25,7 @@ url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule ".zsh/zsh-users/zsh-completions"]
 path = .zsh/zsh-users/zsh-completions
 url = https://github.com/zsh-users/zsh-completions.git
+
+[submodule ".config/nvim"]
+path = .config/nvim
+url = https://github.com/NvChad/NvChad.git
