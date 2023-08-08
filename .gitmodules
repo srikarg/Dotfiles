@@ -1,31 +1,31 @@
 [submodule ".zsh/z"]
-path = .zsh/z
+path = zsh/.zsh/z
 url = https://github.com/rupa/z
 
 [submodule ".zsh/pure"]
-path = .zsh/pure
+path = zsh/.zsh/pure
 url = https://github.com/sindresorhus/pure.git
 
 [submodule ".zsh/ohmyzsh"]
-path = .zsh/ohmyzsh
+path = zsh/.zsh/ohmyzsh
 url = https://github.com/ohmyzsh/ohmyzsh/
 
 [submodule ".zsh/alias-tips"]
-path = .zsh/alias-tips
+path = zsh/.zsh/alias-tips
 url = https://github.com/djui/alias-tips
 
 [submodule ".zsh/zsh-users/zsh-syntax-highlighting"]
-path = .zsh/zsh-users/zsh-syntax-highlighting
+path = zsh/.zsh/zsh-users/zsh-syntax-highlighting
 url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 
 [submodule ".zsh/zsh-users/zsh-autosuggestions"]
-path = .zsh/zsh-users/zsh-autosuggestions
+path = zsh/.zsh/zsh-users/zsh-autosuggestions
 url = https://github.com/zsh-users/zsh-autosuggestions.git
 
 [submodule ".zsh/zsh-users/zsh-completions"]
-path = .zsh/zsh-users/zsh-completions
+path = zsh/.zsh/zsh-users/zsh-completions
 url = https://github.com/zsh-users/zsh-completions.git
 
-[submodule ".config/nvim"]
-path = .config/nvim
+[submodule "neovim/.config/nvim"]
+path = neovim/.config/nvim
 url = https://github.com/NvChad/NvChad.git
