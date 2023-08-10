@@ -79,7 +79,7 @@ fi
 complete -W "NSGlobalDomain" defaults
 
 # Add `killall` tab completion for common apps
-complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
+complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall
 
 if command -v brew >/dev/null 2>&1; then
   # FZF Auto-completion
@@ -89,4 +89,5 @@ if command -v brew >/dev/null 2>&1; then
   source "$(brew --prefix fzf)/shell/key-bindings.zsh"
 fi
 
-source "$HOME/.zsh/z/z.sh"
+eval "$(zoxide init zsh)" 
+

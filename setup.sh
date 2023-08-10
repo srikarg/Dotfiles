@@ -15,6 +15,8 @@ fi
 # Delete all .DS_Store files before proceeding with GNU Stow
 find "$DOTFILES_DIR" -name ".DS_Store" -type f -print -delete
 
+ln -s "$DOTFILES_DIR"/custom-nvchad-config "$DOTFILES_DIR"/neovim/.config/nvim/lua/custom
+
 function run() {
   for files in $DOTFILES_DIR/*; do
     if [ -d "${files}" ]; then

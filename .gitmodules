@@ -1,7 +1,3 @@
-[submodule ".zsh/z"]
-path = zsh/.zsh/z
-url = https://github.com/rupa/z
-
 [submodule ".zsh/pure"]
 path = zsh/.zsh/pure
 url = https://github.com/sindresorhus/pure.git

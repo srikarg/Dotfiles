@@ -83,8 +83,6 @@ brew "ghostscript"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
-# Tcl/Tk UI for the git revision control system
-brew "git-gui"
 # Git extension for versioning large files
 brew "git-lfs"
 # GNU implementation of the famous stream editor
@@ -175,6 +173,8 @@ brew "shfmt"
 brew "smartmontools"
 # Editor of encrypted files
 brew "sops"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
 # Programmatically correct mistyped console commands
@@ -203,6 +203,8 @@ brew "wget"
 brew "woff2"
 # YAML syntax highlighter to bring colours where only jq could
 brew "yh"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
 # A Kubernetes credential (exec) plugin implementing azure authentication
@@ -321,6 +323,7 @@ vscode "unifiedjs.vscode-mdx"
 vscode "usernamehw.errorlens"
 vscode "VisualStudioExptTeam.intellicode-api-usage-examples"
 vscode "VisualStudioExptTeam.vscodeintellicode"
+vscode "vscodevim.vim"
 vscode "WallabyJs.quokka-vscode"
 vscode "wmaurer.change-case"
 vscode "xabikos.JavaScriptSnippets"
