@@ -1,26 +1,34 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local on_attach = require('plugins.configs.lspconfig').on_attach
+local capabilities = require('plugins.configs.lspconfig').capabilities
 
-local lspconfig = require "lspconfig"
+local lspconfig = require('lspconfig')
 
 -- Provide default configuration for the following LSP servers:
-local servers = { "html", "cssls", "jsonls", "tsserver", "docker_compose_language_service", "emmet_language_server", "bashls" }
+local servers = {
+  'html',
+  'cssls',
+  'jsonls',
+  'tsserver',
+  'docker_compose_language_service',
+  'emmet_language_server',
+  'bashls',
+}
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  lspconfig[lsp].setup({
     on_attach = on_attach,
     capabilities = capabilities,
-  }
+  })
 end
 
-lspconfig.eslint.setup {
-  on_attach = function (client, bufnr)
-    vim.api.nvim_create_autocmd("BufWritePre", {
+lspconfig.eslint.setup({
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd('BufWritePre', {
       buffer = bufnr,
-      command = "EslintFixAll",
+      command = 'EslintFixAll',
     })
 
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})

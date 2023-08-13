@@ -3,168 +3,171 @@ local M = {}
 
 M.disabled = {
   n = {
-    ["<leader>cm"] = "",
-    ["<leader>gt"] = "",
-    ["<leader>ph"] = "",
-    ["<leader>rh"] = "",
-    ["<leader>fz"] = "",
-    ["<leader>h"] = "",
-    ["<leader>v"] = "",
-  }
+    ['<leader>cm'] = '',
+    ['<leader>gt'] = '',
+    ['<leader>ph'] = '',
+    ['<leader>rh'] = '',
+    ['<leader>fz'] = '',
+    ['<leader>h'] = '',
+    ['<leader>v'] = '',
+  },
 }
 
 M.general = {
   n = {
     --- Miscellaneous
-    [";"] = { ":", "Enter Command Mode", opts = { nowait = true } },
-    ["<C-d>"] = { "<C-d>zz", "Page Down and Center", opts = { nowait = true } },
-    ["<C-u>"] = { "<C-u>zz", "Page Up and Center", opts = { nowait = true } },
+    [';'] = { ':', 'Enter Command Mode', opts = { nowait = true } },
+    ['<C-d>'] = { '<C-d>zz', 'Page Down and Center', opts = { nowait = true } },
+    ['<C-u>'] = { '<C-u>zz', 'Page Up and Center', opts = { nowait = true } },
 
     --- Themes
-    ["<leader>tl"] = {
+    ['<leader>tl'] = {
       function()
-        require("base46").toggle_theme()
+        require('base46').toggle_theme()
       end,
-      "Toggle Light/Dark Theme",
+      'Toggle Light/Dark Theme',
     },
-  }
+  },
 }
 
 M.trouble = {
   n = {
-    ["<leader>tt"] = { "<cmd> Trouble document_diagnostics <CR>", "Trouble Document Diagnostics" },
-  }
+    ['<leader>tt'] = { '<cmd> TroubleToggle <CR>', 'Toggle Trouble' },
+  },
 }
 
 M.telescope = {
   n = {
     -- Miscellaneous
-    ["<leader>fc"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Fuzzy Search in Current Buffer" },
+    ['<leader>fc'] = {
+      '<cmd> Telescope current_buffer_fuzzy_find <CR>',
+      'Fuzzy Search in Current Buffer',
+    },
 
     -- Telescope Git Commands
-    ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "Git Commits" },
-    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "Git Status" },
-    ["<leader>gb"] = { "<cmd> Telescope git_branches <CR>", "Git Branches" },
-    ["<leader>gf"] = { "<cmd> Telescope git_files <CR>", "Search Git Files" },
-  }
+    ['<leader>gc'] = { '<cmd> Telescope git_commits <CR>', 'Git Commits' },
+    ['<leader>gs'] = { '<cmd> Telescope git_status <CR>', 'Git Status' },
+    ['<leader>gb'] = { '<cmd> Telescope git_branches <CR>', 'Git Branches' },
+    ['<leader>gf'] = { '<cmd> Telescope git_files <CR>', 'Search Git Files' },
+  },
 }
 
 M.gitsigns = {
   n = {
     -- Navigation through Git hunks
-    ["]c"] = {
+    [']c'] = {
       function()
         if vim.wo.diff then
-          return "]c"
+          return ']c'
         end
         vim.schedule(function()
-          require("gitsigns").next_hunk()
+          require('gitsigns').next_hunk()
         end)
-        return "<Ignore>"
+        return '<Ignore>'
       end,
-      "Jump To Next Hunk",
+      'Jump To Next Hunk',
       opts = { expr = true },
     },
-    ["[c"] = {
+    ['[c'] = {
       function()
         if vim.wo.diff then
-          return "[c"
+          return '[c'
         end
         vim.schedule(function()
-          require("gitsigns").prev_hunk()
+          require('gitsigns').prev_hunk()
         end)
-        return "<Ignore>"
+        return '<Ignore>'
       end,
-      "Jump To Previous Hunk",
+      'Jump To Previous Hunk',
       opts = { expr = true },
     },
 
     -- Git actions
-    ["<leader>hs"] = {
+    ['<leader>hs'] = {
       function()
-        require("gitsigns").stage_hunk()
+        require('gitsigns').stage_hunk()
       end,
-      "Stage Hunk",
+      'Stage Hunk',
     },
-    ["<leader>hr"] = {
+    ['<leader>hr'] = {
       function()
-        require("gitsigns").reset_hunk()
+        require('gitsigns').reset_hunk()
       end,
-      "Reset Hunk",
+      'Reset Hunk',
     },
-    ["<leader>hS"] = {
+    ['<leader>hS'] = {
       function()
-        require("gitsigns").stage_buffer()
+        require('gitsigns').stage_buffer()
       end,
-      "Stage Buffer",
+      'Stage Buffer',
     },
-    ["<leader>hu"] = {
+    ['<leader>hu'] = {
       function()
-        require("gitsigns").undo_stage_hunk()
+        require('gitsigns').undo_stage_hunk()
       end,
-      "Undo Stage Hunk",
+      'Undo Stage Hunk',
     },
-    ["<leader>hR"] = {
+    ['<leader>hR'] = {
       function()
-        require("gitsigns").reset_buffer()
+        require('gitsigns').reset_buffer()
       end,
-      "Reset Buffer",
+      'Reset Buffer',
     },
-    ["<leader>hp"] = {
+    ['<leader>hp'] = {
       function()
-        require("gitsigns").preview_hunk_inline()
+        require('gitsigns').preview_hunk_inline()
       end,
-      "Preview Hunk Inline",
+      'Preview Hunk Inline',
     },
-    ["<leader>hb"] = {
+    ['<leader>hb'] = {
       function()
-        require("gitsigns").blame_line{full=true}
+        require('gitsigns').blame_line({ full = true })
       end,
-      "Git Blame for Current Line",
+      'Git Blame for Current Line',
     },
-    ["<leader>tb"] = {
+    ['<leader>tb'] = {
       function()
-        require("gitsigns").toggle_current_line_blame()
+        require('gitsigns').toggle_current_line_blame()
       end,
-      "Toggle Git Line Blame",
+      'Toggle Git Line Blame',
     },
-    ["<leader>hd"] = {
+    ['<leader>hd'] = {
       function()
-        require("gitsigns").diffthis()
+        require('gitsigns').diffthis()
       end,
-      "Diff This Buffer",
+      'Diff This Buffer',
     },
-    ["<leader>hD"] = {
+    ['<leader>hD'] = {
       function()
-        require("gitsigns").diffthis("~")
+        require('gitsigns').diffthis('~')
       end,
-      "Diff This Buffer Against ~",
+      'Diff This Buffer Against ~',
     },
-    ["<leader>td"] = {
+    ['<leader>td'] = {
       function()
-        require("gitsigns").toggle_deleted()
+        require('gitsigns').toggle_deleted()
       end,
-      "Toggle Deleted Lines",
+      'Toggle Deleted Lines',
     },
   },
 }
 
 M.nvterm = {
   n = {
-    ["<leader>H"] = {
+    ['<leader>H'] = {
       function()
-        require("nvterm.terminal").new "horizontal"
+        require('nvterm.terminal').new('horizontal')
       end,
-      "New Horizontal Terminal",
+      'New Horizontal Terminal',
     },
 
-    ["<leader>V"] = {
+    ['<leader>V'] = {
       function()
-        require("nvterm.terminal").new "vertical"
+        require('nvterm.terminal').new('vertical')
       end,
-      "New Vertical Terminal",
+      'New Vertical Terminal',
     },
-  }
+  },
 }
 
 -- more keybinds!
