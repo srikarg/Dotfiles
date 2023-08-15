@@ -7,7 +7,6 @@ local lspconfig = require('lspconfig')
 local servers = {
   'html',
   'cssls',
-  'jsonls',
   'tsserver',
   'docker_compose_language_service',
   'emmet_language_server',
@@ -30,5 +29,16 @@ lspconfig.eslint.setup({
 
     on_attach(client, bufnr)
   end,
+  capabilities = capabilities,
+})
+
+lspconfig.jsonls.setup({
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
+    },
+  },
+  on_attach = on_attach,
   capabilities = capabilities,
 })

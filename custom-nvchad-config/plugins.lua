@@ -11,6 +11,37 @@ local plugins = {
   },
 
   {
+    'b0o/schemastore.nvim',
+    ft = { 'json', 'jsonc' },
+  },
+
+  {
+    'ggandor/leap.nvim',
+    event = { 'VeryLazy' },
+    dependencies = { 'tpope/vim-repeat' },
+    config = function()
+      require('leap').add_default_mappings()
+    end,
+  },
+
+  {
+    'danymat/neogen',
+    dependencies = 'nvim-treesitter/nvim-treesitter',
+    config = true,
+  },
+
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    event = { 'BufReadPost', 'BufNewFile' },
+    dependencies = 'nvim-treesitter/nvim-treesitter',
+    opts = {
+      enable = true,
+      throttle = true,
+      max_lines = 0,
+    },
+  },
+
+  {
     'folke/trouble.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     cmd = { 'Trouble', 'TroubleToggle' },
@@ -57,22 +88,10 @@ local plugins = {
     opts = overrides.telescope,
   },
 
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
-  -- All NvChad plugins are lazy-loaded by default
-
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`,
-  -- `event`, or set `lazy = false`
-
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
+  {
+    'hrsh7th/nvim-cmp',
+    opts = overrides.cmp,
+  },
 }
 
 return plugins

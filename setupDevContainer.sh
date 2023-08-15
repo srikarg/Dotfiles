@@ -12,4 +12,4 @@ rsync --exclude ".git/" \
   --exclude "brew.sh" \
   --exclude "README.md" \
   --exclude "Dockerfile" \
-  -avP --no-perms $DOTFILES_DIR/ $HOME
+  -avP --no-perms "$DOTFILES_DIR"/ "$HOME"

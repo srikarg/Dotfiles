@@ -8,6 +8,7 @@ M.ui = {
   theme = 'catppuccin',
   theme_toggle = { 'catppuccin', 'onenord_light' },
   transparency = false,
+  lsp_semantic_tokens = true,
 
   hl_override = highlights.override,
   hl_add = highlights.add,

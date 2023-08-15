@@ -10,6 +10,7 @@ M.treesitter = {
     'typescript',
     'tsx',
     'json',
+    'jsdoc',
     'markdown',
     'markdown_inline',
     'bash',
@@ -55,11 +56,19 @@ M.mason = {
 -- git support in nvimtree
 M.nvimtree = {
   filters = {
-    dotfiles = true,
+    dotfiles = false,
+    git_ignored = false,
+    git_clean = false,
   },
 
   git = {
     enable = true,
+  },
+
+  actions = {
+    expand_all = {
+      exclude = { '.git', 'node_modules' },
+    },
   },
 
   renderer = {
@@ -86,9 +95,14 @@ M.telescope = {
       '--column',
       '--smart-case',
       '--hidden',
+      '--no-ignore',
     },
     file_ignore_patterns = { 'node_modules', '.git' },
   },
+}
+
+M.cmp = {
+  experimental = { ghost_text = true },
 }
 
 return M
