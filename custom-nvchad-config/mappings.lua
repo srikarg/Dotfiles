@@ -28,7 +28,7 @@ M.general = {
       function()
         require('base46').toggle_theme()
       end,
-      'Toggle Light/Dark Theme',
+      '[t]oggle between [l]ight/dark theme',
     },
   },
 }
@@ -39,21 +39,21 @@ M.tabufline = {
       function()
         require('nvchad.tabufline').closeAllBufs()
       end,
-      'Close all buffers',
+      'close all buffers',
     },
 
     ['<leader>C'] = {
       function()
         require('nvchad.tabufline').closeOtherBufs()
       end,
-      'Close all buffers except current one',
+      'close all buffers except current one',
     },
   },
 }
 
 M.trouble = {
   n = {
-    ['<leader>tt'] = { '<cmd> TroubleToggle <CR>', 'Toggle Trouble' },
+    ['<leader>tt'] = { '<cmd> TroubleToggle <CR>', '[t]oggle [t]rouble' },
   },
 }
 
@@ -62,35 +62,35 @@ M.telescope = {
     -- Miscellaneous
     ['<leader>fc'] = {
       '<cmd> Telescope current_buffer_fuzzy_find <CR>',
-      'Fuzzy Search in Current Buffer',
+      '[f]ind in [c]urrent buffer',
     },
 
     -- Telescope Git Commands
-    ['<leader>gc'] = { '<cmd> Telescope git_commits <CR>', 'Git Commits' },
-    ['<leader>gs'] = { '<cmd> Telescope git_status <CR>', 'Git Status' },
-    ['<leader>gb'] = { '<cmd> Telescope git_branches <CR>', 'Git Branches' },
-    ['<leader>gf'] = { '<cmd> Telescope git_files <CR>', 'Search Git Files' },
+    ['<leader>gc'] = { '<cmd> Telescope git_commits <CR>', '[g]it [c]ommits' },
+    ['<leader>gs'] = { '<cmd> Telescope git_status <CR>', '[g]it [s]tatus' },
+    ['<leader>gb'] = { '<cmd> Telescope git_branches <CR>', '[g]it [b]ranches' },
+    ['<leader>fg'] = { '<cmd> Telescope git_files <CR>', '[f]ind [g]it files' },
 
     -- Telescope LSP Commands
     ['<leader>ld'] = {
       '<cmd> Telescope lsp_document_symbols <CR>',
-      'Search [L]SP [D]ocument Symbols',
+      'search [l]sp [d]ocument symbols',
     },
     ['<leader>lw'] = {
       '<cmd> Telescope lsp_dynamic_workspace_symbols <CR>',
-      'Search [L]SP [W]orkspace Symbols',
+      'search [l]sp [w]orkspace symbols',
     },
     ['gd'] = {
       '<cmd> Telescope lsp_definitions <CR>',
-      'Search All [L]SP [D]efinitions',
+      '[g]o to [d]efinition',
     },
     ['gi'] = {
       '<cmd> Telescope lsp_implementations <CR>',
-      'Search All [L]SP [I]mplementations',
+      '[g]o to [i]mplementation',
     },
     ['gr'] = {
       '<cmd> Telescope lsp_references <CR>',
-      'Search All [L]SP [R]eferences',
+      '[g]o to [r]eferences',
     },
   },
 }
@@ -130,67 +130,67 @@ M.gitsigns = {
       function()
         require('gitsigns').stage_hunk()
       end,
-      'Stage Hunk',
+      '[s]tage git [h]unk',
     },
     ['<leader>hr'] = {
       function()
         require('gitsigns').reset_hunk()
       end,
-      'Reset Hunk',
+      '[r]eset git [h]unk',
     },
     ['<leader>hS'] = {
       function()
         require('gitsigns').stage_buffer()
       end,
-      '[S]tage Buffer',
+      '[S]tage all hunks in buffer',
     },
     ['<leader>hu'] = {
       function()
         require('gitsigns').undo_stage_hunk()
       end,
-      'Undo [S]tage [H]unk',
+      '[u]ndo stage of git [h]unk',
     },
     ['<leader>hR'] = {
       function()
         require('gitsigns').reset_buffer()
       end,
-      '[R]eset Buffer',
+      '[R]eset all git hunks in buffer',
     },
     ['<leader>hp'] = {
       function()
         require('gitsigns').preview_hunk_inline()
       end,
-      '[P]review [H]unk Inline',
+      '[p]review git [h]unk inline',
     },
     ['<leader>hb'] = {
       function()
         require('gitsigns').blame_line({ full = true })
       end,
-      'Git [B]lame for Current Line',
+      'git [b]lame for current line',
     },
     ['<leader>tb'] = {
       function()
         require('gitsigns').toggle_current_line_blame()
       end,
-      '[T]oggle Git Line [B]lame',
+      '[t]oggle git line [b]lame',
     },
     ['<leader>hd'] = {
       function()
         require('gitsigns').diffthis()
       end,
-      '[D]iff This Buffer',
+      '[d]iff this buffer',
     },
     ['<leader>hD'] = {
       function()
         require('gitsigns').diffthis('~')
       end,
-      '[D]iff This Buffer Against ~',
+      '[D]iff this buffer against ~',
     },
     ['<leader>td'] = {
       function()
         require('gitsigns').toggle_deleted()
       end,
-      '[T]oggle [D]eleted Lines',
+      '[t]oggle [d]eleted lines',
     },
   },
 }
@@ -201,14 +201,14 @@ M.nvterm = {
       function()
         require('nvterm.terminal').new('horizontal')
       end,
-      'New [H]orizontal Terminal',
+      'new [H]orizontal terminal',
     },
 
     ['<leader>V'] = {
       function()
         require('nvterm.terminal').new('vertical')
       end,
-      'New [V]ertical Terminal',
+      'new [V]ertical terminal',
     },
   },
 }
@@ -219,7 +219,7 @@ M.neogen = {
       function()
         require('neogen').generate()
       end,
-      '[G]enerate [D]ocumentation for Current Function',
+      '[g]enerate [d]ocumentation for current function',
     },
   },
 }

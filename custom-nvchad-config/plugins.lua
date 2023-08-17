@@ -5,9 +5,7 @@ local plugins = {
   {
     'max397574/better-escape.nvim',
     event = 'InsertEnter',
-    config = function()
-      require('better_escape').setup()
-    end,
+    config = true,
   },
 
   {
@@ -20,24 +18,24 @@ local plugins = {
     event = { 'VeryLazy' },
     dependencies = { 'tpope/vim-repeat' },
     config = function()
-      require('leap').add_default_mappings()
+      require('custom.configs.plugins.leap')
     end,
   },
 
   {
     'danymat/neogen',
-    dependencies = 'nvim-treesitter/nvim-treesitter',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = true,
   },
 
   {
     'nvim-treesitter/nvim-treesitter-context',
     event = { 'BufReadPost', 'BufNewFile' },
-    dependencies = 'nvim-treesitter/nvim-treesitter',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     opts = {
       enable = true,
-      throttle = true,
       max_lines = 0,
+      line_numbers = true,
     },
   },
 
@@ -45,29 +43,27 @@ local plugins = {
     'folke/trouble.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     cmd = { 'Trouble', 'TroubleToggle' },
-    config = function()
-      require('trouble').setup()
-    end,
+    config = true,
   },
 
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- format & linting
+      -- Format and Linting
       {
         'jose-elias-alvarez/null-ls.nvim',
         config = function()
-          require('custom.configs.null-ls')
+          require('custom.configs.plugins.null-ls')
         end,
       },
     },
     config = function()
       require('plugins.configs.lspconfig')
-      require('custom.configs.lspconfig')
-    end, -- Override to setup mason-lspconfig
+      require('custom.configs.plugins.lspconfig')
+    end,
   },
 
-  -- Overrides for existing NVChad Plugins
+  -- Overrides For Existing NVChad Plugins
   {
     'williamboman/mason.nvim',
     opts = overrides.mason,
@@ -90,6 +86,16 @@ local plugins = {
 
   {
     'hrsh7th/nvim-cmp',
+    dependencies = {
+      -- Cmp Sources Plugins
+      {
+        'saadparwaiz1/cmp_luasnip',
+        'hrsh7th/cmp-nvim-lua',
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+      },
+    },
     opts = overrides.cmp,
   },
 }

@@ -15,11 +15,24 @@ M.treesitter = {
     'markdown_inline',
     'bash',
   },
+
+  highlight = {
+    enable = true,
+    use_languagetree = true,
+  },
+
   indent = {
     enable = true,
-    -- disable = {
-    --   "python"
-    -- },
+  },
+
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = '<CR>',
+      scope_incremental = '<CR>',
+      node_incremental = '<TAB>',
+      node_decremental = '<S-TAB>',
+    },
   },
 }
 
@@ -103,6 +116,14 @@ M.telescope = {
 
 M.cmp = {
   experimental = { ghost_text = true },
+
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' },
+    { name = 'nvim_lua' },
+    { name = 'path' },
+  },
 }
 
 return M
