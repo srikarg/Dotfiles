@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 SYSTEM_TYPE=$(uname -s)
 
 # Make Visual Studio Code the default editor

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 SYSTEM_TYPE=$(uname -s)
 
 # Homebrew and Homebrew Tools

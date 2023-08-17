@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ### Aliases
 
 # Find npm package updates for current repository
