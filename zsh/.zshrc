@@ -55,6 +55,8 @@ source "$HOME/.zsh/ohmyzsh/plugins/minikube/minikube.plugin.zsh"
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
+# Source: https://apple.stackexchange.com/questions/427561/macos-zsh-sessions-zsh-history-and-setopt-append-history
+SHELL_SESSIONS_DISABLE=1
 
 setopt hist_ignore_all_dups # Remove older duplicate entries from history
 setopt hist_reduce_blanks   # Remove superfluous blanks from history items
@@ -89,5 +91,4 @@ if command -v brew >/dev/null 2>&1; then
   source "$(brew --prefix fzf)/shell/key-bindings.zsh"
 fi
 
-eval "$(zoxide init zsh)" 
-
+eval "$(zoxide init zsh)"
