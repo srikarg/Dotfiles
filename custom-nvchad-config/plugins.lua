@@ -40,6 +40,29 @@ local plugins = {
   },
 
   {
+    'RRethy/nvim-treesitter-textsubjects',
+    event = { 'BufReadPost', 'BufNewFile' },
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+    config = function()
+      require('nvim-treesitter.configs').setup(
+        overrides.treesitter.textsubjects
+      )
+    end,
+  },
+
+  {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    event = { 'BufReadPost', 'BufNewFile' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('nvim-treesitter.configs').setup(overrides.treesitter.textobjects)
+    end,
+  },
+
+  {
     'folke/trouble.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     cmd = { 'Trouble', 'TroubleToggle' },

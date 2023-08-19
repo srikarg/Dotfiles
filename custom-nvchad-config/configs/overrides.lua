@@ -34,6 +34,37 @@ M.treesitter = {
       node_decremental = '<S-TAB>',
     },
   },
+
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ['ia'] = '@parameter.inner',
+        ['aa'] = '@parameter.outer',
+      },
+      include_surrounding_whitespace = true,
+    },
+    move = {
+      enable = true,
+      goto_next_start = {
+        [']m'] = '@function.outer',
+      },
+      goto_previous_start = {
+        ['[m'] = '@function.outer',
+      },
+    },
+  },
+
+  textsubjects = {
+    enable = true,
+    prev_selection = ',',
+    keymaps = {
+      ['.'] = 'textsubjects-smart',
+      [';'] = 'textsubjects-container-outer',
+      ['i;'] = 'textsubjects-container-inner',
+    },
+  },
 }
 
 M.mason = {
@@ -60,9 +91,6 @@ M.mason = {
     'shfmt',
     'shellcheck',
     'bash-language-server',
-
-    -- General
-    'codespell',
   },
 }
 

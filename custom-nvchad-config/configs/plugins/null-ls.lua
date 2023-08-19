@@ -9,23 +9,23 @@ local group =
 local event = 'BufWritePre' -- or "BufWritePost"
 local async = event == 'BufWritePost'
 
-local b = null_ls.builtins
+local null_ls_builtins = null_ls.builtins
 
 local sources = {
   -- General
-  b.formatting.trim_whitespace,
-  b.completion.spell,
+  null_ls_builtins.formatting.trim_whitespace,
+  null_ls_builtins.completion.spell,
 
   -- Web Development
-  b.diagnostics.eslint,
-  b.formatting.prettier,
+  null_ls_builtins.diagnostics.eslint,
+  null_ls_builtins.formatting.prettier,
 
   -- Shell
-  b.diagnostics.shellcheck,
-  b.formatting.shfmt,
+  null_ls_builtins.diagnostics.shellcheck,
+  null_ls_builtins.formatting.shfmt,
 
   -- Lua
-  b.formatting.stylua,
+  null_ls_builtins.formatting.stylua,
 }
 
 null_ls.setup({
