@@ -7,7 +7,7 @@ SYSTEM_TYPE=$(uname -s)
 git submodule init && git submodule update --recursive --remote
 
 # Check if GNU Stow is installed
-if ! which stow >/dev/null 2>&1; then
+if ! command -v stow &>/dev/null; then
   echo "GNU Stow is not installed. Please install it before running this script."
   exit 1
 fi
@@ -38,10 +38,15 @@ else
 fi
 unset run
 
-# Only set up iTerm2 on MacOS
+# Only set up iTerm2, Homebrew, and Kubectl Krew on MacOS
 if [ "$SYSTEM_TYPE" = "Darwin" ]; then
   printf "Installing brew packages...\n"
   . "$DOTFILES_DIR"/homebrew/brew.sh
+
+  if command -v kubectl krew &>/dev/null; then
+    printf "Installing kubectl krew plugins...\n"
+    kubectl krew install <kubectl-krew-plugin-manager-list.txt
+  fi
 
   printf "Setting up iTerm2 preferences folder...\n"
   defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iterm2"
