@@ -129,6 +129,8 @@ brew "kubernetes-cli"
 brew "less"
 # I/O abstraction library for dealing with structured file formats
 brew "libgsf"
+# Mac App Store command-line interface
+brew "mas"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
 # NCurses Disk Usage
@@ -175,6 +177,8 @@ brew "smartmontools"
 brew "sops"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Opinionated Lua code formatter
+brew "stylua"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
 # Programmatically correct mistyped console commands
@@ -183,6 +187,8 @@ brew "thefuck"
 brew "tilt"
 # Simplified and community-driven man pages
 brew "tldr"
+# CLI tool that moves files or folder to the trash
+brew "trash"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Modern watch command
@@ -225,12 +231,18 @@ cask "google-chrome"
 cask "logseq"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
+# System monitor for the menu bar
+cask "stats"
 # Real time file synchronization software
 cask "syncthing"
-# Customizable timing of breaks
-cask "time-out"
-# HTML to PDF renderer
-cask "wkhtmltopdf"
+mas "Amphetamine", id: 937984704
+mas "Brother iPrint&Scan", id: 1193539993
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Trello", id: 1278508951
 vscode "42Crunch.vscode-openapi"
 vscode "aaron-bond.better-comments"
 vscode "antfu.browse-lite"
@@ -265,6 +277,7 @@ vscode "hashicorp.terraform"
 vscode "hediet.vscode-drawio"
 vscode "herrmannplatz.npm-dependency-links"
 vscode "heybourn.headwind"
+vscode "JohnnyMorganz.stylua"
 vscode "jsynowiec.vscode-insertdatestring"
 vscode "jtr.vscode-position"
 vscode "kyrcha.character-position"
