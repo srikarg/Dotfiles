@@ -32,6 +32,12 @@ function fns() {
   npm run "$script"
 }
 
+# Add a new spacer tile to the Dock
+function add_spacer_tile() {
+  defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+  killall Dock
+}
+
 # fzf history
 function fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
