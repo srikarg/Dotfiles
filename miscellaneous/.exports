@@ -1,19 +1,27 @@
 #!/usr/bin/env bash
-SYSTEM_TYPE=$(uname -s)
 
-# Make Visual Studio Code the default editor
-export EDITOR="code -w"
+SYSTEM_TYPE=$(uname -s)
 
 # ZSH Cache Directory that some Oh My ZSH Plugins (Kubernetes, Minikube) use to
 # cache ZSH completion files
 export ZSH_CACHE_DIR="$HOME/.cache/zsh"
 
-# Homebrew
 # MacOS
 if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-  export HOMEBREW_PREFIX="/usr/local"
+  # Set Homebrew environment variables
+  BREW_PREFIX=$(brew --prefix)
+  export HOMEBREW_PREFIX="$BREW_PREFIX"
   export HOMEBREW_CELLAR="/usr/local/Cellar"
   export HOMEBREW_REPOSITORY="/usr/local/Homebrew"
+
+  # Set $EDITOR variable
+
+  # Make Visual Studio Code the default editor
+  # export EDITOR="code -w"
+
+  # Make Homebrew neovim the default editor
+  export EDITOR="$BREW_PREFIX/bin/nvim"
+
   export MANPATH="/usr/local/share/man${MANPATH+:$MANPATH}:"
   export INFOPATH="/usr/local/share/info:${INFOPATH:-}"
 fi

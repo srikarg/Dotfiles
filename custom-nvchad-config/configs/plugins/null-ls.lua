@@ -22,7 +22,10 @@ local sources = {
 
   -- Shell
   null_ls_builtins.diagnostics.shellcheck,
-  null_ls_builtins.formatting.shfmt,
+  null_ls_builtins.formatting.shfmt.with({
+    -- https://github.com/mvdan/sh/blob/master/cmd/shfmt/shfmt.1.scd
+    extra_args = { '-i', '2', '-ci' },
+  }),
 
   -- Lua
   null_ls_builtins.formatting.stylua,
