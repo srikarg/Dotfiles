@@ -5,7 +5,7 @@ SYSTEM_TYPE=$(uname -s)
 ## Add Homebrew to PATH
 ### MacOS
 if [ "$SYSTEM_TYPE" = "Darwin" ]; then
-  export PATH="/usr/local/bin:/usr/local/sbin${PATH+:$PATH}"
+  export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin${PATH+:$PATH}"
 
   # Add MacOS Visual Studio Code Binary (code) to PATH
   export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
