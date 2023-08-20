@@ -7,10 +7,6 @@ tap "homebrew/cask-versions"
 tap "homebrew/services"
 # Software library to render fonts
 brew "freetype"
-# Manage compile and link flags for libraries
-brew "pkg-config"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Toolkit for image loading and pixel buffer manipulation
 brew "gdk-pixbuf"
 # OpenType text shaping engine
@@ -91,6 +87,8 @@ brew "gnu-sed"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Graph visualization software from AT&T and Bell Labs
@@ -113,8 +111,6 @@ brew "htop"
 brew "httpie"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Manage your Java environment
@@ -149,6 +145,10 @@ brew "php@8.1"
 brew "phpunit"
 # CLI tool to help discover deprecated apiVersions in Kubernetes
 brew "pluto"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Cross-platform application and UI framework
 brew "qt"
 # Rsync for cloud storage
@@ -219,126 +219,42 @@ brew "azure/kubelogin/kubelogin"
 brew "hashicorp/tap/terraform"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
 cask "basictex"
+# Desktop password and login vault
+cask "bitwarden"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Finds duplicate files in a computer system
 cask "dupeguru"
 # Tool to rename digital photos, movie- and audio-clips
 cask "exifrenamer"
+# Collaborative team software
+cask "figma"
 # Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
-# Web browser
-cask "google-chrome"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Software for Logitech devices
+cask "logi-options-plus"
 # Privacy-first, open-source platform for knowledge sharing and management
 cask "logseq"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
+# Collaboration platform for API development
+cask "postman"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Team communication and collaboration software
+cask "slack"
+# Move and resize windows with ease
+cask "spectacle"
+# Music streaming service
+cask "spotify"
 # System monitor for the menu bar
 cask "stats"
 # Real time file synchronization software
 cask "syncthing"
+# Open-source code editor
+cask "visual-studio-code"
 mas "Amphetamine", id: 937984704
 mas "Brother iPrint&Scan", id: 1193539993
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Trello", id: 1278508951
-vscode "42Crunch.vscode-openapi"
-vscode "aaron-bond.better-comments"
-vscode "antfu.browse-lite"
-vscode "antfu.slidev"
-vscode "antfu.vite"
-vscode "arcticicestudio.nord-visual-studio-code"
-vscode "astro-build.astro-vscode"
-vscode "atlassian.atlascode"
-vscode "bierner.color-info"
-vscode "bierner.markdown-emoji"
-vscode "blackmist.LinkCheckMD"
-vscode "bradlc.vscode-tailwindcss"
-vscode "chouzz.vscode-better-align"
-vscode "christian-kohler.npm-intellisense"
-vscode "christian-kohler.path-intellisense"
-vscode "DavidAnson.vscode-markdownlint"
-vscode "dbaeumer.vscode-eslint"
-vscode "dkundel.vscode-new-file"
-vscode "eamodio.gitlens"
-vscode "emilast.LogFileHighlighter"
-vscode "enkia.tokyo-night"
-vscode "esbenp.prettier-vscode"
-vscode "ExodiusStudios.comment-anchors"
-vscode "firefox-devtools.vscode-firefox-debug"
-vscode "foxundermoon.shell-format"
-vscode "gencer.html-slim-scss-css-class-completion"
-vscode "golang.go"
-vscode "GraphQL.vscode-graphql"
-vscode "GraphQL.vscode-graphql-execution"
-vscode "GraphQL.vscode-graphql-syntax"
-vscode "hashicorp.terraform"
-vscode "hediet.vscode-drawio"
-vscode "herrmannplatz.npm-dependency-links"
-vscode "heybourn.headwind"
-vscode "JohnnyMorganz.stylua"
-vscode "jsynowiec.vscode-insertdatestring"
-vscode "jtr.vscode-position"
-vscode "kyrcha.character-position"
-vscode "lunuan.kubernetes-templates"
-vscode "mattpocock.ts-error-translator"
-vscode "mdickin.markdown-shortcuts"
-vscode "meganrogge.template-string-converter"
-vscode "mhutchie.git-graph"
-vscode "mikestead.dotenv"
-vscode "mitchdenny.ecdc"
-vscode "mrmlnc.vscode-scss"
-vscode "ms-azuretools.vscode-docker"
-vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
-vscode "ms-python.black-formatter"
-vscode "ms-python.isort"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-toolsai.jupyter"
-vscode "ms-toolsai.jupyter-keymap"
-vscode "ms-toolsai.jupyter-renderers"
-vscode "ms-toolsai.vscode-jupyter-cell-tags"
-vscode "ms-toolsai.vscode-jupyter-slideshow"
-vscode "ms-vscode-remote.remote-containers"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode-remote.remote-wsl"
-vscode "ms-vscode-remote.vscode-remote-extensionpack"
-vscode "ms-vscode.live-server"
-vscode "ms-vscode.remote-explorer"
-vscode "ms-vscode.remote-server"
-vscode "ms-vscode.sublime-keybindings"
-vscode "ms-vsliveshare.vsliveshare"
-vscode "naumovs.color-highlight"
-vscode "Orta.vscode-jest"
-vscode "ow.vscode-subword-navigation"
-vscode "pflannery.vscode-versionlens"
-vscode "PKief.material-icon-theme"
-vscode "pnp.polacode"
-vscode "redhat.java"
-vscode "redhat.vscode-commons"
-vscode "redhat.vscode-xml"
-vscode "redhat.vscode-yaml"
-vscode "remcohaszing.schemastore"
-vscode "rust-lang.rust-analyzer"
-vscode "sburg.vscode-javascript-booster"
-vscode "shd101wyy.markdown-preview-enhanced"
-vscode "SonarSource.sonarlint-vscode"
-vscode "stkb.rewrap"
-vscode "streetsidesoftware.code-spell-checker"
-vscode "stylelint.vscode-stylelint"
-vscode "tilt-dev.tiltfile"
-vscode "timonwong.shellcheck"
-vscode "tombonnike.vscode-status-bar-format-toggle"
-vscode "Tyriar.sort-lines"
-vscode "unifiedjs.vscode-mdx"
-vscode "usernamehw.errorlens"
-vscode "VisualStudioExptTeam.intellicode-api-usage-examples"
-vscode "VisualStudioExptTeam.vscodeintellicode"
-vscode "vscodevim.vim"
-vscode "WallabyJs.quokka-vscode"
-vscode "wmaurer.change-case"
-vscode "xabikos.JavaScriptSnippets"
-vscode "yzhang.markdown-all-in-one"
-vscode "ZixuanChen.vitest-explorer"

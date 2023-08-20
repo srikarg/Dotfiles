@@ -19,7 +19,7 @@ git submodule update --recursive --remote
 ### Updating Homebrew Dump Bundle File
 
 ```bash
-brew bundle dump --describe --force --file ~/.Dotfiles/.Brewfile
+brew bundle dump --describe --force --brews --casks --taps --mas --file ~/.Dotfiles/homebrew/.Brewfile
 ```
 
 ### Forcing Local State to Match Homebrew Dump Bundle File
