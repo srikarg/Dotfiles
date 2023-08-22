@@ -243,6 +243,8 @@ cask "meetingbar"
 cask "postman"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Screenshot measurement and annotation tool
+cask "shottr"
 # Team communication and collaboration software
 cask "slack"
 # Move and resize windows with ease
