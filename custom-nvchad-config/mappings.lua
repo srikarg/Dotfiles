@@ -57,6 +57,53 @@ M.trouble = {
   },
 }
 
+M.navbuddy = {
+  n = {
+    ['<leader>N'] = {
+      '<cmd> :lua require("nvim-navbuddy").open() <CR>',
+      'open [N]avbuddy',
+    },
+  },
+}
+
+M.gitlinker = {
+  n = {
+    ['<leader>gy'] = {
+      function()
+        require('gitlinker').get_buf_range_url('n')
+      end,
+      '[g]it [y]ank URL for current line(s)',
+    },
+    ['<leader>go'] = {
+      function()
+        require('gitlinker').get_buf_range_url(
+          'n',
+          { action_callback = require('gitlinker.actions').open_in_browser }
+        )
+      end,
+      '[g]it [o]pen URL for current line(s)',
+      opts = { silent = true },
+    },
+  },
+  v = {
+    ['<leader>gy'] = {
+      function()
+        require('gitlinker').get_buf_range_url('v')
+      end,
+      '[g]it [y]ank URL for current line(s)',
+    },
+    ['<leader>go'] = {
+      function()
+        require('gitlinker').get_buf_range_url(
+          'v',
+          { action_callback = require('gitlinker.actions').open_in_browser }
+        )
+      end,
+      '[g]it [o]pen URL for current line(s)',
+    },
+  },
+}
+
 M.telescope = {
   n = {
     -- Miscellaneous
@@ -105,6 +152,7 @@ M.gitsigns = {
         end
         vim.schedule(function()
           require('gitsigns').next_hunk()
+          vim.api.nvim_feedkeys('zz', 'n', false)
         end)
         return '<Ignore>'
       end,
@@ -118,6 +166,7 @@ M.gitsigns = {
         end
         vim.schedule(function()
           require('gitsigns').prev_hunk()
+          vim.api.nvim_feedkeys('zz', 'n', false)
         end)
         return '<Ignore>'
       end,

@@ -14,6 +14,15 @@ local plugins = {
   },
 
   {
+    'ruifm/gitlinker.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    event = { 'VeryLazy' },
+    config = function()
+      require('custom.configs.plugins.gitlinker')
+    end,
+  },
+
+  {
     'ggandor/leap.nvim',
     event = { 'VeryLazy' },
     dependencies = { 'tpope/vim-repeat' },
@@ -77,6 +86,16 @@ local plugins = {
         'jose-elias-alvarez/null-ls.nvim',
         config = function()
           require('custom.configs.plugins.null-ls')
+        end,
+      },
+      {
+        'SmiteshP/nvim-navbuddy',
+        dependencies = {
+          'SmiteshP/nvim-navic',
+          'MunifTanjim/nui.nvim',
+        },
+        config = function()
+          require('custom.configs.plugins.navbuddy')
         end,
       },
     },
