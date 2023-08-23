@@ -11,6 +11,7 @@ local servers = {
   'docker_compose_language_service',
   'emmet_language_server',
   'bashls',
+  'marksman',
 }
 
 for _, lsp in ipairs(servers) do

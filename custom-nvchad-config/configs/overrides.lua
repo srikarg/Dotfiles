@@ -79,10 +79,13 @@ M.mason = {
     'typescript-language-server',
     'deno',
     'prettier',
-    'markdownlint',
     'eslint-lsp',
     'emmet-language-server',
     'json-lsp',
+
+    -- Markdown
+    'markdownlint',
+    'marksman',
 
     -- Docker
     'docker-compose-language-service',
@@ -138,7 +141,7 @@ M.telescope = {
       '--hidden',
       '--no-ignore',
     },
-    file_ignore_patterns = { 'node_modules', '.git' },
+    file_ignore_patterns = { 'node_modules/', '.git/' },
   },
 }
 
