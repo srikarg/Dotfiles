@@ -13,6 +13,8 @@ M.disabled = {
     ['gd'] = '',
     ['gi'] = '',
     ['gr'] = '',
+    ['<leader>ra'] = '',
+    ['<leader>fw'] = '',
   },
 }
 
@@ -29,6 +31,18 @@ M.general = {
         require('base46').toggle_theme()
       end,
       '[t]oggle between [l]ight/dark theme',
+    },
+  },
+}
+
+M.lspconfig = {
+  n = {
+    -- Miscellaneous
+    ['<leader>lr'] = {
+      function()
+        require('nvchad.renamer').open()
+      end,
+      '[l]sp [r]ename',
     },
   },
 }
@@ -110,6 +124,11 @@ M.telescope = {
     ['<leader>fc'] = {
       '<cmd> Telescope current_buffer_fuzzy_find <CR>',
       '[f]ind in [c]urrent buffer',
+    },
+    ['<leader>fr'] = { '<cmd> Telescope live_grep <CR>', '[f]ind g[r]ep' },
+    ['<leader>fw'] = {
+      '<cmd> Telescope grep_string <CR>',
+      '[f]ind [w]ord with grep',
     },
 
     -- Telescope Git Commands
