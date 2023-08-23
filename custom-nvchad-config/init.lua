@@ -1,6 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 
 vim.opt.relativenumber = true
+vim.opt.colorcolumn = "80"
 
 -- Auto resize panes when resizing nvim window
 autocmd('VimResized', {
