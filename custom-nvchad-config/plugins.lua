@@ -16,15 +16,22 @@ local plugins = {
   {
     'ruifm/gitlinker.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    event = { 'VeryLazy' },
+    event = 'VeryLazy',
     config = function()
       require('custom.configs.plugins.gitlinker')
     end,
   },
 
   {
+    'kylechui/nvim-surround',
+    branch = 'main', -- Use `*` `version` for stability; use `main` `branch` for the latest features
+    event = 'VeryLazy',
+    config = true,
+  },
+
+  {
     'ggandor/leap.nvim',
-    event = { 'VeryLazy' },
+    event = 'VeryLazy',
     dependencies = { 'tpope/vim-repeat' },
     config = function()
       require('custom.configs.plugins.leap')
