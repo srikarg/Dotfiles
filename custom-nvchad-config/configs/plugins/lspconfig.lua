@@ -43,3 +43,23 @@ lspconfig.jsonls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
+
+lspconfig.yamlls.setup({
+  settings = {
+    yaml = {
+      format = { enable = true, singleQuote = true, bracketSpacing = true },
+      validate = true,
+      completion = true,
+      schemaStore = { enable = false, url = '' },
+      editor = { formatOnType = true },
+      schemas = require('schemastore').yaml.schemas(),
+    },
+    redhat = {
+      telemetry = {
+        enabled = false,
+      },
+    },
+  },
+  on_attach = on_attach,
+  capabilities = capabilities,
+})

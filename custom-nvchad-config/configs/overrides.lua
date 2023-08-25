@@ -82,6 +82,7 @@ M.mason = {
     'eslint-lsp',
     'emmet-language-server',
     'json-lsp',
+    'yaml-language-server',
 
     -- Markdown
     'markdownlint',
