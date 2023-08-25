@@ -134,6 +134,11 @@ local plugins = {
   },
 
   {
+    'lukas-reineke/indent-blankline.nvim',
+    opts = overrides.blankline,
+  },
+
+  {
     'hrsh7th/nvim-cmp',
     dependencies = {
       -- Cmp Sources Plugins

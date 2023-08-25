@@ -204,4 +204,9 @@ M.cmp = {
   },
 }
 
+M.blankline = {
+  use_treesitter = true,
+  use_treesitter_scope = true,
+}
+
 return M
