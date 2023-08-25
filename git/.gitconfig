@@ -200,7 +200,7 @@ light = false
 line-numbers = true
 side-by-side = true
 hyperlinks = true
-hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+; hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 
 [filter "lfs"]
 
