@@ -146,15 +146,61 @@ M.telescope = {
   },
 }
 
+-- Sourced from https://github.com/BrunoKrugel/dotfiles/blob/master/configs/cmp.lua#L34-L65
+local function limit_lsp_types(entry, ctx)
+  local kind = entry:get_kind()
+  local line = ctx.cursor.line
+  local col = ctx.cursor.col
+  local char_before_cursor = string.sub(line, col - 1, col - 1)
+  local char_after_dot = string.sub(line, col, col)
+  local types = require('cmp.types')
+
+  if char_before_cursor == '.' and char_after_dot:match('[a-zA-Z]') then
+    if
+      kind == types.lsp.CompletionItemKind.Method
+      or kind == types.lsp.CompletionItemKind.Field
+      or kind == types.lsp.CompletionItemKind.Property
+    then
+      return true
+    else
+      return false
+    end
+  elseif string.match(line, '^%s+%w+$') then
+    if
+      kind == types.lsp.CompletionItemKind.Function
+      or kind == types.lsp.CompletionItemKind.Variable
+    then
+      return true
+    else
+      return false
+    end
+  end
+
+  if kind == require('cmp').lsp.CompletionItemKind.Text then
+    return false
+  end
+
+  return true
+end
+
 M.cmp = {
   experimental = { ghost_text = true },
 
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'buffer' },
+    { name = 'nvim_lsp', keyword_length = 5, entry_filter = limit_lsp_types },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'luasnip', max_item_count = 3 },
+    { name = 'buffer', keyword_length = 5 },
     { name = 'nvim_lua' },
     { name = 'path' },
+    { name = 'calc' },
+  },
+
+  performance = {
+    debounce = 300,
+    throttle = 60,
+    max_view_entries = 10,
+    fetching_timeout = 200,
   },
 }
 
