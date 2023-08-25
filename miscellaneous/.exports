@@ -6,6 +6,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+# Change data directory for zoxide
+export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
+
 # ZSH Cache Directory that some Oh My ZSH Plugins (Kubernetes, Minikube) use to
 # cache ZSH completion files
 export ZSH_CACHE_DIR="$HOME/.cache/zsh"

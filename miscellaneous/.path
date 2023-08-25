@@ -60,3 +60,6 @@ export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # Add Homebrew Ruby 3.1.0 to PATH
 export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.1.0/bin:$PATH"
+
+# Add folder where additional binaries may live (such as `zoxide`)
+export PATH="$HOME/.local/bin:$PATH"
