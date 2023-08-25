@@ -13,4 +13,8 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 
+# Extra environment variables/configuration that is machine specific
 .extra
+
+# LazyGit state file
+lazygit/.config/lazygit/state.yml

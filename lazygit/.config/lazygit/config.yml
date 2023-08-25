@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://json.schemastore.org/lazygit.json
+
+quitOnTopLevelReturn: true
+os:
+  editPreset: "nvim"
+gui:
+  nerdFontsVersion: "3"
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
+keybinding:
+  files:
+    toggleTreeView: "t"

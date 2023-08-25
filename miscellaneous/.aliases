@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 ### Aliases
 
+alias lg="lazygit"
+
 # Find npm package updates for current repository
 alias nu='npm-check-updates -i --format group,repo'
 

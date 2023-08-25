@@ -2,6 +2,10 @@
 
 SYSTEM_TYPE=$(uname -s)
 
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
 # ZSH Cache Directory that some Oh My ZSH Plugins (Kubernetes, Minikube) use to
 # cache ZSH completion files
 export ZSH_CACHE_DIR="$HOME/.cache/zsh"
@@ -18,6 +22,7 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
 
   # Make Homebrew neovim the default editor
   export EDITOR="$HOMEBREW_PREFIX/bin/nvim"
+  export VISUAL="$HOMEBREW_PREFIX/bin/nvim"
 fi
 
 # Linux

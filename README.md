@@ -25,5 +25,5 @@ brew bundle dump --describe --force --brews --casks --taps --mas --file ~/.Dotfi
 ### Forcing Local State to Match Homebrew Dump Bundle File
 
 ```bash
-brew bundle cleanup --force --file ~/.Dotfiles/.Brewfile
+brew bundle cleanup --force --file ~/.Dotfiles/homebrew/.Brewfile
 ```

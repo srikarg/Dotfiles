@@ -278,6 +278,13 @@ M.nvterm = {
       end,
       'new [V]ertical terminal',
     },
+
+    ['<leader>lg'] = {
+      function()
+        require('nvterm.terminal').send('lazygit', 'vertical')
+      end,
+      '[l]azy [g]it',
+    },
   },
 }
 

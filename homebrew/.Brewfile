@@ -121,6 +121,8 @@ brew "jq"
 brew "just"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Pager program similar to more
 brew "less"
 # I/O abstraction library for dealing with structured file formats
