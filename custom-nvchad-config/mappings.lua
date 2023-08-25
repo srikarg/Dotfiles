@@ -118,49 +118,6 @@ M.gitlinker = {
   },
 }
 
-M.telescope = {
-  n = {
-    -- Miscellaneous
-    ['<leader>fc'] = {
-      '<cmd> Telescope current_buffer_fuzzy_find <CR>',
-      '[f]ind in [c]urrent buffer',
-    },
-    ['<leader>fr'] = { '<cmd> Telescope live_grep <CR>', '[f]ind g[r]ep' },
-    ['<leader>fw'] = {
-      '<cmd> Telescope grep_string <CR>',
-      '[f]ind [w]ord with grep',
-    },
-
-    -- Telescope Git Commands
-    ['<leader>gc'] = { '<cmd> Telescope git_commits <CR>', '[g]it [c]ommits' },
-    ['<leader>gs'] = { '<cmd> Telescope git_status <CR>', '[g]it [s]tatus' },
-    ['<leader>gb'] = { '<cmd> Telescope git_branches <CR>', '[g]it [b]ranches' },
-    ['<leader>fg'] = { '<cmd> Telescope git_files <CR>', '[f]ind [g]it files' },
-
-    -- Telescope LSP Commands
-    ['<leader>ld'] = {
-      '<cmd> Telescope lsp_document_symbols <CR>',
-      'search [l]sp [d]ocument symbols',
-    },
-    ['<leader>lw'] = {
-      '<cmd> Telescope lsp_dynamic_workspace_symbols <CR>',
-      'search [l]sp [w]orkspace symbols',
-    },
-    ['gd'] = {
-      '<cmd> Telescope lsp_definitions <CR>',
-      '[g]o to [d]efinition',
-    },
-    ['gi'] = {
-      '<cmd> Telescope lsp_implementations <CR>',
-      '[g]o to [i]mplementation',
-    },
-    ['gr'] = {
-      '<cmd> Telescope lsp_references <CR>',
-      '[g]o to [r]eferences',
-    },
-  },
-}
-
 M.gitsigns = {
   n = {
     -- Navigation through Git hunks
@@ -259,6 +216,64 @@ M.gitsigns = {
         require('gitsigns').toggle_deleted()
       end,
       '[t]oggle [d]eleted lines',
+    },
+  },
+
+  v = {
+    ['<leader>hs'] = {
+      function()
+        require('gitsigns').stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+      end,
+      '[s]tage git [h]unk',
+    },
+    ['<leader>hr'] = {
+      function()
+        require('gitsigns').reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+      end,
+      '[r]eset git [h]unk',
+    },
+  },
+}
+
+M.telescope = {
+  n = {
+    -- Miscellaneous
+    ['<leader>fc'] = {
+      '<cmd> Telescope current_buffer_fuzzy_find <CR>',
+      '[f]ind in [c]urrent buffer',
+    },
+    ['<leader>fr'] = { '<cmd> Telescope live_grep <CR>', '[f]ind g[r]ep' },
+    ['<leader>fw'] = {
+      '<cmd> Telescope grep_string <CR>',
+      '[f]ind [w]ord with grep',
+    },
+
+    -- Telescope Git Commands
+    ['<leader>gc'] = { '<cmd> Telescope git_commits <CR>', '[g]it [c]ommits' },
+    ['<leader>gs'] = { '<cmd> Telescope git_status <CR>', '[g]it [s]tatus' },
+    ['<leader>gb'] = { '<cmd> Telescope git_branches <CR>', '[g]it [b]ranches' },
+    ['<leader>fg'] = { '<cmd> Telescope git_files <CR>', '[f]ind [g]it files' },
+
+    -- Telescope LSP Commands
+    ['<leader>ld'] = {
+      '<cmd> Telescope lsp_document_symbols <CR>',
+      'search [l]sp [d]ocument symbols',
+    },
+    ['<leader>lw'] = {
+      '<cmd> Telescope lsp_dynamic_workspace_symbols <CR>',
+      'search [l]sp [w]orkspace symbols',
+    },
+    ['gd'] = {
+      '<cmd> Telescope lsp_definitions <CR>',
+      '[g]o to [d]efinition',
+    },
+    ['gi'] = {
+      '<cmd> Telescope lsp_implementations <CR>',
+      '[g]o to [i]mplementation',
+    },
+    ['gr'] = {
+      '<cmd> Telescope lsp_references <CR>',
+      '[g]o to [r]eferences',
     },
   },
 }
