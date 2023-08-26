@@ -307,7 +307,10 @@ M.neogen = {
   n = {
     ['<leader>gd'] = {
       function()
-        require('neogen').generate()
+        require('neogen').generate({
+          -- The annotation type to generate. Currently supported: func, class, type, file
+          type = 'func',
+        })
       end,
       '[g]enerate [d]ocumentation for current function',
     },
