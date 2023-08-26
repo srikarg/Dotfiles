@@ -23,6 +23,14 @@ local plugins = {
   },
 
   {
+    'RRethy/vim-illuminate',
+    event = 'VeryLazy',
+    config = function()
+      require('custom.configs.plugins.illuminate')
+    end,
+  },
+
+  {
     'kylechui/nvim-surround',
     branch = 'main', -- Use `*` `version` for stability; use `main` `branch` for the latest features
     event = 'VeryLazy',
