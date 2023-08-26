@@ -17,7 +17,6 @@ local sources = {
   null_ls_builtins.completion.spell,
 
   -- Web Development
-  null_ls_builtins.diagnostics.eslint,
   null_ls_builtins.formatting.prettier,
 
   -- Shell
