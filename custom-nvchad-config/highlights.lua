@@ -20,6 +20,12 @@ M.override = {
   NvimTreeGitDirty = { fg = 'yellow' },
   NvimTreeGitDeleted = { fg = 'red' },
   NvimTreeCursorLine = { bg = 'one_bg3' },
+
+  -- indent-blankline
+  IndentBlanklineChar = { fg = 'grey', bold = true },
+  IndentBlanklineSpaceChar = { fg = 'grey', bold = true },
+  IndentBlanklineContextChar = { fg = 'grey', bold = true },
+  IndentBlanklineContextStart = { bg = 'one_bg2' },
 }
 
 ---@type HLTable
