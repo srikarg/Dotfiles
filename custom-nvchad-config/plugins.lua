@@ -142,6 +142,11 @@ local plugins = {
   },
 
   {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make',
+  },
+
+  {
     'lukas-reineke/indent-blankline.nvim',
     opts = overrides.blankline,
   },
