@@ -197,3 +197,11 @@ function vol() {
 function te() {
   open "$@" -a textedit
 }
+
+function brewup() {
+  brew update
+  brew upgrade
+  brew cleanup
+  brew doctor
+  brew bundle dump --describe --force --brews --casks --taps --mas --file "$HOME/.Dotfiles/homebrew/.Brewfile"
+}

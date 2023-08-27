@@ -37,10 +37,16 @@ brew "gmp"
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
+# Emulator for x86 and PowerPC
+brew "qemu"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Libraries to talk to Microsoft SQL Server and Sybase databases
+brew "freetds"
+# Network authentication protocol
+brew "krb5"
 # General-purpose scripting language
 brew "php"
 # Dependency Manager for PHP
@@ -71,6 +77,8 @@ brew "libass"
 brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
+# Library for manipulating fonts
+brew "fonttools"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Interpreter for PostScript and PDF
@@ -189,6 +197,8 @@ brew "thefuck"
 brew "tilt"
 # Simplified and community-driven man pages
 brew "tldr"
+# Terminal multiplexer
+brew "tmux"
 # CLI tool that moves files or folder to the trash
 brew "trash"
 # Display directories as trees (with optional color/HTML output)
