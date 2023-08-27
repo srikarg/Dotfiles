@@ -25,3 +25,7 @@ url = https://github.com/zsh-users/zsh-completions.git
 [submodule "neovim/.config/nvim"]
 path = neovim/.config/nvim
 url = https://github.com/NvChad/NvChad.git
+
+[submodule "tmux/.tmux/plugins/tpm"]
+path = tmux/.tmux/plugins/tpm
+url = https://github.com/tmux-plugins/tpm

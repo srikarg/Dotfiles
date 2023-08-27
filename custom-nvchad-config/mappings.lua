@@ -25,6 +25,12 @@ M.general = {
     ['<C-d>'] = { '<C-d>zz', 'Page Down and Center', opts = { nowait = true } },
     ['<C-u>'] = { '<C-u>zz', 'Page Up and Center', opts = { nowait = true } },
 
+    -- Tmux Navigator
+    ['<C-h>'] = { '<cmd> TmuxNavigateLeft<CR>', 'window left' },
+    ['<C-l>'] = { '<cmd> TmuxNavigateRight<CR>', 'window right' },
+    ['<C-j>'] = { '<cmd> TmuxNavigateDown<CR>', 'window down' },
+    ['<C-k>'] = { '<cmd> TmuxNavigateUp<CR>', 'window up' },
+
     --- Themes
     ['<leader>tl'] = {
       function()

@@ -3,6 +3,11 @@ local overrides = require('custom.configs.overrides')
 ---@type NvPluginSpec[]
 local plugins = {
   {
+    'christoomey/vim-tmux-navigator',
+    lazy = false,
+  },
+
+  {
     'max397574/better-escape.nvim',
     event = 'InsertEnter',
     config = true,
