@@ -35,6 +35,69 @@ M.add = {
   -- NvimTree
   NvimTreeGitStaged = { fg = 'orange' },
 
+  -- Git Signs
+  GitSignsCurrentLineBlame = { fg = 'light_grey', bold = true },
+
+  -- Diff
+  DiffChange = { fg = 'yellow' },
+  DiffAdd = { fg = 'vibrant_green' },
+  DiffDelete = { fg = 'red' },
+  DiffText = { fg = 'white', bg = 'red', bold = true },
+
+  DiffviewDim1 = { fg = 'grey' },
+  DiffviewReference = { fg = 'cyan' },
+  DiffviewPrimary = { fg = 'cyan' },
+  DiffviewSecondary = { fg = 'blue' },
+  DiffviewNonText = { link = 'DiffviewDim1' },
+  DiffviewStatusUnmerged = { link = 'GitMerge' },
+  DiffviewStatusUntracked = { link = 'GitNew' },
+  DiffviewStatusModified = { link = 'GitDirty' },
+  DiffviewStatusRenamed = { link = 'GitRenamed' },
+  DiffviewStatusDeleted = { link = 'GitDeleted' },
+  DiffviewStatusAdded = { link = 'GitStaged' },
+  DiffviewFilePanelRootPath = { link = 'NvimTreeRootFolder' },
+  DiffviewFilePanelTitle = { link = 'Title' },
+  DiffviewFilePanelCounter = { fg = 'cyan' },
+  DiffviewFilePanelInsertions = { link = 'GitNew' },
+  DiffviewFilePanelDeletions = { link = 'GitDeleted' },
+  DiffviewFilePanelConflicts = { link = 'GitMerge' },
+  DiffviewFolderSign = { link = 'NvimTreeFolderIcon' },
+  DiffviewDiffDelete = { link = 'Comment' },
+
+  GitSignsChange = { fg = 'green' },
+  GitSignsAdd = { fg = 'vibrant_green' },
+  GitSignsDelete = { fg = 'red' },
+  GitSignsText = { fg = 'white', bg = 'red', bold = true },
+
+  -- Deprecated
+  cssDeprecated = { strikethrough = true },
+  javaScriptDeprecated = { strikethrough = true },
+
+  -- Trouble
+  TroubleCount = { fg = 'pink' },
+  TroubleCode = { fg = 'white' },
+  TroubleWarning = { fg = 'orange' },
+  TroubleSignWarning = { fg = 'yellow' },
+  TroubleTextWarning = { fg = 'white' },
+  TroublePreview = { fg = 'red' },
+  TroubleSource = { fg = 'cyan' },
+  TroubleSignHint = { fg = 'green' },
+  TroubleTextHint = { fg = 'white' },
+  TroubleHint = { fg = 'orange' },
+  TroubleSignOther = { fg = 'green' },
+  TroubleSignInformation = { fg = 'white' },
+  TroubleTextInformation = { fg = 'blue' },
+  TroubleInformation = { fg = 'white' },
+  TroubleError = { fg = 'red' },
+  TroubleTextError = { fg = 'red' }, -- error info text
+  TroubleSignError = { fg = 'red' }, -- error sign color
+  TroubleText = { fg = 'white' },
+  TroubleFile = { fg = 'yellow' }, -- the source file that has error
+  TroubleFoldIcon = { fg = 'cyan' }, -- fold icon color
+  TroubleNormal = { fg = 'white' },
+  TroubleLocation = { fg = 'white' }, -- location of error
+  TroubleIndent = { link = 'Comment' }, -- indent color
+
   -- vim-illuminate
   IlluminatedWordText = {
     bg = 'light_grey',

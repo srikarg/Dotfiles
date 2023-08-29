@@ -57,7 +57,7 @@ M.ui = {
     -- The modules argument here is the default table of modules here: https://github.com/NvChad/ui/blob/v2.0/lua/nvchad/statusline/default.lua
     overriden_modules = function(modules)
       modules[2] = getFileInfo()
-      table.insert(modules, 6, navic_statusline())
+      -- table.insert(modules, 6, navic_statusline())
     end,
   },
 
