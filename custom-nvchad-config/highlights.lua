@@ -26,6 +26,8 @@ M.override = {
   IndentBlanklineSpaceChar = { fg = 'grey', bold = true },
   IndentBlanklineContextChar = { fg = 'grey', bold = true },
   IndentBlanklineContextStart = { bg = 'one_bg2' },
+
+  NavicText = { fg = 'white' },
 }
 
 ---@type HLTable

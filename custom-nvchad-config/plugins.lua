@@ -118,6 +118,12 @@ local plugins = {
           require('custom.configs.plugins.navbuddy')
         end,
       },
+      {
+        'SmiteshP/nvim-navic',
+        config = function()
+          require('custom.configs.plugins.navic')
+        end,
+      },
     },
     config = function()
       require('plugins.configs.lspconfig')

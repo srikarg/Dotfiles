@@ -32,7 +32,18 @@ local getFileInfo = function()
   return '%#St_file_info#' .. icon .. filepath .. '%#St_file_sep#' .. ' '
 end
 
+local function navic_statusline()
+  local navic = require('nvim-navic')
+
+  if navic.is_available() then
+    return navic.get_location()
+  else
+    return ' '
+  end
+end
+
 M.ui = {
+  extended_integrations = { 'navic' },
   theme = 'catppuccin',
   theme_toggle = { 'catppuccin', 'onenord_light' },
   transparency = false,
@@ -46,6 +57,7 @@ M.ui = {
     -- The modules argument here is the default table of modules here: https://github.com/NvChad/ui/blob/v2.0/lua/nvchad/statusline/default.lua
     overriden_modules = function(modules)
       modules[2] = getFileInfo()
+      table.insert(modules, 6, navic_statusline())
     end,
   },
 

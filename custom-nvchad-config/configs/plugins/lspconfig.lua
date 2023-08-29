@@ -1,5 +1,13 @@
-local on_attach = require('plugins.configs.lspconfig').on_attach
+local on_attach_nvchad = require('plugins.configs.lspconfig').on_attach
 local capabilities = require('plugins.configs.lspconfig').capabilities
+
+local on_attach = function(client, bufnr)
+  if client.server_capabilities.documentSymbolProvider then
+    require('nvim-navic').attach(client, bufnr)
+  end
+
+  on_attach_nvchad(client, bufnr)
+end
 
 local lspconfig = require('lspconfig')
 
