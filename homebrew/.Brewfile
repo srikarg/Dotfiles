@@ -241,6 +241,8 @@ cask "dupeguru"
 cask "exifrenamer"
 # Collaborative team software
 cask "figma"
+# Screen color temperature controller
+cask "flux"
 # Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
 # Terminal emulator as alternative to Apple's Terminal app
