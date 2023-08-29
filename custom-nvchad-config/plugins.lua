@@ -8,6 +8,11 @@ local plugins = {
   },
 
   {
+    'tpope/vim-obsession',
+    lazy = false,
+  },
+
+  {
     'max397574/better-escape.nvim',
     event = 'InsertEnter',
     config = true,
