@@ -63,3 +63,6 @@ export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.1.0/bin:$PATH"
 
 # Add folder where additional binaries may live (such as `zoxide`)
 export PATH="$HOME/.local/bin:$PATH"
+
+# Add my own custom scripts folder to path
+export PATH="$HOME/.local/scripts:$PATH"

@@ -136,7 +136,7 @@ function zc() {
 
 # Tree function
 
-function t() {
+function tree() {
   if [ $# -eq 0 ]; then
     tree -aNCL 2 -I '.git|node_modules|bower_components' --dirsfirst | less -FRNX
   else
@@ -172,6 +172,33 @@ function n() {
   else
     nvim "$@"
   fi
+}
+
+function tx() {
+  current_working_dir=$(pwd)
+  session_name="${1:-default}"
+  echo "Attempting to connect to session $session_name..."
+
+  # If already in tmux
+  if [[ -z $TMUX ]]; then
+    if [ $# -eq 0 ]; then
+      tmux new-session -A -s "$session_name" -c "$current_working_dir"
+    else
+      tmux new-session -A -s "$session_name"
+    fi
+    return 0
+  fi
+
+  # If not in tmux
+  if ! tmux has-session -t "$session_name" 2>/dev/null; then
+    if [ $# -eq 0 ]; then
+      tmux new-session -ds "$session_name"
+    else
+      tmux new-session -ds "$session_name" -c "$current_working_dir"
+    fi
+  fi
+
+  tmux switch-client -t "$session_name"
 }
 
 # `o` with no arguments opens current directory, otherwise opens the given
