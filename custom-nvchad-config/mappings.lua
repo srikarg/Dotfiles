@@ -31,6 +31,9 @@ M.general = {
     ['<C-j>'] = { '<cmd> TmuxNavigateDown<CR>', 'window down' },
     ['<C-k>'] = { '<cmd> TmuxNavigateUp<CR>', 'window up' },
 
+    -- Undotree
+    ['<leader>u'] = { '<cmd> UndotreeToggle<CR>', 'toggle [u]ndotree' },
+
     --- Themes
     ['<leader>tl'] = {
       function()

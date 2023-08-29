@@ -13,6 +13,14 @@ local plugins = {
   },
 
   {
+    'mbbill/undotree',
+    lazy = false,
+    config = function()
+      require('custom.configs.plugins.undotree')
+    end,
+  },
+
+  {
     'max397574/better-escape.nvim',
     event = 'InsertEnter',
     config = true,
