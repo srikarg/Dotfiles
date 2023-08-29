@@ -89,6 +89,8 @@ brew "git"
 brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
+# Alternative to top/htop
+brew "glances"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # GNU Pretty Good Privacy (PGP) package
@@ -139,6 +141,10 @@ brew "libgsf"
 brew "mas"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
+# 'traceroute' and 'ping' in a single tool
+brew "mtr"
+# Free (GNU) replacement for the Pico text editor
+brew "nano"
 # NCurses Disk Usage
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
