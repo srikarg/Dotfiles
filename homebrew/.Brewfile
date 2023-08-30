@@ -253,6 +253,8 @@ cask "flux"
 cask "font-fira-code-nerd-font"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Display key code, unicode value and modifier keys state for any key combination
+cask "key-codes"
 # Software for Logitech devices
 cask "logi-options-plus"
 # Privacy-first, open-source platform for knowledge sharing and management
