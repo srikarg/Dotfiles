@@ -21,6 +21,16 @@ local plugins = {
   },
 
   {
+    'folke/zen-mode.nvim',
+    dependencies = { 'folke/twilight.nvim' },
+    cmd = 'ZenMode',
+    config = function()
+      require('custom.configs.plugins.zenmode')
+      require('custom.configs.plugins.twilight')
+    end,
+  },
+
+  {
     'max397574/better-escape.nvim',
     event = 'InsertEnter',
     config = true,

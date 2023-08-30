@@ -44,6 +44,17 @@ M.general = {
   },
 }
 
+M.zenmode = {
+  n = {
+    ['<leader>z'] = {
+      function()
+        require('zen-mode').toggle()
+      end,
+      'toggle [z]en mode',
+    },
+  },
+}
+
 M.lspconfig = {
   n = {
     -- Miscellaneous
