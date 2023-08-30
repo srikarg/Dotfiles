@@ -39,7 +39,7 @@ prompt pure
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^f "t\n"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
