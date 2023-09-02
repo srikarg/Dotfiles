@@ -265,12 +265,12 @@ cask "meetingbar"
 cask "postman"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
 # Screenshot measurement and annotation tool
 cask "shottr"
 # Team communication and collaboration software
 cask "slack"
-# Move and resize windows with ease
-cask "spectacle"
 # Music streaming service
 cask "spotify"
 # System monitor for the menu bar
