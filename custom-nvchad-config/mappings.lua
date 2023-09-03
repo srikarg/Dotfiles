@@ -44,6 +44,12 @@ M.general = {
   },
 }
 
+M.docsview = {
+  n = {
+    ['<leader>dv'] = { '<cmd> DocsViewToggle<CR>', '[d]ocs [v]iew toggle' },
+  },
+}
+
 M.zenmode = {
   n = {
     ['<leader>z'] = {

@@ -13,6 +13,21 @@ local plugins = {
   },
 
   {
+    'nacro90/numb.nvim',
+    lazy = false,
+    config = true,
+  },
+
+  {
+    'amrbashir/nvim-docs-view',
+    opt = true,
+    cmd = { 'DocsViewToggle' },
+    config = function()
+      require('custom.configs.plugins.docs-view')
+    end,
+  },
+
+  {
     'mbbill/undotree',
     lazy = false,
     config = function()
