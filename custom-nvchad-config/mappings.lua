@@ -268,9 +268,18 @@ M.telescope = {
       '<cmd> Telescope current_buffer_fuzzy_find <CR>',
       '[f]ind in [c]urrent buffer',
     },
-    ['<leader>fr'] = { '<cmd> Telescope live_grep <CR>', '[f]ind g[r]ep' },
+
+    -- Grepping
+    ['<leader>fr'] = {
+      function()
+        require('telescope').extensions.live_grep_args.live_grep_args()
+      end,
+      '[f]ind g[r]ep',
+    },
     ['<leader>fw'] = {
-      '<cmd> Telescope grep_string <CR>',
+      function()
+        require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()
+      end,
       '[f]ind [w]ord with grep',
     },
 
@@ -300,6 +309,16 @@ M.telescope = {
     ['gr'] = {
       '<cmd> Telescope lsp_references <CR>',
       '[g]o to [r]eferences',
+    },
+  },
+
+  v = {
+    -- Grepping
+    ['<leader>fr'] = {
+      function()
+        require('telescope-live-grep-args.shortcuts').grep_visual_selection()
+      end,
+      '[f]ind g[r]ep',
     },
   },
 }

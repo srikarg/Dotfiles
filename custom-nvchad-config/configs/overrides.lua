@@ -139,13 +139,24 @@ M.telescope = {
       '--line-number',
       '--column',
       '--smart-case',
-      '--hidden',
-      '--no-ignore',
     },
     file_ignore_patterns = { '^node_modules/', '^.git/' },
   },
 
-  extensions_list = { 'themes', 'terms', 'fzf' },
+  extensions_list = { 'themes', 'terms', 'fzf', 'live_grep_args' },
+
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = 'smart_case',
+    },
+
+    live_grep_args = {
+      auto_quoting = true,
+    },
+  },
 }
 
 -- Sourced from https://github.com/BrunoKrugel/dotfiles/blob/master/configs/cmp.lua#L34-L65
