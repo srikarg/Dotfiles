@@ -155,6 +155,28 @@ M.telescope = {
 
     live_grep_args = {
       auto_quoting = true,
+      mappings = {
+        i = {
+          ['<C-k>'] = function(...)
+            require('telescope-live-grep-args.actions').quote_prompt()(...)
+          end,
+          ['<C-i>'] = function(...)
+            require('telescope-live-grep-args.actions').quote_prompt({
+              postfix = ' --iglob ',
+            })(...)
+          end,
+          ['<C-t>'] = function(...)
+            require('telescope-live-grep-args.actions').quote_prompt({
+              postfix = ' -t',
+            })(...)
+          end,
+          ['<C-a>'] = function(...)
+            require('telescope-live-grep-args.actions').quote_prompt({
+              postfix = ' --hidden --no-ignore',
+            })(...)
+          end,
+        },
+      },
     },
   },
 }
