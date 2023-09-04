@@ -144,6 +144,8 @@ M.telescope = {
     },
     file_ignore_patterns = { '^node_modules/', '^.git/' },
   },
+
+  extensions_list = { 'themes', 'terms', 'fzf' },
 }
 
 -- Sourced from https://github.com/BrunoKrugel/dotfiles/blob/master/configs/cmp.lua#L34-L65

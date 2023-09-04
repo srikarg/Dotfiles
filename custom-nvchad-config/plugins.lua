@@ -187,12 +187,13 @@ local plugins = {
 
   {
     'nvim-telescope/telescope.nvim',
+    dependencies = {
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make',
+      },
+    },
     opts = overrides.telescope,
-  },
-
-  {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    build = 'make',
   },
 
   {
