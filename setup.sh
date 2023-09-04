@@ -24,7 +24,11 @@ function run() {
       echo "$(basename "$files") stowed."
     fi
   done
+  # Create the ZSH cache directory if it doesn't exist
   mkdir -p "$ZSH_CACHE_DIR"
+  # Create the ZSH completions directory for plugins if it doesn't exist
+  mkdir -p "$ZSH_CACHE_DIR/completions"
+  rm -f "$HOME/.zcompdump"
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then

@@ -1,3 +1,4 @@
+source "$HOME/.zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 source "$HOME/.zsh/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -8,12 +9,10 @@ fpath+=$HOME/.zsh/ohmyzsh/plugins/docker-compose
 fpath+=$HOME/.zsh/zsh-users/zsh-completions/src
 fpath+=$HOME/.zsh/pure
 
-rm -f ~/.zcompdump
 autoload -Uz compinit
 compinit
 
 source "$HOME/.zsh/alias-tips/alias-tips.plugin.zsh"
-
 source "$HOME/.zsh/ohmyzsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/copypath/copypath.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/copyfile/copyfile.plugin.zsh"
@@ -22,7 +21,6 @@ source "$HOME/.zsh/ohmyzsh/plugins/git/git.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/gitignore/gitignore.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/history/history.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/history-substring-search/history-substring-search.plugin.zsh"
-source "$HOME/.zsh/ohmyzsh/plugins/npm/npm.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/macos/macos.plugin.zsh"
 
 ZSH_DOTENV_PROMPT=false
@@ -31,14 +29,13 @@ DISABLE_MAGIC_FUNCTIONS=true
 autoload -U promptinit
 promptinit
 
-PURE_PROMPT_SYMBOL="⚡"
-
 zstyle :prompt:pure:git:stash show yes
 
 prompt pure
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
 bindkey -s ^f "t\n"
 
 # Load the shell dotfiles, and then some:

@@ -29,3 +29,7 @@ url = https://github.com/NvChad/NvChad.git
 [submodule "tmux/.tmux/plugins/tpm"]
 path = tmux/.tmux/plugins/tpm
 url = https://github.com/tmux-plugins/tpm
+
+[submodule "zsh/.zsh/zsh-vi-mode"]
+path = zsh/.zsh/zsh-vi-mode
+url = https://github.com/jeffreytse/zsh-vi-mode.git
