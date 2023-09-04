@@ -19,6 +19,15 @@ local plugins = {
   },
 
   {
+    'ggandor/leap.nvim',
+    lazy = false,
+    dependencies = { 'tpope/vim-repeat' },
+    config = function()
+      require('custom.configs.plugins.leap')
+    end,
+  },
+
+  {
     'amrbashir/nvim-docs-view',
     opt = true,
     cmd = { 'DocsViewToggle' },
@@ -78,15 +87,6 @@ local plugins = {
     branch = 'main', -- Use `*` `version` for stability; use `main` `branch` for the latest features
     event = 'VeryLazy',
     config = true,
-  },
-
-  {
-    'ggandor/leap.nvim',
-    event = 'VeryLazy',
-    dependencies = { 'tpope/vim-repeat' },
-    config = function()
-      require('custom.configs.plugins.leap')
-    end,
   },
 
   {
