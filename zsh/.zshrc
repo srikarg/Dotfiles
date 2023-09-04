@@ -4,8 +4,15 @@ source "$HOME/.zsh/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source "$HOME/.zsh/zsh-users/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
+if type brew &>/dev/null
+then
+  fpath+=$(brew --prefix)/share/zsh/site-functions
+fi
+
 fpath+=$HOME/.zsh/ohmyzsh/plugins/docker
 fpath+=$HOME/.zsh/ohmyzsh/plugins/docker-compose
+fpath+=$HOME/.zsh/ohmyzsh/plugins/helm
+fpath+=$HOME/.zsh/ohmyzsh/plugins/volta
 fpath+=$HOME/.zsh/zsh-users/zsh-completions/src
 fpath+=$HOME/.zsh/pure
 
@@ -17,6 +24,9 @@ source "$HOME/.zsh/ohmyzsh/plugins/colored-man-pages/colored-man-pages.plugin.zs
 source "$HOME/.zsh/ohmyzsh/plugins/copypath/copypath.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/copyfile/copyfile.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/docker-compose/docker-compose.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/docker/docker.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/helm/helm.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/volta/volta.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/git/git.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/gitignore/gitignore.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/history/history.plugin.zsh"
