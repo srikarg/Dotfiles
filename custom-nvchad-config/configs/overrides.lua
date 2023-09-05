@@ -77,6 +77,7 @@ M.mason = {
     'css-lsp',
     'html-lsp',
     'typescript-language-server',
+    'js-debug-adapter',
     'deno',
     'prettier',
     'eslint-lsp',
@@ -143,7 +144,7 @@ M.telescope = {
     file_ignore_patterns = { '^node_modules/', '^.git/' },
   },
 
-  extensions_list = { 'themes', 'terms', 'fzf', 'live_grep_args' },
+  extensions_list = { 'themes', 'terms', 'fzf', 'live_grep_args', 'dap' },
 
   extensions = {
     fzf = {

@@ -28,6 +28,42 @@ local plugins = {
   },
 
   {
+    'mfussenegger/nvim-dap',
+    config = function()
+      require('custom.configs.plugins.dap.adapters.javascript')
+      require('core.utils').load_mappings('dap')
+    end,
+  },
+
+  {
+    'theHamsta/nvim-dap-virtual-text',
+    dependencies = { 'mfussenegger/nvim-dap' },
+    config = true,
+  },
+
+  {
+    'rcarriga/nvim-dap-ui',
+    event = 'VeryLazy',
+    dependencies = {
+      'mfussenegger/nvim-dap',
+      'theHamsta/nvim-dap-virtual-text',
+    },
+    config = function()
+      require('custom.configs.plugins.dap.ui')
+    end,
+  },
+
+  {
+    'nvim-telescope/telescope-dap.nvim',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'mfussenegger/nvim-dap',
+    },
+    config = true,
+  },
+
+  {
     'amrbashir/nvim-docs-view',
     opt = true,
     cmd = { 'DocsViewToggle' },

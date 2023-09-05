@@ -43,7 +43,7 @@ local function navic_statusline()
 end
 
 M.ui = {
-  extended_integrations = { 'navic' },
+  extended_integrations = { 'navic', 'dap' },
   theme = 'catppuccin',
   theme_toggle = { 'catppuccin', 'onenord_light' },
   transparency = false,

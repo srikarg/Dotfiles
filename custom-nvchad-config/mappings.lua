@@ -44,6 +44,22 @@ M.general = {
   },
 }
 
+M.dap = {
+  plugin = true,
+
+  n = {
+    ['<leader>db'] = {
+      '<cmd> DapToggleBreakpoint <CR>',
+      'toggle [d]ebugger [b]reakpoint',
+    },
+
+    ['<leader>dr'] = {
+      '<cmd> DapContinue <CR>',
+      '[d]ebugger [r]un/continue',
+    },
+  },
+}
+
 M.docsview = {
   n = {
     ['<leader>dv'] = { '<cmd> DocsViewToggle<CR>', '[d]ocs [v]iew toggle' },
