@@ -58,6 +58,40 @@ M.dap = {
       '<cmd> DapContinue <CR>',
       '[d]ebugger [r]un/continue',
     },
+
+    ['<leader>do'] = {
+      '<cmd> DapStepOver <CR>',
+      '[d]ebugger step [o]ver',
+    },
+
+    ['<leader>dO'] = {
+      '<cmd> DapStepOut <CR>',
+      '[d]ebugger step [O]ut',
+    },
+
+    ['<leader>di'] = {
+      '<cmd> DapStepInto <CR>',
+      '[d]ebugger step [i]nto',
+    },
+
+    ['<leader>dt'] = {
+      '<cmd> DapTerminate <CR>',
+      '[d]ebugger [t]erminate',
+    },
+
+    ['<leader>dh'] = {
+      function()
+        require('dap.ui.widgets').hover()
+      end,
+      '[d]ebugger [h]over current variable',
+    },
+
+    ['<leader>dp'] = {
+      function()
+        require('dap.ui.widgets').preview()
+      end,
+      '[d]ebugger [p]review current variable',
+    },
   },
 }
 
