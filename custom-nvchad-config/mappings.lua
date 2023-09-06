@@ -15,6 +15,7 @@ M.disabled = {
     ['gr'] = '',
     ['<leader>ra'] = '',
     ['<leader>fw'] = '',
+    ['<leader>fo'] = '',
   },
 }
 
@@ -283,6 +284,19 @@ M.telescope = {
     ['<leader>fc'] = {
       '<cmd> Telescope current_buffer_fuzzy_find <CR>',
       '[f]ind in [c]urrent buffer',
+    },
+
+    -- Finding recent files
+    ['<leader>fo'] = {
+      function()
+        -- https://github.com/nvim-telescope/telescope.nvim/issues/2539#issuecomment-1562510095
+        require('telescope.builtin').oldfiles({
+          tiebreak = function(current_entry, existing_entry, _)
+            return current_entry.index < existing_entry.index
+          end,
+        })
+      end,
+      '[f]ind [o]ldfiles',
     },
 
     -- Grepping
