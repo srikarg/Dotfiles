@@ -16,6 +16,8 @@ M.disabled = {
     ['<leader>ra'] = '',
     ['<leader>fw'] = '',
     ['<leader>fo'] = '',
+    ['<leader>q'] = '',
+    ['<leader>f'] = '',
   },
 }
 
@@ -142,9 +144,31 @@ M.tabufline = {
   },
 }
 
-M.trouble = {
+local diagnostics_active = true
+
+M.diagnostics = {
   n = {
-    ['<leader>tt'] = { '<cmd> TroubleToggle <CR>', '[t]oggle [t]rouble' },
+    ['<leader>qq'] = {
+      '<cmd> TroubleToggle <CR>',
+      'Toggle Diagnostics List (via Trouble plugin)',
+    },
+    ['<leader>qf'] = {
+      function()
+        vim.diagnostic.open_float({ border = 'rounded' })
+      end,
+      'Toggle Floating Diagnostic',
+    },
+    ['<leader>qt'] = {
+      function()
+        diagnostics_active = not diagnostics_active
+        if diagnostics_active then
+          vim.diagnostic.show()
+        else
+          vim.diagnostic.hide()
+        end
+      end,
+      'Toggle Diagnostics Visibility',
+    },
   },
 }
 
@@ -425,7 +449,5 @@ M.neogen = {
     },
   },
 }
-
--- more keybinds!
 
 return M
