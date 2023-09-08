@@ -7,7 +7,7 @@ end
 zenmode.setup({
   window = {
     backdrop = 0.9,
-    width = 0.6,
+    width = 83, -- This leaves enough space for the line numbers column + 80 characters
     height = 1,
     options = {
       signcolumn = 'no',
@@ -24,5 +24,6 @@ zenmode.setup({
     gitsigns = { enabled = true },
     twilight = { enabled = true },
     tmux = { enabled = true },
+    diagnostics = { enabled = true },
   },
 })
