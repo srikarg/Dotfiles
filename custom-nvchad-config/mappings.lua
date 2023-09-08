@@ -29,21 +29,19 @@ M.general = {
     ['<C-u>'] = { '<C-u>zz', 'Page Up and Center', opts = { nowait = true } },
 
     -- Tmux Navigator
-    ['<C-h>'] = { '<cmd> TmuxNavigateLeft<CR>', 'window left' },
-    ['<C-l>'] = { '<cmd> TmuxNavigateRight<CR>', 'window right' },
-    ['<C-j>'] = { '<cmd> TmuxNavigateDown<CR>', 'window down' },
-    ['<C-k>'] = { '<cmd> TmuxNavigateUp<CR>', 'window up' },
+    ['<C-h>'] = {
+      '<cmd> TmuxNavigateLeft<CR>',
+      'Navigate to the Window on the Left',
+    },
+    ['<C-l>'] = {
+      '<cmd> TmuxNavigateRight<CR>',
+      'Navigate to the Window on the Right',
+    },
+    ['<C-j>'] = { '<cmd> TmuxNavigateDown<CR>', 'Navigate to the Window Below' },
+    ['<C-k>'] = { '<cmd> TmuxNavigateUp<CR>', 'Navigate to the Window Above' },
 
     -- Undotree
-    ['<leader>u'] = { '<cmd> UndotreeToggle<CR>', 'toggle [u]ndotree' },
-
-    --- Themes
-    ['<leader>tl'] = {
-      function()
-        require('base46').toggle_theme()
-      end,
-      '[t]oggle between [l]ight/dark theme',
-    },
+    ['<leader>u'] = { '<cmd> UndotreeToggle<CR>', 'Toggle [u]ndotree Plugin' },
   },
 }
 
@@ -53,7 +51,7 @@ M.dap = {
   n = {
     ['<leader>db'] = {
       '<cmd> DapToggleBreakpoint <CR>',
-      'toggle [d]ebugger [b]reakpoint',
+      'Toggle [d]ebugger [b]reakpoint',
     },
 
     ['<leader>dr'] = {
@@ -63,17 +61,17 @@ M.dap = {
 
     ['<leader>do'] = {
       '<cmd> DapStepOver <CR>',
-      '[d]ebugger step [o]ver',
+      '[d]ebugger Step [o]ver',
     },
 
     ['<leader>dO'] = {
       '<cmd> DapStepOut <CR>',
-      '[d]ebugger step [O]ut',
+      '[d]ebugger Step [O]ut',
     },
 
     ['<leader>di'] = {
       '<cmd> DapStepInto <CR>',
-      '[d]ebugger step [i]nto',
+      '[d]ebugger Step [i]nto',
     },
 
     ['<leader>dt'] = {
@@ -85,21 +83,21 @@ M.dap = {
       function()
         require('dap.ui.widgets').hover()
       end,
-      '[d]ebugger [h]over current variable',
+      '[d]ebugger [h]over Current Variable',
     },
 
     ['<leader>dp'] = {
       function()
         require('dap.ui.widgets').preview()
       end,
-      '[d]ebugger [p]review current variable',
+      '[d]ebugger [p]review Current Variable',
     },
   },
 }
 
 M.docsview = {
   n = {
-    ['<leader>dv'] = { '<cmd> DocsViewToggle<CR>', '[d]ocs [v]iew toggle' },
+    ['<leader>dv'] = { '<cmd> DocsViewToggle<CR>', '[d]ocs [v]iew Toggle' },
   },
 }
 
@@ -109,7 +107,7 @@ M.zenmode = {
       function()
         require('zen-mode').toggle()
       end,
-      'toggle [z]en mode',
+      'Toggle [z]en Mode',
     },
   },
 }
@@ -132,14 +130,14 @@ M.tabufline = {
       function()
         require('nvchad.tabufline').closeAllBufs()
       end,
-      'close all buffers',
+      'Close All Buffers',
     },
 
     ['<leader>C'] = {
       function()
         require('nvchad.tabufline').closeOtherBufs()
       end,
-      'close all buffers except current one',
+      'Close All Buffers Except Current One',
     },
   },
 }
@@ -176,7 +174,7 @@ M.navbuddy = {
   n = {
     ['<leader>N'] = {
       '<cmd> :lua require("nvim-navbuddy").open() <CR>',
-      'open [N]avbuddy',
+      'Open [N]avbuddy',
     },
   },
 }
@@ -187,7 +185,7 @@ M.gitlinker = {
       function()
         require('gitlinker').get_buf_range_url('n')
       end,
-      '[g]it [y]ank URL for current line(s)',
+      '[g]it [y]ank URL for Current Line(s)',
     },
     ['<leader>go'] = {
       function()
@@ -196,7 +194,7 @@ M.gitlinker = {
           { action_callback = require('gitlinker.actions').open_in_browser }
         )
       end,
-      '[g]it [o]pen URL for current line(s)',
+      '[g]it [o]pen URL for Current Line(s)',
       opts = { silent = true },
     },
   },
@@ -205,7 +203,7 @@ M.gitlinker = {
       function()
         require('gitlinker').get_buf_range_url('v')
       end,
-      '[g]it [y]ank URL for current line(s)',
+      '[g]it [y]ank URL for Current Line(s)',
     },
     ['<leader>go'] = {
       function()
@@ -214,7 +212,7 @@ M.gitlinker = {
           { action_callback = require('gitlinker.actions').open_in_browser }
         )
       end,
-      '[g]it [o]pen URL for current line(s)',
+      '[g]it [o]pen URL for Current Line(s)',
     },
   },
 }
@@ -256,67 +254,67 @@ M.gitsigns = {
       function()
         require('gitsigns').stage_hunk()
       end,
-      '[s]tage git [h]unk',
+      '[s]tage Git [h]unk',
     },
     ['<leader>hr'] = {
       function()
         require('gitsigns').reset_hunk()
       end,
-      '[r]eset git [h]unk',
+      '[r]eset Git [h]unk',
     },
     ['<leader>hS'] = {
       function()
         require('gitsigns').stage_buffer()
       end,
-      '[S]tage all hunks in buffer',
+      '[S]tage All Hunks in Buffer',
     },
     ['<leader>hu'] = {
       function()
         require('gitsigns').undo_stage_hunk()
       end,
-      '[u]ndo stage of git [h]unk',
+      '[u]ndo Stage of Git [h]unk',
     },
     ['<leader>hR'] = {
       function()
         require('gitsigns').reset_buffer()
       end,
-      '[R]eset all git hunks in buffer',
+      '[R]eset All Git Hunks in Buffer',
     },
     ['<leader>hp'] = {
       function()
         require('gitsigns').preview_hunk_inline()
       end,
-      '[p]review git [h]unk inline',
+      '[p]review Git [h]unk Inline',
     },
     ['<leader>hb'] = {
       function()
         require('gitsigns').blame_line({ full = true })
       end,
-      'git [b]lame for current line',
+      'Git [b]lame for Current Line',
     },
     ['<leader>tb'] = {
       function()
         require('gitsigns').toggle_current_line_blame()
       end,
-      '[t]oggle git line [b]lame',
+      '[t]oggle Git Line [b]lame',
     },
     ['<leader>hd'] = {
       function()
         require('gitsigns').diffthis()
       end,
-      '[d]iff this buffer',
+      '[d]iff This Buffer',
     },
     ['<leader>hD'] = {
       function()
         require('gitsigns').diffthis('~')
       end,
-      '[D]iff this buffer against ~',
+      '[D]iff This Buffer Against ~',
     },
     ['<leader>td'] = {
       function()
         require('gitsigns').toggle_deleted()
       end,
-      '[t]oggle [d]eleted lines',
+      '[t]oggle [d]eleted Lines',
     },
   },
 
@@ -325,13 +323,13 @@ M.gitsigns = {
       function()
         require('gitsigns').stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
       end,
-      '[s]tage git [h]unk',
+      '[s]tage Git [h]unk',
     },
     ['<leader>hr'] = {
       function()
         require('gitsigns').reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
       end,
-      '[r]eset git [h]unk',
+      '[r]eset Git [h]unk',
     },
   },
 }
@@ -341,7 +339,7 @@ M.telescope = {
     -- Miscellaneous
     ['<leader>fc'] = {
       '<cmd> Telescope current_buffer_fuzzy_find <CR>',
-      '[f]ind in [c]urrent buffer',
+      '[f]ind In [c]urrent Buffer',
     },
 
     -- Finding recent files
@@ -368,7 +366,7 @@ M.telescope = {
       function()
         require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()
       end,
-      '[f]ind [w]ord with grep',
+      '[f]ind [w]ord With Grep',
     },
 
     -- Telescope Git Commands
@@ -380,11 +378,11 @@ M.telescope = {
     -- Telescope LSP Commands
     ['<leader>ld'] = {
       '<cmd> Telescope lsp_document_symbols <CR>',
-      'search [l]sp [d]ocument symbols',
+      'Search [l]sp [d]ocument Symbols',
     },
     ['<leader>lw'] = {
       '<cmd> Telescope lsp_dynamic_workspace_symbols <CR>',
-      'search [l]sp [w]orkspace symbols',
+      'Search [l]sp [w]orkspace Symbols',
     },
     ['gd'] = {
       '<cmd> Telescope lsp_definitions <CR>',
@@ -417,21 +415,14 @@ M.nvterm = {
       function()
         require('nvterm.terminal').new('horizontal')
       end,
-      'new [H]orizontal terminal',
+      'New [H]orizontal Terminal',
     },
 
     ['<leader>V'] = {
       function()
         require('nvterm.terminal').new('vertical')
       end,
-      'new [V]ertical terminal',
-    },
-
-    ['<leader>lg'] = {
-      function()
-        require('nvterm.terminal').send('lazygit', 'vertical')
-      end,
-      '[l]azy [g]it',
+      'New [V]ertical Terminal',
     },
   },
 }
@@ -445,7 +436,7 @@ M.neogen = {
           type = 'func',
         })
       end,
-      '[g]enerate [d]ocumentation for current function',
+      '[g]enerate [d]ocumentation for Current Function',
     },
   },
 }
