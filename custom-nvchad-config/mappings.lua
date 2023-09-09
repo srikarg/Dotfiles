@@ -19,6 +19,8 @@ M.disabled = {
     ['<leader>q'] = '',
     ['<leader>f'] = '',
     ['<leader>ma'] = '',
+    ['<tab>'] = '',
+    ['<S-tab>'] = '',
   },
 }
 
@@ -212,6 +214,20 @@ M.tabufline = {
         require('nvchad.tabufline').closeOtherBufs()
       end,
       'Close All Buffers Except Current One',
+    },
+
+    ['<leader>k'] = {
+      function()
+        require('nvchad.tabufline').tabuflineNext()
+      end,
+      'Go To Next Buffer',
+    },
+
+    ['<leader>j'] = {
+      function()
+        require('nvchad.tabufline').tabuflinePrev()
+      end,
+      'Go To Previous Buffer',
     },
   },
 }
