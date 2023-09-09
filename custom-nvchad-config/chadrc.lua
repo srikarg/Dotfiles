@@ -1,7 +1,7 @@
 ---@type ChadrcConfig
 local M = {}
 
-local core = 'custom.utils.core'
+local core = require('custom.utils.core')
 local highlights = require('custom.highlights')
 
 M.ui = {
