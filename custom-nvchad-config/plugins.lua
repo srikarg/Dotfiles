@@ -33,6 +33,14 @@ local plugins = {
   },
 
   {
+    'rmagatti/gx-extended.nvim',
+    keys = { 'gx' },
+    config = function()
+      require('custom.configs.plugins.gx-extended')
+    end,
+  },
+
+  {
     'mfussenegger/nvim-dap',
     config = function()
       require('custom.configs.plugins.dap.adapters.javascript')
