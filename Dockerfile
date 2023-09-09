@@ -1,4 +1,4 @@
-FROM debian:10
+FROM debian
 LABEL maintainer="srikarvgudipati@gmail.com"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -11,22 +11,27 @@ WORKDIR /root
 RUN \
   apt-get -qq -y update && \
   apt-get install -qq -y --no-install-recommends \
-  bash \
   ca-certificates \
+  cmake \
   curl \
   fd-find \
   gcc \
+  gettext \
   git \
   less \
   locales \
+  make \
+  ninja-build \
+  pipx \
   python3-dev \
-  python3-pip \
   python3-setuptools \
   ripgrep \
   rsync \
+  stow \
   sudo \
   tldr \
   tree \
+  unzip \
   vim \
   zsh
 
@@ -37,11 +42,16 @@ RUN \
   echo "LANG=en_US.UTF-8" > /etc/locale.conf && \
   locale-gen en_US.UTF-8
 
+# https://github.com/neovim/neovim/wiki/Building-Neovim#quick-start
+RUN git clone https://github.com/neovim/neovim /tmp/neovim
+
+RUN cd /tmp/neovim && git checkout stable && make CMAKE_BUILD_TYPE=Release && make install
+
 RUN ln -s $(which fdfind) /usr/bin/fd
 
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git /root/.fzf
 
-RUN pip3 install thefuck
+RUN pipx install thefuck
 
 RUN curl https://get.volta.sh | bash
 
@@ -49,7 +59,7 @@ RUN volta install node
 
 COPY . /root/.Dotfiles
 
-RUN /root/.Dotfiles/setup.sh -f
+RUN cd /root/.Dotfiles && ./setup.sh -f
 
 RUN /root/.fzf/install --all --no-bash
 
