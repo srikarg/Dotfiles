@@ -18,6 +18,7 @@ M.disabled = {
     ['<leader>fo'] = '',
     ['<leader>q'] = '',
     ['<leader>f'] = '',
+    ['<leader>ma'] = '',
   },
 }
 
@@ -42,6 +43,79 @@ M.general = {
 
     -- Undotree
     ['<leader>u'] = { '<cmd> UndotreeToggle<CR>', 'Toggle [u]ndotree Plugin' },
+  },
+}
+
+M.harpoon = {
+  n = {
+    ['<leader>ma'] = {
+      function()
+        require('harpoon.mark').add_file()
+      end,
+      '[a]dd Harpoon [m]ark',
+    },
+    ['<leader>mc'] = {
+      function()
+        require('harpoon.mark').clear_all()
+      end,
+      '[c]lear All Harpoon [m]arks',
+    },
+    ['<leader>md'] = {
+      function()
+        require('harpoon.mark').rm_file()
+      end,
+      '[d]elete Harpoon [m]ark',
+    },
+
+    ['<leader>ml'] = {
+      function()
+        require('harpoon.ui').toggle_quick_menu()
+      end,
+      '[l]ist Harpoon [m]arks',
+    },
+    ['<leader>mj'] = {
+      function()
+        require('harpoon.ui').nav_next()
+      end,
+      'Next Harpoon [m]ark',
+    },
+    ['<leader>mk'] = {
+      function()
+        require('harpoon.ui').nav_prev()
+      end,
+      'Previous Harpoon [m]ark',
+    },
+
+    ['<leader>1'] = {
+      function()
+        require('harpoon.ui').nav_file(1)
+      end,
+      '[1]st Harpoon Mark',
+    },
+    ['<leader>2'] = {
+      function()
+        require('harpoon.ui').nav_file(2)
+      end,
+      '[2]nd Harpoon Mark',
+    },
+    ['<leader>3'] = {
+      function()
+        require('harpoon.ui').nav_file(3)
+      end,
+      '[3]rd Harpoon Mark',
+    },
+    ['<leader>4'] = {
+      function()
+        require('harpoon.ui').nav_file(4)
+      end,
+      '[4]th Harpoon Mark',
+    },
+    ['<leader>5'] = {
+      function()
+        require('harpoon.ui').nav_file(5)
+      end,
+      '[5]th Harpoon Mark',
+    },
   },
 }
 

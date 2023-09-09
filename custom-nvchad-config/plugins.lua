@@ -28,6 +28,11 @@ local plugins = {
   },
 
   {
+    'ThePrimeagen/harpoon',
+    lazy = false,
+  },
+
+  {
     'mfussenegger/nvim-dap',
     config = function()
       require('custom.configs.plugins.dap.adapters.javascript')
@@ -69,6 +74,21 @@ local plugins = {
     cmd = { 'DocsViewToggle' },
     config = function()
       require('custom.configs.plugins.docs-view')
+    end,
+  },
+
+  {
+    'axelvc/template-string.nvim',
+    ft = {
+      'html',
+      'typescript',
+      'javascript',
+      'typescriptreact',
+      'javascriptreact',
+      'python',
+    },
+    config = function()
+      require('custom.configs.plugins.template-string')
     end,
   },
 
