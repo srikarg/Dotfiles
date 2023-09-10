@@ -15,8 +15,10 @@ local lspconfig = require('lspconfig')
 local servers = {
   'html',
   'cssls',
+  'tailwindcss',
   'tsserver',
   'astro',
+  'svelte',
   'docker_compose_language_service',
   'emmet_language_server',
   'bashls',

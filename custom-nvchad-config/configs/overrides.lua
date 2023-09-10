@@ -96,9 +96,11 @@ M.mason = {
 
     -- Web Development
     'css-lsp',
+    'tailwindcss-language-server',
     'html-lsp',
     'typescript-language-server',
     'astro-language-server',
+    'svelte-language-server',
     'js-debug-adapter',
     'deno',
     'prettier',
