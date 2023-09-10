@@ -2,18 +2,38 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
+    -- Miscellaneous
     'vim',
+    'vimdoc',
     'lua',
-    'html',
+    'regex',
+    'dockerfile',
+
+    -- Git
+    'gitignore',
+    'diff',
+    'gitcommit',
+    'git_rebase',
+    'git_config',
+
+    -- Web Development
     'astro',
+    'svelte',
+    'html',
     'css',
+    'scss',
     'javascript',
     'typescript',
     'tsx',
     'json',
+    'yaml',
     'jsdoc',
+
+    -- Markdown
     'markdown',
     'markdown_inline',
+
+    -- Shell
     'bash',
   },
 
