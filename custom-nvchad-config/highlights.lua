@@ -73,30 +73,7 @@ M.add = {
   cssDeprecated = { strikethrough = true },
   javaScriptDeprecated = { strikethrough = true },
 
-  -- Trouble
-  TroubleCount = { fg = 'pink' },
-  TroubleCode = { fg = 'white' },
-  TroubleWarning = { fg = 'orange' },
-  TroubleSignWarning = { fg = 'yellow' },
-  TroubleTextWarning = { fg = 'white' },
-  TroublePreview = { fg = 'red' },
-  TroubleSource = { fg = 'cyan' },
-  TroubleSignHint = { fg = 'green' },
-  TroubleTextHint = { fg = 'white' },
-  TroubleHint = { fg = 'orange' },
-  TroubleSignOther = { fg = 'green' },
-  TroubleSignInformation = { fg = 'white' },
-  TroubleTextInformation = { fg = 'blue' },
-  TroubleInformation = { fg = 'white' },
-  TroubleError = { fg = 'red' },
-  TroubleTextError = { fg = 'red' }, -- error info text
-  TroubleSignError = { fg = 'red' }, -- error sign color
-  TroubleText = { fg = 'white' },
-  TroubleFile = { fg = 'yellow' }, -- the source file that has error
-  TroubleFoldIcon = { fg = 'cyan' }, -- fold icon color
-  TroubleNormal = { fg = 'white' },
-  TroubleLocation = { fg = 'white' }, -- location of error
-  TroubleIndent = { link = 'Comment' }, -- indent color
+  HarpoonHl = { fg = 'cyan', bg = 'statusline_bg' },
 
   -- vim-illuminate
   IlluminatedWordText = {
