@@ -16,6 +16,7 @@ local servers = {
   'html',
   'cssls',
   'tsserver',
+  'astro',
   'docker_compose_language_service',
   'emmet_language_server',
   'bashls',

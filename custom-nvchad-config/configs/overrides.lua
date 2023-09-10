@@ -5,6 +5,7 @@ M.treesitter = {
     'vim',
     'lua',
     'html',
+    'astro',
     'css',
     'javascript',
     'typescript',
@@ -77,6 +78,7 @@ M.mason = {
     'css-lsp',
     'html-lsp',
     'typescript-language-server',
+    'astro-language-server',
     'js-debug-adapter',
     'deno',
     'prettier',
@@ -185,6 +187,7 @@ M.telescope = {
 -- Sourced from https://github.com/BrunoKrugel/dotfiles/blob/master/configs/cmp.lua#L34-L65
 local function limit_lsp_types(entry, ctx)
   local kind = entry:get_kind()
+  local completionItem = entry:get_completion_item()
   local line = ctx.cursor.line
   local col = ctx.cursor.col
   local char_before_cursor = string.sub(line, col - 1, col - 1)
@@ -212,7 +215,10 @@ local function limit_lsp_types(entry, ctx)
     end
   end
 
-  if kind == require('cmp').lsp.CompletionItemKind.Text then
+  if
+    kind == types.lsp.CompletionItemKind.Text
+    and completionItem.detail ~= 'Emmet Abbreviation'
+  then
     return false
   end
 
