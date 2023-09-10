@@ -1,5 +1,15 @@
 local M = {}
 
+M.devicons = {
+  override_by_filename = {
+    ['astro'] = {
+      icon = '',
+      color = '#FFFFFF',
+      name = 'Astro',
+    },
+  },
+}
+
 M.treesitter = {
   ensure_installed = {
     -- Miscellaneous

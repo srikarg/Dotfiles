@@ -240,6 +240,11 @@ local plugins = {
   },
 
   {
+    'nvim-tree/nvim-web-devicons',
+    opts = overrides.devicons,
+  },
+
+  {
     'nvim-treesitter/nvim-treesitter',
     opts = overrides.treesitter,
   },
