@@ -216,14 +216,14 @@ M.tabufline = {
       'Close All Buffers Except Current One',
     },
 
-    ['<leader>k'] = {
+    ['L'] = {
       function()
         require('nvchad.tabufline').tabuflineNext()
       end,
       'Go To Next Buffer',
     },
 
-    ['<leader>j'] = {
+    ['H'] = {
       function()
         require('nvchad.tabufline').tabuflinePrev()
       end,

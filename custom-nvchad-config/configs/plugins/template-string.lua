@@ -6,12 +6,14 @@ end
 
 template_string.setup({
   filetypes = {
+    'astro',
     'html',
-    'typescript',
     'javascript',
-    'typescriptreact',
     'javascriptreact',
     'python',
+    'svelte',
+    'typescript',
+    'typescriptreact',
   }, -- filetypes where the plugin is active
   jsx_brackets = true, -- must add brackets to jsx attributes
   remove_template_string = true, -- remove backticks when there are no template string

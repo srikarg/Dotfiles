@@ -5,6 +5,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
+tap "oven-sh/bun"
 # Software library to render fonts
 brew "freetype"
 # Toolkit for image loading and pixel buffer manipulation
@@ -59,6 +60,8 @@ brew "dasel"
 brew "dive"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
 # Isolated development environments using Docker
 brew "docker-compose"
 # Platform keystore credential helper for Docker
@@ -235,6 +238,8 @@ brew "zsh"
 brew "azure/kubelogin/kubelogin"
 # Terraform
 brew "hashicorp/tap/terraform"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
 cask "basictex"
 # Desktop password and login vault

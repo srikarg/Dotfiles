@@ -17,7 +17,28 @@ local sources = {
   null_ls_builtins.completion.spell,
 
   -- Web Development
-  null_ls_builtins.formatting.prettier,
+  null_ls_builtins.formatting.prettier.with({
+    filetypes = {
+      'astro',
+      'css',
+      'graphql',
+      'handlebars',
+      'html',
+      'javascript',
+      'javascriptreact',
+      'json',
+      'jsonc',
+      'less',
+      'markdown',
+      'markdown.mdx',
+      'scss',
+      'svelte',
+      'typescript',
+      'typescriptreact',
+      'vue',
+      'yaml',
+    },
+  }),
 
   -- Shell
   null_ls_builtins.formatting.shfmt.with({

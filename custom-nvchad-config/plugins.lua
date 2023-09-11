@@ -88,12 +88,14 @@ local plugins = {
   {
     'axelvc/template-string.nvim',
     ft = {
+      'astro',
       'html',
-      'typescript',
       'javascript',
-      'typescriptreact',
       'javascriptreact',
       'python',
+      'svelte',
+      'typescript',
+      'typescriptreact',
     },
     config = function()
       require('custom.configs.plugins.template-string')
