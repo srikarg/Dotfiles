@@ -18,6 +18,7 @@ M.treesitter = {
     'lua',
     'regex',
     'dockerfile',
+    'mermaid',
 
     -- Git
     'gitignore',
@@ -281,6 +282,30 @@ M.cmp = {
 M.blankline = {
   use_treesitter = true,
   use_treesitter_scope = true,
+}
+
+M.colorizer = {
+  filetypes = {
+    '*',
+    cmp_docs = { always_update = true },
+    cmp_menu = { always_update = true },
+  },
+  user_default_options = {
+    names = false,
+    RRGGBBAA = true,
+    rgb_fn = true,
+    tailwind = true,
+    RGB = true,
+    RRGGBB = true,
+    AARRGGBB = true,
+    hsl_fn = true,
+    css = true,
+    css_fn = true,
+    mode = 'background',
+    sass = { enable = true, parsers = { 'css' } },
+    virtualtext = '■',
+    always_update = true,
+  },
 }
 
 return M

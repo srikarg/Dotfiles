@@ -276,20 +276,46 @@ local plugins = {
   },
 
   {
+    'NvChad/nvim-colorizer.lua',
+    opts = overrides.colorizer,
+  },
+
+  {
     'hrsh7th/nvim-cmp',
     dependencies = {
       -- Cmp Sources Plugins
-      {
-        'saadparwaiz1/cmp_luasnip',
-        'hrsh7th/cmp-nvim-lua',
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-path',
-        'hrsh7th/cmp-calc',
-        'hrsh7th/cmp-nvim-lsp-signature-help',
-      },
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-nvim-lua',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-calc',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
+      'js-everts/cmp-tailwind-colors',
     },
-    opts = overrides.cmp,
+    config = function()
+      local nvChadDefaultConfig = require('plugins.configs.cmp')
+      local customConfig = overrides.cmp
+      local mergedConfig =
+        vim.tbl_deep_extend('force', nvChadDefaultConfig, customConfig)
+
+      dofile(vim.g.base46_cache .. 'cmp')
+
+      local defaultFormatFunction = nvChadDefaultConfig.formatting.format
+
+      mergedConfig.formatting.format = function(entry, item)
+        if item.kind == 'Color' then
+          item = require('cmp-tailwind-colors').format(entry, item)
+          if item.kind == 'Color' then
+            return defaultFormatFunction(entry, item)
+          end
+          return item
+        end
+        return defaultFormatFunction(entry, item)
+      end
+
+      require('cmp').setup(mergedConfig)
+    end,
   },
 }
 
