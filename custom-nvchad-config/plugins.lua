@@ -86,6 +86,23 @@ local plugins = {
   },
 
   {
+    'iamcco/markdown-preview.nvim',
+    ft = { 'markdown' },
+    build = 'cd app && npm install',
+    config = function()
+      require('core.utils').load_mappings('markdown_preview')
+    end,
+  },
+
+  {
+    'sindrets/diffview.nvim',
+    cmd = { 'DiffviewOpen', 'DiffviewFileHistory' },
+    config = function()
+      require('custom.configs.plugins.diff-view')
+    end,
+  },
+
+  {
     'axelvc/template-string.nvim',
     ft = {
       'astro',

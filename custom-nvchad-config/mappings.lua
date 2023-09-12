@@ -121,6 +121,17 @@ M.harpoon = {
   },
 }
 
+M.markdown_preview = {
+  plugin = true,
+
+  n = {
+    ['<leader>mpt'] = {
+      '<cmd> MarkdownPreviewToggle <CR>',
+      '[t]oggle [m]arkdown [p]review',
+    },
+  },
+}
+
 M.dap = {
   plugin = true,
 
@@ -304,6 +315,22 @@ M.gitlinker = {
       end,
       '[g]it [o]pen URL for Current Line(s)',
     },
+  },
+}
+
+M.diffview = {
+  n = {
+    ['<leader>gvd'] = { '<CMD> DiffviewOpen<CR>', '  Show Git Diff' },
+    ['<leader>gvf'] = {
+      '<CMD> DiffviewFileHistory %<CR>',
+      '  Show File History',
+    },
+    ['<leader>gvp'] = {
+      '<CMD> DiffviewOpen --cached<CR>',
+      '  Show Staged Diffs',
+    },
+    ['<leader>gvr'] = { '<CMD> DiffviewRefresh<CR>', '  Refresh Diff View' },
+    ['<leader>gvc'] = { '<CMD> DiffviewClose<CR>', '  Close Diff View' },
   },
 }
 
