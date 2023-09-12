@@ -28,21 +28,12 @@ M.override = {
   IndentBlanklineContextStart = { bg = 'one_bg2' },
 
   NavicText = { fg = 'white' },
-}
-
----@type HLTable
-M.add = {
-  -- NvimTree
-  NvimTreeGitStaged = { fg = 'orange' },
-
-  -- Git Signs
-  GitSignsCurrentLineBlame = { fg = 'light_grey', bold = true },
 
   -- Diff
-  DiffChange = { fg = 'yellow' },
-  DiffAdd = { fg = 'vibrant_green' },
-  DiffDelete = { fg = 'red' },
-  DiffText = { fg = 'white', bg = 'red', bold = true },
+  DiffChange = { fg = 'black', bg = 'yellow' },
+  DiffAdd = { fg = 'black', bg = 'vibrant_green' },
+  DiffDelete = { fg = 'black', bg = 'red' },
+  DiffText = { fg = 'black', bg = 'yellow', bold = true },
 
   DiffviewDim1 = { fg = 'grey' },
   DiffviewReference = { fg = 'cyan' },
@@ -63,6 +54,15 @@ M.add = {
   DiffviewFilePanelConflicts = { link = 'GitMerge' },
   DiffviewFolderSign = { link = 'NvimTreeFolderIcon' },
   DiffviewDiffDelete = { link = 'Comment' },
+}
+
+---@type HLTable
+M.add = {
+  -- NvimTree
+  NvimTreeGitStaged = { fg = 'orange' },
+
+  -- Git Signs
+  GitSignsCurrentLineBlame = { fg = 'light_grey', bold = true },
 
   GitSignsChange = { fg = 'green' },
   GitSignsAdd = { fg = 'vibrant_green' },

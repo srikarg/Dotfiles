@@ -5,6 +5,8 @@ if not dapPresent or not dapUiPresent then
   return
 end
 
+dofile(vim.g.base46_cache .. 'dap')
+
 dapui.setup({
   icons = { expanded = '▾', collapsed = '▸' },
   mappings = {
@@ -55,8 +57,6 @@ dapui.setup({
     max_type_length = nil,
   },
 })
-
-dofile(vim.g.base46_cache .. 'dap')
 
 vim.fn.sign_define(
   'DapBreakpoint',
