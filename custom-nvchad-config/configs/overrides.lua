@@ -19,6 +19,7 @@ M.treesitter = {
     'regex',
     'dockerfile',
     'mermaid',
+    'python',
 
     -- Git
     'gitignore',
@@ -74,6 +75,12 @@ M.treesitter = {
       keymaps = {
         ['ia'] = '@parameter.inner',
         ['aa'] = '@parameter.outer',
+
+        ['if'] = '@function.inner',
+        ['af'] = '@function.outer',
+
+        ['it'] = '@comment.inner',
+        ['at'] = '@comment.outer',
       },
       include_surrounding_whitespace = true,
     },
@@ -282,6 +289,9 @@ M.cmp = {
 M.blankline = {
   use_treesitter = true,
   use_treesitter_scope = true,
+
+  show_current_context = true,
+  show_current_context_start = true,
 }
 
 M.colorizer = {
