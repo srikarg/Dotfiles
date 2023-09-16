@@ -30,6 +30,10 @@ M.general = {
     [';'] = { ':', 'Enter Command Mode', opts = { nowait = true } },
     ['<C-d>'] = { '<C-d>zz', 'Page Down and Center', opts = { nowait = true } },
     ['<C-u>'] = { '<C-u>zz', 'Page Up and Center', opts = { nowait = true } },
+    ['<C-a>'] = { '<cmd>normal ggVG <CR>', 'Select Entire Buffer' },
+
+    -- Spell Check
+    ['<leader>st'] = { '<cmd>set spell! <CR>', '[t]oggle [s]pellcheck' },
 
     -- Tmux Navigator
     ['<C-h>'] = {
