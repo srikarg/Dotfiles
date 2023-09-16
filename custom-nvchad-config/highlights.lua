@@ -63,7 +63,6 @@ M.add = {
 
   -- Git Signs
   GitSignsCurrentLineBlame = { fg = 'light_grey', bold = true },
-
   GitSignsChange = { fg = 'green' },
   GitSignsAdd = { fg = 'vibrant_green' },
   GitSignsDelete = { fg = 'red' },
@@ -73,21 +72,25 @@ M.add = {
   cssDeprecated = { strikethrough = true },
   javaScriptDeprecated = { strikethrough = true },
 
+  -- Harpoon
   HarpoonHl = { fg = 'cyan', bg = 'statusline_bg' },
+
+  -- Treesitter Context
+  TreesitterContext = { bg = 'lightbg', bold = true },
 
   -- vim-illuminate
   IlluminatedWordText = {
-    bg = 'light_grey',
+    bg = 'lightbg',
     -- fg = 'white',
     underline = false,
   },
   IlluminatedWordRead = {
-    bg = 'light_grey',
+    bg = 'lightbg',
     -- fg = 'white',
     underline = false,
   },
   IlluminatedWordWrite = {
-    bg = 'light_grey',
+    bg = 'lightbg',
     -- fg = 'white',
     underline = false,
   },
