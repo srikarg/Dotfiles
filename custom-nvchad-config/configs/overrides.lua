@@ -184,6 +184,20 @@ M.telescope = {
       '--smart-case',
     },
     file_ignore_patterns = { '^node_modules/', '^.git/' },
+    mappings = {
+      i = {
+        ['<c-t>'] = function(...)
+          local trouble = require('trouble.providers.telescope')
+          trouble.open_with_trouble(...)
+        end,
+      },
+      n = {
+        ['<c-t>'] = function(...)
+          local trouble = require('trouble.providers.telescope')
+          trouble.open_with_trouble(...)
+        end,
+      },
+    },
   },
 
   extensions_list = { 'themes', 'terms', 'fzf', 'live_grep_args', 'dap' },
