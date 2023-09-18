@@ -127,6 +127,14 @@ local plugins = {
   },
 
   {
+    'echasnovski/mini.ai',
+    lazy = false,
+    config = function()
+      require('custom.configs.plugins.mini-ai')
+    end,
+  },
+
+  {
     'folke/zen-mode.nvim',
     dependencies = { 'folke/twilight.nvim' },
     cmd = 'ZenMode',

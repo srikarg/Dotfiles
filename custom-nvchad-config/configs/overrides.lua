@@ -72,16 +72,6 @@ M.treesitter = {
     select = {
       enable = true,
       lookahead = true,
-      keymaps = {
-        ['ia'] = '@parameter.inner',
-        ['aa'] = '@parameter.outer',
-
-        ['if'] = '@function.inner',
-        ['af'] = '@function.outer',
-
-        ['it'] = '@comment.inner',
-        ['at'] = '@comment.outer',
-      },
       include_surrounding_whitespace = true,
     },
     move = {
