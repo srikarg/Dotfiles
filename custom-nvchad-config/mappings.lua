@@ -52,6 +52,18 @@ M.general = {
   },
 }
 
+M.session = {
+  n = {
+    ['<leader>ss'] = {
+      function()
+        require('auto-session.session-lens').search_session()
+      end,
+      '󰆓 List session',
+    },
+    ['<leader>sd'] = { '<CMD>SessionDelete<CR>', '󱙃 Delete Session' },
+  },
+}
+
 M.flash = {
   n = {
     ['s'] = {

@@ -8,5 +8,8 @@ vim.opt.listchars:append('eol:↵')
 
 vim.opt.spelllang = 'en_us'
 
+vim.opt.sessionoptions =
+  'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+
 require('custom.utils.autocmd')
 require('custom.utils.usercmd')

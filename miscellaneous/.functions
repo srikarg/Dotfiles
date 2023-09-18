@@ -168,7 +168,7 @@ function v() {
 # given location
 function n() {
   if [ $# -eq 0 ]; then
-    nvim .
+    nvim
   else
     nvim "$@"
   fi

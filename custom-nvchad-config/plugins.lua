@@ -8,8 +8,11 @@ local plugins = {
   },
 
   {
-    'tpope/vim-obsession',
+    'rmagatti/auto-session',
     lazy = false,
+    config = function()
+      require('custom.configs.plugins.auto-session')
+    end,
   },
 
   {
