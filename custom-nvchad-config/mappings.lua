@@ -52,6 +52,86 @@ M.general = {
   },
 }
 
+M.flash = {
+  n = {
+    ['s'] = {
+      function()
+        require('flash').jump()
+      end,
+      'Jump with Flash',
+    },
+
+    ['S'] = {
+      function()
+        require('flash').treesitter()
+      end,
+      'Jump with Flash Treesitter',
+    },
+  },
+
+  o = {
+    ['s'] = {
+      function()
+        require('flash').jump()
+      end,
+      'Jump with Flash',
+    },
+
+    ['S'] = {
+      function()
+        require('flash').treesitter()
+      end,
+      'Jump with Flash Treesitter',
+    },
+
+    ['r'] = {
+      function()
+        require('flash').remote()
+      end,
+      'Remote Flash',
+    },
+
+    ['R'] = {
+      function()
+        require('flash').treesitter_search()
+      end,
+      'Treesitter Search',
+    },
+  },
+
+  x = {
+    ['s'] = {
+      function()
+        require('flash').jump()
+      end,
+      'Jump with Flash',
+    },
+
+    ['S'] = {
+      function()
+        require('flash').treesitter()
+      end,
+      'Jump with Flash Treesitter',
+    },
+
+    ['R'] = {
+      function()
+        require('flash').treesitter_search()
+      end,
+      'Treesitter Search',
+    },
+  },
+
+  c = {
+    ['<C-s>'] = {
+      function()
+        require('flash').toggle()
+      end,
+      'Toggle Flash Search',
+    },
+  },
+}
+
 M.harpoon = {
   n = {
     ['<leader>ma'] = {

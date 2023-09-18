@@ -19,11 +19,10 @@ local plugins = {
   },
 
   {
-    'ggandor/leap.nvim',
-    lazy = false,
-    dependencies = { 'tpope/vim-repeat' },
+    'folke/flash.nvim',
+    event = 'VeryLazy',
     config = function()
-      require('custom.configs.plugins.leap')
+      require('custom.configs.plugins.flash')
     end,
   },
 
