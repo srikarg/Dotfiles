@@ -256,6 +256,8 @@ cask "figma"
 cask "flux"
 # Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
+# Developer targeted fonts with a high number of glyphs
+cask "font-jetbrains-mono-nerd-font"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Display key code, unicode value and modifier keys state for any key combination
