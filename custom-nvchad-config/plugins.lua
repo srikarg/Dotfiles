@@ -9,7 +9,7 @@ local plugins = {
 
   {
     'rmagatti/auto-session',
-    lazy = false,
+    event = 'VimEnter',
     config = function()
       require('custom.configs.plugins.auto-session')
     end,
@@ -17,7 +17,7 @@ local plugins = {
 
   {
     'nacro90/numb.nvim',
-    lazy = false,
+    event = 'VimEnter',
     config = true,
   },
 
@@ -31,7 +31,7 @@ local plugins = {
 
   {
     'ThePrimeagen/harpoon',
-    lazy = false,
+    event = 'VimEnter',
   },
 
   {
@@ -123,7 +123,7 @@ local plugins = {
 
   {
     'mbbill/undotree',
-    lazy = false,
+    event = 'VimEnter',
     config = function()
       require('custom.configs.plugins.undotree')
     end,
@@ -131,7 +131,7 @@ local plugins = {
 
   {
     'echasnovski/mini.ai',
-    lazy = false,
+    event = 'VimEnter',
     config = function()
       require('custom.configs.plugins.mini-ai')
     end,
