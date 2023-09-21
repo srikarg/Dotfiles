@@ -38,6 +38,7 @@ local sources = {
       'vue',
       'yaml',
     },
+    extra_args = { '--print-width', '80', '--prose-wrap', 'always' },
   }),
 
   -- Shell
