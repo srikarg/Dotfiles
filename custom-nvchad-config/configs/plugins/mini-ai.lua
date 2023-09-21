@@ -22,11 +22,6 @@ mini_ai.setup({
       i = '@class.inner',
     }),
 
-    t = mini_ai.gen_spec.treesitter({
-      a = '@comment.outer',
-      i = '@comment.inner',
-    }),
-
     e = function()
       local from = { line = 1, col = 1 }
       local to = {
