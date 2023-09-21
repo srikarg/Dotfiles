@@ -27,3 +27,25 @@ brew bundle dump --describe --force --brews --casks --taps --mas --file ~/.Dotfi
 ```bash
 brew bundle cleanup --force --file ~/.Dotfiles/homebrew/.Brewfile
 ```
+
+### Upgrading Homebrew Casks
+
+Sourced from <https://stackoverflow.com/a/31994862/1042093>.
+
+#### Normal Upgrade
+
+```bash
+brew upgrade --cask
+```
+
+#### List Outdated
+
+```bash
+brew outdated --cask --greedy --verbose
+```
+
+#### Force Upgrade
+
+```bash
+brew upgrade --cask --greedy
+```
