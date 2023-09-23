@@ -1,5 +1,6 @@
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = '80'
+vim.opt.textwidth = 80
 
 -- Display space and end of line characters
 vim.opt.list = true
