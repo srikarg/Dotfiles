@@ -28,27 +28,57 @@ M.general = {
   n = {
     --- Miscellaneous
     [';'] = { ':', 'Enter Command Mode', opts = { nowait = true } },
+
     ['<C-d>'] = { '<C-d>zz', 'Page Down and Center', opts = { nowait = true } },
     ['<C-u>'] = { '<C-u>zz', 'Page Up and Center', opts = { nowait = true } },
-    ['<C-a>'] = { '<cmd>normal ggVG <CR>', 'Select Entire Buffer' },
 
-    -- Spell Check
-    ['<leader>st'] = { '<cmd>set spell! <CR>', '[t]oggle [s]pellcheck' },
+    ['<C-a>'] = { '<CMD>normal ggVG <CR>', 'Select Entire Buffer' },
+
+    ['<A-k>'] = { '<CMD>m .-2<CR>==', '󰜸 Move line up' },
+    ['<A-j>'] = { '<CMD>m .+1<CR>==', '󰜯 Move line down' },
+
+    -- Undotree
+    ['<leader>u'] = { '<CMD> UndotreeToggle<CR>', 'Toggle [u]ndotree Plugin' },
 
     -- Tmux Navigator
     ['<C-h>'] = {
-      '<cmd> TmuxNavigateLeft<CR>',
+      '<CMD> TmuxNavigateLeft<CR>',
       'Navigate to the Window on the Left',
     },
     ['<C-l>'] = {
-      '<cmd> TmuxNavigateRight<CR>',
+      '<CMD> TmuxNavigateRight<CR>',
       'Navigate to the Window on the Right',
     },
-    ['<C-j>'] = { '<cmd> TmuxNavigateDown<CR>', 'Navigate to the Window Below' },
-    ['<C-k>'] = { '<cmd> TmuxNavigateUp<CR>', 'Navigate to the Window Above' },
+    ['<C-j>'] = { '<CMD> TmuxNavigateDown<CR>', 'Navigate to the Window Below' },
+    ['<C-k>'] = { '<CMD> TmuxNavigateUp<CR>', 'Navigate to the Window Above' },
 
-    -- Undotree
-    ['<leader>u'] = { '<cmd> UndotreeToggle<CR>', 'Toggle [u]ndotree Plugin' },
+    -- Spell Check
+    ['<leader>st'] = { '<CMD>set spell! <CR>', '[t]oggle [s]pellcheck' },
+  },
+
+  v = {
+    ['<A-k>'] = {
+      ":m'<-2<CR>gv=gv",
+      '󰜸 Move selection up',
+      opts = { silent = true },
+    },
+    ['<A-j>'] = {
+      ":m'>+1<CR>gv=gv",
+      '󰜯 Move selection down',
+      opts = { silent = true },
+    },
+
+    -- Indent backward/forward:
+    ['<'] = { '<gv', ' Ident backward', opts = { silent = false } },
+    ['>'] = { '>gv', ' Ident forward', opts = { silent = false } },
+  },
+
+  c = {
+    -- Autocomplete for brackets in command mode:
+    ['('] = { '()<left>', 'Auto complete (', opts = { silent = false } },
+    ['<'] = { '<><left>', 'Auto complete <', opts = { silent = false } },
+    ['"'] = { '""<left>', [[Auto complete "]], opts = { silent = false } },
+    ["'"] = { "''<left>", "Auto complete '", opts = { silent = false } },
   },
 }
 
@@ -222,7 +252,7 @@ M.markdown_preview = {
 
   n = {
     ['<leader>mpt'] = {
-      '<cmd> MarkdownPreviewToggle <CR>',
+      '<CMD> MarkdownPreviewToggle <CR>',
       '[t]oggle [m]arkdown [p]review',
     },
   },
@@ -233,32 +263,32 @@ M.dap = {
 
   n = {
     ['<leader>db'] = {
-      '<cmd> DapToggleBreakpoint <CR>',
+      '<CMD> DapToggleBreakpoint <CR>',
       'Toggle [d]ebugger [b]reakpoint',
     },
 
     ['<leader>dr'] = {
-      '<cmd> DapContinue <CR>',
+      '<CMD> DapContinue <CR>',
       '[d]ebugger [r]un/continue',
     },
 
     ['<leader>do'] = {
-      '<cmd> DapStepOver <CR>',
+      '<CMD> DapStepOver <CR>',
       '[d]ebugger Step [o]ver',
     },
 
     ['<leader>dO'] = {
-      '<cmd> DapStepOut <CR>',
+      '<CMD> DapStepOut <CR>',
       '[d]ebugger Step [O]ut',
     },
 
     ['<leader>di'] = {
-      '<cmd> DapStepInto <CR>',
+      '<CMD> DapStepInto <CR>',
       '[d]ebugger Step [i]nto',
     },
 
     ['<leader>dt'] = {
-      '<cmd> DapTerminate <CR>',
+      '<CMD> DapTerminate <CR>',
       '[d]ebugger [t]erminate',
     },
 
@@ -280,7 +310,7 @@ M.dap = {
 
 M.docsview = {
   n = {
-    ['<leader>dv'] = { '<cmd> DocsViewToggle<CR>', '[d]ocs [v]iew Toggle' },
+    ['<leader>dv'] = { '<CMD> DocsViewToggle<CR>', '[d]ocs [v]iew Toggle' },
   },
 }
 
@@ -344,7 +374,7 @@ local diagnostics_active = true
 M.diagnostics = {
   n = {
     ['<leader>qq'] = {
-      '<cmd> TroubleToggle <CR>',
+      '<CMD> TroubleToggle <CR>',
       'Toggle Diagnostics List (via Trouble plugin)',
     },
     ['<leader>qf'] = {
@@ -370,7 +400,7 @@ M.diagnostics = {
 M.navbuddy = {
   n = {
     ['<leader>N'] = {
-      '<cmd> :lua require("nvim-navbuddy").open() <CR>',
+      '<CMD> :lua require("nvim-navbuddy").open() <CR>',
       'Open [N]avbuddy',
     },
   },
@@ -551,7 +581,7 @@ M.telescope = {
   n = {
     -- Miscellaneous
     ['<leader>fc'] = {
-      '<cmd> Telescope current_buffer_fuzzy_find <CR>',
+      '<CMD> Telescope current_buffer_fuzzy_find <CR>',
       '[f]ind In [c]urrent Buffer',
     },
 
@@ -583,30 +613,30 @@ M.telescope = {
     },
 
     -- Telescope Git Commands
-    ['<leader>gc'] = { '<cmd> Telescope git_commits <CR>', '[g]it [c]ommits' },
-    ['<leader>gs'] = { '<cmd> Telescope git_status <CR>', '[g]it [s]tatus' },
-    ['<leader>gb'] = { '<cmd> Telescope git_branches <CR>', '[g]it [b]ranches' },
-    ['<leader>fg'] = { '<cmd> Telescope git_files <CR>', '[f]ind [g]it files' },
+    ['<leader>gc'] = { '<CMD> Telescope git_commits <CR>', '[g]it [c]ommits' },
+    ['<leader>gs'] = { '<CMD> Telescope git_status <CR>', '[g]it [s]tatus' },
+    ['<leader>gb'] = { '<CMD> Telescope git_branches <CR>', '[g]it [b]ranches' },
+    ['<leader>fg'] = { '<CMD> Telescope git_files <CR>', '[f]ind [g]it files' },
 
     -- Telescope LSP Commands
     ['<leader>ld'] = {
-      '<cmd> Telescope lsp_document_symbols <CR>',
+      '<CMD> Telescope lsp_document_symbols <CR>',
       'Search [l]sp [d]ocument Symbols',
     },
     ['<leader>lw'] = {
-      '<cmd> Telescope lsp_dynamic_workspace_symbols <CR>',
+      '<CMD> Telescope lsp_dynamic_workspace_symbols <CR>',
       'Search [l]sp [w]orkspace Symbols',
     },
     ['gd'] = {
-      '<cmd> Telescope lsp_definitions <CR>',
+      '<CMD> Telescope lsp_definitions <CR>',
       '[g]o to [d]efinition',
     },
     ['gi'] = {
-      '<cmd> Telescope lsp_implementations <CR>',
+      '<CMD> Telescope lsp_implementations <CR>',
       '[g]o to [i]mplementation',
     },
     ['gr'] = {
-      '<cmd> Telescope lsp_references <CR>',
+      '<CMD> Telescope lsp_references <CR>',
       '[g]o to [r]eferences',
     },
   },
