@@ -74,6 +74,7 @@ M.treesitter = {
       lookahead = true,
       include_surrounding_whitespace = true,
     },
+
     move = {
       enable = true,
       goto_next_start = {
@@ -81,6 +82,16 @@ M.treesitter = {
       },
       goto_previous_start = {
         ['[m'] = '@function.outer',
+      },
+    },
+
+    swap = {
+      enable = true,
+      swap_next = {
+        ['<leader>sa'] = '@parameter.inner',
+      },
+      swap_previous = {
+        ['<leader>sA'] = '@parameter.inner',
       },
     },
   },
