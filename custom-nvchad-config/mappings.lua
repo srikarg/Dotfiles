@@ -93,6 +93,15 @@ M.general = {
   },
 }
 
+M.pandoc = {
+  n = {
+    ['<leader>cpj'] = {
+      '<CMD> %!pandoc -t jira % <CR>',
+      '[c]onvert with [p]andoc to [j]ira format',
+    },
+  },
+}
+
 M.session = {
   n = {
     ['<leader>ss'] = {
@@ -101,7 +110,7 @@ M.session = {
       end,
       '󰆓 List session',
     },
-    ['<leader>sd'] = { '<CMD>SessionDelete<CR>', '󱙃 Delete Session' },
+    ['<leader>sd'] = { '<CMD> SessionDelete <CR>', '󱙃 Delete Session' },
   },
 }
 
