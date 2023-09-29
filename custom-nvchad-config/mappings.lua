@@ -37,6 +37,17 @@ M.general = {
     ['<A-k>'] = { '<CMD>m .-2<CR>==', '󰜸 Move line up' },
     ['<A-j>'] = { '<CMD>m .+1<CR>==', '󰜯 Move line down' },
 
+    ['<leader>h'] = {
+      '<CMD>vs <CR>',
+      '󰤼 Vertical split',
+      opts = { nowait = true },
+    },
+    ['<leader>v'] = {
+      '<CMD>sp <CR>',
+      '󰤻 Horizontal split',
+      opts = { nowait = true },
+    },
+
     -- Undotree
     ['<leader>u'] = { '<CMD> UndotreeToggle<CR>', 'Toggle [u]ndotree Plugin' },
 
@@ -648,24 +659,6 @@ M.telescope = {
         require('telescope-live-grep-args.shortcuts').grep_visual_selection()
       end,
       '[f]ind g[r]ep',
-    },
-  },
-}
-
-M.nvterm = {
-  n = {
-    ['<leader>H'] = {
-      function()
-        require('nvterm.terminal').new('horizontal')
-      end,
-      'New [H]orizontal Terminal',
-    },
-
-    ['<leader>V'] = {
-      function()
-        require('nvterm.terminal').new('vertical')
-      end,
-      'New [V]ertical Terminal',
     },
   },
 }
