@@ -286,6 +286,8 @@ cask "stats"
 cask "syncthing"
 # Open-source code editor
 cask "visual-studio-code"
+# HTML to PDF renderer
+cask "wkhtmltopdf"
 mas "Amphetamine", id: 937984704
 mas "Brother iPrint&Scan", id: 1193539993
 mas "Trello", id: 1278508951
