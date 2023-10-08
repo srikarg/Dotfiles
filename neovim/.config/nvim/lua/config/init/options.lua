@@ -64,7 +64,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
+vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -99,4 +99,19 @@ vim.opt.sessionoptions = {
   'winpos',
   'terminal',
   'localoptions',
+}
+
+-- Folding
+vim.opt.foldcolumn = '1'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldnestmax = 10
+vim.opt.foldenable = true
+vim.opt.fillchars = {
+  foldopen = '',
+  foldclose = '',
+  fold = ' ',
+  foldsep = ' ',
+  diff = '╱',
+  eob = ' ',
 }
