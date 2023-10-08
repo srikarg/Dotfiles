@@ -10,14 +10,22 @@ vim.opt.splitright = true
 -- Horizontally split windows below by default
 vim.opt.splitbelow = true
 
+-- Confirm before exiting an edited buffer
 vim.opt.confirm = true
 
+-- Format options
 vim.opt.formatoptions = 'jcroqlnt'
+
+-- Grep options
 vim.opt.grepformat = '%f:%l:%c:%m'
 vim.opt.grepprg = 'rg --vimgrep'
 
+-- Hide mode since we have statusline
+vim.opt.showmode = false
+
 -- Indenting
 vim.opt.expandtab = true
+vim.opt.shiftround = true
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
 vim.opt.tabstop = 2
@@ -34,15 +42,13 @@ vim.opt.cursorline = true
 
 -- Numbers
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.numberwidth = 2
 vim.opt.ruler = false
 
 -- Go to previous/next line with h, l, left arrow, and right arrow
 -- when cursor reaches end/beginning of line
 vim.opt.whichwrap:append('<>[]hl')
-
--- Relative line numbers
-vim.opt.relativenumber = true
 
 -- Enable mouse mode
 vim.opt.mouse = 'a'
@@ -53,7 +59,7 @@ vim.opt.mouse = 'a'
 vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
-vim.o.breakindent = true
+vim.opt.breakindent = true
 
 -- Save undo history
 vim.opt.undofile = true
@@ -67,14 +73,14 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.opt.completeopt = 'menu,menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+vim.opt.termguicolors = true
 
 -- Enable color column
 vim.opt.colorcolumn = '80'
