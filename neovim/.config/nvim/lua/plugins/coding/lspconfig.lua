@@ -15,6 +15,16 @@ local default_on_attach = function(client, bufnr)
     nmap('<leader>N', require('nvim-navbuddy').open, 'Open [N]avbuddy')
   end
 
+  if client.server_capabilities.inlayHintProvider then
+    local inlayHintsEnabled = false
+    local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
+
+    nmap('<leader>ti', function()
+      inlayHintsEnabled = not inlayHintsEnabled
+      inlay_hint(bufnr, inlayHintsEnabled)
+    end, '[T]oggle [I]nlay Hints')
+  end
+
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
@@ -127,7 +137,20 @@ return {
 
           tailwindcss = {},
 
-          tsserver = {},
+          tsserver = {
+            init_options = {
+              preferences = {
+                includeInlayParameterNameHints = 'all',
+                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayEnumMemberValueHints = true,
+                importModuleSpecifierPreference = 'non-relative',
+              },
+            },
+          },
 
           astro = {},
 
@@ -162,6 +185,11 @@ return {
               Lua = {
                 workspace = { checkThirdParty = false },
                 telemetry = { enable = false },
+                hint = {
+                  enable = true,
+                  arrayIndex = 'Enable',
+                  setType = true,
+                },
               },
             },
           },
@@ -239,6 +267,7 @@ return {
                 default_on_attach(client, bufnr)
               end,
               settings = (servers[server_name] or {}).settings,
+              init_options = (servers[server_name] or {}).init_options,
               filetypes = (servers[server_name] or {}).filetypes,
             })
           end,
