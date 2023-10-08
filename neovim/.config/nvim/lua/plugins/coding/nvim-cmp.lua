@@ -65,6 +65,12 @@ return {
     -- Adds completion of LSP signature
     'hrsh7th/cmp-nvim-lsp-signature-help',
 
+    -- Adds completion of document symbols
+    'hrsh7th/cmp-nvim-lsp-document-symbol',
+
+    -- Command line history completion
+    'dmitmel/cmp-cmdline-history',
+
     -- Adds completion of Tailwind CSS colors
     'roobert/tailwindcss-colorizer-cmp.nvim',
 
@@ -151,10 +157,11 @@ return {
 
     -- `/` cmdline setup.
     cmp.setup.cmdline('/', {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = {
+      sources = cmp.config.sources({
+        { name = 'nvim_lsp_document_symbol' },
+      }, {
         { name = 'buffer' },
-      },
+      }),
     })
 
     -- `:` cmdline setup.
@@ -169,6 +176,8 @@ return {
             ignore_cmds = { 'Man', '!' },
           },
         },
+      }, {
+        { name = 'cmdline_history' },
       }),
     })
   end,
