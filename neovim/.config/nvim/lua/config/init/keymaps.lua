@@ -11,6 +11,14 @@ vim.keymap.set('n', '<C-c>', '<CMD> %y+ <CR>', { desc = 'Copy Entire Buffer' })
 
 vim.keymap.set('n', '<leader>Q', '<cmd>qa<cr>', { desc = 'Quit all' })
 
+-- Spell Check
+vim.keymap.set(
+  'n',
+  '<leader>ts',
+  '<CMD>set spell! <CR>',
+  { desc = '[T]oggle [S]pell Check' }
+)
+
 -- Conversion via Pandoc
 vim.keymap.set(
   'n',

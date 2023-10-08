@@ -93,7 +93,9 @@ vim.opt.list = true
 vim.opt.listchars:append('space:⋅')
 vim.opt.listchars:append('eol:↵')
 
+-- Spell Check Settings
 vim.opt.spelllang = 'en_us'
+vim.opt.spelloptions = 'camel'
 
 vim.opt.sessionoptions = {
   'buffers',
