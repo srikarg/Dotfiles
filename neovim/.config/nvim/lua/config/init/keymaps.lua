@@ -20,10 +20,42 @@ vim.keymap.set(
 )
 
 -- Conversion via Pandoc
+vim.keymap.set('n', '<leader>cp', function()
+  -- https://pandoc.org/MANUAL.html#general-options
+  local from_format = vim.fn.input('From format (e.g. markdown): ')
+
+  -- Check if the user pressed <Esc> to cancel input
+  if from_format == '' or from_format == '\27' then
+    return
+  end
+
+  local to_format = vim.fn.input('To format (e.g. jira): ')
+
+  -- Check if the user pressed <Esc> to cancel input
+  if to_format == '' or to_format == '\27' then
+    return
+  end
+
+  local command = ''
+
+  if from_format ~= '' and to_format ~= '' then
+    command = 'pandoc -f ' .. from_format .. ' -t ' .. to_format .. ' -'
+  elseif to_format ~= '' then
+    command = 'pandoc -t ' .. to_format .. ' -'
+  else
+    vim.api.nvim_err_writeln(
+      'Invalid input. You must specify the to format at the very least.'
+    )
+  end
+  if command ~= '' then
+    vim.cmd('%!' .. command)
+  end
+end, { desc = '[C]onvert with [P]andoc' })
+
 vim.keymap.set(
   'n',
   '<leader>cpj',
-  '<CMD> %!pandoc -t jira % <CR>',
+  '<CMD> %!pandoc -t jira - <CR>',
   { desc = '[C]onvert with [P]andoc to [J]ira Format' }
 )
 
