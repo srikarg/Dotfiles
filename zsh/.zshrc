@@ -61,17 +61,19 @@ source "$HOME/.zsh/ohmyzsh/plugins/minikube/minikube.plugin.zsh"
 
 # History Setup
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=100000
+HISTSIZE=1000000000
 SAVEHIST=$HISTSIZE
 # Source: https://apple.stackexchange.com/questions/427561/macos-zsh-sessions-zsh-history-and-setopt-append-history
 SHELL_SESSIONS_DISABLE=1
 
-setopt hist_ignore_all_dups # Remove older duplicate entries from history
-setopt hist_reduce_blanks   # Remove superfluous blanks from history items
-setopt share_history        # Share history between different instances of the shell
-setopt auto_list            # Automatically list choices on ambiguous completion
-setopt auto_menu            # Automatically use menu completion
-setopt always_to_end        # Move cursor to end if word had one match
+setopt HIST_IGNORE_ALL_DUPS # Remove older duplicate entries from history
+setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks from history items
+setopt SHARE_HISTORY        # Share history between different instances of the shell
+setopt AUTO_LIST            # Automatically list choices on ambiguous completion
+setopt AUTO_MENU            # Automatically use menu completion
+setopt ALWAYS_TO_END        # Move cursor to end if word had one match
+setopt APPEND_HISTORY       # Append history to the history file instead of overwriting
+setopt EXTENDED_HISTORY     # Record command execution timestamp and completion time in HISTFILE
 
 autoload bashcompinit
 bashcompinit
