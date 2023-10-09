@@ -158,9 +158,13 @@ return {
     -- `/` cmdline setup.
     cmp.setup.cmdline('/', {
       sources = cmp.config.sources({
-        { name = 'nvim_lsp_document_symbol' },
+        {
+          name = 'nvim_lsp_document_symbol',
+        },
       }, {
-        { name = 'buffer' },
+        {
+          name = 'buffer',
+        },
       }),
     })
 
@@ -168,16 +172,17 @@ return {
     cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
-        { name = 'path' },
+        {
+          name = 'path',
+        },
       }, {
         {
           name = 'cmdline',
-          option = {
-            ignore_cmds = { 'Man', '!' },
-          },
         },
       }, {
-        { name = 'cmdline_history' },
+        {
+          name = 'cmdline_history',
+        },
       }),
     })
   end,
