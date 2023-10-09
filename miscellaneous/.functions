@@ -227,7 +227,7 @@ function te() {
 
 function brewup() {
   brew update
-  brew upgrade
+  brew upgrade --fetch-HEAD
   brew cleanup
   brew doctor
   brew bundle dump --describe --force --brews --casks --taps --mas --file "$HOME/.Dotfiles/homebrew/.Brewfile"
