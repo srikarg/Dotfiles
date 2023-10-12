@@ -3,7 +3,7 @@ return {
 
   ft = { 'markdown' },
 
-  build = 'cd app && npm install',
+  build = 'cd app && npm install && git reset --hard',
 
   keys = {
     {
