@@ -400,5 +400,23 @@ return {
       name = 'DiagnosticSign' .. name
       vim.fn.sign_define(name, { text = icon, texthl = name, numhl = '' })
     end
+
+    vim.diagnostic.config({
+      underline = true,
+      update_in_insert = false,
+      virtual_text = {
+        spacing = 4,
+        source = 'if_many',
+        prefix = function(diagnostic)
+          local icons = require('config').icons.diagnostics
+          for d, icon in pairs(icons) do
+            if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
+              return icon
+            end
+          end
+        end,
+      },
+      severity_sort = true,
+    })
   end,
 }
