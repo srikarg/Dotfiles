@@ -197,7 +197,7 @@ return {
         buffer_previewer_maker = require('telescope.previewers').buffer_previewer_maker,
         mappings = {
           i = {
-            ['<c-t>'] = function(...)
+            ['<C-t>'] = function(...)
               local trouble = require('trouble.providers.telescope')
               trouble.open_with_trouble(...)
             end,
@@ -226,11 +226,6 @@ return {
               ['<C-i>'] = function(...)
                 require('telescope-live-grep-args.actions').quote_prompt({
                   postfix = ' --iglob ',
-                })(...)
-              end,
-              ['<C-t>'] = function(...)
-                require('telescope-live-grep-args.actions').quote_prompt({
-                  postfix = ' -t',
                 })(...)
               end,
               ['<C-a>'] = function(...)
