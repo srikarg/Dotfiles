@@ -195,6 +195,12 @@ return {
           },
 
           yamlls = {
+            filetypes = {
+              'yaml',
+              'yaml.docker-compose',
+              'helm',
+            },
+
             settings = {
               yaml = {
                 format = {
