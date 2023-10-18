@@ -5,7 +5,7 @@ return {
 
   dependencies = {
     'nvim-tree/nvim-web-devicons',
-    'echasnovski/mini.bufremove',
+    'ojroques/nvim-bufdel',
   },
 
   keys = {
@@ -37,10 +37,7 @@ return {
     options = {
       modified_icon = '',
       close_command = function(n)
-        require('mini.bufremove').delete(n, false)
-      end,
-      right_mouse_command = function(n)
-        require('mini.bufremove').delete(n, false)
+        require('bufdel').delete_buffer_expr(tostring(n), false)
       end,
       diagnostics = 'nvim_lsp',
       always_show_bufferline = true,

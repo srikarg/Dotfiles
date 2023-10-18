@@ -116,20 +116,6 @@ vim.keymap.set(
   { desc = 'Edit New Buffer' }
 )
 
-vim.keymap.set(
-  'n',
-  '<leader>x',
-  '<CMD> bdelete <CR>',
-  { desc = 'Close Current Buffer', silent = true }
-)
-
-vim.keymap.set(
-  'n',
-  '<leader>X',
-  '<CMD> %bdelete <CR>',
-  { desc = 'Close All Buffers', silent = true }
-)
-
 -- Move Between Visual Lines with jk
 vim.keymap.set(
   'n',
