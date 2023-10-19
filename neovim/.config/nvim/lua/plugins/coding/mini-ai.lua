@@ -20,8 +20,8 @@ return {
         }),
 
         c = ai.gen_spec.treesitter({
-          a = '@class.outer',
-          i = '@class.inner',
+          a = { '@class.outer', '@comment.outer' },
+          i = { '@class.inner', '@comment.inner' },
         }),
 
         ['='] = ai.gen_spec.treesitter({
@@ -62,10 +62,10 @@ return {
       _ = 'Underscore',
       a = 'Argument',
       b = 'Balanced ), ], }',
-      c = 'Class',
+      c = 'Class, Comment',
       f = 'Function',
-      o = 'Block, conditional, loop',
-      e = 'Entire buffer',
+      o = 'Block, Conditional, Loop',
+      e = 'Entire Buffer',
       q = 'Quote `, ", \'',
       t = 'Tag',
     }
