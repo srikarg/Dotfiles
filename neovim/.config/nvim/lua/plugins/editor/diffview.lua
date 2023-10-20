@@ -35,13 +35,50 @@ return {
     },
   },
 
-  opts = {
-    enhanced_diff_hl = true,
-    view = {
-      merge_tool = {
-        layout = 'diff3_mixed',
-        disable_diagnostics = true,
+  opts = function()
+    local actions = require('diffview.actions')
+
+    return {
+      enhanced_diff_hl = true,
+
+      view = {
+        merge_tool = {
+          layout = 'diff3_mixed',
+          disable_diagnostics = true,
+        },
       },
-    },
-  },
+
+      keymaps = {
+        file_panel = {
+          {
+            'n',
+            '[c',
+            actions.view_windo(function(layout_name, sym)
+              if sym == 'b' then
+                vim.cmd('norm! [c')
+              end
+            end),
+          },
+          {
+            'n',
+            ']c',
+            actions.view_windo(function(layout_name, sym)
+              if sym == 'b' then
+                vim.cmd('norm! ]c')
+              end
+            end),
+          },
+          {
+            'n',
+            'x',
+            actions.view_windo(function(layout_name, sym)
+              if sym == 'b' then
+                vim.cmd('diffget')
+              end
+            end),
+          },
+        },
+      },
+    }
+  end,
 }
