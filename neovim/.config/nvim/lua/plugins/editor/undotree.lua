@@ -6,7 +6,7 @@ return {
   keys = {
     {
       '<leader>u',
-      '<CMD> UndotreeToggle<CR>',
+      '<CMD> UndotreeToggle <CR>',
       desc = 'Toggle [u]ndotree Plugin',
     },
   },
