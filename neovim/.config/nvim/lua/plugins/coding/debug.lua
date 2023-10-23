@@ -5,7 +5,11 @@ return {
 
   dependencies = {
     'rcarriga/nvim-dap-ui',
-    'theHamsta/nvim-dap-virtual-text',
+    {
+      'theHamsta/nvim-dap-virtual-text',
+
+      config = true,
+    },
 
     -- Installs the debug adapters for you
     'williamboman/mason.nvim',
@@ -15,6 +19,7 @@ return {
   config = function()
     local dap = require('dap')
     local dapui = require('dapui')
+    local icons = require('config').icons
 
     require('mason-nvim-dap').setup({
       -- Makes a best effort to setup the various debuggers with
@@ -65,32 +70,35 @@ return {
       { desc = 'Debug: Toggle Breakpoint' }
     )
 
-    -- Dap UI setup
-    -- For more information, see |:help nvim-dap-ui|
-    dapui.setup({
-      icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
-      controls = {
-        icons = {
-          pause = '⏸',
-          play = '▶',
-          step_into = '⏎',
-          step_over = '⏭',
-          step_out = '⏮',
-          step_back = 'b',
-          run_last = '▶▶',
-          terminate = '⏹',
-          disconnect = '⏏',
-        },
-      },
-    })
-
-    -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
     vim.keymap.set(
       'n',
       '<leader>dt',
-      dapui.toggle,
-      { desc = 'Debug: See last session result.' }
+      dap.terminate,
+      { desc = 'Debug: Terminate Session' }
     )
+
+    vim.keymap.set(
+      'n',
+      '<leader>dh',
+      require('dap.ui.widgets').hover,
+      { desc = 'Debug: Hover Current Variable' }
+    )
+
+    vim.keymap.set(
+      'n',
+      '<leader>dp',
+      require('dap.ui.widgets').preview,
+      { desc = 'Debug: Preview Current Variable' }
+    )
+
+    -- Dap UI setup
+    -- For more information, see |:help nvim-dap-ui|
+    dapui.setup({
+      icons = icons.dap.ui.icons,
+      controls = {
+        icons = icons.dap.ui.controls,
+      },
+    })
 
     local create_cmd = vim.api.nvim_create_user_command
 
