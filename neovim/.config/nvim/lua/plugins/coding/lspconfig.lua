@@ -89,8 +89,6 @@ return {
 
           -- Web Development
           'prettier',
-          'prettierd',
-          'eslint_d',
 
           --Docker
           'hadolint',

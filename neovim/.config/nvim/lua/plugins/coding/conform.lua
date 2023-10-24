@@ -20,32 +20,31 @@ return {
   config = function()
     require('conform').setup({
       formatters_by_ft = {
+        -- Use the "*" filetype to run formatters on all filetypes.
+        ['*'] = { 'trim_whitespace', 'trim_newlines' },
+
         -- Use a sub-list to run only the first available formatter
-        ['javascript'] = { { 'prettierd', 'prettier' } },
-        ['javascriptreact'] = { { 'prettierd', 'prettier' } },
-        ['typescript'] = { { 'prettierd', 'prettier' } },
-        ['typescriptreact'] = { { 'prettierd', 'prettier' } },
-        ['vue'] = { { 'prettierd', 'prettier' } },
-        ['css'] = { { 'prettierd', 'prettier' } },
-        ['scss'] = { { 'prettierd', 'prettier' } },
-        ['less'] = { { 'prettierd', 'prettier' } },
-        ['html'] = { { 'prettierd', 'prettier' } },
-        ['json'] = { { 'prettierd', 'prettier' } },
-        ['jsonc'] = { { 'prettierd', 'prettier' } },
-        ['yaml'] = { { 'prettierd', 'prettier' } },
-        ['markdown'] = { { 'prettierd', 'prettier' } },
-        ['markdown.mdx'] = { { 'prettierd', 'prettier' } },
-        ['graphql'] = { { 'prettierd', 'prettier' } },
-        ['handlebars'] = { { 'prettierd', 'prettier' } },
+        ['javascript'] = { 'prettier' },
+        ['javascriptreact'] = { 'prettier' },
+        ['typescript'] = { 'prettier' },
+        ['typescriptreact'] = { 'prettier' },
+        ['vue'] = { 'prettier' },
+        ['css'] = { 'prettier' },
+        ['scss'] = { 'prettier' },
+        ['less'] = { 'prettier' },
+        ['html'] = { 'prettier' },
+        ['json'] = { 'prettier' },
+        ['jsonc'] = { 'prettier' },
+        ['yaml'] = { 'prettier' },
+        ['markdown'] = { 'prettier' },
+        ['markdown.mdx'] = { 'prettier' },
+        ['graphql'] = { 'prettier' },
+        ['handlebars'] = { 'prettier' },
         ['lua'] = { 'stylua' },
         ['bash'] = { 'shfmt' },
 
-        -- Use the "*" filetype to run formatters on all filetypes.
-        ['*'] = {},
-
         -- Use the "_" filetype to run formatters on filetypes that don't
         -- have other formatters configured.
-        ['_'] = { 'trim_whitespace' },
       },
     })
 
