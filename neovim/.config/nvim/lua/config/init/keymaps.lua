@@ -111,9 +111,9 @@ vim.keymap.set(
 -- Buffer Management
 vim.keymap.set(
   'n',
-  '<leader>b',
+  '<leader>n',
   '<CMD> enew <CR>',
-  { desc = 'Edit New Buffer' }
+  { desc = 'Edit [N]ew Buffer' }
 )
 
 -- Move Between Visual Lines with jk
