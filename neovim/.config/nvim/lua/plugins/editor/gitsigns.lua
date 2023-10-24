@@ -17,60 +17,60 @@ return {
         'n',
         '<leader>hs',
         require('gitsigns').stage_hunk,
-        { buffer = bufnr, desc = '[s]tage Git [h]unk' }
+        { buffer = bufnr, desc = '[S]tage Git [H]unk' }
       )
 
       vim.keymap.set(
         'n',
         '<leader>hr',
         require('gitsigns').reset_hunk,
-        { buffer = bufnr, desc = '[r]eset Git [h]unk' }
+        { buffer = bufnr, desc = '[R]eset Git [H]unk' }
       )
 
       vim.keymap.set(
         'n',
         '<leader>hS',
         require('gitsigns').stage_buffer,
-        { buffer = bufnr, desc = '[S]tage All Hunks in Buffer' }
+        { buffer = bufnr, desc = '[S]tage All Hunks In Buffer' }
       )
 
       vim.keymap.set(
         'n',
         '<leader>hu',
         require('gitsigns').undo_stage_hunk,
-        { buffer = bufnr, desc = '[u]ndo Stage of Git [h]unk' }
+        { buffer = bufnr, desc = '[U]ndo Stage Of Git [H]unk' }
       )
 
       vim.keymap.set(
         'n',
         '<leader>hR',
         require('gitsigns').reset_buffer,
-        { buffer = bufnr, desc = '[R]eset All Git Hunks in Buffer' }
+        { buffer = bufnr, desc = '[R]eset All Git Hunks In Buffer' }
       )
 
       vim.keymap.set(
         'n',
         '<leader>hp',
         require('gitsigns').preview_hunk_inline,
-        { buffer = bufnr, desc = '[p]review Git [h]unk Inline' }
+        { buffer = bufnr, desc = '[P]review Git [H]unk Inline' }
       )
 
       vim.keymap.set('n', '<leader>hb', function()
         require('gitsigns').blame_line({ full = true })
-      end, { buffer = bufnr, desc = 'Git [b]lame for Current Line' })
+      end, { buffer = bufnr, desc = 'Git [B]lame For Current Line' })
 
       vim.keymap.set(
         'n',
-        '<leader>tb',
+        '<leader>gtb',
         require('gitsigns').toggle_current_line_blame,
-        { buffer = bufnr, desc = '[t]oggle Git Line [b]lame' }
+        { buffer = bufnr, desc = '[T]oggle [G]it Line [B]lame' }
       )
 
       vim.keymap.set(
         'n',
         '<leader>hd',
         require('gitsigns').diffthis,
-        { buffer = bufnr, desc = '[d]iff This Buffer' }
+        { buffer = bufnr, desc = '[D]iff This Buffer' }
       )
 
       vim.keymap.set('n', '<leader>hD', function()
@@ -79,16 +79,16 @@ return {
 
       vim.keymap.set(
         'n',
-        '<leader>td',
+        '<leader>gtd',
         require('gitsigns').toggle_deleted,
-        { buffer = bufnr, desc = '[t]oggle [d]eleted Lines' }
+        { buffer = bufnr, desc = '[T]oggle [G]it [D]eleted Lines' }
       )
 
       vim.keymap.set(
         'n',
         '<leader>hp',
         require('gitsigns').preview_hunk,
-        { buffer = bufnr, desc = 'Preview git hunk' }
+        { buffer = bufnr, desc = 'Preview Git Hunk' }
       )
 
       -- don't override the built-in and fugitive keymaps
@@ -105,7 +105,7 @@ return {
       end, {
         expr = true,
         buffer = bufnr,
-        desc = 'Jump to next hunk',
+        desc = 'Jump to Next Hunk',
       })
 
       vim.keymap.set({ 'n', 'v' }, '[c', function()
@@ -119,7 +119,7 @@ return {
       end, {
         expr = true,
         buffer = bufnr,
-        desc = 'Jump to previous hunk',
+        desc = 'Jump to Previous Hunk',
       })
     end,
   },

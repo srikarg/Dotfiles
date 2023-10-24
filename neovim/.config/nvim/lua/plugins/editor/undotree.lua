@@ -7,7 +7,7 @@ return {
     {
       '<leader>u',
       '<CMD> UndotreeToggle <CR>',
-      desc = 'Toggle [u]ndotree Plugin',
+      desc = 'Toggle [U]ndotree Plugin',
     },
   },
 
