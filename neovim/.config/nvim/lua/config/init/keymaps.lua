@@ -14,9 +14,9 @@ vim.keymap.set('n', '<leader>Q', '<cmd>qa<cr>', { desc = 'Quit all' })
 -- Spell Check
 vim.keymap.set(
   'n',
-  '<leader>ts',
+  '<leader>us',
   '<CMD>set spell! <CR>',
-  { desc = '[T]oggle [S]pell Check' }
+  { desc = 'Toggle [S]pell Check' }
 )
 
 -- Conversion via Pandoc

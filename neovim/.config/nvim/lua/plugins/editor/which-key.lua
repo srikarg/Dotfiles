@@ -22,6 +22,7 @@ return {
       ['<leader>q'] = { name = 'Diagnostics', _ = 'which_key_ignore' },
       ['<leader>t'] = { name = '[T]esting', _ = 'which_key_ignore' },
       ['<leader>s'] = { name = '[S]how Messages', _ = 'which_key_ignore' },
+      ['<leader>u'] = { name = 'Toggle Settings', _ = 'which_key_ignore' },
     })
   end,
 }

@@ -19,10 +19,10 @@ local default_on_attach = function(client, bufnr)
     local inlayHintsEnabled = false
     local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
 
-    nmap('<leader>ti', function()
+    nmap('<leader>ui', function()
       inlayHintsEnabled = not inlayHintsEnabled
       inlay_hint(bufnr, inlayHintsEnabled)
-    end, '[T]oggle [I]nlay Hints')
+    end, 'Toggle [I]nlay Hints')
   end
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')

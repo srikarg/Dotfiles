@@ -15,6 +15,11 @@ return {
       desc = 'Format Current Selection',
       mode = 'v',
     },
+    {
+      '<leader>uf',
+      '<CMD> FormatToggle <CR>',
+      desc = 'Toggle [F]ormatting',
+    },
   },
 
   config = function()
