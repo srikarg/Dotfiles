@@ -40,6 +40,12 @@ M.icons = {
     Hint = ' ',
     Info = ' ',
   },
+  neotest = {
+    failed = '',
+    running = '',
+    skipped = '',
+    passed = '',
+  },
   git = {
     added = ' ',
     modified = ' ',

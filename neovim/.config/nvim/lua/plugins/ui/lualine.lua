@@ -34,7 +34,7 @@ return {
           },
           {
             'diagnostics',
-            separator = '',
+            separator = '|',
             symbols = {
               error = icons.diagnostics.Error,
               warn = icons.diagnostics.Warn,
@@ -55,22 +55,24 @@ return {
                 })
                 local sections = {
                   {
-                    sign = '',
+                    sign = icons.neotest.failed,
                     count = status and status.failed or '-',
-                    base = 'NeotestFailed',
-                    tag = 'test_fail',
+                    base = 'NeotestFailedStatusLine',
                   },
                   {
-                    sign = '',
+                    sign = icons.neotest.running,
                     count = status and status.running or '-',
-                    base = 'NeotestRunning',
-                    tag = 'test_running',
+                    base = 'NeotestRunningStatusLine',
                   },
                   {
-                    sign = '',
+                    sign = icons.neotest.skipped,
+                    count = status and status.skipped or '-',
+                    base = 'NeotestSkippedStatusLine',
+                  },
+                  {
+                    sign = icons.neotest.passed,
                     count = status and status.passed or '-',
-                    base = 'NeotestPassed',
-                    tag = 'test_pass',
+                    base = 'NeotestPassedStatusLine',
                   },
                 }
 

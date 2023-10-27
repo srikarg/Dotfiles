@@ -6,7 +6,7 @@ return {
   priority = 1000,
 
   config = function()
-    require('tokyonight').setup({
+    local opts = {
       style = 'night', -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
       light_style = 'day', -- The theme is used when the background is set to light
       transparent = false, -- Enable this to disable setting the background color
@@ -55,8 +55,37 @@ return {
         highlights.TelescopeResultsTitle =
           { bg = colors.bg_dark, fg = colors.bg_dark }
       end,
-    })
+    }
 
+    require('tokyonight').setup(opts)
     vim.cmd.colorscheme('tokyonight-night')
+
+    local colors = require('tokyonight.colors').setup(opts)
+
+    local highlights = {
+      NeotestPassedStatusLine = {
+        fg = colors.green,
+        bg = colors.bg_statusline,
+      },
+
+      NeotestFailedStatusLine = {
+        fg = colors.error,
+        bg = colors.bg_statusline,
+      },
+
+      NeotestRunningStatusLine = {
+        fg = colors.yellow,
+        bg = colors.bg_statusline,
+      },
+
+      NeotestSkippedStatusLine = {
+        fg = colors.cyan,
+        bg = colors.bg_statusline,
+      },
+    }
+
+    for group, args in pairs(highlights) do
+      vim.api.nvim_set_hl(0, group, args)
+    end
   end,
 }
