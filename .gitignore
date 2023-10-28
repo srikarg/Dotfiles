@@ -18,3 +18,13 @@ Thumbs.db
 
 # LazyGit state file
 lazygit/.config/lazygit/state.yml
+
+# Ignore everything in custom scripts directory except .local/scripts
+#
+# This is needed as the ~/.local folder might have other folders outside of the
+# custom scripts one we are adding via a GNU Stow alias
+!/custom-scripts/
+/custom-scripts/**
+!/custom-scripts/\.local/
+!/custom-scripts/\.local/scripts/
+!/custom-scripts/\.local/scripts/*
