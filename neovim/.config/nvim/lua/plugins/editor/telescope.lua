@@ -18,6 +18,10 @@ return {
     },
 
     {
+      'debugloop/telescope-undo.nvim',
+    },
+
+    {
       'nvim-telescope/telescope-dap.nvim',
 
       dependencies = {
@@ -155,6 +159,14 @@ return {
       desc = '[F]ind With [G]rep',
       mode = 'v',
     },
+
+    {
+      '<leader>U',
+      function()
+        require('telescope').extensions.undo.undo()
+      end,
+      desc = '[U]ndo History',
+    },
   },
 
   config = function()
@@ -209,6 +221,14 @@ return {
       },
 
       extensions = {
+        undo = {
+          side_by_side = true,
+          layout_strategy = 'vertical',
+          layout_config = {
+            preview_height = 0.4,
+          },
+        },
+
         fzf = {
           fuzzy = true,
           override_generic_sorter = true,
@@ -243,5 +263,6 @@ return {
     require('telescope').load_extension('live_grep_args')
     require('telescope').load_extension('notify')
     require('telescope').load_extension('dap')
+    require('telescope').load_extension('undo')
   end,
 }
