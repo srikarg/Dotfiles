@@ -7,6 +7,10 @@
    `npm install -g pure-prompt`
 3. `cd` into the Dotfiles directory
 4. Run `./setup.sh` located in the directory
+5. To properly enable the Ctrl-Space `tmux` prefix key, disable the default
+   "Select the previous input source" and "Select next source in input menu"
+   MacOS keyboard shortcuts by following
+   [this Github comment](https://github.com/tmux/tmux/issues/457#issuecomment-357938515)
 
 ## Common Tasks
 
