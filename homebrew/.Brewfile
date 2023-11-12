@@ -288,6 +288,8 @@ cask "stats"
 cask "syncthing"
 # Open-source code editor
 cask "visual-studio-code"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm-nightly"
 # HTML to PDF renderer
 cask "wkhtmltopdf"
 mas "Amphetamine", id: 937984704
