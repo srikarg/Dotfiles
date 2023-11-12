@@ -72,6 +72,8 @@ brew "dos2unix"
 brew "exa"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
+# Modern, maintained replacement for ls
+brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Subtitle renderer for the ASS/SSA subtitle format
