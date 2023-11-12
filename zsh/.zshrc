@@ -19,6 +19,8 @@ fpath+=$HOME/.zsh/pure
 autoload -Uz compinit
 compinit
 
+source "$HOME/.exports"
+
 source "$HOME/.zsh/alias-tips/alias-tips.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/copypath/copypath.plugin.zsh"
@@ -32,6 +34,8 @@ source "$HOME/.zsh/ohmyzsh/plugins/gitignore/gitignore.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/history/history.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/history-substring-search/history-substring-search.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/macos/macos.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/kubectl/kubectl.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/minikube/minikube.plugin.zsh"
 
 ZSH_DOTENV_PROMPT=false
 DISABLE_MAGIC_FUNCTIONS=true
@@ -51,13 +55,10 @@ bindkey -s ^f "t\n"
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,exports,aliases,functions,extra}; do
+for file in ~/.{path,aliases,functions,extra}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
-
-source "$HOME/.zsh/ohmyzsh/plugins/kubectl/kubectl.plugin.zsh"
-source "$HOME/.zsh/ohmyzsh/plugins/minikube/minikube.plugin.zsh"
 
 # History Setup
 HISTFILE=$HOME/.zsh_history
