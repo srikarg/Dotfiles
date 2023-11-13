@@ -121,7 +121,7 @@
   },
   "mason-lspconfig.nvim": {
     "branch": "main",
-    "commit": "6eb8cae80f2e4322ec82cd9f8fa423f6d1eb02c3"
+    "commit": "c1a10a956eab57c8e9e43491a252ac112e765af3"
   },
   "mason-nvim-dap.nvim": {
     "branch": "main",
@@ -157,7 +157,7 @@
   },
   "neotest-jest": {
     "branch": "main",
-    "commit": "65ab61c77aa1c245f16982ffe1a4d31589e18023"
+    "commit": "d8b00a91e440474da20a8e9acdb0d72051078b8b"
   },
   "neotest-vitest": {
     "branch": "main",
@@ -201,7 +201,7 @@
   },
   "nvim-lint": {
     "branch": "master",
-    "commit": "775ae0e5a451dd6c5d15de7a828ea72d2c54e8cf"
+    "commit": "4f2d968a827d86bb40b7b1fad28c11f7b764fef3"
   },
   "nvim-lspconfig": {
     "branch": "master",
@@ -225,7 +225,7 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "075a64addc33390028ea124a1046a43497f05cd1"
+    "commit": "2241f81d74a3de7f8ae1517bbfc24c319218d9a0"
   },
   "nvim-treesitter-context": {
     "branch": "master",
@@ -245,7 +245,7 @@
   },
   "nvim-web-devicons": {
     "branch": "master",
-    "commit": "71cf9bfd1b2d36c6942ba80f24c382d057e6b567"
+    "commit": "11eb26fc166742db8d1e8a6f5a7de9df37b09aae"
   },
   "plenary.nvim": {
     "branch": "master",
@@ -332,3 +332,4 @@
     "commit": "50e2e2a36cc97847d9ab3b1a3555ba2ef6839b50"
   }
 }
+

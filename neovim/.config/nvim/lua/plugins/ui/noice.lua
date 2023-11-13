@@ -5,7 +5,21 @@ return {
 
   dependencies = {
     'MunifTanjim/nui.nvim',
-    'rcarriga/nvim-notify',
+
+    {
+      'rcarriga/nvim-notify',
+
+      opts = {
+        timeout = 3000,
+        stages = 'static',
+        max_height = function()
+          return math.floor(vim.o.lines * 0.75)
+        end,
+        max_width = function()
+          return math.floor(vim.o.columns * 0.75)
+        end,
+      },
+    },
   },
 
   opts = {
@@ -28,6 +42,11 @@ return {
         },
         view = 'mini',
       },
+      -- Show @recording messages
+      {
+        filter = { event = 'msg_showmode' },
+        view = 'mini',
+      },
     },
     presets = {
       bottom_search = true,
@@ -39,7 +58,7 @@ return {
 
   keys = {
     {
-      '<S-Enter>',
+      '<S-CR>',
       function()
         require('noice').redirect(vim.fn.getcmdline())
       end,
