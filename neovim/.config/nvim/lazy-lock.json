@@ -9,7 +9,7 @@
   },
   "LuaSnip": {
     "branch": "master",
-    "commit": "46c91e814732c1630b8a8b50d04acbf54b8320fa"
+    "commit": "1f4ad8bb72bdeb60975e98652636b991a9b7475d"
   },
   "auto-session": {
     "branch": "main",
@@ -74,6 +74,10 @@
   "dressing.nvim": {
     "branch": "master",
     "commit": "fe3071330a0720ce3695ac915820c8134b22d1b0"
+  },
+  "dropbar.nvim": {
+    "branch": "master",
+    "commit": "c41904a3dcc103587b1157da13d565a0a5f9f3a5"
   },
   "flash.nvim": {
     "branch": "main",
@@ -141,7 +145,7 @@
   },
   "neodev.nvim": {
     "branch": "main",
-    "commit": "f93a984ee75ba6d532d85419619cc6e91d954ee9"
+    "commit": "1fc168ee385441994d7e9397e854cb20f5c7e324"
   },
   "neogen": {
     "branch": "main",
@@ -149,7 +153,7 @@
   },
   "neotest": {
     "branch": "master",
-    "commit": "009328955066ae6c170d24bb0de5f168d8760ff8"
+    "commit": "d424d262d01bccc1e0b038c9a7220a755afd2a1f"
   },
   "neotest-jest": {
     "branch": "main",
@@ -217,7 +221,7 @@
   },
   "nvim-tree.lua": {
     "branch": "master",
-    "commit": "874ae6e9445a5eb5ba430e5fd10212450a261ad7"
+    "commit": "80cfeadf179d5cba76f0f502c71dbcff1b515cd8"
   },
   "nvim-treesitter": {
     "branch": "master",
@@ -237,11 +241,11 @@
   },
   "nvim-ufo": {
     "branch": "main",
-    "commit": "ebbab711d909d5f675e38ad489765bd22bd2c6b3"
+    "commit": "9a14b104e7aedd492fd0613c0325a390adf4e23c"
   },
   "nvim-web-devicons": {
     "branch": "master",
-    "commit": "3fafeea5f339223e888fd15eb4032260849cb038"
+    "commit": "71cf9bfd1b2d36c6942ba80f24c382d057e6b567"
   },
   "plenary.nvim": {
     "branch": "master",
@@ -253,7 +257,7 @@
   },
   "schemastore.nvim": {
     "branch": "main",
-    "commit": "a937222abcc2843c13f0a92576a215d391829811"
+    "commit": "fe2ab14cf777a041b7c62af37346f7849400a754"
   },
   "statuscol.nvim": {
     "branch": "main",
@@ -277,7 +281,7 @@
   },
   "telescope-undo.nvim": {
     "branch": "main",
-    "commit": "a3dcb6e32a3a59a5570a7cda33171eeef9753345"
+    "commit": "13c33c173e53f14df7eec5155c52a3d2ab022d8d"
   },
   "telescope.nvim": {
     "branch": "master",

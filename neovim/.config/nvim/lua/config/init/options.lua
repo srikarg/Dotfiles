@@ -13,6 +13,9 @@ vim.opt.splitbelow = true
 -- Confirm before exiting an edited buffer
 vim.opt.confirm = true
 
+-- Register mouse move events
+vim.opt.mousemoveevent = true
+
 -- Format options
 vim.opt.formatoptions = 'jcroqlnt'
 

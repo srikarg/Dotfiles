@@ -10,7 +10,6 @@ local default_on_attach = function(client, bufnr)
 
   if client.server_capabilities.documentSymbolProvider then
     require('nvim-navbuddy').attach(client, bufnr)
-    require('nvim-navic').attach(client, bufnr)
 
     nmap('<leader>N', require('nvim-navbuddy').open, 'Open [N]avbuddy')
   end
@@ -289,7 +288,16 @@ return {
       'SmiteshP/nvim-navbuddy',
 
       dependencies = {
-        'SmiteshP/nvim-navic',
+        {
+          'SmiteshP/nvim-navic',
+
+          config = function()
+            require('nvim-navic').setup({
+              icons = require('config').icons.kinds,
+            })
+          end,
+        },
+
         'MunifTanjim/nui.nvim',
       },
 

@@ -1,10 +1,6 @@
 return {
   'nvim-lualine/lualine.nvim',
 
-  dependencies = {
-    'SmiteshP/nvim-navic',
-  },
-
   event = 'VeryLazy',
 
   opts = function()
