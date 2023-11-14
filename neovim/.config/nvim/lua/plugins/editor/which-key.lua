@@ -23,6 +23,7 @@ return {
       ['<leader>t'] = { name = '[T]esting', _ = 'which_key_ignore' },
       ['<leader>s'] = { name = '[S]how Messages', _ = 'which_key_ignore' },
       ['<leader>u'] = { name = 'Toggle Settings', _ = 'which_key_ignore' },
+      ['<leader>x'] = { name = 'Lists', _ = 'which_key_ignore' },
     })
   end,
 }

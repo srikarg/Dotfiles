@@ -15,7 +15,7 @@ return {
 
     {
       '<leader>/',
-      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+      "<ESC> <CMD> lua require('Comment.api').toggle.linewise(vim.fn.visualmode()) <CR>",
       mode = 'v',
       desc = 'Toggle Linewise Comment',
     },

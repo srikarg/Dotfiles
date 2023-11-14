@@ -9,8 +9,6 @@ vim.keymap.set('n', '<C-s>', '<CMD> w <CR>', { desc = 'Save Current Buffer' })
 
 vim.keymap.set('n', '<C-c>', '<CMD> %y+ <CR>', { desc = 'Copy Entire Buffer' })
 
-vim.keymap.set('n', '<leader>Q', '<cmd>qa<cr>', { desc = 'Quit all' })
-
 -- Spell Check
 vim.keymap.set(
   'n',
@@ -150,12 +148,12 @@ vim.keymap.set(
 
 vim.keymap.set(
   'n',
-  '<leader>qf',
+  '<leader>cf',
   vim.diagnostic.open_float,
-  { desc = 'Open floating diagnostic message' }
+  { desc = 'Open [C]ode [F]loating Diagnostic Message' }
 )
 
-vim.keymap.set('n', '<leader>qt', function()
+vim.keymap.set('n', '<leader>ut', function()
   diagnostics_active = not diagnostics_active
   if diagnostics_active then
     vim.diagnostic.show()
@@ -163,3 +161,40 @@ vim.keymap.set('n', '<leader>qt', function()
     vim.diagnostic.hide()
   end
 end, { desc = '[T]oggle Diagnostic Visibility' })
+
+-- Lists keymaps
+vim.keymap.set(
+  'n',
+  '<leader>xl',
+  '<CMD> lopen <CR>',
+  { desc = 'Open Location List' }
+)
+vim.keymap.set(
+  'n',
+  '<leader>xq',
+  '<CMD> copen <CR>',
+  { desc = 'Open Quickfix List' }
+)
+
+vim.api.nvim_create_user_command(
+  'Cnext',
+  'try | cnext | catch | cfirst | catch | endtry',
+  {}
+)
+vim.api.nvim_create_user_command(
+  'Cprev',
+  'try | cprev | catch | clast | catch | endtry',
+  {}
+)
+vim.keymap.set(
+  'n',
+  '[q',
+  '<CMD> Cprev <CR>',
+  { desc = 'Previous Quickfix List Item' }
+)
+vim.keymap.set(
+  'n',
+  ']q',
+  '<CMD> Cnext <CR>',
+  { desc = 'Next Quickfix List Item' }
+)

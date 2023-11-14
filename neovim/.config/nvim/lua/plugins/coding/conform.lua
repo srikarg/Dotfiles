@@ -5,12 +5,12 @@ return {
 
   keys = {
     {
-      '<leader>fm',
+      '<leader>F',
       '<CMD> Format <CR>',
       desc = 'Format Current Buffer',
     },
     {
-      '<leader>fm',
+      '<leader>F',
       '<CMD> Format <CR>',
       desc = 'Format Current Selection',
       mode = 'v',

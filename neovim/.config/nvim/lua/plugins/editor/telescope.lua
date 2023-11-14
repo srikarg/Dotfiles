@@ -216,6 +216,11 @@ return {
           },
           n = {
             ['q'] = require('telescope.actions').close,
+
+            ['<C-t>'] = function(...)
+              local trouble = require('trouble.providers.telescope')
+              trouble.open_with_trouble(...)
+            end,
           },
         },
       },

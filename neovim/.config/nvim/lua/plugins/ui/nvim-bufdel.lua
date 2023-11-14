@@ -3,7 +3,7 @@ return {
 
   keys = {
     {
-      '<leader>x',
+      '<leader>q',
       '<CMD> BufDel <CR>',
       desc = 'Close Current Buffer',
       silent = true,
@@ -11,7 +11,7 @@ return {
     },
 
     {
-      '<leader>X',
+      '<leader>Q',
       '<CMD> BufDelAll <CR>',
       desc = 'Close All Buffers',
       silent = true,
@@ -21,6 +21,6 @@ return {
 
   opts = {
     next = 'tabs',
-    quit = false,
+    quit = true,
   },
 }
