@@ -1,0 +1,9 @@
+return {
+  'zeioth/garbage-day.nvim',
+
+  dependencies = 'neovim/nvim-lspconfig',
+
+  event = 'VeryLazy',
+
+  config = true,
+}

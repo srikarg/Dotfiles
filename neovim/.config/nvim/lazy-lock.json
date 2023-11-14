@@ -77,7 +77,7 @@
   },
   "dropbar.nvim": {
     "branch": "master",
-    "commit": "c41904a3dcc103587b1157da13d565a0a5f9f3a5"
+    "commit": "183587de8899a8a61edd974ade9c4df73e6b6a49"
   },
   "flash.nvim": {
     "branch": "main",
@@ -90,6 +90,10 @@
   "friendly-snippets": {
     "branch": "main",
     "commit": "43727c2ff84240e55d4069ec3e6158d74cb534b6"
+  },
+  "garbage-day.nvim": {
+    "branch": "main",
+    "commit": "cecb3b5672b61d970bb714cec781720c9ab76bbf"
   },
   "gitsigns.nvim": {
     "branch": "main",
@@ -205,7 +209,7 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "90a28fd7637b66e055af62387ecee06f7cbd3173"
+    "commit": "0a0682d4646a6869b85a4e4d0e30da5ef8b11f66"
   },
   "nvim-navbuddy": {
     "branch": "master",
@@ -225,7 +229,7 @@
   },
   "nvim-treesitter": {
     "branch": "master",
-    "commit": "2241f81d74a3de7f8ae1517bbfc24c319218d9a0"
+    "commit": "c0da2013d1cef768c00f3f0b7f365fe19a10bca3"
   },
   "nvim-treesitter-context": {
     "branch": "master",
