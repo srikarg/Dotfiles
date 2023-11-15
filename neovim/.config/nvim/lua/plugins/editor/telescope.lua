@@ -188,12 +188,14 @@ return {
         initial_mode = 'insert',
         selection_strategy = 'reset',
         sorting_strategy = 'ascending',
-        layout_strategy = 'horizontal',
+        layout_strategy = 'flex',
         layout_config = {
           horizontal = {
             prompt_position = 'top',
-            results_width = 0.4,
             preview_width = 0.6,
+          },
+          vertical = {
+            prompt_position = 'top',
           },
         },
         file_sorter = require('telescope.sorters').get_fuzzy_file,
