@@ -19,7 +19,6 @@ return {
       ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
       ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
       ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-      ['<leader>q'] = { name = 'Diagnostics', _ = 'which_key_ignore' },
       ['<leader>t'] = { name = '[T]esting', _ = 'which_key_ignore' },
       ['<leader>s'] = { name = '[S]how Messages', _ = 'which_key_ignore' },
       ['<leader>u'] = { name = 'Toggle Settings', _ = 'which_key_ignore' },

@@ -12,12 +12,12 @@ return {
       desc = 'Toggle Trouble',
     },
     {
-      '<leader>xD',
+      '<leader>xd',
       '<CMD> TroubleToggle document_diagnostics <CR>',
       desc = 'Document Diagnostics (Trouble)',
     },
     {
-      '<leader>xW',
+      '<leader>xw',
       '<CMD> TroubleToggle workspace_diagnostics <CR>',
       desc = 'Workspace Diagnostics (Trouble)',
     },
