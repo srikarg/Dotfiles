@@ -6,8 +6,10 @@ vim.filetype.add({
     Tmuxfile = 'tmux',
     ['go.sum'] = 'go',
     ['yarn.lock'] = 'yaml',
+    ['.env'] = 'dotenv',
   },
   pattern = {
+    ['%.env%.%w+'] = 'dotenv',
     ['.*%.postman_collection'] = 'json',
     ['Jenkinsfile.*'] = 'groovy',
     ['%.kube/config'] = 'yaml',

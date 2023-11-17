@@ -118,5 +118,7 @@ return {
         },
       },
     })
+
+    vim.treesitter.language.register('bash', 'dotenv')
   end,
 }

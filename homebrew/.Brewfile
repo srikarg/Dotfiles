@@ -68,6 +68,8 @@ brew "docker-compose"
 brew "docker-credential-helper"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
+# Lightning-fast linter for .env files written in Rust
+brew "dotenv-linter"
 # Modern replacement for 'ls'
 brew "exa"
 # Perl lib for reading and writing EXIF metadata

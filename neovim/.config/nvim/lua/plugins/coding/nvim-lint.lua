@@ -18,6 +18,8 @@ return {
       ['markdown'] = { 'markdownlint' },
       ['bash'] = { 'shellcheck' },
       ['dockerfile'] = { 'hadolint' },
+      ['dotenv'] = { 'dotenv_linter' },
+      ['zsh'] = { 'zsh' },
     }
 
     vim.api.nvim_create_autocmd(
