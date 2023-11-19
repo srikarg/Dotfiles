@@ -153,14 +153,14 @@ vim.keymap.set(
   { desc = 'Open [C]ode [F]loating Diagnostic Message' }
 )
 
-vim.keymap.set('n', '<leader>ut', function()
+vim.keymap.set('n', '<leader>ud', function()
   diagnostics_active = not diagnostics_active
   if diagnostics_active then
     vim.diagnostic.show()
   else
     vim.diagnostic.hide()
   end
-end, { desc = '[T]oggle Diagnostic Visibility' })
+end, { desc = 'Toggle [D]iagnostic Visibility' })
 
 -- Lists keymaps
 vim.keymap.set(
