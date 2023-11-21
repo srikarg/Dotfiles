@@ -92,9 +92,6 @@ return {
           toggle_dotfiles,
           { buffer = buf_id, desc = 'Toggle Dotfiles' }
         )
-        vim.keymap.set('n', '<ESC>', function()
-          MiniFiles.close()
-        end, { desc = 'Close' })
       end,
     })
   end,

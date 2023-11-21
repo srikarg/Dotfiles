@@ -37,8 +37,6 @@ return {
         keymaps = {
           ['q'] = '<C-w>q',
 
-          ['<ESC>'] = '<C-w>q',
-
           ['h'] = '<C-w>c',
 
           ['l'] = function()
