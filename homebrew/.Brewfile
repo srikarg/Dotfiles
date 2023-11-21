@@ -70,8 +70,6 @@ brew "docker-credential-helper"
 brew "dos2unix"
 # Lightning-fast linter for .env files written in Rust
 brew "dotenv-linter"
-# Modern replacement for 'ls'
-brew "exa"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 # Modern, maintained replacement for ls
