@@ -10,7 +10,7 @@ config.color_scheme = 'tokyonight_night'
 
 config.font_size = 16.0
 
-config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Light' })
+config.font = wezterm.font('JetBrainsMono NFM', { weight = 'Light' })
 
 config.scrollback_lines = 200000
 
