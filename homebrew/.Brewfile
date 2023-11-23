@@ -244,6 +244,8 @@ brew "hashicorp/tap/terraform"
 brew "oven-sh/bun/bun"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
 cask "basictex"
+# CLI for managing the battery charging status
+cask "battery"
 # Desktop password and login vault
 cask "bitwarden"
 # Web browser focusing on privacy
