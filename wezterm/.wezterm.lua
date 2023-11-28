@@ -8,7 +8,7 @@ end
 
 config.color_scheme = 'tokyonight_night'
 
-config.font_size = 16.0
+config.font_size = 18.0
 
 config.font = wezterm.font('JetBrainsMono NFM', { weight = 'Light' })
 
