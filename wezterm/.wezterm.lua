@@ -25,7 +25,15 @@ config.window_background_opacity = 0.95
 
 config.native_macos_fullscreen_mode = true
 
+config.window_close_confirmation = 'NeverPrompt'
+
 config.keys = {
+  {
+    key = 'w',
+    mods = 'CMD',
+    action = wezterm.action.CloseCurrentTab({ confirm = false }),
+  },
+
   {
     key = 't',
     mods = 'SUPER',
