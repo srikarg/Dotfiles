@@ -250,8 +250,10 @@ cask "battery"
 cask "bitwarden"
 # Web browser focusing on privacy
 cask "brave-browser"
-# Finds duplicate files in a computer system
-cask "dupeguru"
+# Tool to show live information about the batteries in various devices
+cask "coconutbattery"
+# Voice and text chat software
+cask "discord"
 # Tool to rename digital photos, movie- and audio-clips
 cask "exifrenamer"
 # Collaborative team software
@@ -272,8 +274,6 @@ cask "logi-options-plus"
 cask "logseq"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
-# Collaboration platform for API development
-cask "postman"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
@@ -288,12 +288,25 @@ cask "spotify"
 cask "stats"
 # Real time file synchronization software
 cask "syncthing"
+# Mesh VPN based on Wireguard
+cask "tailscale"
 # Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm-nightly"
 # HTML to PDF renderer
 cask "wkhtmltopdf"
+# Video communication and virtual meeting platform
+cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Brother iPrint&Scan", id: 1193539993
+mas "Flow", id: 1423210932
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pixelmator Pro", id: 1289583905
 mas "Trello", id: 1278508951
