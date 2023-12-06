@@ -1,5 +1,21 @@
 # yaml-language-server: $schema=https://json.schemastore.org/lazygit.json
 
+customCommands:
+  - key: "<c-b>"
+    command:
+      "git fetch -p && git branch --merged | egrep -v '\\* | master | main' |
+      xargs -r git branch -d"
+    context: "localBranches"
+    loadingText: Pruning local branches that have been merged into master/main
+    stream: true
+  - key: "<c-B>"
+    command:
+      "git fetch -p && git for-each-ref --format '%(refname:short)
+      %(upstream:track)' refs/heads | awk '\\$2 == \"[gone]\" {print \\$1}' |
+      xargs -r git branch -D"
+    context: "localBranches"
+    loadingText: Pruning local branches that don't have a remote tracking branch
+    stream: true
 gui:
   # stuff relating to the UI
   windowSize: "normal" # one of 'normal' | 'half' | 'full' default is 'normal'

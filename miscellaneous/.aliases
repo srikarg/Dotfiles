@@ -115,7 +115,9 @@ alias gp='git push'
 alias gpu='git pull'
 alias gco='git checkout'
 alias gcob='git checkout -B'
+# Delete local branches that have been merged into master/main already
 alias gcb="git fetch -p && git branch --merged | egrep -v '\* | master | main' | xargs -r git branch -d"
+# Delete local branches that have no upstream remote tracking branches
 alias ggg="git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' refs/heads | awk '\$2 == \"[gone]\" {print \$1}' | xargs -r git branch -D"
 alias gb='git branch'
 alias gl='git log --color=always --pretty=format:"%C(yellow)%h %C(cyan)%<(16)%ad %Cgreen%an%C(auto)%d%Creset: %s" -10 --date=relative'
