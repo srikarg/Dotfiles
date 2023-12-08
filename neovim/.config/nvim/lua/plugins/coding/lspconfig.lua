@@ -118,6 +118,8 @@ return {
     {
       'williamboman/mason-lspconfig.nvim',
       config = function()
+        local nvim_lsp = require('lspconfig')
+
         -- Enable the following language servers
         --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
         --
@@ -146,6 +148,12 @@ return {
                 importModuleSpecifierPreference = 'non-relative',
               },
             },
+            root_dir = nvim_lsp.util.root_pattern('package.json'),
+            single_file_support = false,
+          },
+
+          denols = {
+            root_dir = nvim_lsp.util.root_pattern('deno.json', 'deno.jsonc'),
           },
 
           astro = {},
@@ -271,6 +279,8 @@ return {
               settings = (servers[server_name] or {}).settings,
               init_options = (servers[server_name] or {}).init_options,
               filetypes = (servers[server_name] or {}).filetypes,
+              root_dir = (servers[server_name] or {}).root_dir,
+              single_file_support = (servers[server_name] or {}).single_file_support,
             })
           end,
         })

@@ -23,26 +23,28 @@ return {
   },
 
   config = function()
+    local conform_utils = require('conform.util')
+
     require('conform').setup({
       formatters_by_ft = {
         -- Use the "*" filetype to run formatters on all filetypes.
         ['*'] = { 'trim_whitespace', 'trim_newlines' },
 
         -- Use a sub-list to run only the first available formatter
-        ['javascript'] = { 'prettier' },
-        ['javascriptreact'] = { 'prettier' },
-        ['typescript'] = { 'prettier' },
-        ['typescriptreact'] = { 'prettier' },
+        ['javascript'] = { { 'deno_fmt', 'prettier' } },
+        ['javascriptreact'] = { { 'deno_fmt', 'prettier' } },
+        ['typescript'] = { { 'deno_fmt', 'prettier' } },
+        ['typescriptreact'] = { { 'deno_fmt', 'prettier' } },
         ['vue'] = { 'prettier' },
         ['css'] = { 'prettier' },
         ['scss'] = { 'prettier' },
         ['less'] = { 'prettier' },
         ['html'] = { 'prettier' },
-        ['json'] = { 'prettier' },
-        ['jsonc'] = { 'prettier' },
+        ['json'] = { { 'deno_fmt', 'prettier' } },
+        ['jsonc'] = { { 'deno_fmt', 'prettier' } },
         ['yaml'] = { 'prettier' },
-        ['markdown'] = { 'prettier' },
-        ['markdown.mdx'] = { 'prettier' },
+        ['markdown'] = { { 'deno_fmt', 'prettier' } },
+        ['markdown.mdx'] = { { 'deno_fmt', 'prettier' } },
         ['graphql'] = { 'prettier' },
         ['handlebars'] = { 'prettier' },
         ['lua'] = { 'stylua' },
@@ -50,6 +52,24 @@ return {
 
         -- Use the "_" filetype to run formatters on filetypes that don't
         -- have other formatters configured.
+      },
+
+      formatters = {
+        prettier = {
+          condition = function(self, ctx)
+            -- Don't format with `prettier` if we're in a deno project as we can
+            -- just use `denofmt` instead
+            return not vim.fs.find(
+              { 'deno.json', 'deno.jsonc' },
+              { path = ctx.filename, upward = true }
+            )[1]
+          end,
+        },
+
+        deno_fmt = {
+          cwd = conform_utils.root_file({ 'deno.json', 'deno.jsonc' }),
+          require_cwd = true,
+        },
       },
     })
 
