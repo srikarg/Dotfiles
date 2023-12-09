@@ -242,14 +242,14 @@ brew "azure/kubelogin/kubelogin"
 brew "hashicorp/tap/terraform"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
+# Application uninstaller
+cask "appcleaner"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
 cask "basictex"
 # CLI for managing the battery charging status
 cask "battery"
 # Desktop password and login vault
 cask "bitwarden"
-# Web browser focusing on privacy
-cask "brave-browser"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
 # Voice and text chat software
@@ -258,6 +258,8 @@ cask "discord"
 cask "exifrenamer"
 # Collaborative team software
 cask "figma"
+# Web browser
+cask "firefox"
 # Screen color temperature controller
 cask "flux"
 # Developer targeted fonts with a high number of glyphs
@@ -274,18 +276,24 @@ cask "logi-options-plus"
 cask "logseq"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
+# Open-source software for live streaming and screen recording
+cask "obs"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Screenshot measurement and annotation tool
 cask "shottr"
+# Instant messaging application focusing on security
+cask "signal"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
 cask "spotify"
 # System monitor for the menu bar
 cask "stats"
+# Video game digital distribution service
+cask "steam"
 # Real time file synchronization software
 cask "syncthing"
 # Mesh VPN based on Wireguard
@@ -296,12 +304,15 @@ cask "visual-studio-code"
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm-nightly"
+# Native desktop client for WhatsApp
+cask "whatsapp"
 # HTML to PDF renderer
 cask "wkhtmltopdf"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Brother iPrint&Scan", id: 1193539993
+mas "Color Picker", id: 1545870783
 mas "Flow", id: 1423210932
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
