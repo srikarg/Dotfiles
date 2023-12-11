@@ -21,7 +21,6 @@ config.hide_tab_bar_if_only_one_tab = true
 config.use_dead_keys = false
 
 config.window_decorations = 'RESIZE' -- no title bar
-config.window_background_opacity = 0.95
 
 config.native_macos_fullscreen_mode = true
 
