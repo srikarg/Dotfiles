@@ -21,6 +21,12 @@ return {
       trim_left = '<',
       trim_right = '>',
     },
+
+    options = {
+      -- Whether to use for editing directories
+      -- Disabled because nvim-tree is used for this
+      use_as_default_explorer = false,
+    },
   },
 
   keys = {
