@@ -7,6 +7,7 @@ vim.filetype.add({
     ['go.sum'] = 'go',
     ['yarn.lock'] = 'yaml',
     ['.env'] = 'dotenv',
+    ['.sh'] = 'bash',
   },
   pattern = {
     ['%.env%.%w+'] = 'dotenv',

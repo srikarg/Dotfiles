@@ -49,6 +49,7 @@ return {
         ['handlebars'] = { 'prettier' },
         ['lua'] = { 'stylua' },
         ['bash'] = { 'shfmt' },
+        ['sh'] = { 'shfmt' },
 
         -- Use the "_" filetype to run formatters on filetypes that don't
         -- have other formatters configured.
