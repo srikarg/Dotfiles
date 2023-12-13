@@ -417,9 +417,11 @@ return {
   },
 
   config = function()
-    for name, icon in pairs(require('config').icons.diagnostics) do
+    local diagnosticIcons = require('config').icons.diagnostics
+
+    for name, icon in pairs(diagnosticIcons) do
       name = 'DiagnosticSign' .. name
-      vim.fn.sign_define(name, { text = icon, texthl = name, numhl = '' })
+      vim.fn.sign_define(name, { text = icon, texthl = name })
     end
 
     vim.diagnostic.config({
@@ -429,13 +431,20 @@ return {
         spacing = 4,
         source = 'if_many',
         prefix = function(diagnostic)
-          local icons = require('config').icons.diagnostics
-          for d, icon in pairs(icons) do
-            if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
+          for name, icon in pairs(diagnosticIcons) do
+            if diagnostic.severity == vim.diagnostic.severity[name:upper()] then
               return icon
             end
           end
         end,
+      },
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = diagnosticIcons.Error,
+          [vim.diagnostic.severity.WARN] = diagnosticIcons.Warn,
+          [vim.diagnostic.severity.HINT] = diagnosticIcons.Hint,
+          [vim.diagnostic.severity.INFO] = diagnosticIcons.Info,
+        },
       },
       severity_sort = true,
     })
