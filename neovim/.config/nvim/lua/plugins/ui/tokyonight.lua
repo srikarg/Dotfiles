@@ -38,6 +38,9 @@ return {
       ---@param highlights Highlights
       ---@param colors ColorScheme
       on_highlights = function(highlights, colors)
+        highlights.DiagnosticUnnecessary = {
+          fg = colors.comment,
+        }
         highlights.CursorLineNr = { fg = colors.orange, bold = true }
         highlights.LineNrAbove = { fg = colors.fg_gutter }
         highlights.LineNrBelow = { fg = colors.fg_gutter }
