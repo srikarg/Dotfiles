@@ -20,7 +20,7 @@ local default_on_attach = function(client, bufnr)
 
     nmap('<leader>ui', function()
       inlayHintsEnabled = not inlayHintsEnabled
-      inlay_hint(bufnr, inlayHintsEnabled)
+      inlay_hint.enable(bufnr, inlayHintsEnabled)
     end, 'Toggle [I]nlay Hints')
   end
 
