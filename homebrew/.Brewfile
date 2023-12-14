@@ -5,7 +5,6 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
-tap "oven-sh/bun"
 # Software library to render fonts
 brew "freetype"
 # Toolkit for image loading and pixel buffer manipulation
@@ -42,20 +41,14 @@ brew "gnutls"
 brew "qemu"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
-# Get a file from an HTTP, HTTPS or FTP server
-brew "curl"
-# Libraries to talk to Microsoft SQL Server and Sybase databases
-brew "freetds"
-# Network authentication protocol
-brew "krb5"
-# General-purpose scripting language
-brew "php"
-# Dependency Manager for PHP
-brew "composer"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # JSON, YAML, TOML, XML, and CSV query and modification tool
 brew "dasel"
+# Secure runtime for JavaScript and TypeScript
+brew "deno"
 # Tool for exploring each layer in a docker image
 brew "dive"
 # Pack, ship and run any application as a lightweight container
@@ -84,6 +77,8 @@ brew "ffmpeg"
 brew "findutils"
 # Library for manipulating fonts
 brew "fonttools"
+# Libraries to talk to Microsoft SQL Server and Sybase databases
+brew "freetds"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Interpreter for PostScript and PDF
@@ -134,6 +129,8 @@ brew "jenv"
 brew "jq"
 # Handy way to save and run project-specific commands
 brew "just"
+# Network authentication protocol
+brew "krb5"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # Simple terminal UI for git commands
@@ -160,10 +157,6 @@ brew "nginx"
 brew "openjdk"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-# General-purpose scripting language
-brew "php@8.1"
-# Programmer-oriented testing framework for PHP
-brew "phpunit"
 # CLI tool to help discover deprecated apiVersions in Kubernetes
 brew "pluto"
 # Interpreted, interactive, object-oriented programming language
@@ -180,8 +173,6 @@ brew "rename"
 brew "ripgrep"
 # Readline wrapper: adds readline support to tools that lack it
 brew "rlwrap"
-# Extremely fast tool to remove dupes and other lint from your filesystem
-brew "rmlint"
 # Utility that provides fast incremental file transfer
 brew "rsync"
 # Powerful, clean, object-oriented scripting language
@@ -240,8 +231,6 @@ brew "zsh"
 brew "azure/kubelogin/kubelogin"
 # Terraform
 brew "hashicorp/tap/terraform"
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
 # Application uninstaller
 cask "appcleaner"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
@@ -298,6 +287,8 @@ cask "steam"
 cask "syncthing"
 # Mesh VPN based on Wireguard
 cask "tailscale"
+# Virtual machines UI using QEMU
+cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
