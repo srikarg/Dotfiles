@@ -1,3 +1,53 @@
+local lualine_custom_theme = function()
+  local tokyonight_colors =
+    require('tokyonight.colors').setup({ style = 'night' })
+
+  local colors = {
+    darkfg = tokyonight_colors.bg,
+    textbg = 'StatusLine',
+    innerbg = nil,
+    outerbg = nil,
+    normal = '#7e9cd8',
+    insert = '#98bb6c',
+    visual = '#ffa066',
+    replace = '#e46876',
+    command = '#e6c384',
+  }
+
+  return {
+    inactive = {
+      a = { fg = colors.darkfg, bg = colors.outerbg, gui = 'bold' },
+      b = { fg = colors.textbg, bg = colors.outerbg },
+      c = { fg = colors.textbg, bg = colors.innerbg },
+    },
+    visual = {
+      a = { fg = colors.darkfg, bg = colors.visual, gui = 'bold' },
+      b = { fg = colors.textbg, bg = colors.outerbg },
+      c = { fg = colors.textbg, bg = colors.innerbg },
+    },
+    replace = {
+      a = { fg = colors.darkfg, bg = colors.replace, gui = 'bold' },
+      b = { fg = colors.textbg, bg = colors.outerbg },
+      c = { fg = colors.textbg, bg = colors.innerbg },
+    },
+    normal = {
+      a = { fg = colors.darkfg, bg = colors.normal, gui = 'bold' },
+      b = { fg = colors.textbg, bg = colors.outerbg },
+      c = { fg = colors.textbg, bg = colors.innerbg },
+    },
+    insert = {
+      a = { fg = colors.darkfg, bg = colors.insert, gui = 'bold' },
+      b = { fg = colors.textbg, bg = colors.outerbg },
+      c = { fg = colors.textbg, bg = colors.innerbg },
+    },
+    command = {
+      a = { fg = colors.darkfg, bg = colors.command, gui = 'bold' },
+      b = { fg = colors.textbg, bg = colors.outerbg },
+      c = { fg = colors.textbg, bg = colors.innerbg },
+    },
+  }
+end
+
 return {
   'nvim-lualine/lualine.nvim',
 
@@ -8,7 +58,7 @@ return {
 
     return {
       options = {
-        theme = 'auto',
+        theme = lualine_custom_theme(),
         globalstatus = true,
         ignore_focus = { 'NvimTree' },
       },

@@ -38,13 +38,20 @@ return {
       ---@param highlights Highlights
       ---@param colors ColorScheme
       on_highlights = function(highlights, colors)
+        highlights.StatusLine = {
+          bg = colors.bg,
+        }
+
         highlights.DiagnosticUnnecessary = {
           fg = colors.comment,
         }
+
         highlights.CursorLineNr = { fg = colors.orange, bold = true }
+
         highlights.LineNrAbove = { fg = colors.fg_gutter }
         highlights.LineNrBelow = { fg = colors.fg_gutter }
         local prompt = '#2d3149'
+
         highlights.TelescopeNormal =
           { bg = colors.bg_dark, fg = colors.fg_dark }
         highlights.TelescopeBorder =
