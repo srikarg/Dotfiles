@@ -255,8 +255,6 @@ cask "flux"
 cask "font-fira-code-nerd-font"
 # Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 # Display key code, unicode value and modifier keys state for any key combination
 cask "key-codes"
 # Software for Logitech devices
@@ -271,6 +269,8 @@ cask "obs"
 cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# Screen recorder and editor
+cask "screen-studio"
 # Screenshot measurement and annotation tool
 cask "shottr"
 # Instant messaging application focusing on security
@@ -287,6 +287,8 @@ cask "steam"
 cask "syncthing"
 # Mesh VPN based on Wireguard
 cask "tailscale"
+# Unpacks archive files
+cask "the-unarchiver"
 # Virtual machines UI using QEMU
 cask "utm"
 # Open-source code editor
