@@ -95,6 +95,9 @@ return {
           -- Markdown
           'markdownlint',
 
+          -- Clojure
+          'joker',
+
           -- Shell
           'shfmt',
           'shellcheck',
@@ -157,6 +160,8 @@ return {
           },
 
           astro = {},
+
+          clojure_lsp = {},
 
           svelte = {},
 

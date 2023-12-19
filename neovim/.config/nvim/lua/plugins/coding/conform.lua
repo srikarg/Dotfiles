@@ -50,6 +50,7 @@ return {
         ['lua'] = { 'stylua' },
         ['bash'] = { 'shfmt' },
         ['sh'] = { 'shfmt' },
+        ['clojure'] = { 'joker' },
 
         -- Use the "_" filetype to run formatters on filetypes that don't
         -- have other formatters configured.

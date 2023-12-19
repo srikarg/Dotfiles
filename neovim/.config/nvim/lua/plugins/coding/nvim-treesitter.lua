@@ -26,6 +26,7 @@ return {
         'dockerfile',
         'mermaid',
         'python',
+        'clojure',
 
         -- Git
         'gitignore',
