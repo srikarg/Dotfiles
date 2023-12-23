@@ -35,8 +35,6 @@ return {
       },
       menu = {
         keymaps = {
-          ['q'] = '<C-w>q',
-
           ['h'] = '<C-w>c',
 
           ['l'] = function()

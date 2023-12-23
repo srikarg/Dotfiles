@@ -37,7 +37,7 @@ brew "gmp"
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# Emulator for x86 and PowerPC
+# Generic machine emulator and virtualizer
 brew "qemu"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
@@ -263,6 +263,8 @@ cask "logi-options-plus"
 cask "logseq"
 # Shows the next meeting in the menu bar
 cask "meetingbar"
+# GameStream client
+cask "moonlight"
 # Open-source software for live streaming and screen recording
 cask "obs"
 # Control your tools with a few keystrokes
