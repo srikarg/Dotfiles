@@ -47,6 +47,12 @@ return {
         filter = { event = 'msg_showmode' },
         view = 'mini',
       },
+      -- Skip session management info message from auto-session plugin
+      -- https://github.com/rmagatti/auto-session/blob/51196ca66b38fc1660fdf50031cb0b31a199b7c9/lua/auto-session/init.lua#L859
+      {
+        filter = { find = 'Setting up autocmds' },
+        opts = { skip = true },
+      },
     },
     presets = {
       bottom_search = true,
