@@ -136,11 +136,11 @@ function zc() {
 
 # Tree function
 
-function tree() {
+function l() {
   if [ $# -eq 0 ]; then
-    tree -aNCL 2 -I '.git|node_modules|bower_components' --dirsfirst | less -FRNX
+    tree -aNCL 2 -I '.git|node_modules' --dirsfirst | less -FRNX
   else
-    tree -aNCL 2 -I '.git|node_modules|bower_components' --dirsfirst "$1" | less -FRNX
+    tree -aNCL 2 -I '.git|node_modules' --dirsfirst "$1" | less -FRNX
   fi
 }
 

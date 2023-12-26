@@ -33,9 +33,7 @@ alias tarc="COPYFILE_DISABLE=1 tar -czf"
 alias tare="tar -xzf"
 
 # List all files colorized in long format using the `eza` binary
-alias l="eza --hyperlink --long --sort=time --time=modified --time-style=relative --all --git --color=auto --icons=auto --group-directories-first --dereference"
-
-alias ls="l"
+alias ls="eza --hyperlink --long --sort=time --time=modified --time-style=relative --all --git --color=auto --icons=auto --group-directories-first --dereference"
 
 # List only directories
 alias lsd="eza --hyperlink --long --only-dirs --sort=time --time=modified --time-style=relative --all --git --color=auto --icons=auto --dereference"
