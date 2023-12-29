@@ -92,6 +92,11 @@ return {
         fg = colors.cyan,
         bg = colors.bg_statusline,
       },
+
+      HighlightUndo = {
+        bg = colors.blue,
+        fg = colors.bg,
+      },
     }
 
     for group, args in pairs(highlights) do
