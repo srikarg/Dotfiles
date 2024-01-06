@@ -72,6 +72,9 @@ return {
 
       incremental_selection = {
         enable = true,
+        -- Prevents these keybinds from functioning in command history mode
+        -- (CTRL-F when in command mode) and other areas where the filetype is 'vim'
+        disable = { 'vim' },
         keymaps = {
           init_selection = '<CR>',
           scope_incremental = '<CR>',
