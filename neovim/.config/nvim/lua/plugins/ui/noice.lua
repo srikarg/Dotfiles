@@ -53,6 +53,14 @@ return {
         filter = { find = 'Setting up autocmds' },
         opts = { skip = true },
       },
+      -- Avoids unnecessary message when a LSP cannot provide information upon
+      -- vim.lsp.buf.hover() in a file that has multiple LSPs attached.
+      -- See https://github.com/neovim/nvim-lspconfig/issues/1931#issuecomment-1297599534
+      -- for more information.
+      {
+        filter = { find = 'No information available' },
+        opts = { skip = true },
+      },
     },
     presets = {
       bottom_search = true,
