@@ -158,5 +158,50 @@ return {
         args = { '${port}' },
       },
     }
+
+    -- Provide backup configurations for these filetypes in case a `launch.json`
+    -- file is not present for the current project.
+    for _, language in ipairs({
+      'typescript',
+      'javascript',
+      'typescriptreact',
+      'javascriptreact',
+    }) do
+      if not dap.configurations[language] then
+        dap.configurations[language] = {
+          {
+            type = 'pwa-node',
+            request = 'launch',
+            name = 'Launch Current File',
+            program = '${file}',
+            cwd = '${workspaceFolder}',
+          },
+          {
+            type = 'pwa-node',
+            request = 'attach',
+            name = 'Attach',
+            processId = require('dap.utils').pick_process,
+            cwd = '${workspaceFolder}',
+          },
+          {
+            type = 'pwa-node',
+            request = 'launch',
+            name = 'Launch Current File with Deno',
+            program = '${file}',
+            cwd = '${workspaceFolder}',
+            runtimeExecutable = 'deno',
+            runtimeArgs = {
+              'run',
+              '--unstable',
+              '--import-map',
+              './import_map.json',
+              '--inspect-brk',
+              '--allow-all',
+            },
+            attachSimplePort = 9229,
+          },
+        }
+      end
+    end
   end,
 }
