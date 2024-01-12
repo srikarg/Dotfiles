@@ -157,6 +157,22 @@ return {
 
           denols = {
             root_dir = nvim_lsp.util.root_pattern('deno.json', 'deno.jsonc'),
+
+            settings = {
+              deno = {
+                enable = true,
+                lint = true,
+                unstable = true,
+                suggest = {
+                  imports = {
+                    autoDiscover = true,
+                    hosts = {
+                      ['https://deno.land'] = true,
+                    },
+                  },
+                },
+              },
+            },
           },
 
           astro = {},
