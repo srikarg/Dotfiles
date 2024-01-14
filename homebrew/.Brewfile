@@ -41,6 +41,8 @@ brew "gnutls"
 brew "qemu"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
+# Color-highlighted diff(1) output
+brew "colordiff"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -243,6 +245,8 @@ cask "bitwarden"
 cask "coconutbattery"
 # Voice and text chat software
 cask "discord"
+# Launcher for *Epic Games* games
+cask "epic-games"
 # Tool to rename digital photos, movie- and audio-clips
 cask "exifrenamer"
 # Collaborative team software
@@ -265,6 +269,8 @@ cask "logseq"
 cask "meetingbar"
 # GameStream client
 cask "moonlight"
+# VPN client
+cask "mullvadvpn"
 # Open-source software for live streaming and screen recording
 cask "obs"
 # Control your tools with a few keystrokes
@@ -301,8 +307,6 @@ cask "vlc"
 cask "wezterm-nightly"
 # Native desktop client for WhatsApp
 cask "whatsapp"
-# HTML to PDF renderer
-cask "wkhtmltopdf"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
