@@ -10,6 +10,8 @@ config.color_scheme = 'tokyonight_night'
 
 config.font_size = 18.0
 
+config.max_fps = 120
+
 config.font = wezterm.font('JetBrainsMono NFM', { weight = 'Light' })
 
 config.scrollback_lines = 200000
