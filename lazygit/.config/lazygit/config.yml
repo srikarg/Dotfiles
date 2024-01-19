@@ -16,6 +16,8 @@ customCommands:
     context: "localBranches"
     loadingText: Pruning local branches that don't have a remote tracking branch
     stream: true
+services:
+  "sourcecode.jnj.com": "bitbucketServer:sourcecode.jnj.com"
 gui:
   # stuff relating to the UI
   windowSize: "normal" # one of 'normal' | 'half' | 'full' default is 'normal'
