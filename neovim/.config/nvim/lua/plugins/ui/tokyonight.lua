@@ -42,6 +42,10 @@ return {
           bg = colors.bg,
         }
 
+        highlights.WinBar = {
+          bg = colors.bg,
+        }
+
         highlights.DiagnosticUnnecessary = {
           fg = colors.comment,
         }
