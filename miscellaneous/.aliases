@@ -3,6 +3,8 @@
 
 alias lg="lazygit"
 
+alias t="tmux-sessionizer"
+
 ## NPM
 #
 # Find npm package updates for current repository
