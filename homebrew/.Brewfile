@@ -5,6 +5,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
+tap "joshmedeski/sesh"
 # Software library to render fonts
 brew "freetype"
 # Toolkit for image loading and pixel buffer manipulation
@@ -233,6 +234,8 @@ brew "zsh"
 brew "azure/kubelogin/kubelogin"
 # Terraform
 brew "hashicorp/tap/terraform"
+# Smart terminal session manager
+brew "joshmedeski/sesh/sesh"
 # Application uninstaller
 cask "appcleaner"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
