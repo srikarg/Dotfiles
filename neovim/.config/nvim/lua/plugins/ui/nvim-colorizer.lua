@@ -4,6 +4,7 @@ return {
   opts = {
     filetypes = {
       '*',
+      '!TelescopePrompt',
       '!TelescopeResults',
       cmp_docs = { always_update = true },
       cmp_menu = { always_update = true },
