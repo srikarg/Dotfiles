@@ -2,7 +2,7 @@
 
 # This uses the `sesh` binary found here: https://github.com/joshmedeski/sesh#tmux--fzf
 
-session=$(sesh list -tz | fzf-tmux -p 55%,60% \
+session=$(sesh list --tmux --zoxide --hide-attached | fzf-tmux -p 55%,60% \
   --no-sort --border-label ' sesh ' --prompt '⚡  ' \
   --header '  ^a all ^t tmux ^x zoxide ^f find' \
   --bind 'tab:down,btab:up' \
