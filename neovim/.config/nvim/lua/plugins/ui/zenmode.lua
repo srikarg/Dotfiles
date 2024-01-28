@@ -36,7 +36,7 @@ return {
         showcmd = false,
       },
       gitsigns = { enabled = true },
-      twilight = { enabled = true },
+      twilight = { enabled = false },
       tmux = { enabled = true },
       diagnostics = { enabled = true },
     },
