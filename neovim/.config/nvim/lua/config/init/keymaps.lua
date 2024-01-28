@@ -130,8 +130,6 @@ vim.keymap.set(
 )
 
 -- Diagnostic keymaps
-local diagnostics_active = true
-
 vim.keymap.set(
   'n',
   '[d',
@@ -152,15 +150,6 @@ vim.keymap.set(
   vim.diagnostic.open_float,
   { desc = 'Open [C]ode [F]loating Diagnostic Message' }
 )
-
-vim.keymap.set('n', '<leader>ud', function()
-  diagnostics_active = not diagnostics_active
-  if diagnostics_active then
-    vim.diagnostic.show()
-  else
-    vim.diagnostic.hide()
-  end
-end, { desc = 'Toggle [D]iagnostic Visibility' })
 
 -- Lists keymaps
 vim.keymap.set(
