@@ -39,6 +39,7 @@ return {
         'astro',
         'svelte',
         'html',
+        'http',
         'css',
         'scss',
         'javascript',
