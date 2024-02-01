@@ -56,6 +56,9 @@ return {
       function()
         require('neotest').output.open({
           enter = true,
+          quiet = true,
+          last_run = true,
+          auto_close = true,
         })
       end,
       desc = 'Testing: Open Output',
