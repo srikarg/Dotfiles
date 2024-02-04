@@ -9,24 +9,12 @@ local function limit_lsp_types(entry, ctx)
   local types = require('cmp.types')
 
   if char_before_cursor == '.' and char_after_dot:match('[a-zA-Z]') then
-    if
-      kind == types.lsp.CompletionItemKind.Method
+    return kind == types.lsp.CompletionItemKind.Method
       or kind == types.lsp.CompletionItemKind.Field
       or kind == types.lsp.CompletionItemKind.Property
-    then
-      return true
-    else
-      return false
-    end
   elseif string.match(line, '^%s+%w+$') then
-    if
-      kind == types.lsp.CompletionItemKind.Function
+    return kind == types.lsp.CompletionItemKind.Function
       or kind == types.lsp.CompletionItemKind.Variable
-    then
-      return true
-    else
-      return false
-    end
   end
 
   if
@@ -86,7 +74,11 @@ return {
     local cmp_tailwind_colors = require('tailwindcss-colorizer-cmp')
 
     cmp.setup({
-      experimental = { ghost_text = true },
+      experimental = {
+        ghost_text = {
+          hl_group = 'Comment',
+        },
+      },
 
       snippet = {
         expand = function(args)
@@ -107,7 +99,7 @@ return {
         }),
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-l>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
@@ -136,7 +128,7 @@ return {
       sources = {
         {
           name = 'nvim_lsp',
-          keyword_length = 5,
+          keyword_length = 2,
           entry_filter = limit_lsp_types,
         },
         { name = 'nvim_lsp_signature_help' },
@@ -148,10 +140,11 @@ return {
       },
 
       performance = {
-        debounce = 300,
-        throttle = 60,
+        debounce = 30,
+        throttle = 20,
+        async_budget = 0.8,
         max_view_entries = 10,
-        fetching_timeout = 200,
+        fetching_timeout = 250,
       },
     })
 
