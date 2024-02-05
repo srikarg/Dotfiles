@@ -86,6 +86,9 @@ return {
           -- Lua
           'stylua',
 
+          -- SonarQube
+          'sonarlint-language-server',
+
           -- Web Development
           'prettier',
 
