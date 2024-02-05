@@ -95,15 +95,15 @@ vim.keymap.set(
 vim.keymap.set(
   'n',
   '<leader>V',
-  '<CMD> vs <BAR> wincmd p <CR>',
-  { desc = 'Vertical Split and Return to Previous Split', nowait = true }
+  '<CMD> vs <CR>',
+  { desc = 'Vertical Split', nowait = true }
 )
 
 vim.keymap.set(
   'n',
   '<leader>H',
-  '<CMD> sp <BAR> wincmd p <CR>',
-  { desc = 'Horizontal Split and Return to Previous Split', nowait = true }
+  '<CMD> sp <CR>',
+  { desc = 'Horizontal Split', nowait = true }
 )
 
 -- Buffer Management
