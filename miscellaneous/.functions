@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 ### Custom Functions
 
+function rgl {
+  # Pipe ripgrep searches to less to enable scrolling through results
+  rg -p "$1" | less -R
+}
+
 function notes() {
   echo "Please enter the name of the notes file:"
   read name
