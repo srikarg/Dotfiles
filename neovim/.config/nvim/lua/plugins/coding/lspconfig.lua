@@ -154,6 +154,32 @@ return {
                 importModuleSpecifierPreference = 'non-relative',
               },
             },
+            on_attach = function()
+              vim.keymap.set('n', '<leader>co', function()
+                vim.lsp.buf.code_action({
+                  apply = true,
+                  context = {
+                    only = { 'source.organizeImports.ts' },
+                    diagnostics = {},
+                  },
+                })
+              end, { desc = 'Organize Imports' })
+
+              vim.keymap.set('n', '<leader>cR', function()
+                vim.lsp.buf.code_action({
+                  apply = true,
+                  context = {
+                    only = { 'source.removeUnused.ts' },
+                    diagnostics = {},
+                  },
+                })
+              end, { desc = 'Remove Unused Imports' })
+            end,
+            settings = {
+              completions = {
+                completeFunctionCalls = true,
+              },
+            },
             root_dir = nvim_lsp.util.root_pattern('package.json'),
             single_file_support = false,
           },
@@ -301,6 +327,7 @@ return {
                 default_on_attach(client, bufnr)
               end,
               settings = (servers[server_name] or {}).settings,
+              keys = (servers[server_name] or {}).keys,
               init_options = (servers[server_name] or {}).init_options,
               filetypes = (servers[server_name] or {}).filetypes,
               root_dir = (servers[server_name] or {}).root_dir,
