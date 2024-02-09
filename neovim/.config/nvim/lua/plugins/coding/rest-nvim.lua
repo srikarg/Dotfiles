@@ -3,16 +3,6 @@ return {
 
   ft = 'http',
 
-  keys = {
-    {
-      '<Leader>cr',
-      function()
-        require('rest-nvim').run()
-      end,
-      desc = 'Execute HTTP request',
-    },
-  },
-
   dependencies = { { 'nvim-lua/plenary.nvim' } },
 
   config = function()
@@ -59,5 +49,12 @@ return {
       yank_dry_run = true,
       search_back = true,
     })
+
+    vim.keymap.set(
+      'n',
+      '<leader>cr',
+      require('rest-nvim').run,
+      { desc = 'Execute HTTP Request' }
+    )
   end,
 }
