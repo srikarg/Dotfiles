@@ -88,6 +88,7 @@ return {
         ensure_installed = {
           -- Web Development --
           -- LSPs
+          'biome',
           'eslint',
           'yamlls',
           'tailwindcss',
@@ -162,6 +163,8 @@ return {
           cssls = {},
 
           tailwindcss = {},
+
+          biome = {},
 
           tsserver = {
             init_options = {
