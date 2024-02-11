@@ -84,7 +84,6 @@ return {
   config = function()
     local cmp = require('cmp')
     local luasnip = require('luasnip')
-    local cmp_tailwind_colors = require('tailwindcss-colorizer-cmp')
 
     cmp.setup({
       experimental = {
@@ -100,7 +99,15 @@ return {
       },
 
       formatting = {
-        format = cmp_tailwind_colors.formatter,
+        format = function(entry, item)
+          local icons = require('config').icons.kinds
+
+          if icons[item.kind] then
+            item.kind = icons[item.kind] .. item.kind
+          end
+
+          return require('tailwindcss-colorizer-cmp').formatter(entry, item)
+        end,
       },
 
       mapping = cmp.mapping.preset.insert({
