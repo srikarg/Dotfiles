@@ -35,6 +35,19 @@ return {
     'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
 
+    -- Codeium
+    {
+      'Exafunction/codeium.nvim',
+
+      enabled = false,
+
+      cmd = 'Codeium',
+
+      build = ':Codeium Auth',
+
+      opts = {},
+    },
+
     -- Adds LSP completion capabilities
     'hrsh7th/cmp-nvim-lsp',
 
@@ -130,6 +143,9 @@ return {
           name = 'nvim_lsp',
           keyword_length = 2,
           entry_filter = limit_lsp_types,
+        },
+        {
+          name = 'codeium',
         },
         { name = 'nvim_lsp_signature_help' },
         { name = 'luasnip', max_item_count = 3 },
