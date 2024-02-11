@@ -75,41 +75,69 @@ return {
   'neovim/nvim-lspconfig',
 
   dependencies = {
-    -- Automatically install Formatters, Linters, and LSPs to stdpath for neovim
     {
       'williamboman/mason.nvim',
 
-      config = function()
-        require('mason').setup()
+      config = true,
+    },
 
-        local ensure_installed = {
-          -- Lua
-          'stylua',
+    {
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-          -- SonarQube
+      opts = {
+        ensure_installed = {
+          -- Web Development --
+          -- LSPs
+          'eslint',
+          'yamlls',
+          'tailwindcss',
+          'html',
+          'cssls',
+          'jsonls',
+          'svelte',
+          'tsserver',
+          'denols',
+          'emmet_language_server',
+          'astro',
+          -- Formatters
+          'prettier',
+          -- Linters
           'sonarlint-language-server',
 
-          -- Web Development
-          'prettier',
+          -- Lua --
+          -- LSPs
+          'lua_ls',
+          -- Formatters
+          'stylua',
 
-          --Docker
+          -- Docker --
+          -- LSPs
+          'docker_compose_language_service',
+          'dockerls',
+          -- Linters
           'hadolint',
 
-          -- Markdown
-          'markdownlint',
-
-          -- Clojure
+          -- Clojure --
+          -- LSPs
+          'clojure_lsp',
+          -- Linters
           'joker',
 
-          -- Shell
-          'shfmt',
-          'shellcheck',
-        }
+          -- Markdown --
+          -- LSPs
+          'marksman',
+          -- Linters
+          'markdownlint',
 
-        vim.api.nvim_create_user_command('MasonInstallAll', function()
-          vim.cmd('MasonInstall ' .. table.concat(ensure_installed, ' '))
-        end, {})
-      end,
+          -- Shell --
+          -- LSPs
+          'bashls',
+          -- Linters
+          'shellcheck',
+          -- Formatters
+          'shfmt',
+        },
+      },
     },
 
     'hrsh7th/cmp-nvim-lsp',
@@ -123,17 +151,11 @@ return {
 
     {
       'williamboman/mason-lspconfig.nvim',
+
       config = function()
         local nvim_lsp = require('lspconfig')
 
-        -- Enable the following language servers
-        --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-        --
-        --  Add any additional override configuration in the following tables. They will be passed to
-        --  the `settings` field of the server config. You must look up that documentation yourself.
-        --
-        --  If you want to override the default filetypes that your language server will attach to you can
-        --  define the property 'filetypes' to the map in question.
+        -- Enable and configure the following LSP servers
         local servers = {
           html = {},
 
@@ -295,12 +317,9 @@ return {
           },
         }
 
-        -- Ensure the servers above are installed
         local mason_lspconfig = require('mason-lspconfig')
 
-        mason_lspconfig.setup({
-          ensure_installed = vim.tbl_keys(servers),
-        })
+        mason_lspconfig.setup()
 
         -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
         local capabilities = vim.lsp.protocol.make_client_capabilities()
