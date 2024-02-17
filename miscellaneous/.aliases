@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 ### Aliases
 
+# Ring the bell after a command is done, fails, etc.
+# Example usage: `sleep 10 && ring_bell`
+alias ring_bell="echo -e '\a'"
+
 alias lg="lazygit"
 
 alias t="tmux-sessionizer"
