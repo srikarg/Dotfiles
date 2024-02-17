@@ -76,6 +76,11 @@ whitespace = fix
 # Show most recently changed branches first.
 sort = -committerdate
 
+[commit]
+
+# Add whole commit diff in the text editor when composing commit messages
+verbose = true
+
 [core]
 
 pager = delta
@@ -132,6 +137,9 @@ untracked = cyan
 renames = copies
 colorMoved = default
 
+# Use a different diff algorithm.
+algorithm = histogram
+
 [diff "bin"]
 
 # Use `hexdump` to diff binary files.
@@ -147,7 +155,7 @@ autocorrect = prompt
 # Include summaries of merged commits in newly created merge commit messages
 log = true
 # Change conflict style for merges
-conflictstyle = diff3
+conflictstyle = zdiff3
 
 [push]
 
