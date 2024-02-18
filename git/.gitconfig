@@ -76,12 +76,18 @@ whitespace = fix
 # Show most recently changed branches first.
 sort = -committerdate
 
+[column]
+
+ui = auto
+
 [commit]
 
 # Add whole commit diff in the text editor when composing commit messages
 verbose = true
 
 [core]
+
+fsmonitor = true
 
 pager = delta
 
@@ -169,6 +175,11 @@ followTags = true
 [pull]
 
 ff = only
+
+[rerere]
+
+enabled = true
+autoUpdate = true
 
 # URL shorthands
 
