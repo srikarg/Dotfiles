@@ -33,6 +33,13 @@ return {
       '<CMD> DiffviewClose <CR>',
       desc = '  Close Diff View',
     },
+
+    {
+      '<leader>gvf',
+      ':DiffviewFileHistory <CR>',
+      mode = 'v',
+      desc = '  Show File History',
+    },
   },
 
   opts = function()
