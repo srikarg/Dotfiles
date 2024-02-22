@@ -52,7 +52,6 @@ return {
             -- Match the image's name in FROM lines of Dockerfiles to go to the
             -- DockerHub page for the specified image
             local docker_image = string.match(line_string, '^FROM .-([%a%d]+):')
-            print(docker_image)
             local url = 'https://hub.docker.com/_/' .. docker_image
             return docker_image and url or nil
           end,
