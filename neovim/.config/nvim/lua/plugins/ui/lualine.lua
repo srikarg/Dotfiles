@@ -1,17 +1,17 @@
 local lualine_custom_theme = function()
   local tokyonight_colors =
-    require('tokyonight.colors').setup({ style = 'night' })
+    require('tokyonight.colors').setup({ style = 'moon' })
 
   local colors = {
     darkfg = tokyonight_colors.bg,
     textbg = 'StatusLine',
     innerbg = nil,
     outerbg = nil,
-    normal = '#7e9cd8',
-    insert = '#98bb6c',
-    visual = '#ffa066',
-    replace = '#e46876',
-    command = '#e6c384',
+    normal = tokyonight_colors.blue,
+    insert = tokyonight_colors.green,
+    visual = tokyonight_colors.orange,
+    replace = tokyonight_colors.red,
+    command = tokyonight_colors.yellow,
   }
 
   return {
@@ -175,14 +175,10 @@ return {
             },
           },
         },
-        lualine_y = {
+        lualine_y = {},
+        lualine_z = {
           { 'progress', separator = ' ', padding = { left = 1, right = 0 } },
           { 'location', padding = { left = 0, right = 1 } },
-        },
-        lualine_z = {
-          function()
-            return ' ' .. os.date('%I:%M %p')
-          end,
         },
       },
       extensions = { 'nvim-tree', 'lazy', 'trouble', 'quickfix' },
