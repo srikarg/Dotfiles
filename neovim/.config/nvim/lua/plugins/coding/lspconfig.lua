@@ -145,15 +145,14 @@ return {
 
     'hrsh7th/nvim-cmp',
 
-    -- Additional lua configuration, makes nvim stuff amazing!
-    {
-      'folke/neodev.nvim',
-    },
+    'folke/neodev.nvim',
 
     {
       'williamboman/mason-lspconfig.nvim',
 
       config = function()
+        require('neodev').setup()
+
         local nvim_lsp = require('lspconfig')
 
         -- Enable and configure the following LSP servers
