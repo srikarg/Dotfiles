@@ -49,9 +49,8 @@ return {
         highlights.LineNrBelow = { fg = colors.fg_gutter, bold = true }
 
         local prompt = '#2d3149'
-
         highlights.TelescopeNormal =
-          { bg = colors.bg_dark, fg = colors.fg_dark }
+          { bg = colors.bg_dark, fg = colors.fg_dark, bold = true }
         highlights.TelescopeBorder =
           { bg = colors.bg_dark, fg = colors.bg_dark }
         highlights.TelescopePromptNormal = { bg = prompt }
