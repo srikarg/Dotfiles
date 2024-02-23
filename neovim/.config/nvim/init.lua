@@ -9,6 +9,8 @@ require('config.init.options')
 
 require('config.init.keymaps')
 
+require('config.init.usercmd')
+
 require('config.init.autocmd')
 
 require('config.init.filetype')
