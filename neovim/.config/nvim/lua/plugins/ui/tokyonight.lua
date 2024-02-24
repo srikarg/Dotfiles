@@ -50,6 +50,9 @@ return {
 
         highlights.BufferLineFill = { fg = colors.fg, bg = colors.bg }
 
+        highlights.StatusLine = { fg = colors.fg, bg = colors.bg }
+        highlights.StatusLineNC = { fg = colors.fg, bg = colors.bg }
+
         local prompt = '#2d3149'
         highlights.TelescopeNormal =
           { bg = colors.bg_dark, fg = colors.fg_dark, bold = true }
