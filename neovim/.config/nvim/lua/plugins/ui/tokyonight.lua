@@ -48,6 +48,8 @@ return {
         highlights.LineNrAbove = { fg = colors.fg_gutter, bold = true }
         highlights.LineNrBelow = { fg = colors.fg_gutter, bold = true }
 
+        highlights.BufferLineFill = { fg = colors.fg, bg = colors.bg }
+
         local prompt = '#2d3149'
         highlights.TelescopeNormal =
           { bg = colors.bg_dark, fg = colors.fg_dark, bold = true }
