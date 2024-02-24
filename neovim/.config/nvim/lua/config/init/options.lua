@@ -91,10 +91,16 @@ vim.opt.colorcolumn = '80'
 -- Use default text width of 80 characters
 vim.opt.textwidth = 80
 
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10
+
 -- Display space and end of line characters
 vim.opt.list = true
-vim.opt.listchars:append('space:⋅')
-vim.opt.listchars:append('eol:↵')
+vim.opt.listchars =
+  { tab = '» ', trail = '·', nbsp = '␣', space = '⋅', eol = '↵' }
 
 -- Spell Check Settings
 vim.opt.spelllang = 'en_us'
