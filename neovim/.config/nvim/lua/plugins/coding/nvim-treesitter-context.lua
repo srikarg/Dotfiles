@@ -17,7 +17,7 @@ return {
 
   opts = {
     enable = true,
-    max_lines = 0,
+    max_lines = 10,
     line_numbers = true,
   },
 }
