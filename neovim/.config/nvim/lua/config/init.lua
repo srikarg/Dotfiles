@@ -1,5 +1,7 @@
 local M = {}
 
+M.colorscheme = 'tokyonight-moon'
+
 M.icons = {
   misc = {
     dots = '󰇘',

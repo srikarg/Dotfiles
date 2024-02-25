@@ -1,6 +1,7 @@
 local lualine_custom_theme = function()
+  local colorscheme = require('config').colorscheme:gsub('tokyonight-', '')
   local tokyonight_colors =
-    require('tokyonight.colors').setup({ style = 'moon' })
+    require('tokyonight.colors').setup({ style = colorscheme })
 
   local colors = {
     darkfg = tokyonight_colors.bg,

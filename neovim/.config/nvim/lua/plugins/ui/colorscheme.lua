@@ -6,8 +6,10 @@ return {
   priority = 1000,
 
   config = function()
+    local colorscheme = require('config').colorscheme
+
     local opts = {
-      style = 'moon', -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+      style = colorscheme:gsub('tokyonight-', ''), -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
       light_style = 'day', -- The theme is used when the background is set to light
       transparent = false, -- Enable this to disable setting the background color
       terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
@@ -70,7 +72,7 @@ return {
     }
 
     require('tokyonight').setup(opts)
-    vim.cmd.colorscheme('tokyonight-moon')
+    vim.cmd.colorscheme(colorscheme)
 
     local colors = require('tokyonight.colors').setup(opts)
 
