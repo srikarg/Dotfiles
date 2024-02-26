@@ -23,6 +23,9 @@ vim.opt.formatoptions = 'jcroqlnt'
 vim.opt.grepformat = '%f:%l:%c:%m'
 vim.opt.grepprg = 'rg --vimgrep'
 
+-- Always show the status line only for the last window
+vim.opt.laststatus = 3
+
 -- Hide mode since we have statusline
 vim.opt.showmode = false
 

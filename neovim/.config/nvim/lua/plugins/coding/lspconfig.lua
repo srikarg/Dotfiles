@@ -9,6 +9,7 @@ local default_on_attach = function(client, bufnr)
   end
 
   if client.server_capabilities.documentSymbolProvider then
+    require('nvim-navic').attach(client, bufnr)
     require('nvim-navbuddy').attach(client, bufnr)
 
     nmap('<leader>N', require('nvim-navbuddy').open, 'Open [N]avbuddy')
