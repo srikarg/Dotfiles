@@ -25,6 +25,9 @@ return {
           require('tokyonight.colors').setup({ style = colorscheme })
         local filename =
           vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
+        if filename == '' then
+          filename = '[No Name]'
+        end
         local ft_icon, ft_color = devicons.get_icon_color(filename)
         local modified = vim.bo[props.buf].modified
         local res = {
@@ -34,7 +37,13 @@ return {
             ' ',
             guibg = ft_color,
             guifg = helpers.contrast_color(ft_color),
-          } or '',
+          } or {
+            ' ',
+            '',
+            ' ',
+            guibg = tokyonight_colors.blue,
+            guifg = tokyonight_colors.bg_dark,
+          },
           ' ',
           { filename, gui = modified and 'bold,italic' or 'bold' },
           guibg = tokyonight_colors.bg_dark,
