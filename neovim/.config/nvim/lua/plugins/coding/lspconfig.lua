@@ -499,17 +499,7 @@ return {
     vim.diagnostic.config({
       underline = true,
       update_in_insert = false,
-      virtual_text = {
-        spacing = 4,
-        source = 'if_many',
-        prefix = function(diagnostic)
-          for name, icon in pairs(diagnosticIcons) do
-            if diagnostic.severity == vim.diagnostic.severity[name:upper()] then
-              return icon
-            end
-          end
-        end,
-      },
+      virtual_text = false,
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = diagnosticIcons.Error,
