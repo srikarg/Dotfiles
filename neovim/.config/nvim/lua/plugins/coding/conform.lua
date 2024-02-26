@@ -51,6 +51,7 @@ return {
         ['bash'] = { 'shfmt' },
         ['sh'] = { 'shfmt' },
         ['clojure'] = { 'joker' },
+        ['xml'] = { 'xmlformat' },
 
         -- Use the "_" filetype to run formatters on filetypes that don't
         -- have other formatters configured.

@@ -103,6 +103,7 @@ return {
           'astro',
           -- Formatters
           'prettier',
+          'xmlformatter',
           -- Linters
           'sonarlint-language-server',
 
