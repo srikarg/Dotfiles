@@ -9,6 +9,13 @@ vim.keymap.set('n', '<C-s>', '<CMD> w <CR>', { desc = 'Save Current Buffer' })
 
 vim.keymap.set('n', '<C-c>', '<CMD> %y+ <CR>', { desc = 'Copy Entire Buffer' })
 
+vim.keymap.set(
+  't',
+  '<Esc><Esc>',
+  '<C-\\><C-n>',
+  { desc = 'Exit terminal mode' }
+)
+
 -- Spell Check
 vim.keymap.set(
   'n',
