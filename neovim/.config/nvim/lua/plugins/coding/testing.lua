@@ -24,6 +24,23 @@ return {
       desc = 'Testing: Run Current File',
     },
     {
+      '<leader>twf',
+      function()
+        require('neotest').run.run({
+          vim.fn.expand('%'),
+          vitestCommand = 'npx vitest watch',
+        })
+      end,
+      desc = 'Testing: Run Current File in Watch Mode',
+    },
+    {
+      '<leader>twr',
+      function()
+        require('neotest').run.run({ vitestCommand = 'npx vitest watch' })
+      end,
+      desc = 'Testing: Run Tests in Watch Mode',
+    },
+    {
       '<leader>tn',
       function()
         require('neotest').run.run()
