@@ -98,21 +98,6 @@ vim.keymap.set(
   { desc = 'Page Down and Center', nowait = true }
 )
 
--- Splits
-vim.keymap.set(
-  'n',
-  '<leader>V',
-  '<CMD> vs <CR>',
-  { desc = 'Vertical Split', nowait = true }
-)
-
-vim.keymap.set(
-  'n',
-  '<leader>H',
-  '<CMD> sp <CR>',
-  { desc = 'Horizontal Split', nowait = true }
-)
-
 -- Buffer Management
 vim.keymap.set(
   'n',
