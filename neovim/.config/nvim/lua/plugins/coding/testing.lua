@@ -88,6 +88,7 @@ return {
     'antoinemadec/FixCursorHold.nvim',
     'haydenmeade/neotest-jest',
     'marilari88/neotest-vitest',
+    'MarkEmmons/neotest-deno',
   },
 
   config = function()
@@ -100,6 +101,7 @@ return {
         },
       },
       adapters = {
+        require('neotest-deno'),
         require('neotest-jest')({
           jestCommand = 'npm test --',
           env = {
