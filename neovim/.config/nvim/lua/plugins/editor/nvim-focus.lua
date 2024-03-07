@@ -71,6 +71,12 @@ return {
     local focus_group =
       vim.api.nvim_create_augroup('FocusDisable', { clear = true })
 
+    -- Auto resize panes when resizing nvim window
+    autocmd('VimResized', {
+      pattern = '*',
+      command = 'FocusAutoresize',
+    })
+
     autocmd('WinEnter', {
       group = focus_group,
       callback = function(_)
