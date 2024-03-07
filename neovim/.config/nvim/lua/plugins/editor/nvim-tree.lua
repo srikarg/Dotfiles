@@ -15,6 +15,9 @@ return {
         dotfiles = false,
         git_ignored = false,
         git_clean = false,
+        custom = {
+          '.DS_Store',
+        },
       },
       disable_netrw = false,
       hijack_netrw = true,
