@@ -256,7 +256,7 @@ cask "exifrenamer"
 cask "figma"
 # Web browser
 cask "firefox"
-# Screen color temperature controller
+# Screen colour temperature controller
 cask "flux"
 # Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
@@ -294,7 +294,7 @@ cask "spotify"
 cask "stats"
 # Video game digital distribution service
 cask "steam"
-# Real time file synchronization software
+# Real time file synchronisation software
 cask "syncthing"
 # Mesh VPN based on Wireguard
 cask "tailscale"
@@ -302,6 +302,8 @@ cask "tailscale"
 cask "the-unarchiver"
 # Virtual machines UI using QEMU
 cask "utm"
+# Customizable timing of breaks
+cask "time-out"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
