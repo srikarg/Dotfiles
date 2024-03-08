@@ -1,18 +1,18 @@
 # yaml-language-server: $schema=https://json.schemastore.org/lazygit.json
 
 customCommands:
-  - key: "<c-b>"
+  - key: "b"
     command:
-      "git fetch -p && git branch --merged | egrep -v '\\* | master | main' |
+      "git fetch -p; git branch --merged | egrep -v '\\* | master | main' |
       xargs -r git branch -d"
     context: "localBranches"
     loadingText: Pruning local branches that have been merged into master/main
     stream: true
-  - key: "<c-B>"
+  - key: "<c-b>"
     command:
-      "git fetch -p && git for-each-ref --format '%(refname:short)
-      %(upstream:track)' refs/heads | awk '\\$2 == \"[gone]\" {print \\$1}' |
-      xargs -r git branch -D"
+      "git fetch -p; git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0
+      <(git branch -vv | grep origin) | awk '{print $1}' | xargs -r git branch
+      -d"
     context: "localBranches"
     loadingText: Pruning local branches that don't have a remote tracking branch
     stream: true
