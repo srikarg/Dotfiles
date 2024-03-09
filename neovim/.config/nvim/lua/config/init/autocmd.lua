@@ -18,6 +18,12 @@ autocmd('FileType', {
   end,
 })
 
+-- Auto resize panes when resizing nvim window
+autocmd('VimResized', {
+  pattern = '*',
+  command = 'tabdo wincmd =',
+})
+
 -- Go to last known position when opening file and center the line on the screen
 autocmd('BufWinEnter', {
   pattern = { '*' },
