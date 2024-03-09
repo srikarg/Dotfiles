@@ -78,7 +78,7 @@ sort = -committerdate
 
 [column]
 
-ui = auto
+ui = never
 
 [commit]
 
