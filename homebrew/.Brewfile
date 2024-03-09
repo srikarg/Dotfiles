@@ -244,6 +244,8 @@ cask "basictex"
 cask "battery"
 # Desktop password and login vault
 cask "bitwarden"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
 # Voice and text chat software
@@ -262,6 +264,8 @@ cask "flux"
 cask "font-fira-code-nerd-font"
 # Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
+# Menu bar calendar
+cask "itsycal"
 # Display key code, unicode value and modifier keys state for any key combination
 cask "key-codes"
 # Software for Logitech devices
