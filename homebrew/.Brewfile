@@ -136,6 +136,8 @@ brew "just"
 brew "krb5"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
+# Lazier way to manage everything docker
+brew "lazydocker"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Pager program similar to more

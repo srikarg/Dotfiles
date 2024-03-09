@@ -7,6 +7,8 @@ alias ring_bell="echo -e '\a'"
 
 alias lg="lazygit"
 
+alias ld="lazydocker"
+
 alias t="tmux-sessionizer"
 
 ## NPM
