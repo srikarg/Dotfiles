@@ -83,12 +83,13 @@ return {
   },
 
   dependencies = {
-    'nvim-lua/plenary.nvim',
-    'nvim-treesitter/nvim-treesitter',
+    'MarkEmmons/neotest-deno',
     'antoinemadec/FixCursorHold.nvim',
     'haydenmeade/neotest-jest',
     'marilari88/neotest-vitest',
-    'MarkEmmons/neotest-deno',
+    'nvim-lua/plenary.nvim',
+    'nvim-neotest/nvim-nio',
+    'nvim-treesitter/nvim-treesitter',
   },
 
   config = function()
