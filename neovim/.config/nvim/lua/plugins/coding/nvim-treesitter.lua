@@ -48,6 +48,7 @@ return {
         'json',
         'json5',
         'jsonc',
+        'xml',
         'yaml',
         'jsdoc',
 

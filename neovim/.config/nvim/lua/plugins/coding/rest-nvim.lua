@@ -1,9 +1,13 @@
 return {
   'rest-nvim/rest.nvim',
 
+  tag = 'v1.2.1',
+
   ft = 'http',
 
-  dependencies = { { 'nvim-lua/plenary.nvim' } },
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+  },
 
   config = function()
     require('rest-nvim').setup({
