@@ -48,10 +48,24 @@ brew "colordiff"
 brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# Toolkit for creating graphical user interfaces
+brew "gtk4"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# Duplicate file utility
+brew "czkawka"
 # JSON, YAML, TOML, XML, and CSV query and modification tool
 brew "dasel"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
+# Diff that understands syntax
+brew "difftastic"
 # Tool for exploring each layer in a docker image
 brew "dive"
 # Pack, ship and run any application as a lightweight container
@@ -72,10 +86,6 @@ brew "exiftool"
 brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Subtitle renderer for the ASS/SSA subtitle format
-brew "libass"
-# Play, record, convert, and stream audio and video
-brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # Library for manipulating fonts
@@ -100,16 +110,12 @@ brew "gnu-sed"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Manage compile and link flags for libraries
-brew "pkg-config"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # GNU grep, egrep and fgrep
 brew "grep"
-# Toolkit for creating graphical user interfaces
-brew "gtk4"
 # GNU Ubiquitous Intelligent Language for Extensions
 brew "guile"
 # Kubernetes package manager
@@ -122,8 +128,8 @@ brew "highlight"
 brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
-# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
-brew "libheif"
+# Library for reading RAW files from digital photo cameras
+brew "libraw"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Manage your Java environment
@@ -238,6 +244,8 @@ brew "azure/kubelogin/kubelogin"
 brew "hashicorp/tap/terraform"
 # Smart terminal session manager
 brew "joshmedeski/sesh/sesh"
+# Transfer files from and to an Android smartphone
+cask "android-file-transfer"
 # Application uninstaller
 cask "appcleaner"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
