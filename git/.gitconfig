@@ -176,6 +176,10 @@ followTags = true
 
 ff = only
 
+[rebase]
+
+updateRefs = true
+
 [rerere]
 
 enabled = true
