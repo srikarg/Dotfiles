@@ -155,19 +155,55 @@ return {
           name = 'codeium',
         },
         { name = 'nvim_lsp_signature_help' },
-        { name = 'luasnip', max_item_count = 3 },
+        { name = 'luasnip' },
         { name = 'buffer', keyword_length = 5 },
         { name = 'nvim_lua' },
         { name = 'path' },
         { name = 'calc' },
       },
 
+      sorting = {
+        comparators = {
+          cmp.config.compare.offset,
+          cmp.config.compare.exact,
+          cmp.config.compare.score,
+          cmp.config.compare.recently_used,
+
+          function(entry1, entry2)
+            local _, entry1_under = entry1.completion_item.label:find('^_+')
+            local _, entry2_under = entry2.completion_item.label:find('^_+')
+            entry1_under = entry1_under or 0
+            entry2_under = entry2_under or 0
+            if entry1_under > entry2_under then
+              return false
+            elseif entry1_under < entry2_under then
+              return true
+            end
+          end,
+
+          cmp.config.compare.kind,
+          cmp.config.compare.locality,
+          cmp.config.compare.sort_text,
+          cmp.config.compare.length,
+          cmp.config.compare.order,
+        },
+      },
+
       performance = {
         debounce = 30,
         throttle = 20,
         async_budget = 0.8,
-        max_view_entries = 10,
+        max_view_entries = 20,
         fetching_timeout = 250,
+      },
+
+      matching = {
+        disallow_fuzzy_matching = false,
+        disallow_fullfuzzy_matching = false,
+        disallow_partial_fuzzy_matching = false,
+        disallow_partial_matching = false,
+        disallow_prefix_unmatching = false,
+        disallow_symbol_nonprefix_matching = true,
       },
     })
 
