@@ -28,5 +28,10 @@ return {
     require('luasnip.loaders.from_lua').lazy_load({
       paths = vim.g.lua_snippets_path or '',
     })
+
+    require('luasnip').filetype_extend(
+      'typescript',
+      { 'javascript', 'javascriptreact', 'jsdoc' }
+    )
   end,
 }
