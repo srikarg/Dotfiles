@@ -155,7 +155,7 @@ return {
           name = 'codeium',
         },
         { name = 'nvim_lsp_signature_help' },
-        { name = 'luasnip' },
+        { name = 'luasnip', max_item_count = 3 },
         { name = 'buffer', keyword_length = 5 },
         { name = 'nvim_lua' },
         { name = 'path' },
