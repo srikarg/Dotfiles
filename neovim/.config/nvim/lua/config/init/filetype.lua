@@ -5,6 +5,7 @@ vim.filetype.add({
     Justfile = 'just',
     Tmuxfile = 'tmux',
     ['go.sum'] = 'go',
+    ['.sequelizerc'] = 'javascript',
     ['yarn.lock'] = 'yaml',
     ['.env'] = 'dotenv',
     ['.sh'] = 'bash',
