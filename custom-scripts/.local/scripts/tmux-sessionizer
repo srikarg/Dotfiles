@@ -2,13 +2,17 @@
 
 # This uses the `sesh` binary found here: https://github.com/joshmedeski/sesh#tmux--fzf
 
-session=$(sesh list --tmux --zoxide --hide-attached | fzf-tmux -p 55%,60% \
-  --no-sort --border-label ' sesh ' --prompt '⚡  ' \
-  --header '  ^a all ^t tmux ^x zoxide ^f find' \
+session=$(sesh list -i --tmux --zoxide --hide-attached | fzf-tmux -p 55%,60% -- \
+  --ansi \
+  --no-sort --border-label ' sesh ' --prompt '⚡ ' \
+  --pointer '👉🏼' \
+  --no-scrollbar \
+  --layout reverse --info hidden \
+  --header '^a all ^t tmux ^x zoxide ^f find' \
   --bind 'tab:down,btab:up' \
-  --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list)' \
-  --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t)' \
-  --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z)' \
-  --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 3 -t d -E .Trash . ~)')
+  --bind 'ctrl-a:change-prompt(⚡ )+reload(sesh list -i)' \
+  --bind 'ctrl-t:change-prompt(🪟 )+reload(sesh list -ti)' \
+  --bind 'ctrl-x:change-prompt(📁 )+reload(sesh list -zi)' \
+  --bind 'ctrl-f:change-prompt(🔎 )+reload(fd -H -d 3 -t d -E .Trash . ~)')
 
 sesh connect "$session"
