@@ -205,6 +205,12 @@ return {
         disallow_prefix_unmatching = false,
         disallow_symbol_nonprefix_matching = true,
       },
+
+      view = {
+        entries = {
+          follow_cursor = true,
+        },
+      },
     })
 
     -- `/` cmdline setup.
