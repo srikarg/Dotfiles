@@ -33,5 +33,10 @@ return {
       'typescript',
       { 'javascript', 'javascriptreact', 'jsdoc' }
     )
+
+    require('luasnip').filetype_extend(
+      'javascript',
+      { 'javascriptreact', 'jsdoc' }
+    )
   end,
 }
