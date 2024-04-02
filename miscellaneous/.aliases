@@ -11,6 +11,8 @@ alias ld="lazydocker"
 
 alias t="tmux-sessionizer"
 
+alias rgf='rg --files | rg'
+
 ## NPM
 #
 # Find npm package updates for current repository
