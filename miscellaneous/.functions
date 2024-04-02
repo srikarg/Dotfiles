@@ -18,15 +18,22 @@ function notes() {
 }
 
 function rename_branch() {
-  echo "What is the name of the old branch?"
-  read old_branch
-  echo "What is the new name for the branch?"
-  read new_branch
-  git checkout "$old_branch"
-  git branch -m "$new_branch"
-  git push origin -u "$new_branch"
-  git push origin --delete "$old_branch"
-  echo "Successfully renamed " "$old_branch" " to " "$new_branch"
+  OLD_BRANCH=$(git branch | tr -d "* " | fzf --prompt "Old Branch Name: ")
+  if [[ -z "$OLD_BRANCH" ]]; then
+    echo "Old branch name is empty, exiting..."
+    return
+  fi
+  NEW_BRANCH=$OLD_BRANCH
+  vared -p "New Branch Name: " NEW_BRANCH
+  if [[ "$OLD_BRANCH" == "$NEW_BRANCH" ]]; then
+    echo "The new branch name is the same as the old branch name, exiting..."
+    return
+  fi
+  git checkout "$OLD_BRANCH"
+  git branch -m "$NEW_BRANCH"
+  git push origin -u "$NEW_BRANCH"
+  git push origin --delete "$OLD_BRANCH"
+  echo "Successfully renamed \"$OLD_BRANCH\" to \"$NEW_BRANCH\"!"
 }
 
 # fzf npm script
