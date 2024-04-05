@@ -99,7 +99,12 @@ return {
           return ']c'
         end
         vim.schedule(function()
-          gs.next_hunk({ navigation_message = false, preview = true })
+          gs.nav_hunk('next', {
+            wrap = true,
+            navigation_message = false,
+            foldopen = true,
+            preview = true,
+          })
         end)
         return '<Ignore>'
       end, {
@@ -113,7 +118,12 @@ return {
           return '[c'
         end
         vim.schedule(function()
-          gs.prev_hunk({ navigation_message = false, preview = true })
+          gs.nav_hunk('prev', {
+            wrap = true,
+            navigation_message = false,
+            foldopen = true,
+            preview = true,
+          })
         end)
         return '<Ignore>'
       end, {
