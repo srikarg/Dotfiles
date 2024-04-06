@@ -21,5 +21,7 @@ return {
     },
   },
 
-  config = true,
+  opts = {
+    ignore = '^$',
+  },
 }
