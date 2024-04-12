@@ -22,6 +22,8 @@ brew "adwaita-icon-theme"
 brew "webp"
 # Spell checker with better logic than ispell
 brew "aspell"
+# Code searching, linting, rewriting
+brew "ast-grep"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
 # Interpreted, interactive, object-oriented programming language

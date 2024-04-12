@@ -28,6 +28,15 @@ return {
 
       config = true,
     },
+
+    {
+      'ray-x/telescope-ast-grep.nvim',
+
+      dependencies = {
+        'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope.nvim',
+      },
+    },
   },
 
   keys = {
@@ -35,6 +44,12 @@ return {
       '<leader>fa',
       '<CMD> Telescope find_files follow=true no_ignore=true hidden=true <CR>',
       desc = '[F]ind From [A]ll Files',
+    },
+
+    {
+      '<leader>fA',
+      '<CMD> Telescope AST_grep <CR>',
+      desc = '[F]ind with [A]ST Grep',
     },
 
     {
