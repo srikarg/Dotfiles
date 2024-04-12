@@ -1,4 +1,5 @@
 tap "azure/kubelogin"
+tap "derailed/k9s"
 tap "fairwindsops/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
@@ -242,6 +243,8 @@ brew "zoxide"
 brew "zsh"
 # A Kubernetes credential (exec) plugin implementing azure authentication
 brew "azure/kubelogin/kubelogin"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "derailed/k9s/k9s"
 # Terraform
 brew "hashicorp/tap/terraform"
 # Smart terminal session manager

@@ -1,0 +1,7 @@
+# https://k9scli.io/topics/hotkeys/
+# $XDG_DATA_HOME/k9s/hotkeys.yaml
+hotKeys:
+  quit-app:
+    shortCut: q
+    description: Quit
+    command: quit
