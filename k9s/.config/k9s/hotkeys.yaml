@@ -1,7 +1,32 @@
 # https://k9scli.io/topics/hotkeys/
 # $XDG_DATA_HOME/k9s/hotkeys.yaml
 hotKeys:
-  quit-app:
+  quit:
     shortCut: q
     description: Quit
     command: quit
+
+  contexts:
+    shortCut: Shift-1
+    description: Contexts
+    command: ctx
+
+  namespaces:
+    shortCut: Shift-2
+    description: Namespaces
+    command: ns
+
+  pods:
+    shortCut: Shift-3
+    description: Pods
+    command: po
+
+  deployments:
+    shortCut: Shift-4
+    description: Deployments
+    command: deploy
+
+  xray-deployments:
+    shortCut: Shift-5
+    description: XRay Deployments
+    command: xray deploy
