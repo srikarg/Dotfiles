@@ -27,10 +27,6 @@ brew "aspell"
 brew "ast-grep"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
-# Official Amazon AWS command-line interface
-brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Programmable completion for Bash 4.2+
@@ -51,10 +47,6 @@ brew "colordiff"
 brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
-# Subtitle renderer for the ASS/SSA subtitle format
-brew "libass"
-# Play, record, convert, and stream audio and video
-brew "ffmpeg"
 # Toolkit for creating graphical user interfaces
 brew "gtk4"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
@@ -89,6 +81,10 @@ brew "exiftool"
 brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # Library for manipulating fonts
@@ -174,9 +170,7 @@ brew "pandoc"
 # CLI tool to help discover deprecated apiVersions in Kubernetes
 brew "pluto"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
+brew "python@3.11"
 # Cross-platform application and UI framework
 brew "qt"
 # Rsync for cloud storage
