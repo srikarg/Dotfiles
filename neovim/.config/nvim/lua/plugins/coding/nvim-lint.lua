@@ -15,7 +15,7 @@ return {
 
   config = function()
     require('lint').linters_by_ft = {
-      ['markdown'] = { 'markdownlint' },
+      ['markdown'] = { 'markdownlint', 'cspell' },
       ['bash'] = { 'shellcheck' },
       ['dockerfile'] = { 'hadolint' },
       ['dotenv'] = { 'dotenv_linter' },
