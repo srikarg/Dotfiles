@@ -31,6 +31,8 @@ brew "automake"
 brew "bash"
 # Programmable completion for Bash 4.2+
 brew "bash-completion@2"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # GNU multiple precision arithmetic library
 brew "gmp"
 # Validating, recursive, caching DNS resolver
