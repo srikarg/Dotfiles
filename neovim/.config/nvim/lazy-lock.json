@@ -28,6 +28,7 @@
   "garbage-day.nvim": { "branch": "main", "commit": "3af496f0d1dc6586dcf4ceda6bbf61a8f820ab66" },
   "gitsigns.nvim": { "branch": "main", "commit": "9cafac31a091267838e1e90fd6e083d37611f516" },
   "gx-extended.nvim": { "branch": "main", "commit": "83b07be5f9153bd46bcded55c5df1a2eaa90a5c0" },
+  "hardtime.nvim": { "branch": "main", "commit": "eaf4bc31b86419c26ad7b3a142dd36ca545ca2e4" },
   "highlight-undo.nvim": { "branch": "main", "commit": "a0dbc6afa19b438ca5a6f54bc7f1a10399f21a15" },
   "indent-blankline.nvim": { "branch": "master", "commit": "3d08501caef2329aba5121b753e903904088f7e6" },
   "keymap-amend.nvim": { "branch": "master", "commit": "b8bf9d820878d5497fdd11d6de55dea82872d98e" },
