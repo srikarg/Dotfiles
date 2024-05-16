@@ -9,6 +9,7 @@ return {
   },
 
   opts = {
+    disable_mouse = false,
     hints = {
       ['y$'] = {
         message = function()
