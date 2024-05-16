@@ -4,7 +4,6 @@ tap "fairwindsops/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "joshmedeski/sesh"
 # Software library to render fonts
@@ -162,7 +161,7 @@ brew "nano"
 # NCurses Disk Usage
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
 # Development kit for the Java programming language
