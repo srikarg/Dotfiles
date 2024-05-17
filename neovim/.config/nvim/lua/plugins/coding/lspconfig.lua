@@ -165,49 +165,6 @@ return {
 
           biome = {},
 
-          tsserver = {
-            init_options = {
-              preferences = {
-                includeInlayParameterNameHints = 'all',
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-                importModuleSpecifierPreference = 'non-relative',
-              },
-            },
-            on_attach = function()
-              vim.keymap.set('n', '<leader>co', function()
-                vim.lsp.buf.code_action({
-                  apply = true,
-                  context = {
-                    only = { 'source.organizeImports.ts' },
-                    diagnostics = {},
-                  },
-                })
-              end, { desc = 'Organize Imports' })
-
-              vim.keymap.set('n', '<leader>cR', function()
-                vim.lsp.buf.code_action({
-                  apply = true,
-                  context = {
-                    only = { 'source.removeUnused.ts' },
-                    diagnostics = {},
-                  },
-                })
-              end, { desc = 'Remove Unused Imports' })
-            end,
-            settings = {
-              completions = {
-                completeFunctionCalls = true,
-              },
-            },
-            root_dir = nvim_lsp.util.root_pattern('package.json'),
-            single_file_support = false,
-          },
-
           denols = {
             root_dir = nvim_lsp.util.root_pattern('deno.json', 'deno.jsonc'),
 
@@ -338,10 +295,15 @@ return {
 
         mason_lspconfig.setup_handlers({
           function(server_name)
+            -- Skip setting up `tsserver` since we're using the "typescript-tools"
+            -- Neovim extension to manage `tsserver`
+            if server_name == 'tsserver' then
+              return
+            end
             require('lspconfig')[server_name].setup({
               capabilities = capabilities,
               on_attach = function(client, bufnr)
-                if servers[server_name].on_attach then
+                if servers[server_name] and servers[server_name].on_attach then
                   servers[server_name].on_attach(client, bufnr)
                 end
 
