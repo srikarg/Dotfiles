@@ -261,7 +261,7 @@ return {
                 vim.bo[bufnr].buftype ~= ''
                 or vim.bo[bufnr].filetype == 'helm'
               then
-                vim.diagnostic.disable()
+                vim.diagnostic.enable(false)
               end
             end,
           },
@@ -461,7 +461,17 @@ return {
     vim.diagnostic.config({
       underline = true,
       update_in_insert = false,
-      virtual_text = false,
+      virtual_text = {
+        spacing = 4,
+        source = 'if_many',
+        prefix = function(diagnostic)
+          for name, icon in pairs(diagnosticIcons) do
+            if diagnostic.severity == vim.diagnostic.severity[name:upper()] then
+              return icon
+            end
+          end
+        end,
+      },
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = diagnosticIcons.Error,
