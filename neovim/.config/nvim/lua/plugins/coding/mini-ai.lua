@@ -14,7 +14,7 @@ return {
           i = { '@block.inner', '@conditional.inner', '@loop.inner' },
         }),
 
-        f = ai.gen_spec.treesitter({
+        m = ai.gen_spec.treesitter({
           a = '@function.outer',
           i = '@function.inner',
         }),
