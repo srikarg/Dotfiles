@@ -8,34 +8,29 @@ return {
   keys = {
     {
       '<leader>xx',
-      '<CMD> TroubleToggle <CR>',
+      '<CMD> Trouble diagnostics toggle <CR>',
       desc = 'Toggle Trouble',
     },
     {
       '<leader>xd',
-      '<CMD> TroubleToggle document_diagnostics <CR>',
+      '<CMD> Trouble diagnostics toggle filter.buf=0 <CR>',
       desc = 'Document Diagnostics (Trouble)',
     },
     {
-      '<leader>xw',
-      '<CMD> TroubleToggle workspace_diagnostics <CR>',
-      desc = 'Workspace Diagnostics (Trouble)',
-    },
-    {
       '<leader>xL',
-      '<CMD> TroubleToggle loclist <CR>',
+      '<CMD> Trouble loclist toggle <CR>',
       desc = 'Location List (Trouble)',
     },
     {
       '<leader>xQ',
-      '<CMD> TroubleToggle quickfix <CR>',
+      '<CMD> Trouble qflist toggle <CR>',
       desc = 'Quickfix List (Trouble)',
     },
     {
       '[q',
       function()
         if require('trouble').is_open() then
-          require('trouble').previous({ skip_groups = true, jump = true })
+          require('trouble').prev({ skip_groups = true, jump = true })
         else
           local ok, err = pcall(vim.cmd.cprev)
           if not ok then
