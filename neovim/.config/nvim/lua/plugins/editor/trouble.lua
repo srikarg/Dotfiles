@@ -12,6 +12,11 @@ return {
       desc = 'Toggle Trouble',
     },
     {
+      '<leader>xs',
+      '<CMD> Trouble lsp toggle focus=false win.position=right <CR>',
+      desc = 'LSP Information (Trouble)',
+    },
+    {
       '<leader>xd',
       '<CMD> Trouble diagnostics toggle filter.buf=0 <CR>',
       desc = 'Document Diagnostics (Trouble)',
@@ -58,5 +63,22 @@ return {
 
   opts = {
     use_diagnostic_signs = true,
+
+    icons = {
+      indent = {
+        middle = ' ',
+        last = ' ',
+        top = ' ',
+        ws = '│  ',
+      },
+    },
+
+    modes = {
+      diagnostics = {
+        groups = {
+          { 'filename', format = '{file_icon} {basename:Title} {count}' },
+        },
+      },
+    },
   },
 }

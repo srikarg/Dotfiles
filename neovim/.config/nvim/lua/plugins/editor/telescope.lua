@@ -215,16 +215,16 @@ return {
         mappings = {
           i = {
             ['<C-t>'] = function(...)
-              local trouble = require('trouble.providers.telescope')
-              trouble.open_with_trouble(...)
+              local trouble = require('trouble.sources.telescope')
+              trouble.open(...)
             end,
           },
           n = {
             ['q'] = require('telescope.actions').close,
 
             ['<C-t>'] = function(...)
-              local trouble = require('trouble.providers.telescope')
-              trouble.open_with_trouble(...)
+              local trouble = require('trouble.sources.telescope')
+              trouble.open(...)
             end,
           },
         },
