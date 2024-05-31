@@ -17,9 +17,15 @@ return {
     },
 
     {
+      '<leader>gvb',
+      '<CMD> DiffviewFileHistory<CR>',
+      desc = '  Show Branch History',
+    },
+
+    {
       '<leader>gvp',
-      '<CMD> DiffviewOpen --cached <CR>',
-      desc = '  Show Staged Diffs',
+      '<CMD> DiffviewOpen origin/HEAD...HEAD --imply-local <CR>',
+      desc = '  Show PR History',
     },
 
     {
