@@ -52,6 +52,12 @@ return {
         'yaml',
         'jsdoc',
 
+        -- Go
+        'go',
+        'gomod',
+        'gowork',
+        'gosum',
+
         -- Markdown
         'markdown',
         'markdown_inline',

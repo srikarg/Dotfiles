@@ -84,6 +84,7 @@ return {
 
   dependencies = {
     'MarkEmmons/neotest-deno',
+    'nvim-neotest/neotest-go',
     'antoinemadec/FixCursorHold.nvim',
     'haydenmeade/neotest-jest',
     'marilari88/neotest-vitest',
@@ -103,6 +104,9 @@ return {
       },
       adapters = {
         require('neotest-deno'),
+        require('neotest-go')({
+          recursive_run = true,
+        }),
         require('neotest-jest')({
           jestCommand = 'npm test --',
           env = {

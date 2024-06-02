@@ -11,8 +11,15 @@ return {
         'nvim-neotest/nvim-nio',
       },
     },
+
     {
       'theHamsta/nvim-dap-virtual-text',
+
+      config = true,
+    },
+
+    {
+      'leoluz/nvim-dap-go',
 
       config = true,
     },
@@ -38,6 +45,7 @@ return {
 
       ensure_installed = {
         'js',
+        'delve',
       },
     })
 

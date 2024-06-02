@@ -43,6 +43,7 @@ return {
         ['json'] = { { 'biome', 'deno_fmt', 'prettier' } },
         ['jsonc'] = { { 'biome', 'deno_fmt', 'prettier' } },
         ['yaml'] = { 'prettier' },
+        ['go'] = { 'goimports', 'gofumpt' },
         ['markdown'] = { { 'deno_fmt', 'prettier' } },
         ['markdown.mdx'] = { { 'deno_fmt', 'prettier' } },
         ['graphql'] = { 'prettier' },
