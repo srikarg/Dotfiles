@@ -145,14 +145,10 @@ return {
 
     'hrsh7th/nvim-cmp',
 
-    'folke/neodev.nvim',
-
     {
       'williamboman/mason-lspconfig.nvim',
 
       config = function()
-        require('neodev').setup()
-
         local nvim_lsp = require('lspconfig')
 
         -- Enable and configure the following LSP servers
