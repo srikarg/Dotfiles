@@ -134,16 +134,18 @@ return {
       })
     end
 
-    require('dap.ext.vscode').load_launchjs(nil, {
-      ['pwa-node'] = {
-        'javascript',
-        'typescript',
-      },
-      ['node'] = {
-        'javascript',
-        'typescript',
-      },
-    })
+    if vim.fn.filereadable('.vscode/launch.json') then
+      require('dap.ext.vscode').load_launchjs(nil, {
+        ['pwa-node'] = {
+          'javascript',
+          'typescript',
+        },
+        ['node'] = {
+          'javascript',
+          'typescript',
+        },
+      })
+    end
 
     dap.adapters['pwa-node'] = {
       type = 'server',
