@@ -58,6 +58,8 @@ brew "pkg-config"
 brew "czkawka"
 # JSON, YAML, TOML, XML, and CSV query and modification tool
 brew "dasel"
+# Debugger for the Go programming language
+brew "delve"
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # Diff that understands syntax
@@ -161,7 +163,7 @@ brew "nano"
 # NCurses Disk Usage
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
 # Development kit for the Java programming language
@@ -170,6 +172,8 @@ brew "openjdk"
 brew "pandoc"
 # CLI tool to help discover deprecated apiVersions in Kubernetes
 brew "pluto"
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
 # Cross-platform application and UI framework
@@ -290,6 +294,8 @@ cask "moonlight"
 cask "mullvadvpn"
 # Open-source software for live streaming and screen recording
 cask "obs"
+# Colour picker for colours onscreen
+cask "pika"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
@@ -328,6 +334,8 @@ cask "wezterm-nightly"
 cask "whatsapp"
 # Video communication and virtual meeting platform
 cask "zoom"
+# Multiplayer code editor
+cask "zed"
 mas "Amphetamine", id: 937984704
 mas "Brother iPrint&Scan", id: 1193539993
 mas "Color Picker", id: 1545870783
