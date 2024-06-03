@@ -36,23 +36,29 @@ return {
     },
   },
 
-  opts = {
-    settings = {
-      separate_diagnostic_server = true,
-      code_lens = 'off',
-      complete_function_calls = true,
-      tsserver_file_preferences = {
-        importModuleSpecifierPreference = 'non-relative',
-        includeCompletionsForModuleExports = true,
-        includeInlayEnumMemberValueHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayParameterNameHints = 'all',
-        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayVariableTypeHints = true,
-        quotePreference = 'auto',
+  opts = function()
+    local nvim_lsp = require('lspconfig')
+
+    return {
+      root_dir = nvim_lsp.util.root_pattern('package.json'),
+      single_file_support = false,
+      settings = {
+        separate_diagnostic_server = true,
+        code_lens = 'off',
+        complete_function_calls = true,
+        tsserver_file_preferences = {
+          importModuleSpecifierPreference = 'non-relative',
+          includeCompletionsForModuleExports = true,
+          includeInlayEnumMemberValueHints = true,
+          includeInlayFunctionLikeReturnTypeHints = true,
+          includeInlayFunctionParameterTypeHints = true,
+          includeInlayParameterNameHints = 'all',
+          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+          includeInlayPropertyDeclarationTypeHints = true,
+          includeInlayVariableTypeHints = true,
+          quotePreference = 'auto',
+        },
       },
-    },
-  },
+    }
+  end,
 }
