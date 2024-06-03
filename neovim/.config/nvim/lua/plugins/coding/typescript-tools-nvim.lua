@@ -1,3 +1,5 @@
+local inlayHintsEnabled = false
+
 return {
   'pmizio/typescript-tools.nvim',
 
@@ -14,6 +16,17 @@ return {
   },
 
   keys = {
+    {
+      '<leader>ui',
+      function()
+        inlayHintsEnabled = not inlayHintsEnabled
+        print('Setting inlay hints to: ' .. tostring(inlayHintsEnabled))
+        vim.lsp.inlay_hint.enable(inlayHintsEnabled, nil)
+      end,
+      mode = 'n',
+      desc = 'Toggle [I]nlay Hints',
+    },
+
     {
       '<leader>co',
       '<CMD> TSToolsOrganizeImports <CR>',

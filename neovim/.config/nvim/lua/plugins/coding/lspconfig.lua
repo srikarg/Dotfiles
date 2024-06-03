@@ -19,6 +19,7 @@ local default_on_attach = function(client, bufnr)
 
     nmap('<leader>ui', function()
       inlayHintsEnabled = not inlayHintsEnabled
+      print('Setting inlay hints to: ' .. tostring(inlayHintsEnabled))
       vim.lsp.inlay_hint.enable(inlayHintsEnabled, nil)
     end, 'Toggle [I]nlay Hints')
   end
