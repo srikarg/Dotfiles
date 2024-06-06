@@ -10,6 +10,17 @@ return {
 
   opts = {
     disable_mouse = false,
+
+    disabled_filetypes = {
+      'qf',
+      'netrw',
+      'NvimTree',
+      'lazy',
+      'mason',
+      'oil',
+      'trouble',
+    },
+
     hints = {
       ['y$'] = {
         message = function()
