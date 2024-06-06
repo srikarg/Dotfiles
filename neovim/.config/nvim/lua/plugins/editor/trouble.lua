@@ -13,7 +13,7 @@ return {
     },
     {
       '<leader>xs',
-      '<CMD> Trouble lsp toggle focus=false win.position=right <CR>',
+      '<CMD> Trouble lsp toggle focus=false win.position=right win.size=0.5 <CR>',
       desc = 'LSP Information (Trouble)',
     },
     {
