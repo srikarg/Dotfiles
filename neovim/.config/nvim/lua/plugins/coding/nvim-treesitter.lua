@@ -1,132 +1,64 @@
 return {
-  -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
 
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    'windwp/nvim-ts-autotag',
+  opts = {
+    auto_install = false,
+
+    highlight = {
+      enable = true,
+      use_languagetree = true,
+    },
+
+    indent = {
+      enable = true,
+    },
+
+    incremental_selection = {
+      enable = true,
+      -- Prevents these keybinds from functioning in command history mode
+      -- (CTRL-F when in command mode) and other areas where the filetype is 'vim'
+      disable = { 'vim' },
+      keymaps = {
+        init_selection = '<CR>',
+        scope_incremental = '<CR>',
+        node_incremental = '<TAB>',
+        node_decremental = '<S-TAB>',
+      },
+    },
+
+    textobjects = {
+      select = {
+        enable = true,
+        lookahead = true,
+        include_surrounding_whitespace = true,
+      },
+
+      move = {
+        enable = true,
+        set_jumps = true,
+        goto_next_start = {
+          [']f'] = '@function.outer',
+        },
+        goto_next_end = {
+          [']F'] = '@function.outer',
+        },
+        goto_previous_start = {
+          ['[f'] = '@function.outer',
+        },
+        goto_previous_end = {
+          ['[F'] = '@function.outer',
+        },
+      },
+
+      swap = {
+        enable = true,
+        swap_next = {
+          ['<leader>a'] = '@parameter.inner',
+        },
+        swap_previous = {
+          ['<leader>A'] = '@parameter.inner',
+        },
+      },
+    },
   },
-
-  build = ':TSUpdate',
-
-  config = function()
-    require('nvim-treesitter.configs').setup({
-      -- https://github.com/windwp/nvim-ts-autotag
-      autotag = {
-        enable = true,
-      },
-
-      -- Add languages to be installed here that you want installed for treesitter
-      ensure_installed = {
-        -- Miscellaneous
-        'vim',
-        'vimdoc',
-        'lua',
-        'regex',
-        'dockerfile',
-        'mermaid',
-        'python',
-        'clojure',
-
-        -- Git
-        'gitignore',
-        'diff',
-        'gitcommit',
-        'git_rebase',
-        'git_config',
-
-        -- Web Development
-        'astro',
-        'svelte',
-        'html',
-        'http',
-        'css',
-        'scss',
-        'javascript',
-        'typescript',
-        'tsx',
-        'json',
-        'json5',
-        'jsonc',
-        'xml',
-        'yaml',
-        'jsdoc',
-
-        -- Go
-        'go',
-        'gomod',
-        'gowork',
-        'gosum',
-
-        -- Markdown
-        'markdown',
-        'markdown_inline',
-
-        -- Shell
-        'bash',
-      },
-
-      -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-      auto_install = false,
-
-      highlight = {
-        enable = true,
-        use_languagetree = true,
-      },
-
-      indent = {
-        enable = true,
-      },
-
-      incremental_selection = {
-        enable = true,
-        -- Prevents these keybinds from functioning in command history mode
-        -- (CTRL-F when in command mode) and other areas where the filetype is 'vim'
-        disable = { 'vim' },
-        keymaps = {
-          init_selection = '<CR>',
-          scope_incremental = '<CR>',
-          node_incremental = '<TAB>',
-          node_decremental = '<S-TAB>',
-        },
-      },
-
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true,
-          include_surrounding_whitespace = true,
-        },
-
-        move = {
-          enable = true,
-          set_jumps = true,
-          goto_next_start = {
-            [']f'] = '@function.outer',
-          },
-          goto_next_end = {
-            [']F'] = '@function.outer',
-          },
-          goto_previous_start = {
-            ['[f'] = '@function.outer',
-          },
-          goto_previous_end = {
-            ['[F'] = '@function.outer',
-          },
-        },
-
-        swap = {
-          enable = true,
-          swap_next = {
-            ['<leader>a'] = '@parameter.inner',
-          },
-          swap_previous = {
-            ['<leader>A'] = '@parameter.inner',
-          },
-        },
-      },
-    })
-
-    vim.treesitter.language.register('bash', 'dotenv')
-  end,
 }

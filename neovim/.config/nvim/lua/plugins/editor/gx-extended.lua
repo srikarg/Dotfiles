@@ -14,8 +14,7 @@ return {
           patterns = { '*.js', '*.jsx', '*.ts', '*.tsx' },
           name = 'Go to npm package registry',
           match_to_url = function(line_string)
-            local package_name =
-              string.match(line_string, 'from [\'"](.-)[\'"]')
+            local package_name = string.match(line_string, 'from [\'"](.-)[\'"]')
             local url = 'https://www.npmjs.com/package/' .. package_name
 
             return package_name and url or nil
@@ -26,8 +25,7 @@ return {
           patterns = { '*.js', '*.jsx', '*.ts', '*.tsx' },
           name = 'Go to Socket.dev information on npm package',
           match_to_url = function(line_string)
-            local package_name =
-              string.match(line_string, 'from [\'"](.-)[\'"]')
+            local package_name = string.match(line_string, 'from [\'"](.-)[\'"]')
             local url = 'https://socket.dev/npm/package/' .. package_name
 
             return package_name and url or nil

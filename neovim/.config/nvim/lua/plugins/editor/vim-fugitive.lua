@@ -5,15 +5,15 @@ return {
 
   keys = {
     {
-      '<leader>go',
+      '<leader>gB',
       ':.GBrowse <CR>',
-      '[G]it [O]pen URL for Current Line',
+      'Git Browse',
     },
 
     {
-      '<leader>go',
+      '<leader>gB',
       ':GBrowse <CR>',
-      '[G]it [O]pen URL for Current Line(s)',
+      'Git Browse',
       mode = 'v',
     },
   },

@@ -1,3 +1,7 @@
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
@@ -99,8 +103,7 @@ vim.opt.scrolloff = 10
 
 -- Display space and end of line characters
 vim.opt.list = true
-vim.opt.listchars =
-  { tab = '» ', trail = '·', nbsp = '␣', space = '⋅', eol = '↵' }
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', space = '⋅', eol = '↵' }
 
 -- Spell Check Settings
 vim.opt.spelllang = 'en_us'

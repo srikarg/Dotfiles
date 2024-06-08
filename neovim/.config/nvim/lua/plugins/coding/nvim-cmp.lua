@@ -13,14 +13,10 @@ local function limit_lsp_types(entry, ctx)
       or kind == types.lsp.CompletionItemKind.Field
       or kind == types.lsp.CompletionItemKind.Property
   elseif string.match(line, '^%s+%w+$') then
-    return kind == types.lsp.CompletionItemKind.Function
-      or kind == types.lsp.CompletionItemKind.Variable
+    return kind == types.lsp.CompletionItemKind.Function or kind == types.lsp.CompletionItemKind.Variable
   end
 
-  if
-    kind == types.lsp.CompletionItemKind.Text
-    and completionItem.detail ~= 'Emmet Abbreviation'
-  then
+  if kind == types.lsp.CompletionItemKind.Text and completionItem.detail ~= 'Emmet Abbreviation' then
     return false
   end
 
@@ -100,7 +96,7 @@ return {
 
       formatting = {
         format = function(entry, item)
-          local icons = require('config').icons.kinds
+          local icons = require('lazyvim.config').icons.kinds
 
           if icons[item.kind] then
             item.kind = icons[item.kind] .. item.kind
