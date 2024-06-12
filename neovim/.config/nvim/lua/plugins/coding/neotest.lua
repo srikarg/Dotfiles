@@ -2,7 +2,6 @@ return {
   'nvim-neotest/neotest',
 
   dependencies = {
-    'MarkEmmons/neotest-deno',
     'haydenmeade/neotest-jest',
     'marilari88/neotest-vitest',
   },
@@ -17,7 +16,6 @@ return {
     },
     adapters = {
       ['neotest-vitest'] = {},
-      ['neotest-deno'] = {},
       ['neotest-jest'] = {
         jestCommand = 'npm test --',
         env = {
