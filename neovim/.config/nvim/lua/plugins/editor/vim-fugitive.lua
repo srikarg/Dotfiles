@@ -5,6 +5,12 @@ return {
 
   keys = {
     {
+      '<leader>g/',
+      ':vertical Git log --all -p -S ',
+      'Git Pickaxe Search',
+    },
+
+    {
       '<leader>gB',
       ':.GBrowse <CR>',
       'Git Browse',
