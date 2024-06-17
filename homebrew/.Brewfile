@@ -3,7 +3,6 @@ tap "derailed/k9s"
 tap "fairwindsops/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "joshmedeski/sesh"
 # Software library to render fonts
