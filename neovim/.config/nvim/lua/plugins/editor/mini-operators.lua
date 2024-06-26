@@ -8,7 +8,7 @@ return {
 
     -- Evaluate text and replace with output
     evaluate = {
-      prefix = 'g=',
+      prefix = '<leader>g=',
 
       -- Function which does the evaluation
       func = nil,
@@ -16,7 +16,7 @@ return {
 
     -- Exchange text regions
     exchange = {
-      prefix = 'gX',
+      prefix = '<leader>gX',
 
       -- Whether to reindent new text to match previous indent
       reindent_linewise = true,
@@ -24,7 +24,7 @@ return {
 
     -- Multiply (duplicate) text
     multiply = {
-      prefix = 'gM',
+      prefix = '<leader>gM',
 
       -- Function which can modify text before multiplying
       func = nil,
@@ -32,7 +32,7 @@ return {
 
     -- Replace text with register
     replace = {
-      prefix = 'gR',
+      prefix = '<leader>gR',
 
       -- Whether to reindent new text to match previous indent
       reindent_linewise = true,
@@ -40,7 +40,7 @@ return {
 
     -- Sort text
     sort = {
-      prefix = 'gS',
+      prefix = '<leader>gS',
 
       -- Function which does the sort
       func = nil,
