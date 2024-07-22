@@ -44,14 +44,14 @@ return {
 
     opts = {
       formatters_by_ft = {
-        ['javascript'] = { { 'biome', 'deno_fmt', 'prettier' } },
-        ['javascriptreact'] = { { 'biome', 'deno_fmt', 'prettier' } },
-        ['typescript'] = { { 'biome', 'deno_fmt', 'prettier' } },
-        ['typescriptreact'] = { { 'biome', 'deno_fmt', 'prettier' } },
-        ['json'] = { { 'biome', 'deno_fmt', 'prettier' } },
-        ['jsonc'] = { { 'biome', 'deno_fmt', 'prettier' } },
-        ['markdown'] = { { 'deno_fmt', 'prettier' } },
-        ['markdown.mdx'] = { { 'deno_fmt', 'prettier' } },
+        ['javascript'] = { 'biome', 'deno_fmt', 'prettier', stop_after_first = true },
+        ['javascriptreact'] = { 'biome', 'deno_fmt', 'prettier', stop_after_first = true },
+        ['typescript'] = { 'biome', 'deno_fmt', 'prettier', stop_after_first = true },
+        ['typescriptreact'] = { 'biome', 'deno_fmt', 'prettier', stop_after_first = true },
+        ['json'] = { 'biome', 'deno_fmt', 'prettier', stop_after_first = true },
+        ['jsonc'] = { 'biome', 'deno_fmt', 'prettier', stop_after_first = true },
+        ['markdown'] = { 'deno_fmt', 'prettier', stop_after_first = true },
+        ['markdown.mdx'] = { 'deno_fmt', 'prettier', stop_after_first = true },
       },
 
       formatters = {
