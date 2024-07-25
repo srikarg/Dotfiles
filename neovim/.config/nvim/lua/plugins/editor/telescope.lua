@@ -2,13 +2,13 @@ return {
   'nvim-telescope/telescope.nvim',
 
   dependencies = {
-    'ray-x/telescope-ast-grep.nvim',
+    'Marskey/telescope-sg',
   },
 
   keys = {
     {
       '<leader>fA',
-      '<CMD> Telescope AST_grep <CR>',
+      '<CMD> Telescope ast_grep <CR>',
       desc = '[F]ind with [A]ST Grep',
     },
   },
@@ -87,5 +87,6 @@ return {
 
     telescope.load_extension('fzf')
     telescope.load_extension('notify')
+    telescope.load_extension('ast_grep')
   end,
 }
