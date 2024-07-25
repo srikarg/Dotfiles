@@ -22,6 +22,19 @@ return {
       'Git Browse',
       mode = 'v',
     },
+
+    {
+      '<leader>gY',
+      ':GBrowse! <CR>',
+      'Copy Git URL',
+    },
+
+    {
+      '<leader>gY',
+      ':GBrowse! <CR>',
+      'Copy Git URL',
+      mode = 'v',
+    },
   },
 
   dependencies = {
