@@ -5,6 +5,9 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
+-- Enable wrap by default
+vim.opt.wrap = true
+
 -- Disable nvim intro and other messages
 vim.opt.shortmess:append({ W = true, I = true, c = true, C = true, s = true })
 
