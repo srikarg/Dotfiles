@@ -151,6 +151,8 @@ brew "lazygit"
 brew "less"
 # I/O abstraction library for dealing with structured file formats
 brew "libgsf"
+# Package manager for the Lua programming language
+brew "luarocks"
 # Mac App Store command-line interface
 brew "mas"
 # Collection of tools that nobody wrote when UNIX was young
@@ -161,6 +163,8 @@ brew "mtr"
 brew "nano"
 # NCurses Disk Usage
 brew "ncdu"
+# Clean C library for processing UTF-8 Unicode data
+brew "utf8proc", args: ["HEAD"]
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim", args: ["HEAD"]
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
@@ -282,7 +286,7 @@ cask "itsycal"
 # Display key code, unicode value and modifier keys state for any key combination
 cask "key-codes"
 # Software for Logitech devices
-cask "logi-options-plus"
+cask "logi-options+"
 # Privacy-first, open-source platform for knowledge sharing and management
 cask "logseq"
 # Shows the next meeting in the menu bar
