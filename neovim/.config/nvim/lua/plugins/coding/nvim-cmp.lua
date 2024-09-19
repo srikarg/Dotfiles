@@ -77,135 +77,113 @@ return {
     'rafamadriz/friendly-snippets',
   },
 
-  config = function()
+  opts = function(_, opts)
     local cmp = require('cmp')
     local luasnip = require('luasnip')
 
-    cmp.setup({
-      experimental = {
-        ghost_text = {
-          hl_group = 'Comment',
-        },
+    opts.experimental = vim.tbl_extend('force', opts.experimental, {
+      ghost_text = {
+        hl_group = 'Comment',
       },
+    })
 
-      snippet = {
-        expand = function(args)
-          luasnip.lsp_expand(args.body)
-        end,
-      },
-
-      formatting = {
-        format = function(entry, item)
-          local icons = require('lazyvim.config').icons.kinds
-
-          if icons[item.kind] then
-            item.kind = icons[item.kind] .. item.kind
-          end
-
-          return require('tailwindcss-colorizer-cmp').formatter(entry, item)
-        end,
-      },
-
-      mapping = cmp.mapping.preset.insert({
-        ['<C-n>'] = cmp.mapping.select_next_item({
-          behavior = cmp.SelectBehavior.Insert,
-        }),
-        ['<C-p>'] = cmp.mapping.select_prev_item({
-          behavior = cmp.SelectBehavior.Insert,
-        }),
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<C-l>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = true,
-        }),
-        ['<Tab>'] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
-          else
-            fallback()
-          end
-        end, { 'i', 's', 'c' }),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item()
-          elseif luasnip.locally_jumpable(-1) then
-            luasnip.jump(-1)
-          else
-            fallback()
-          end
-        end, { 'i', 's', 'c' }),
+    opts.mapping = vim.tbl_extend('force', opts.mapping, {
+      ['<C-n>'] = cmp.mapping.select_next_item({
+        behavior = cmp.SelectBehavior.Insert,
       }),
+      ['<C-p>'] = cmp.mapping.select_prev_item({
+        behavior = cmp.SelectBehavior.Insert,
+      }),
+      ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-d>'] = cmp.mapping.scroll_docs(4),
+      ['<C-l>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = true,
+      }),
+      ['<Tab>'] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        elseif luasnip.expand_or_locally_jumpable() then
+          luasnip.expand_or_jump()
+        else
+          fallback()
+        end
+      end, { 'i', 's', 'c' }),
+      ['<S-Tab>'] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item()
+        elseif luasnip.locally_jumpable(-1) then
+          luasnip.jump(-1)
+        else
+          fallback()
+        end
+      end, { 'i', 's', 'c' }),
+    })
 
-      sources = {
-        {
-          name = 'nvim_lsp',
-          keyword_length = 2,
-          entry_filter = limit_lsp_types,
-        },
-        {
-          name = 'codeium',
-        },
-        { name = 'nvim_lsp_signature_help' },
-        { name = 'luasnip', max_item_count = 3 },
-        { name = 'buffer', keyword_length = 5 },
-        { name = 'nvim_lua' },
-        { name = 'path' },
-        { name = 'calc' },
+    table.insert(opts.sources, {
+      name = 'nvim_lsp',
+      keyword_length = 2,
+      entry_filter = limit_lsp_types,
+    })
+
+    table.insert(opts.sources, { name = 'codeium' })
+    table.insert(opts.sources, { name = 'copilot' })
+    table.insert(opts.sources, { name = 'nvim_lsp_signature_help' })
+    table.insert(opts.sources, { name = 'luasnip', max_item_count = 3 })
+    table.insert(opts.sources, { name = 'buffer', keyword_length = 5 })
+    table.insert(opts.sources, { name = 'nvim_lua' })
+    table.insert(opts.sources, { name = 'path' })
+    table.insert(opts.sources, { name = 'calc' })
+
+    opts.sorting = vim.tbl_extend('force', opts.sorting, {
+      comparators = {
+        cmp.config.compare.offset,
+        cmp.config.compare.exact,
+        cmp.config.compare.score,
+        cmp.config.compare.recently_used,
+
+        function(entry1, entry2)
+          local _, entry1_under = entry1.completion_item.label:find('^_+')
+          local _, entry2_under = entry2.completion_item.label:find('^_+')
+          entry1_under = entry1_under or 0
+          entry2_under = entry2_under or 0
+          if entry1_under > entry2_under then
+            return false
+          elseif entry1_under < entry2_under then
+            return true
+          end
+        end,
+
+        cmp.config.compare.kind,
+        cmp.config.compare.locality,
+        cmp.config.compare.sort_text,
+        cmp.config.compare.length,
+        cmp.config.compare.order,
       },
+    })
 
-      sorting = {
-        comparators = {
-          cmp.config.compare.offset,
-          cmp.config.compare.exact,
-          cmp.config.compare.score,
-          cmp.config.compare.recently_used,
+    opts.performance = vim.tbl_extend('force', opts.performance or {}, {
+      debounce = 30,
+      throttle = 20,
+      async_budget = 0.8,
+      max_view_entries = 20,
+      fetching_timeout = 250,
+    })
 
-          function(entry1, entry2)
-            local _, entry1_under = entry1.completion_item.label:find('^_+')
-            local _, entry2_under = entry2.completion_item.label:find('^_+')
-            entry1_under = entry1_under or 0
-            entry2_under = entry2_under or 0
-            if entry1_under > entry2_under then
-              return false
-            elseif entry1_under < entry2_under then
-              return true
-            end
-          end,
+    opts.matching = vim.tbl_extend('force', opts.matching or {}, {
+      disallow_fuzzy_matching = false,
+      disallow_fullfuzzy_matching = false,
+      disallow_partial_fuzzy_matching = false,
+      disallow_partial_matching = false,
+      disallow_prefix_unmatching = false,
+      disallow_symbol_nonprefix_matching = true,
+    })
 
-          cmp.config.compare.kind,
-          cmp.config.compare.locality,
-          cmp.config.compare.sort_text,
-          cmp.config.compare.length,
-          cmp.config.compare.order,
-        },
-      },
-
-      performance = {
-        debounce = 30,
-        throttle = 20,
-        async_budget = 0.8,
-        max_view_entries = 20,
-        fetching_timeout = 250,
-      },
-
-      matching = {
-        disallow_fuzzy_matching = false,
-        disallow_fullfuzzy_matching = false,
-        disallow_partial_fuzzy_matching = false,
-        disallow_partial_matching = false,
-        disallow_prefix_unmatching = false,
-        disallow_symbol_nonprefix_matching = true,
-      },
-
-      view = {
-        entries = {
-          follow_cursor = true,
-        },
+    opts.view = vim.tbl_extend('force', opts.view or {}, {
+      entries = {
+        follow_cursor = true,
       },
     })
 
