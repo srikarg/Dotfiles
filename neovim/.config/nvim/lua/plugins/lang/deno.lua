@@ -40,8 +40,6 @@ return {
   {
     'stevearc/conform.nvim',
 
-    optional = true,
-
     opts = {
       formatters_by_ft = {
         ['javascript'] = { 'biome', 'deno_fmt', 'prettier', stop_after_first = true },
