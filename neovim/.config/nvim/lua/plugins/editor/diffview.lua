@@ -1,97 +1,111 @@
 return {
-  'sindrets/diffview.nvim',
-
-  cmd = { 'DiffviewOpen', 'DiffviewFileHistory' },
-
-  keys = {
-    {
-      '<leader>gvd',
-      '<CMD> DiffviewOpen <CR>',
-      desc = '  Show Git Diff',
-    },
-
-    {
-      '<leader>gvf',
-      '<CMD> DiffviewFileHistory % <CR>',
-      desc = '  Show File History',
-    },
-
-    {
-      '<leader>gvb',
-      '<CMD> DiffviewFileHistory<CR>',
-      desc = '  Show Branch History',
-    },
-
-    {
-      '<leader>gvp',
-      '<CMD> DiffviewOpen origin/HEAD...HEAD --imply-local <CR>',
-      desc = '  Show PR History',
-    },
-
-    {
-      '<leader>gvr',
-      '<CMD> DiffviewRefresh <CR>',
-      desc = '  Refresh Diff View',
-    },
-
-    {
-      '<leader>gvc',
-      '<CMD> DiffviewClose <CR>',
-      desc = '  Close Diff View',
-    },
-
-    {
-      '<leader>gvf',
-      ':DiffviewFileHistory <CR>',
-      mode = 'v',
-      desc = '  Show File History',
+  {
+    'folke/which-key.nvim',
+    opts = {
+      spec = {
+        {
+          mode = { 'n', 'v' },
+          { '<leader>gd', group = 'Diffview' },
+        },
+      },
     },
   },
 
-  opts = function()
-    local actions = require('diffview.actions')
+  {
+    'sindrets/diffview.nvim',
 
-    return {
-      enhanced_diff_hl = true,
+    cmd = { 'DiffviewOpen', 'DiffviewFileHistory' },
 
-      view = {
-        merge_tool = {
-          layout = 'diff3_mixed',
-          disable_diagnostics = true,
-        },
+    keys = {
+      {
+        '<leader>gdd',
+        '<CMD> DiffviewOpen <CR>',
+        desc = '  Show Git Diff',
       },
 
-      keymaps = {
-        file_panel = {
-          {
-            'n',
-            '[c',
-            actions.view_windo(function(layout_name, sym)
-              if sym == 'b' then
-                vim.cmd('norm! [c')
-              end
-            end),
-          },
-          {
-            'n',
-            ']c',
-            actions.view_windo(function(layout_name, sym)
-              if sym == 'b' then
-                vim.cmd('norm! ]c')
-              end
-            end),
-          },
-          {
-            'n',
-            'x',
-            actions.view_windo(function(layout_name, sym)
-              if sym == 'b' then
-                vim.cmd('diffget')
-              end
-            end),
+      {
+        '<leader>gdf',
+        '<CMD> DiffviewFileHistory % <CR>',
+        desc = '  Show File History',
+      },
+
+      {
+        '<leader>gdb',
+        '<CMD> DiffviewFileHistory<CR>',
+        desc = '  Show Branch History',
+      },
+
+      {
+        '<leader>gdp',
+        '<CMD> DiffviewOpen origin/HEAD...HEAD --imply-local <CR>',
+        desc = '  Show PR History',
+      },
+
+      {
+        '<leader>gdr',
+        '<CMD> DiffviewRefresh <CR>',
+        desc = '  Refresh Diff View',
+      },
+
+      {
+        '<leader>gdc',
+        '<CMD> DiffviewClose <CR>',
+        desc = '  Close Diff View',
+      },
+
+      {
+        '<leader>gdf',
+        ':DiffviewFileHistory <CR>',
+        mode = 'v',
+        desc = '  Show File History',
+      },
+    },
+
+    opts = function()
+      local actions = require('diffview.actions')
+
+      return {
+        enhanced_diff_hl = true,
+
+        view = {
+          merge_tool = {
+            layout = 'diff3_mixed',
+            disable_diagnostics = true,
           },
         },
-      },
-    }
-  end,
+
+        keymaps = {
+          file_panel = {
+            {
+              'n',
+              '[c',
+              actions.view_windo(function(layout_name, sym)
+                if sym == 'b' then
+                  vim.cmd('norm! [c')
+                end
+              end),
+            },
+            {
+              'n',
+              ']c',
+              actions.view_windo(function(layout_name, sym)
+                if sym == 'b' then
+                  vim.cmd('norm! ]c')
+                end
+              end),
+            },
+            {
+              'n',
+              'x',
+              actions.view_windo(function(layout_name, sym)
+                if sym == 'b' then
+                  vim.cmd('diffget')
+                end
+              end),
+            },
+          },
+        },
+      }
+    end,
+  },
 }
