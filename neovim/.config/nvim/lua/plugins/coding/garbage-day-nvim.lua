@@ -5,5 +5,13 @@ return {
 
   event = 'VeryLazy',
 
-  config = true,
+  opts = {
+    excluded_lsp_clients = {
+      'copilot',
+      'null-ls',
+      'jdtls',
+      'marksman',
+      'lua_ls',
+    },
+  },
 }
