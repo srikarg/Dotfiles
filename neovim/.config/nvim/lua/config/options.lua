@@ -138,3 +138,9 @@ vim.opt.fillchars = {
   diff = '╱',
   eob = ' ',
 }
+
+-- Python Lazy Extra Configuration: https://www.lazyvim.org/extras/lang/python#options
+-- "basedpyright" | "pyright"
+vim.g.lazyvim_python_lsp = 'basedpyright'
+-- "ruff_lsp" | "ruff"
+vim.g.lazyvim_python_ruff = 'ruff_lsp'
