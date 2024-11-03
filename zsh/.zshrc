@@ -38,7 +38,6 @@ source "$HOME/.zsh/ohmyzsh/plugins/macos/macos.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/kubectl/kubectl.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/minikube/minikube.plugin.zsh"
 
-ZSH_DOTENV_PROMPT=false
 DISABLE_MAGIC_FUNCTIONS=true
 
 autoload -U promptinit
