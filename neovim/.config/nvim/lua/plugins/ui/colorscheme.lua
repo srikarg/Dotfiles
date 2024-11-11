@@ -7,6 +7,7 @@ return {
         highlights.DiagnosticUnnecessary = { fg = colors.comment }
 
         highlights.CursorLineNr = { fg = colors.orange, bold = true }
+        highlights.LineNr = { fg = colors.fg_gutter, bold = true }
         highlights.LineNrAbove = { fg = colors.fg_gutter, bold = true }
         highlights.LineNrBelow = { fg = colors.fg_gutter, bold = true }
 
