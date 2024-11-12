@@ -12,6 +12,8 @@ return {
         highlights.LineNrBelow = { fg = colors.fg_gutter, bold = true }
 
         highlights.WinSeparator = { fg = colors.comment }
+
+        highlights.TelescopeResultsComment = { fg = colors.fg_dark }
       end,
     },
   },
