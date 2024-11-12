@@ -1,7 +1,13 @@
 return {
   'echasnovski/mini.files',
 
+  lazy = false,
+
   opts = {
+    options = {
+      use_as_default_explorer = true,
+    },
+
     windows = {
       width_nofocus = 20,
       width_focus = 50,

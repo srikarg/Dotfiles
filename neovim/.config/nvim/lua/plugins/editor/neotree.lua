@@ -3,6 +3,7 @@ return {
 
   opts = {
     enable_diagnostics = false,
+
     filesystem = {
       filtered_items = {
         hide_dotfiles = false,
@@ -14,6 +15,7 @@ return {
         },
       },
       group_empty_dirs = true,
+      hijack_netrw_behavior = 'disabled',
     },
   },
 }
