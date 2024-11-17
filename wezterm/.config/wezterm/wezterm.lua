@@ -10,7 +10,7 @@ config.color_scheme = 'tokyonight_moon'
 
 config.font_size = 18.0
 
-config.max_fps = 120
+config.max_fps = 240
 
 config.font = wezterm.font('JetBrainsMono NFM', { weight = 'Light' })
 
