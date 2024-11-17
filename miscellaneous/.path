@@ -12,7 +12,7 @@ fi
 
 ### Linux
 if [ "$SYSTEM_TYPE" = "Linux" ]; then
-  export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}"
+  export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/opt/binutils/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}"
 
   # Add WSL Visual Studio Code Binary (code) to PATH
   export PATH="$PATH:/mnt/c/Program\ Files/Microsoft\ VS\ Code/bin/code"
