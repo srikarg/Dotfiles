@@ -41,5 +41,24 @@ return {
         },
       },
     },
+
+    scratch = {
+      win_by_ft = {
+        typescript = {
+          keys = {
+            ['source'] = {
+              '<cr>',
+              function(self)
+                local command = { 'deno', vim.api.nvim_buf_get_name(self.buf) }
+                local result = vim.system(command, { text = true }):wait()
+                Snacks.notify.info(result.stdout)
+              end,
+              desc = 'Source buffer',
+              mode = { 'n', 'x' },
+            },
+          },
+        },
+      },
+    },
   },
 }
