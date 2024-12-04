@@ -180,6 +180,10 @@ ff = only
 
 updateRefs = true
 
+[fetch]
+
+prune = true
+
 [rerere]
 
 enabled = true
