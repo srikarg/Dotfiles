@@ -37,8 +37,6 @@ brew "gmp"
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# Generic machine emulator and virtualizer
-brew "qemu"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
 # Color-highlighted diff(1) output
@@ -146,7 +144,7 @@ brew "kubernetes-cli"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Simple terminal UI for git commands
-brew "lazygit"
+brew "lazygit", args: ["HEAD"]
 # Pager program similar to more
 brew "less"
 # I/O abstraction library for dealing with structured file formats
@@ -179,6 +177,8 @@ brew "pluto"
 brew "pre-commit"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
+# Generic machine emulator and virtualizer
+brew "qemu"
 # Cross-platform application and UI framework
 brew "qt"
 # Rsync for cloud storage
