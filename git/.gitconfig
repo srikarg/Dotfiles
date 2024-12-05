@@ -213,7 +213,6 @@ insteadOf = "gist:"
 
 [init]
 
-templatedir = ~/.git_template
 defaultBranch = main
 
 [interactive]
