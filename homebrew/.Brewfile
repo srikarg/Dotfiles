@@ -209,8 +209,6 @@ brew "stow"
 brew "stylua"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
-# Programmatically correct mistyped console commands
-brew "thefuck"
 # Define your dev environment as code. For microservice apps on Kubernetes
 brew "tilt"
 # Simplified and community-driven man pages
