@@ -14,6 +14,8 @@ return {
         highlights.WinSeparator = { fg = colors.comment }
 
         highlights.TelescopeResultsComment = { fg = colors.fg_dark }
+
+        highlights.BlinkCmpGhostText = { fg = colors.comment }
       end,
     },
   },
