@@ -20,6 +20,11 @@ return {
 
       -- Disable the <C-y> "select and accept" keymap configured by LazyVim
       ['<C-y>'] = {},
+
+      -- Use "super tab" configuration to use tab for moving back and forth, and
+      -- also accepting suggestions
+      ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
+      ['<S-Tab>'] = { 'select_prev', 'snippet_forward', 'fallback' },
     },
   },
 }
