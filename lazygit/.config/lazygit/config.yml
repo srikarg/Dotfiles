@@ -8,6 +8,12 @@ customCommands:
     description: 'Prune local branches no longer on its remote'
     loadingText: 'Pruning gone...'
     stream: true
+  - key: 'C'
+    command: 'cz commit'
+    description: 'Commit with commitizen'
+    context: 'files'
+    loadingText: 'Opening commitizen commit tool...'
+    subprocess: true
 services:
   'sourcecode.jnj.com': 'bitbucketServer:sourcecode.jnj.com'
 gui:

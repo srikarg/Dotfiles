@@ -41,6 +41,8 @@ brew "gnutls"
 brew "colima"
 # Color-highlighted diff(1) output
 brew "colordiff"
+# Defines a standard way of committing rules and communicating it
+brew "commitizen"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
