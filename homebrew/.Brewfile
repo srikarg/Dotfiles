@@ -1,10 +1,12 @@
 tap "azure/kubelogin"
 tap "derailed/k9s"
 tap "fairwindsops/tap"
+tap "felixkratz/formulae"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "joshmedeski/sesh"
+tap "nikitabobko/tap"
 # Software library to render fonts
 brew "freetype"
 # Toolkit for image loading and pixel buffer manipulation
@@ -247,10 +249,14 @@ brew "zsh"
 brew "azure/kubelogin/kubelogin"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s"
+# A window border system for macOS
+brew "felixkratz/formulae/borders"
 # Terraform
 brew "hashicorp/tap/terraform"
 # Smart terminal session manager
 brew "joshmedeski/sesh/sesh"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
 # Transfer files from and to an Android smartphone
 cask "android-file-transfer"
 # Application uninstaller
