@@ -2,9 +2,10 @@
 
 # This uses the `sesh` binary found here: https://github.com/joshmedeski/sesh#tmux--fzf
 
-session=$(sesh list --icons --tmux --zoxide --hide-attached | fzf-tmux -p 55%,60% -- \
+session=$(sesh list --icons --tmux --zoxide --hide-attached | fzf-tmux -p 90%,90% -- \
   --ansi \
   --no-sort --border-label ' sesh ' --prompt '⚡ ' \
+  --preview 'sesh preview {}' \
   --pointer '👉🏼' \
   --no-scrollbar \
   --layout reverse --info hidden \
