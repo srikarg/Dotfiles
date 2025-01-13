@@ -1,6 +1,18 @@
 return {
   'folke/snacks.nvim',
 
+  keys = {
+    { '<leader>n', false },
+
+    {
+      '<leader>N',
+      function()
+        Snacks.notifier.show_history()
+      end,
+      desc = 'Notification History',
+    },
+  },
+
   opts = {
     gitbrowse = {
       remote_patterns = {
