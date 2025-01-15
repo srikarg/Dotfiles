@@ -94,5 +94,129 @@ return {
         },
       },
     },
+
+    picker = {
+      prompt = ' ',
+      sources = {},
+      layout = {
+        cycle = true,
+        --- Use the default layout or vertical if the window is too narrow
+        preset = function()
+          return vim.o.columns >= 120 and 'default' or 'vertical'
+        end,
+      },
+      ui_select = true, -- replace `vim.ui.select` with the snacks picker
+      previewers = {
+        file = {
+          max_size = 1024 * 1024, -- 1MB
+          max_line_length = 500,
+        },
+      },
+      win = {
+        -- input window
+        input = {
+          keys = {
+            -- Only overwrite existing keymaps that conflict with Aerospace
+            -- tiling window manager
+            ['<C-a-d>'] = { 'inspect', mode = { 'n', 'i' } },
+            ['<C-a-m>'] = { 'toggle_maximize', mode = { 'i', 'n' } },
+            ['<C-a-p>'] = { 'toggle_preview', mode = { 'i', 'n' } },
+            ['<C-a-w>'] = { 'cycle_win', mode = { 'i', 'n' } },
+            ['<C-a-i>'] = { 'toggle_ignored', mode = { 'i', 'n' } },
+            ['<C-a-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
+          },
+          b = {
+            minipairs_disable = true,
+          },
+        },
+        -- result list window
+        list = {
+          keys = {
+            -- Only overwrite existing keymaps that conflict with Aerospace
+            -- tiling window manager
+            ['<C-a-d>'] = 'inspect',
+            ['<C-a-w>'] = 'cycle_win',
+          },
+        },
+        -- preview window
+        preview = {
+          minimal = false,
+          wo = {
+            cursorline = false,
+            colorcolumn = '',
+          },
+          keys = {
+            -- Only overwrite existing keymaps that conflict with Aerospace
+            -- tiling window manager
+            ['<C-a-w>'] = 'cycle_win',
+          },
+        },
+      },
+      ---@class snacks.picker.icons
+      icons = {
+        files = {
+          enabled = true, -- show file icons
+        },
+        indent = {
+          vertical = '│ ',
+          middle = '├╴',
+          last = '└╴',
+        },
+        ui = {
+          live = '󰐰 ',
+          selected = '● ',
+          -- selected = " ",
+        },
+        git = {
+          commit = '󰜘 ',
+        },
+        diagnostics = {
+          Error = ' ',
+          Warn = ' ',
+          Hint = ' ',
+          Info = ' ',
+        },
+        kinds = {
+          Array = ' ',
+          Boolean = '󰨙 ',
+          Class = ' ',
+          Color = ' ',
+          Control = ' ',
+          Collapsed = ' ',
+          Constant = '󰏿 ',
+          Constructor = ' ',
+          Copilot = ' ',
+          Enum = ' ',
+          EnumMember = ' ',
+          Event = ' ',
+          Field = ' ',
+          File = ' ',
+          Folder = ' ',
+          Function = '󰊕 ',
+          Interface = ' ',
+          Key = ' ',
+          Keyword = ' ',
+          Method = '󰊕 ',
+          Module = ' ',
+          Namespace = '󰦮 ',
+          Null = ' ',
+          Number = '󰎠 ',
+          Object = ' ',
+          Operator = ' ',
+          Package = ' ',
+          Property = ' ',
+          Reference = ' ',
+          Snippet = '󱄽 ',
+          String = ' ',
+          Struct = '󰆼 ',
+          Text = ' ',
+          TypeParameter = ' ',
+          Unit = ' ',
+          Uknown = ' ',
+          Value = ' ',
+          Variable = '󰀫 ',
+        },
+      },
+    },
   },
 }
