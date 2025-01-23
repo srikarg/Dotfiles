@@ -11,6 +11,16 @@ return {
       end,
       desc = 'Notification History',
     },
+
+    {
+      '<leader><leader>',
+      function()
+        Snacks.picker.smart({
+          filter = { cwd = true },
+        })
+      end,
+      desc = 'Smart Snacks Picker',
+    },
   },
 
   opts = {
