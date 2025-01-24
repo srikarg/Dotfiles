@@ -8,6 +8,7 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
 
   # Add MacOS Visual Studio Code Binary (code) to PATH
   export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+  export PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
 fi
 
 ### Linux
