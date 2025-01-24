@@ -122,6 +122,9 @@ return {
       },
       ui_select = true, -- replace `vim.ui.select` with the snacks picker
       previewers = {
+        git = {
+          native = true, -- use native (terminal) or Neovim for previewing git diffs and commits
+        },
         file = {
           max_size = 1024 * 1024, -- 1MB
           max_line_length = 500,
