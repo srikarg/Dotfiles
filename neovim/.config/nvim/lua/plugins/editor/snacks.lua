@@ -108,6 +108,11 @@ return {
     picker = {
       prompt = ' ',
       sources = {},
+      formatters = {
+        file = {
+          filename_first = true, -- display filename before the file path
+        },
+      },
       layout = {
         cycle = true,
         --- Use the default layout or vertical if the window is too narrow
