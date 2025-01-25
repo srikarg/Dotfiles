@@ -107,10 +107,10 @@ return {
 
     picker = {
       prompt = ' ',
-      sources = {},
       formatters = {
         file = {
-          filename_first = true, -- display filename before the file path
+          -- Display filename before the file path
+          filename_first = true,
         },
       },
       layout = {
@@ -120,22 +120,25 @@ return {
           return vim.o.columns >= 120 and 'default' or 'vertical'
         end,
       },
-      ui_select = true, -- replace `vim.ui.select` with the snacks picker
+      -- Replace `vim.ui.select` with the snacks picker
+      ui_select = true,
       previewers = {
         git = {
-          native = true, -- use native (terminal) or Neovim for previewing git diffs and commits
+          -- Use native (terminal) or Neovim for previewing git diffs and commits
+          native = true,
         },
         file = {
-          max_size = 1024 * 1024, -- 1MB
+          -- 1MB
+          max_size = 1024 * 1024,
           max_line_length = 500,
         },
       },
       win = {
-        -- input window
+        -- Input window
         input = {
           keys = {
-            -- Only overwrite existing keymaps that conflict with Aerospace
-            -- tiling window manager
+            -- Overwrite default keymaps that conflict with Aerospace tiling
+            -- window manager
             ['<C-a-d>'] = { 'inspect', mode = { 'n', 'i' } },
             ['<C-a-m>'] = { 'toggle_maximize', mode = { 'i', 'n' } },
             ['<C-a-p>'] = { 'toggle_preview', mode = { 'i', 'n' } },
@@ -147,92 +150,32 @@ return {
             minipairs_disable = true,
           },
         },
-        -- result list window
+        -- Result list window
         list = {
           keys = {
-            -- Only overwrite existing keymaps that conflict with Aerospace
-            -- tiling window manager
+            -- Overwrite default keymaps that conflict with Aerospace tiling
+            -- window manager
             ['<C-a-d>'] = 'inspect',
             ['<C-a-w>'] = 'cycle_win',
           },
         },
-        -- preview window
+        -- Preview window
         preview = {
           minimal = false,
           wo = {
-            cursorline = false,
             colorcolumn = '',
+            cursorline = false,
+            foldcolumn = '0',
+            number = true,
+            relativenumber = false,
+            signcolumn = 'no',
+            statuscolumn = '',
           },
           keys = {
-            -- Only overwrite existing keymaps that conflict with Aerospace
-            -- tiling window manager
+            -- Overwrite default keymaps that conflict with Aerospace tiling
+            -- window manager
             ['<C-a-w>'] = 'cycle_win',
           },
-        },
-      },
-      ---@class snacks.picker.icons
-      icons = {
-        files = {
-          enabled = true, -- show file icons
-        },
-        indent = {
-          vertical = '│ ',
-          middle = '├╴',
-          last = '└╴',
-        },
-        ui = {
-          live = '󰐰 ',
-          selected = '● ',
-          -- selected = " ",
-        },
-        git = {
-          commit = '󰜘 ',
-        },
-        diagnostics = {
-          Error = ' ',
-          Warn = ' ',
-          Hint = ' ',
-          Info = ' ',
-        },
-        kinds = {
-          Array = ' ',
-          Boolean = '󰨙 ',
-          Class = ' ',
-          Color = ' ',
-          Control = ' ',
-          Collapsed = ' ',
-          Constant = '󰏿 ',
-          Constructor = ' ',
-          Copilot = ' ',
-          Enum = ' ',
-          EnumMember = ' ',
-          Event = ' ',
-          Field = ' ',
-          File = ' ',
-          Folder = ' ',
-          Function = '󰊕 ',
-          Interface = ' ',
-          Key = ' ',
-          Keyword = ' ',
-          Method = '󰊕 ',
-          Module = ' ',
-          Namespace = '󰦮 ',
-          Null = ' ',
-          Number = '󰎠 ',
-          Object = ' ',
-          Operator = ' ',
-          Package = ' ',
-          Property = ' ',
-          Reference = ' ',
-          Snippet = '󱄽 ',
-          String = ' ',
-          Struct = '󰆼 ',
-          Text = ' ',
-          TypeParameter = ' ',
-          Unit = ' ',
-          Uknown = ' ',
-          Value = ' ',
-          Variable = '󰀫 ',
         },
       },
     },
