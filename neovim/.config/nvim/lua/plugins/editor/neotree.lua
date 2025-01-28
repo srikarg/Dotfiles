@@ -17,5 +17,19 @@ return {
       group_empty_dirs = true,
       hijack_netrw_behavior = 'disabled',
     },
+
+    window = {
+      mappings = {
+        ['y'] = {
+          function(state)
+            local node = state.tree:get_node()
+            local path = node:get_id()
+            local relative_path = vim.fn.fnamemodify(path, ':.')
+            vim.fn.setreg('+', relative_path, 'c')
+          end,
+          desc = 'Copy Relative Path to Clipboard',
+        },
+      },
+    },
   },
 }
