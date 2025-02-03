@@ -165,6 +165,8 @@ brew "mtr"
 brew "nano"
 # NCurses Disk Usage
 brew "ncdu"
+# Parser generator tool and incremental parsing library
+brew "tree-sitter", args: ["HEAD"]
 # Clean C library for processing UTF-8 Unicode data
 brew "utf8proc", args: ["HEAD"]
 # Ambitious Vim-fork focused on extensibility and agility
