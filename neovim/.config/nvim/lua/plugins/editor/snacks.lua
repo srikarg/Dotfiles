@@ -120,6 +120,16 @@ return {
           return vim.o.columns >= 120 and 'default' or 'vertical'
         end,
       },
+      layouts = {
+        select = {
+          layout = {
+            relative = 'cursor',
+            width = 70,
+            min_width = 0,
+            row = 1,
+          },
+        },
+      },
       -- Replace `vim.ui.select` with the snacks picker
       ui_select = true,
       previewers = {
