@@ -25,6 +25,7 @@ return {
 
   opts = {
     gitbrowse = {
+      what = 'permalink',
       remote_patterns = {
         { '^(https?://sourcecode%.jnj%.com)/scm/(.-)/(.+)%.git$', '%1/projects/%2/repos/%3' },
         { '^(https?://.*)%.git$', '%1' },
@@ -44,21 +45,25 @@ return {
         ['github%.com'] = {
           branch = '/tree/{branch}',
           file = '/blob/{branch}/{file}#L{line_start}-L{line_end}',
+          permalink = '/blob/{commit}/{file}#L{line_start}-L{line_end}',
           commit = '/commit/{commit}',
         },
         ['gitlab%.com'] = {
           branch = '/-/tree/{branch}',
           file = '/-/blob/{branch}/{file}#L{line_start}-L{line_end}',
+          permalink = '/-/blob/{commit}/{file}#L{line_start}-L{line_end}',
           commit = '/-/commit/{commit}',
         },
         ['bitbucket%.org'] = {
           branch = '/src/{branch}',
           file = '/src/{branch}/{file}#lines-{line_start}-L{line_end}',
+          permalink = '/src/{commit}/{file}#lines-{line_start}-L{line_end}',
           commit = '/commits/{commit}',
         },
         ['sourcecode%.jnj%.com'] = {
           branch = '/compare/commits?sourceBranch=refs%2Fheads%2F{branch}&targetBranch=refs%2Fheads%2Fdevelop',
           file = '/browse/{file}?at=refs%2Fheads%2F{branch}#{line_start}-{line_end}',
+          permalink = '/browse/{file}?at={commit}#{line_start}-{line_end}',
           commit = '/commits/{commit}',
         },
       },
