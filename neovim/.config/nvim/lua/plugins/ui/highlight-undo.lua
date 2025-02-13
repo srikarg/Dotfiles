@@ -5,6 +5,7 @@ return {
 
   opts = {
     duration = 300,
+    ignored_filetypes = { 'neo-tree', 'fugitive', 'TelescopePrompt', 'snacks_dashboard', 'lazy' },
     keymaps = {
       undo = {
         desc = 'Undo',
