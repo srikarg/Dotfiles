@@ -127,7 +127,7 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
-alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
+alt-a = 'workspace A'
 alt-b = 'workspace B'
 alt-c = 'workspace C'
 alt-d = 'workspace D'
@@ -142,13 +142,6 @@ alt-p = 'workspace P'
 alt-q = 'workspace Q'
 alt-r = 'workspace R'
 alt-s = 'workspace S'
-alt-t = 'workspace T'
-alt-u = 'workspace U'
-alt-v = 'workspace V'
-alt-w = 'workspace W'
-alt-x = 'workspace X'
-alt-y = 'workspace Y'
-alt-z = 'workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -175,13 +168,6 @@ alt-shift-p = 'move-node-to-workspace P --focus-follows-window'
 alt-shift-q = 'move-node-to-workspace Q --focus-follows-window'
 alt-shift-r = 'move-node-to-workspace R --focus-follows-window'
 alt-shift-s = 'move-node-to-workspace S --focus-follows-window'
-alt-shift-t = 'move-node-to-workspace T --focus-follows-window'
-alt-shift-u = 'move-node-to-workspace U --focus-follows-window'
-alt-shift-v = 'move-node-to-workspace V --focus-follows-window'
-alt-shift-w = 'move-node-to-workspace W --focus-follows-window'
-alt-shift-x = 'move-node-to-workspace X --focus-follows-window'
-alt-shift-y = 'move-node-to-workspace Y --focus-follows-window'
-alt-shift-z = 'move-node-to-workspace Z --focus-follows-window'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -190,11 +176,6 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
-
-# mnemonics T - Terminal Emulators
-[[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
-run = 'move-node-to-workspace T'
 
 # mnemonics B - browsers
 [[on-window-detected]]
@@ -220,11 +201,6 @@ run = 'move-node-to-workspace B'
 [[on-window-detected]]
 if.app-id = 'com.brave.Browser'
 run = 'move-node-to-workspace B'
-
-# mnemonics F - files/finder
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = 'move-node-to-workspace F'
 
 # mnemonics E - email
 [[on-window-detected]]
@@ -265,32 +241,10 @@ run = 'move-node-to-workspace M'
 if.app-id = 'net.whatsapp.WhatsApp'
 run = 'move-node-to-workspace M'
 
-# mnemonics V - vscode + other text editors
-[[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace V'
-
-[[on-window-detected]]
-if.app-id = 'dev.zed.Zed-Preview'
-run = 'move-node-to-workspace V'
-
-[[on-window-detected]]
-if.app-id = 'dev.zed.Zed'
-run = 'move-node-to-workspace V'
-
 # mnemonics S - spotify
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace S'
-
-# mnemonics Z - zoom
-[[on-window-detected]]
-if.app-id = 'us.zoom.xos'
-run = 'move-node-to-workspace Z'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.FaceTime'
-run = 'move-node-to-workspace Z'
 
 [workspace-to-monitor-force-assignment]
 S = 'secondary'
@@ -299,11 +253,13 @@ S = 'secondary'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = [
-  'layout floating tiling',
-  'mode main',
-] # Toggle between floating and tiling layout
+
+# Reset layout
+r = ['flatten-workspace-tree', 'mode main']
+
+# Toggle between floating and tiling layout
+f = ['layout floating tiling', 'mode main']
+
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
