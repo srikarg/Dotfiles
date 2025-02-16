@@ -118,6 +118,14 @@ return {
           filename_first = true,
         },
       },
+      sources = {
+        lsp_symbols = {
+          layout = {
+            preset = 'vscode',
+            preview = 'main',
+          },
+        },
+      },
       layout = {
         cycle = true,
         --- Use the default layout or vertical if the window is too narrow
