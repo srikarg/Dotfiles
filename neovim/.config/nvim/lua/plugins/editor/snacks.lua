@@ -125,6 +125,11 @@ return {
             preview = 'main',
           },
         },
+
+        explorer = {
+          include = { '.env*' },
+          hidden = true,
+        },
       },
       layout = {
         cycle = true,
