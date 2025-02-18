@@ -151,6 +151,11 @@ return {
       -- Replace `vim.ui.select` with the snacks picker
       ui_select = true,
       previewers = {
+        diff = {
+          -- Use native (terminal) or Neovim for previewing git diffs and commits
+          native = true,
+          cmd = { 'difft' },
+        },
         git = {
           -- Use native (terminal) or Neovim for previewing git diffs and commits
           native = true,
