@@ -152,13 +152,13 @@ return {
       ui_select = true,
       previewers = {
         diff = {
-          -- Use native (terminal) or Neovim for previewing git diffs and commits
-          native = true,
-          cmd = { 'difft' },
+          -- Use Neovim for previewing diffs (true) or use an external tool (false)
+          builtin = false,
+          cmd = { 'delta' },
         },
         git = {
-          -- Use native (terminal) or Neovim for previewing git diffs and commits
-          native = true,
+          -- Use Neovim for previewing git output (true) or use git (false)
+          builtin = false,
         },
         file = {
           -- 1MB
