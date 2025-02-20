@@ -16,7 +16,22 @@ return {
       '<leader><leader>',
       function()
         Snacks.picker.smart({
-          filter = { cwd = true },
+          multi = {
+            'buffers',
+            'recent',
+            {
+              finder = 'files',
+              format = 'file',
+              show_empty = true,
+              hidden = true,
+              ignored = false,
+              follow = true,
+              supports_live = true,
+            },
+          },
+          filter = {
+            cwd = true,
+          },
         })
       end,
       desc = 'Smart Snacks Picker',
