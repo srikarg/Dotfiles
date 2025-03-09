@@ -1,11 +1,8 @@
 tap "azure/kubelogin"
 tap "derailed/k9s"
-tap "fairwindsops/tap"
 tap "felixkratz/formulae"
-tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "joshmedeski/sesh"
 tap "nikitabobko/tap"
 # Software library to render fonts
 brew "freetype"
@@ -33,22 +30,26 @@ brew "bash"
 brew "bash-completion@2"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# GNU multiple precision arithmetic library
-brew "gmp"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
 # Color-highlighted diff(1) output
 brew "colordiff"
 # Defines a standard way of committing rules and communicating it
 brew "commitizen"
+# GNU multiple precision arithmetic library
+brew "gmp"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Subtitle renderer for the ASS/SSA subtitle format
+brew "libass"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
 # Toolkit for creating graphical user interfaces
 brew "gtk4"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
@@ -85,10 +86,6 @@ brew "exiftool"
 brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Subtitle renderer for the ASS/SSA subtitle format
-brew "libass"
-# Play, record, convert, and stream audio and video
-brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # Library for manipulating fonts
@@ -177,12 +174,6 @@ brew "nginx"
 brew "openjdk"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-# CLI tool to help discover deprecated apiVersions in Kubernetes
-brew "pluto"
-# Framework for managing multi-language pre-commit hooks
-brew "pre-commit"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # Cross-platform application and UI framework
@@ -201,6 +192,8 @@ brew "rsync"
 brew "ruby"
 # Terminal multiplexer with VT100/ANSI terminal emulation
 brew "screen"
+# Smart session manager for the terminal
+brew "sesh"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Autoformat shell script source code
@@ -217,12 +210,10 @@ brew "stylua"
 brew "terminal-notifier"
 # Define your dev environment as code. For microservice apps on Kubernetes
 brew "tilt"
-# Simplified and community-driven man pages
-brew "tldr"
 # Terminal multiplexer
 brew "tmux"
 # CLI tool that moves files or folder to the trash
-brew "trash"
+brew "trash", link: true
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Modern watch command
@@ -253,10 +244,6 @@ brew "azure/kubelogin/kubelogin"
 brew "derailed/k9s/k9s"
 # A window border system for macOS
 brew "felixkratz/formulae/borders"
-# Terraform
-brew "hashicorp/tap/terraform"
-# Smart terminal session manager
-brew "joshmedeski/sesh/sesh"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "aerospace"
 # Transfer files from and to an Android smartphone
@@ -265,7 +252,7 @@ cask "android-file-transfer"
 cask "appcleaner"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
 cask "basictex"
-# CLI for managing the battery charging status
+# App for managing battery charging. (Also installs a CLI on first use.)
 cask "battery"
 # Desktop password and login vault
 cask "bitwarden"
@@ -285,9 +272,7 @@ cask "figma"
 cask "firefox"
 # Screen colour temperature controller
 cask "flux"
-# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
 # Menu bar calendar
 cask "itsycal"
@@ -327,14 +312,12 @@ cask "stats"
 cask "steam"
 # Real time file synchronisation software
 cask "syncthing"
-# Mesh VPN based on Wireguard
+# Mesh VPN based on WireGuard
 cask "tailscale"
 # Unpacks archive files
 cask "the-unarchiver"
 # Virtual machines UI using QEMU
 cask "utm"
-# Customizable timing of breaks
-cask "time-out"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
