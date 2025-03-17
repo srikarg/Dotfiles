@@ -29,12 +29,14 @@ config.native_macos_fullscreen_mode = true
 config.window_close_confirmation = 'NeverPrompt'
 
 config.keys = {
+  -- Close current tab
   {
     key = 'w',
     mods = 'CMD',
     action = wezterm.action.CloseCurrentTab({ confirm = false }),
   },
 
+  -- New tab
   {
     key = 't',
     mods = 'SUPER',
@@ -43,6 +45,7 @@ config.keys = {
     }),
   },
 
+  -- Toggle fullscreen
   {
     key = 'f',
     mods = 'CTRL|CMD',
