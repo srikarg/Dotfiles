@@ -211,7 +211,7 @@ brew "terminal-notifier"
 # Define your dev environment as code. For microservice apps on Kubernetes
 brew "tilt"
 # Terminal multiplexer
-brew "tmux"
+brew "tmux", args: ["HEAD"]
 # CLI tool that moves files or folder to the trash
 brew "trash", link: true
 # Display directories as trees (with optional color/HTML output)
