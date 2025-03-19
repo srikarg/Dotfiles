@@ -27,6 +27,7 @@ return {
               ignored = false,
               follow = true,
               supports_live = true,
+              include = { '.env*' },
             },
           },
           filter = {
