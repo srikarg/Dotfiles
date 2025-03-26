@@ -6,6 +6,12 @@ return {
       ghost_text = {
         enabled = true,
       },
+
+      menu = {
+        draw = {
+          align_to = 'cursor',
+        },
+      },
     },
 
     signature = { enabled = true },
