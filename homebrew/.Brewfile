@@ -1,8 +1,6 @@
 tap "azure/kubelogin"
 tap "derailed/k9s"
 tap "felixkratz/formulae"
-tap "homebrew/bundle"
-tap "homebrew/services"
 tap "nikitabobko/tap"
 # Software library to render fonts
 brew "freetype"
