@@ -140,7 +140,8 @@ vim.opt.fillchars = {
 }
 
 -- Python Lazy Extra Configuration: https://www.lazyvim.org/extras/lang/python#options
--- "basedpyright" | "pyright"
+-- LSP Server to use for Python.
+-- Set to "basedpyright" to use basedpyright instead of pyright.
 vim.g.lazyvim_python_lsp = 'basedpyright'
--- "ruff_lsp" | "ruff"
-vim.g.lazyvim_python_ruff = 'ruff_lsp'
+-- Set to "ruff_lsp" to use the old LSP implementation version.
+vim.g.lazyvim_python_ruff = 'ruff'
