@@ -30,7 +30,20 @@ vim.api.nvim_create_autocmd('BufWritePre', {
       vim.lsp.buf.code_action({
         apply = true,
         context = {
-          only = { 'source.fixAll.ruff' },
+          only = {
+            'source.fixAll.ruff',
+          },
+          diagnostics = {},
+        },
+      })
+
+      vim.lsp.buf.code_action({
+        apply = true,
+        context = {
+          only = {
+            'source.organizeImports.ruff',
+          },
+          diagnostics = {},
         },
       })
     end
@@ -42,8 +55,24 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = { '*.ts', '*.tsx' },
   callback = function()
     if vim.g.autofixes_enabled then
-      vim.lsp.buf.code_action({ apply = true, context = { only = { 'source.addMissingImports.ts' }, diagnostics = {} } })
-      vim.lsp.buf.code_action({ apply = true, context = { only = { 'source.removeUnused.ts' }, diagnostics = {} } })
+      vim.lsp.buf.code_action({
+        apply = true,
+        context = {
+          only = {
+            'source.addMissingImports.ts',
+          },
+          diagnostics = {},
+        },
+      })
+      vim.lsp.buf.code_action({
+        apply = true,
+        context = {
+          only = {
+            'source.removeUnused.ts',
+          },
+          diagnostics = {},
+        },
+      })
     end
   end,
 })
