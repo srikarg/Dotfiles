@@ -35,6 +35,13 @@ return {
         -- Enable Copilot for all file types
         ['*'] = true,
       },
+      server_opts_overrides = {
+        settings = {
+          telemetry = {
+            telemetryLevel = 'off',
+          },
+        },
+      },
     },
   },
 
