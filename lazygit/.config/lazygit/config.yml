@@ -5,64 +5,52 @@ customCommands:
     context: 'localBranches'
     description: 'Prune local branches no longer on its remote'
     loadingText: 'Pruning gone...'
-    stream: true
+    output: log
   - key: 'C'
     command: 'cz commit'
     description: 'Commit with commitizen'
     context: 'files'
     loadingText: 'Opening commitizen commit tool...'
-    subprocess: true
-
+    output: terminal
 services:
   'sourcecode.jnj.com': 'bitbucketServer:sourcecode.jnj.com'
-
 gui:
   # If true, increase the height of the focused side window; creating an accordion effect.
   expandFocusedSidePanel: true
-
   # The weight of the expanded side panel, relative to the other panels. 2 means
   # twice as tall as the other panels. Only relevant if `expandFocusedSidePanel` is true.
   expandedSidePanelWeight: 2
-
   # Nerd fonts version to use.
   # One of: '2' | '3' | empty string (default)
   # If empty, do not show icons.
   nerdFontsVersion: '3'
-
 git:
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
   paging:
     # Value of the --color arg in the git diff command. Some pagers want this to be set to 'always' and some want it set to 'never'
     colorArg: always
-
     # e.g.
     # diff-so-fancy
     # delta --dark --paging=never
     # ydiff -p cat -s --wrap --width={{columnWidth}}
     pager: delta --dark --paging=never
-
     # If true, Lazygit will use whatever pager is specified in `$GIT_PAGER`, `$PAGER`, or your *git config*. If the pager ends with something like ` | less` we will strip that part out, because less doesn't play nice with our rendering approach. If the custom pager uses less under the hood, that will also break rendering (hence the `--paging=never` flag for the `delta` pager).
     useConfig: false
-
     # Use difftastic for diff output see
     # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#using-external-diff-commands
     # for more information
     externalDiffCommand: difft --color=always
-
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#predefined-commit-message-prefix
   commitPrefix:
     - # pattern to match on. E.g. for 'feature/AB-123' to match on the AB-123 use "^\\w+\\/(\\w+-\\w+).*"
       pattern: "^\\w+\\/(\\w+-\\d+).*"
       # Replace directive. E.g. for 'feature/AB-123' to start the commit message with 'AB-123 ' use "[$1] "
       replace: '$1: '
-
   # If true, parse emoji strings in commit messages e.g. render :rocket: as 🚀
   # (This should really be under 'gui', not 'git')
   parseEmoji: true
-
 # If true, exit Lazygit when the user presses escape in a context where there is nothing to cancel/close
 quitOnTopLevelReturn: true
-
 # Config relating to things outside of Lazygit like how files are opened, copying to clipboard, etc
 os:
   # Command for editing a file. Should contain "{{filename}}".
@@ -78,7 +66,6 @@ os:
   # A built-in preset that sets all of the above settings. Supported presets
   # are defined in the getPreset function in editor_presets.go.
   editPreset: 'nvim'
-
 keybinding:
   files:
     toggleTreeView: 't'
