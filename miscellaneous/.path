@@ -36,6 +36,9 @@ if command -v brew >/dev/null 2>&1; then
   ## Add Homebrew GNU FindUtils to PATH
   export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
 
+  ## Add Homebrew GNU DiffUtils to PATH
+  export PATH="$(brew --prefix diffutils)/bin:$PATH"
+
   ## Add Homebrew OpenJDK to PATH
   export PATH="$(brew --prefix openjdk)/bin:$PATH"
 
