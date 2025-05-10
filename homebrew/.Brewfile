@@ -136,6 +136,8 @@ brew "jenv"
 brew "jq"
 # Handy way to save and run project-specific commands
 brew "just"
+# Fast and secure open-source backup
+brew "kopia"
 # Network authentication protocol
 brew "krb5"
 # Kubernetes command-line interface
@@ -172,6 +174,10 @@ brew "nginx"
 brew "openjdk"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# Fast, disk space efficient package manager
+brew "pnpm"
+# Password generator
+brew "pwgen"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # Cross-platform application and UI framework
@@ -208,6 +214,8 @@ brew "stylua"
 brew "terminal-notifier"
 # Define your dev environment as code. For microservice apps on Kubernetes
 brew "tilt"
+# Official tldr client written in Rust
+brew "tlrc"
 # Terminal multiplexer
 brew "tmux", args: ["HEAD"]
 # CLI tool that moves files or folder to the trash
@@ -278,6 +286,12 @@ cask "font-jetbrains-mono-nerd-font"
 cask "itsycal"
 # Display key code, unicode value and modifier keys state for any key combination
 cask "key-codes"
+# Backup/restore tool
+cask "kopiaui"
+# Discover, download, and run local LLMs
+cask "lm-studio"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
 # Software for Logitech devices
 cask "logi-options+"
 # Privacy-first, open-source platform for knowledge sharing and management
