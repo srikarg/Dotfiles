@@ -7,7 +7,7 @@ return {
       function()
         require('which-key').show({ keys = '<leader>d', loop = true })
       end,
-      desc = 'Window Hydra Mode (which-key)',
+      desc = 'Debug Menu Hydra Mode (which-key)',
     },
   },
 }
