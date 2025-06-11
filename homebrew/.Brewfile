@@ -163,7 +163,7 @@ brew "nano"
 # NCurses Disk Usage
 brew "ncdu"
 # Parser generator tool and incremental parsing library
-brew "tree-sitter", args: ["HEAD"]
+brew "tree-sitter"
 # Clean C library for processing UTF-8 Unicode data
 brew "utf8proc", args: ["HEAD"]
 # Ambitious Vim-fork focused on extensibility and agility
@@ -296,12 +296,10 @@ cask "localsend"
 cask "logi-options+"
 # Privacy-first, open-source platform for knowledge sharing and management
 cask "logseq"
-# Shows the next meeting in the menu bar
-cask "meetingbar"
 # GameStream client
 cask "moonlight"
 # VPN client
-cask "mullvadvpn"
+cask "mullvad-vpn"
 # Open-source software for live streaming and screen recording
 cask "obs"
 # Colour picker for colours onscreen
@@ -328,12 +326,8 @@ cask "steam"
 cask "syncthing"
 # Mesh VPN based on WireGuard
 cask "tailscale"
-# Unpacks archive files
-cask "the-unarchiver"
-# Virtual machines UI using QEMU
-cask "utm"
 # Open-source code editor
-cask "visual-studio-code"
+cask "visual-studio-code@insiders"
 # Multimedia player
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
