@@ -12,6 +12,12 @@ return {
           align_to = 'cursor',
         },
       },
+
+      list = {
+        selection = {
+          preselect = false,
+        },
+      },
     },
 
     signature = { enabled = true },
