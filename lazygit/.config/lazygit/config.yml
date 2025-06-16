@@ -12,6 +12,11 @@ customCommands:
     context: 'files'
     loadingText: 'Opening commitizen commit tool...'
     output: terminal
+  - key: 'E'
+    description: 'Add empty commit'
+    context: 'commits'
+    command: 'git commit --allow-empty -m "Empty commit"'
+    loadingText: 'Committing empty commit...'
 services:
   'sourcecode.jnj.com': 'bitbucketServer:sourcecode.jnj.com'
 gui:
