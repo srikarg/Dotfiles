@@ -154,13 +154,8 @@ alias dcup='docker compose up'
 alias dcupb='docker compose up --build'
 alias dcupd='docker compose up -d'
 
-# Minikube
-alias mk='minikube'
-
-# React
-alias cra='create-react-app'
-
 # Virtual Env
 alias vact='source ./bin/activate'
 
-alias composer="php -d memory_limit=-1 /usr/local/bin/composer"
+# Yazi
+alias y='yazi'
