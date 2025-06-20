@@ -240,6 +240,8 @@ brew "weasyprint"
 brew "wget"
 # Utilities to create and convert Web Open Font File (WOFF) files
 brew "woff2"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
 # YAML syntax highlighter to bring colours where only jq could
 brew "yh"
 # Shell extension to navigate your filesystem faster
