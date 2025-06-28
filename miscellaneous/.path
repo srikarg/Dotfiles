@@ -8,6 +8,9 @@ if [ "$SYSTEM_TYPE" = "Darwin" ]; then
 
   export PATH="$PATH:$HOME/.cache/lm-studio/bin"
 
+  export PNPM_HOME="$HOME/.local/share/pnpm"
+  export PATH="$PATH:$PNPM_HOME"
+
   # Add MacOS Visual Studio Code Binary (code) to PATH
   export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
   export PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
