@@ -1,3 +1,4 @@
+---@module "leetcode.nvim"
 local leet_arg = 'leetcode.nvim'
 
 return {
@@ -10,14 +11,19 @@ return {
   cmd = 'Leet',
 
   dependencies = {
-    'ibhagwan/fzf-lua',
     'nvim-lua/plenary.nvim',
     'MunifTanjim/nui.nvim',
     'nvim-treesitter/nvim-treesitter',
   },
 
   opts = {
+    ---@type string
     arg = leet_arg,
+
+    ---@type lc.lang
     lang = 'python3',
+
+    ---@type lc.picker
+    picker = { provider = 'snacks-picker' },
   },
 }
