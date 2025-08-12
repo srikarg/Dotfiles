@@ -31,8 +31,17 @@ return {
 
       {
         '<leader>gdb',
-        '<CMD> DiffviewFileHistory<CR>',
+        '<CMD> DiffviewFileHistory <CR>',
         desc = '  Show Branch History',
+      },
+
+      {
+        '<leader>gdg',
+        function()
+          local word = vim.fn.expand('<cword>')
+          vim.cmd('DiffviewFileHistory -G' .. word)
+        end,
+        desc = '  Search Git History For Current Word',
       },
 
       {

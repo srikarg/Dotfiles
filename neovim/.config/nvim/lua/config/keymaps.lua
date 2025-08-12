@@ -10,3 +10,7 @@ vim.keymap.set('', '<leader>bl', function()
     virtual_text = not vim.diagnostic.config().virtual_text,
   })
 end, { desc = 'Toggle Diagnostic [l]ines' })
+
+vim.keymap.set('', '<leader>gp', function()
+  vim.cmd('r !git log --pretty=format:"- \\%B" develop..HEAD')
+end, { desc = '  Paste Git Commit Messages Since Develop' })
