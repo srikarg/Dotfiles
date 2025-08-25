@@ -70,7 +70,7 @@ os:
   openDirInEditor: ''
   # A built-in preset that sets all of the above settings. Supported presets
   # are defined in the getPreset function in editor_presets.go.
-  editPreset: 'nvim'
+  editPreset: 'nvim-remote'
 keybinding:
   files:
     toggleTreeView: 't'
