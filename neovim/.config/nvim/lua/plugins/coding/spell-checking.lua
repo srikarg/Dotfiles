@@ -1,5 +1,26 @@
 return {
   {
+    'williamboman/mason.nvim',
+
+    opts = {
+      ensure_installed = {
+        'cspell',
+        'typos-lsp',
+      },
+    },
+  },
+
+  {
+    'mfussenegger/nvim-lint',
+
+    opts = {
+      linters_by_ft = {
+        ['*'] = { 'cspell' },
+      },
+    },
+  },
+
+  {
     'neovim/nvim-lspconfig',
 
     opts = {
@@ -16,15 +37,6 @@ return {
             },
           },
         },
-      },
-    },
-  },
-  {
-    'williamboman/mason.nvim',
-
-    opts = {
-      ensure_installed = {
-        'typos-lsp',
       },
     },
   },
