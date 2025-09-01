@@ -117,6 +117,16 @@ return {
       },
     },
 
+    zen = {
+      toggles = {
+        dim = true,
+        git_signs = false,
+        mini_diff_signs = false,
+        diagnostics = false,
+        inlay_hints = false,
+      },
+    },
+
     dashboard = {
       preset = {
         keys = {
@@ -295,6 +305,12 @@ return {
       lazygit = {
         width = 0,
         height = 0,
+      },
+
+      zen = {
+        backdrop = {
+          transparent = false,
+        },
       },
     },
   },
