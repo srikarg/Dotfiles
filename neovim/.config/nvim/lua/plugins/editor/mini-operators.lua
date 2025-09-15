@@ -1,5 +1,5 @@
 return {
-  'echasnovski/mini.operators',
+  'nvim-mini/mini.operators',
 
   opts = {
     -- Each entry configures one operator.
