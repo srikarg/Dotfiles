@@ -82,7 +82,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = { '*.ts', '*.tsx', '*.js', '*.jsx' },
   callback = function()
     if vim.g.autofixes_enabled then
-      vim.cmd('silent! EslintFixAll')
+      vim.cmd('silent! LspEslintFixAll')
     end
   end,
 })
