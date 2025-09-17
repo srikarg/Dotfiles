@@ -2,6 +2,9 @@
 
 SYSTEM_TYPE=$(uname -s)
 
+# Enable copy/paste to system clipboard for zsh-vi-mode
+export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+
 # Use Docker Compose Bake for building images
 # https://docs.docker.com/guides/compose-bake/
 export COMPOSE_BAKE=true
