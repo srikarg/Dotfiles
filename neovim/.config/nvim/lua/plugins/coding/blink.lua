@@ -1,6 +1,8 @@
 return {
   'saghen/blink.cmp',
 
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
   opts = {
     completion = {
       ghost_text = {
@@ -37,6 +39,16 @@ return {
       -- also accepting suggestions
       ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
       ['<S-Tab>'] = { 'select_prev', 'snippet_forward', 'fallback' },
+    },
+
+    sources = {
+      providers = {
+        snippets = {
+          should_show_items = function(ctx)
+            return ctx.trigger.initial_kind ~= 'trigger_character'
+          end,
+        },
+      },
     },
   },
 }
