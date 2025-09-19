@@ -1,3 +1,24 @@
+local gitActions = {
+  actions = {
+    ['diffview'] = function(picker)
+      local currentCommit = picker:current().commit
+      picker:close()
+      vim.cmd('DiffviewOpen HEAD ' .. currentCommit)
+    end,
+  },
+  win = {
+    input = {
+      keys = {
+        ['<CR>'] = {
+          'diffview',
+          desc = 'Open in Diffview',
+          mode = { 'n', 'i' },
+        },
+      },
+    },
+  },
+}
+
 return {
   'folke/snacks.nvim',
 
@@ -218,6 +239,10 @@ return {
             end,
           },
         },
+
+        git_log_file = gitActions,
+
+        git_log = gitActions,
       },
       layout = {
         cycle = true,
