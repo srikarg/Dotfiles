@@ -39,8 +39,6 @@ git:
     # delta --dark --paging=never
     # ydiff -p cat -s --wrap --width={{columnWidth}}
     pager: delta --dark --paging=never
-    # If true, Lazygit will use whatever pager is specified in `$GIT_PAGER`, `$PAGER`, or your *git config*. If the pager ends with something like ` | less` we will strip that part out, because less doesn't play nice with our rendering approach. If the custom pager uses less under the hood, that will also break rendering (hence the `--paging=never` flag for the `delta` pager).
-    useConfig: false
     # Use difftastic for diff output see
     # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#using-external-diff-commands
     # for more information
@@ -59,7 +57,9 @@ quitOnTopLevelReturn: true
 # Config relating to things outside of Lazygit like how files are opened, copying to clipboard, etc
 os:
   # Command for editing a file. Should contain "{{filename}}".
-  edit: ''
+  edit:
+    '[ -z "$NVIM" ] && (nvim -- {{filename}}) || (nvim --server "$NVIM"
+    --remote-send "q" && nvim --server "$NVIM" --remote {{filename}})'
   # Command for editing a file at a given line number. Should contain
   # "{{filename}}", and may optionally contain "{{line}}".
   editAtLine: ''
