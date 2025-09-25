@@ -16,6 +16,9 @@ return {
         highlights.TelescopeResultsComment = { fg = colors.fg_dark }
 
         highlights.BlinkCmpGhostText = { fg = colors.comment }
+
+        highlights.ComplHint = { fg = colors.comment }
+        highlights.ComplHintMore = { fg = colors.comment }
       end,
     },
   },
