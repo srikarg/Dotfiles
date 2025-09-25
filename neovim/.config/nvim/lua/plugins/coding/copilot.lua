@@ -35,6 +35,7 @@ return {
         -- Enable Copilot for all file types
         ['*'] = true,
       },
+
       server_opts_overrides = {
         settings = {
           telemetry = {
@@ -49,6 +50,8 @@ return {
     'CopilotC-Nvim/CopilotChat.nvim',
 
     opts = {
+      model = 'claude-sonnet-4',
+
       prompts = prompts,
 
       auto_follow_cursor = false,
