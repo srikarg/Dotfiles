@@ -37,14 +37,6 @@ return {
       hide_up_to_date = true, -- It hides up to date versions when displaying virtual text
       hide_unstable_versions = true, -- It hides unstable versions from version list e.g next-11.1.3-canary3
     },
-
-    -- https://github.com/vuki656/package-info.nvim/issues/155#issuecomment-2270572104
-    config = function(_, opts)
-      require('package-info').setup(opts)
-
-      vim.cmd([[highlight PackageInfoUpToDateVersion guifg=]] .. opts.colors.up_to_date)
-      vim.cmd([[highlight PackageInfoOutdatedVersion guifg=]] .. opts.colors.outdated)
-    end,
   },
 
   {
