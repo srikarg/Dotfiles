@@ -333,6 +333,7 @@ return {
       },
 
       zen = {
+        width = 90,
         backdrop = {
           transparent = false,
         },
