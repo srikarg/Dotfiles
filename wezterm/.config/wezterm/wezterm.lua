@@ -12,7 +12,7 @@ config.font_size = 18.0
 
 config.max_fps = 240
 
-config.font = wezterm.font('JetBrainsMono NFM', { weight = 'Light' })
+config.font = wezterm.font('JetBrainsMono NFM', { weight = 'Medium' })
 
 config.scrollback_lines = 200000
 
