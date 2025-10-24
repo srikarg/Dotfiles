@@ -31,18 +31,18 @@ gui:
   nerdFontsVersion: '3'
 git:
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
-  paging:
-    # Value of the --color arg in the git diff command. Some pagers want this to be set to 'always' and some want it set to 'never'
-    colorArg: always
-    # e.g.
-    # diff-so-fancy
-    # delta --dark --paging=never
-    # ydiff -p cat -s --wrap --width={{columnWidth}}
-    pager: delta --dark --paging=never
-    # Use difftastic for diff output see
-    # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#using-external-diff-commands
-    # for more information
-    externalDiffCommand: difft --color=always
+  pagers:
+    - # Value of the --color arg in the git diff command. Some pagers want this to be set to 'always' and some want it set to 'never'
+      colorArg: always
+      # e.g.
+      # diff-so-fancy
+      # delta --dark --paging=never
+      # ydiff -p cat -s --wrap --width={{columnWidth}}
+      pager: delta --dark --paging=never
+      # Use difftastic for diff output see
+      # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#using-external-diff-commands
+      # for more information
+      externalDiffCommand: difft --color=always
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#predefined-commit-message-prefix
   commitPrefix:
     - # pattern to match on. E.g. for 'feature/AB-123' to match on the AB-123 use "^\\w+\\/(\\w+-\\w+).*"
