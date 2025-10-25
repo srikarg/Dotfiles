@@ -9,6 +9,8 @@ export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 # https://docs.docker.com/guides/compose-bake/
 export COMPOSE_BAKE=true
 
+export MANPAGER="nvim +Man!"
+
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 export BAT_THEME="OneHalfDark"
@@ -78,9 +80,6 @@ fi
 
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"
-
-# Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X"
 
 # Require Virtual Environment before invoking pip
 export PIP_REQUIRE_VIRTUALENV=true
