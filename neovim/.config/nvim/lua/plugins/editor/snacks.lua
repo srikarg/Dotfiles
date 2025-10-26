@@ -6,13 +6,25 @@ local gitActions = {
       vim.cmd('DiffviewOpen HEAD ' .. currentCommit)
     end,
 
-    ['gitbrowse'] = function(picker)
+    ['gitbrowse_open'] = function(picker)
       local currentCommit = picker:current().commit
       Snacks.gitbrowse.open({
         notify = false,
         what = 'commit',
         commit = currentCommit,
       })
+    end,
+
+    ['gitbrowse_copy'] = function(picker)
+      local currentCommit = picker:current().commit
+      local cwd = Snacks.git.get_root() or vim.fn.getcwd()
+      local remote_url = vim.fn.system('git -C ' .. vim.fn.shellescape(cwd) .. ' remote get-url origin'):gsub('\n', '')
+      if remote_url and remote_url ~= '' then
+        local repo = Snacks.gitbrowse.get_repo(remote_url)
+        local url = Snacks.gitbrowse.get_url(repo, { commit = currentCommit }, { what = 'commit' })
+        vim.fn.setreg('+', url)
+        Snacks.notify('Copied URL: ' .. url, { title = 'Git Browse' })
+      end
     end,
   },
   win = {
@@ -25,8 +37,14 @@ local gitActions = {
         },
 
         ['o'] = {
-          'gitbrowse',
+          'gitbrowse_open',
           desc = 'Open Commit in Browser',
+          mode = { 'n' },
+        },
+
+        ['y'] = {
+          'gitbrowse_copy',
+          desc = 'Copy Commit URL to Clipboard',
           mode = { 'n' },
         },
       },
