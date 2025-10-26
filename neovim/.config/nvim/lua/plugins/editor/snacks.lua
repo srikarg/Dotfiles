@@ -5,6 +5,15 @@ local gitActions = {
       picker:close()
       vim.cmd('DiffviewOpen HEAD ' .. currentCommit)
     end,
+
+    ['gitbrowse'] = function(picker)
+      local currentCommit = picker:current().commit
+      Snacks.gitbrowse.open({
+        notify = false,
+        what = 'commit',
+        commit = currentCommit,
+      })
+    end,
   },
   win = {
     input = {
@@ -13,6 +22,12 @@ local gitActions = {
           'diffview',
           desc = 'Open in Diffview',
           mode = { 'n', 'i' },
+        },
+
+        ['o'] = {
+          'gitbrowse',
+          desc = 'Open Commit in Browser',
+          mode = { 'n' },
         },
       },
     },
