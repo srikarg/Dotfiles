@@ -14,3 +14,7 @@ end, { desc = 'Toggle Diagnostic [l]ines' })
 vim.keymap.set('', '<leader>gp', function()
   vim.cmd('r !git log --pretty=format:"- \\%B" develop..HEAD')
 end, { desc = '  Paste Git Commit Messages Since Develop' })
+
+vim.keymap.set('', '<leader>qr', function()
+  vim.cmd('restart lua require("persistence").load()')
+end, { desc = 'Restart Neovim' })
