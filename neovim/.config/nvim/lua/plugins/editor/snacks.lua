@@ -49,6 +49,21 @@ return {
     },
 
     {
+      '<leader>gF',
+      function()
+        local word = vim.fn.expand('<cword>')
+        Snacks.picker.git_log({
+          search = word,
+          live = true,
+          on_show = function()
+            vim.cmd.stopinsert()
+          end,
+        })
+      end,
+      desc = '  [F]ind Current Word in Git History',
+    },
+
+    {
       '<leader><leader>',
       function()
         Snacks.picker.smart({
