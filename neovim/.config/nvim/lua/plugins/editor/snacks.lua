@@ -107,6 +107,8 @@ return {
     },
   },
 
+  ---@module 'snacks'
+  ---@type snacks.Config
   opts = {
     gitbrowse = {
       what = 'permalink',
@@ -235,6 +237,7 @@ return {
       },
       sources = {
         lsp_symbols = {
+          keep_parents = true,
           layout = {
             preset = 'vscode',
             preview = 'main',
