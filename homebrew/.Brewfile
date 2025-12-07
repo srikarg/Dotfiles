@@ -244,6 +244,8 @@ brew "woff2"
 brew "yazi"
 # YAML syntax highlighter to bring colours where only jq could
 brew "yh"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
