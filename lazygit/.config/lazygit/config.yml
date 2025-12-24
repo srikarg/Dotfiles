@@ -6,12 +6,6 @@ customCommands:
     description: 'Prune local branches no longer on its remote'
     loadingText: 'Pruning gone...'
     output: log
-  - key: 'C'
-    command: 'cz commit'
-    description: 'Commit with commitizen'
-    context: 'files'
-    loadingText: 'Opening commitizen commit tool...'
-    output: terminal
   - key: 'E'
     description: 'Add empty commit'
     context: 'commits'
