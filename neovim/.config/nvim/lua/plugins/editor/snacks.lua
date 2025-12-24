@@ -239,7 +239,7 @@ return {
         lsp_symbols = {
           keep_parents = true,
           layout = {
-            preset = 'vscode',
+            preset = 'ivy',
             preview = 'main',
           },
         },
