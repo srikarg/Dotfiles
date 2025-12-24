@@ -53,10 +53,6 @@ return {
       model = 'claude-sonnet-4',
 
       prompts = prompts,
-
-      auto_follow_cursor = false,
-      auto_insert_mode = true,
-      insert_at_end = true,
     },
   },
 }
