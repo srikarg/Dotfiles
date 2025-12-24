@@ -140,6 +140,8 @@ vim.opt.fillchars = {
   eob = ' ',
 }
 
+vim.opt.diffopt = 'internal,filler,closeoff,indent-heuristic,linematch:60,iwhiteall'
+
 -- Python Lazy Extra Configuration: https://www.lazyvim.org/extras/lang/python#options
 -- LSP Server to use for Python.
 -- Set to "basedpyright" to use basedpyright instead of pyright.
