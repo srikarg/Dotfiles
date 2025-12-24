@@ -1,6 +1,0 @@
-# Generated with `volta list --format plain | pbcopy`
-
-runtime node@22.12.0 (default)
-package-manager npm@10.9.2 (default)
-package npm-check-updates@17.1.1 / npm-check-updates, ncu / node@20.11.0 npm@built-in (default)
-package prettier@3.2.4 / prettier / node@20.10.0 npm@built-in (default)
