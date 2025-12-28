@@ -298,6 +298,8 @@ return {
           },
         },
 
+        git_log_line = gitActions,
+
         git_log_file = gitActions,
 
         git_log = gitActions,
