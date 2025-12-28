@@ -1,28 +1,26 @@
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
---
--- Add any additional autocmds here
--- with `vim.api.nvim_create_autocmd`
---
--- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
--- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+local autocmd = vim.api.nvim_create_autocmd
 
 -- Autofixes on Save
 vim.g.autofixes_enabled = true
 
-Snacks.toggle
-  .new({
-    name = 'Autofixes on Save',
-    get = function()
-      return vim.g.autofixes_enabled
-    end,
-    set = function(state)
-      vim.g.autofixes_enabled = state
-    end,
-  })
-  :map('<leader>uq', { desc = 'Autofixes on Save' })
+if Snacks and Snacks.toggle then
+  Snacks.toggle
+    .new({
+      name = 'Autofixes on Save',
+      get = function()
+        return vim.g.autofixes_enabled
+      end,
+      set = function(state)
+        vim.g.autofixes_enabled = state
+      end,
+    })
+    :map('<leader>uq', { desc = 'Autofixes on Save' })
+end
 
-vim.api.nvim_create_autocmd('BufWritePre', {
+autocmd('BufWritePre', {
   group = vim.api.nvim_create_augroup('Python Autofixes on Save', { clear = true }),
   pattern = { '*.py' },
   callback = function()
@@ -50,7 +48,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   end,
 })
 
-vim.api.nvim_create_autocmd('BufWritePre', {
+autocmd('BufWritePre', {
   group = vim.api.nvim_create_augroup('TS/TSX Autofixes On Save', { clear = true }),
   pattern = { '*.ts', '*.tsx' },
   callback = function()
@@ -77,7 +75,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   end,
 })
 
-vim.api.nvim_create_autocmd('BufWritePre', {
+autocmd('BufWritePre', {
   group = vim.api.nvim_create_augroup('ESLint Autofixes On Save', { clear = true }),
   pattern = { '*.ts', '*.tsx', '*.js', '*.jsx' },
   callback = function()
