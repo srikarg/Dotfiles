@@ -57,6 +57,12 @@ return {
       model = 'claude-sonnet-4',
 
       prompts = prompts,
+
+      mappings = {
+        -- Remove conflicting reset mapping (C-l) since it conflicts the mapping
+        -- to move to the window on the right (in neovim + tmux)
+        reset = {},
+      },
     },
   },
 }
