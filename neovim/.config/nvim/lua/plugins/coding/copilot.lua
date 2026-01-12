@@ -30,6 +30,8 @@ return {
   {
     'zbirenbaum/copilot.lua',
 
+    optional = true,
+
     opts = {
       filetypes = {
         -- Enable Copilot for all file types
@@ -48,6 +50,8 @@ return {
 
   {
     'CopilotC-Nvim/CopilotChat.nvim',
+
+    optional = true,
 
     opts = {
       model = 'claude-sonnet-4',
