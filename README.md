@@ -16,19 +16,19 @@
 
 ### Update Git Submodules
 
-```bash
+```shell
 git submodule update --recursive --remote
 ```
 
 ### Updating Homebrew Dump Bundle File
 
-```bash
+```shell
 brew bundle dump --describe --force --brews --casks --taps --mas --file ~/.Dotfiles/homebrew/.Brewfile
 ```
 
 ### Forcing Local State to Match Homebrew Dump Bundle File
 
-```bash
+```shell
 brew bundle cleanup --force --file ~/.Dotfiles/homebrew/.Brewfile
 ```
 
@@ -38,18 +38,18 @@ Sourced from <https://stackoverflow.com/a/31994862/1042093>.
 
 #### Normal Upgrade
 
-```bash
+```shell
 brew upgrade --cask
 ```
 
 #### List Outdated
 
-```bash
+```shell
 brew outdated --cask --greedy --verbose
 ```
 
 #### Force Upgrade
 
-```bash
+```shell
 brew upgrade --cask --greedy
 ```
