@@ -1,5 +1,10 @@
 [alias]
 
+# Difftastic aliases, so `git dlog` is `git log` with difftastic and so on.
+dlog = -c diff.external=difft log --ext-diff
+dshow = -c diff.external=difft show --ext-diff
+ddiff = -c diff.external=difft diff
+
 # View abbreviated SHA, description, and history graph of the latest 20 commits.
 l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
