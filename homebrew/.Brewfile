@@ -170,6 +170,8 @@ brew "utf8proc", args: ["HEAD"]
 brew "neovim", args: ["HEAD"]
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
+# AI coding agent, built for the terminal
+brew "opencode"
 # Development kit for the Java programming language
 brew "openjdk"
 # Swiss-army knife of markup format conversion

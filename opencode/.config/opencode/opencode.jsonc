@@ -1,0 +1,28 @@
+// https://opencode.ai/docs/config/
+{
+  "$schema": "https://opencode.ai/config.json",
+  "share": "disabled",
+  "command": {
+    "test": {
+      "template": "Run the full test suite with coverage report and show any failures.\nFocus on the failing tests and suggest fixes.",
+      "description": "Run tests with coverage",
+      "agent": "build",
+    },
+  },
+  "keybinds": {
+    "app_exit": "shift+escape",
+  },
+  "permission": {
+    "*": "ask",
+    "glob": "allow",
+    "grep": "allow",
+    "lsp": "allow",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow",
+    },
+  },
+  "theme": "tokyonight",
+}

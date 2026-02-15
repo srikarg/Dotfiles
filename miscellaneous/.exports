@@ -2,6 +2,10 @@
 
 SYSTEM_TYPE=$(uname -s)
 
+# Enable experimental features for OpenCode CLI
+export OPENCODE_EXPERIMENTAL_LSP_TOOL=1
+export OPENCODE_EXPERIMENTAL_LSP_TY=1
+
 # Enable copy/paste to system clipboard for zsh-vi-mode
 export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 
