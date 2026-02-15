@@ -54,8 +54,6 @@ return {
     optional = true,
 
     opts = {
-      model = 'claude-sonnet-4',
-
       prompts = prompts,
 
       mappings = {
