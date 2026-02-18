@@ -1,3 +1,4 @@
+tap "anomalyco/tap"
 tap "azure/kubelogin"
 tap "derailed/k9s"
 tap "felixkratz/formulae"
@@ -170,8 +171,6 @@ brew "utf8proc", args: ["HEAD"]
 brew "neovim", args: ["HEAD"]
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
-# AI coding agent, built for the terminal
-brew "opencode"
 # Development kit for the Java programming language
 brew "openjdk"
 # Swiss-army knife of markup format conversion
@@ -252,6 +251,8 @@ brew "yq"
 brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode"
 # A Kubernetes credential (exec) plugin implementing azure authentication
 brew "azure/kubelogin/kubelogin"
 # Kubernetes CLI To Manage Your Clusters In Style!
