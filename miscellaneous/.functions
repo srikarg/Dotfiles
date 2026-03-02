@@ -6,6 +6,11 @@ function rgl {
   rg -p "$1" | less -R
 }
 
+# Send a notification with a title and message
+function notify() {
+  printf "\033Ptmux;\033\e]777;notify;%s;%s\e\\\\\033\\" $1 $2
+}
+
 function notes() {
   echo "Please enter the name of the notes file:"
   read name
