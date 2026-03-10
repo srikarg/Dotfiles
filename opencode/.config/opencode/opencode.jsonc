@@ -14,9 +14,27 @@
   },
   "permission": {
     "*": "ask",
+
     "glob": "allow",
+
     "grep": "allow",
+
     "lsp": "allow",
+
+    "todoread": "allow",
+    "todowrite": "allow",
+
+    "bash": {
+      "*": "ask",
+
+      "rm *": "deny",
+
+      "git diff *": "allow",
+      "git log *": "allow",
+      "git branch *": "allow",
+      "git status *": "allow",
+    },
+
     "read": {
       "*": "allow",
       "*.env": "deny",
