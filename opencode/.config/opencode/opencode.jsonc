@@ -12,6 +12,7 @@
       "agent": "build",
     },
   },
+  "instructions": ["CONTRIBUTING.md", ".github/*.md"],
   "permission": {
     "*": "ask",
 
