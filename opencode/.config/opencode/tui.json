@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/tui.json",
+  "theme": "tokyonight",
+  "keybinds": {
+    "app_exit": "shift+escape"
+  },
+  "scroll_acceleration": {
+    "enabled": true
+  }
+}
