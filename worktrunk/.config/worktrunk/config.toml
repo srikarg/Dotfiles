@@ -1,0 +1,62 @@
+[list]
+summary = false # Enable LLM branch summaries (requires [commit.generation])
+
+full = false     # Show CI, main…± diffstat, and LLM summaries (--full)
+branches = false # Include branches without worktrees (--branches)
+remotes = false  # Include remote-only branches (--remotes)
+
+[switch]
+no-cd = true # Skip directory change after switching (--cd to override)
+
+[switch.picker]
+pager = "delta --paging=never" # Pager command for diff preview (overrides git's core.pager)
+
+[post-create]
+tmux = """
+SANITIZED_BRANCH_NAME="{{ branch | sanitize }}"
+WORKTREE_PATH="{{ worktree_path }}"
+SANITIZED_REPO_NAME="{{ repo | sanitize }}"
+
+SESSION_NAME="$SANITIZED_REPO_NAME -- $SANITIZED_BRANCH_NAME"
+
+tmux new-session -d -s "$SESSION_NAME" -c "$WORKTREE_PATH"
+
+tmux send-keys -t "$SESSION_NAME" 'n' Enter
+
+tmux split-window -h -t "$SESSION_NAME"
+
+echo "✓ Session '$SESSION_NAME' created"
+
+sesh connect "$SESSION_NAME"
+"""
+
+zoxide = "zoxide add {{ worktree_path }} 2>/dev/null || true"
+
+[post-switch]
+tmux = """
+SANITIZED_BRANCH_NAME="{{ branch | sanitize }}"
+WORKTREE_PATH="{{ worktree_path }}"
+SANITIZED_REPO_NAME="{{ repo | sanitize }}"
+
+SESSION_NAME="$SANITIZED_REPO_NAME -- $SANITIZED_BRANCH_NAME"
+
+tmux has-session -t "$SESSION_NAME" 2>/dev/null && sesh connect "$SESSION_NAME"
+"""
+
+zoxide = "zoxide add {{ worktree_path }} 2>/dev/null || true"
+
+[pre-remove]
+zoxide = "zoxide remove {{ worktree_path }} 2>/dev/null || true"
+
+[post-remove]
+tmux = """
+SANITIZED_BRANCH_NAME="{{ branch | sanitize }}"
+WORKTREE_PATH="{{ worktree_path }}"
+SANITIZED_REPO_NAME="{{ repo | sanitize }}"
+
+SESSION_NAME="$SANITIZED_REPO_NAME -- $SANITIZED_BRANCH_NAME"
+
+tmux kill-session -t "$SESSION_NAME" 2>/dev/null || true
+
+sesh connect "$SANITIZED_REPO_NAME"
+"""

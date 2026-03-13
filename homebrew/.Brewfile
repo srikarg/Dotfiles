@@ -241,6 +241,8 @@ brew "weasyprint"
 brew "wget"
 # Utilities to create and convert Web Open Font File (WOFF) files
 brew "woff2"
+# CLI for Git worktree management, designed for parallel AI agent workflows
+brew "worktrunk", args: ["HEAD"]
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
 # YAML syntax highlighter to bring colours where only jq could

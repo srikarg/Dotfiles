@@ -103,3 +103,6 @@ if command -v brew >/dev/null 2>&1; then
 fi
 
 eval "$(zoxide init zsh)"
+
+# Enable worktrunk shell integration (https://worktrunk.dev/)
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

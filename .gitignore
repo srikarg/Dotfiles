@@ -19,6 +19,9 @@ Thumbs.db
 # LazyGit state file
 lazygit/.config/lazygit/state.yml
 
+# Worktrunk command approvals state
+/worktrunk/.config/worktrunk/approvals.toml*
+
 # Ignore everything in custom scripts directory except .local/scripts
 #
 # This is needed as the ~/.local folder might have other folders outside of the
