@@ -34,6 +34,9 @@
       "git log *": "allow",
       "git branch *": "allow",
       "git status *": "allow",
+      "git show *": "allow",
+
+      "rg *": "allow",
     },
 
     "read": {
