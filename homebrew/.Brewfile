@@ -155,6 +155,8 @@ brew "libgsf"
 brew "luarocks"
 # Mac App Store command-line interface
 brew "mas"
+# Syntax-aware git merge driver
+brew "mergiraf"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
 # 'traceroute' and 'ping' in a single tool
