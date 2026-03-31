@@ -260,7 +260,7 @@ brew "derailed/k9s/k9s"
 # A window border system for macOS
 brew "felixkratz/formulae/borders"
 # AeroSpace is an i3-like tiling window manager for macOS
-cask "aerospace"
+cask "nikitabobko/tap/aerospace"
 # Transfer files from and to an Android smartphone
 cask "android-file-transfer"
 # Application uninstaller
