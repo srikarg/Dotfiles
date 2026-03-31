@@ -155,6 +155,8 @@ brew "luarocks"
 brew "mas"
 # Syntax-aware git merge driver
 brew "mergiraf"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
 # 'traceroute' and 'ping' in a single tool
@@ -229,8 +231,6 @@ brew "viddy"
 brew "vim"
 # Image processing library
 brew "vips"
-# JavaScript toolchain manager for reproducible environments
-brew "volta"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Convert HTML to PDF

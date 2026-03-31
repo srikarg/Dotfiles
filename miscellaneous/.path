@@ -48,8 +48,6 @@ if command -v brew >/dev/null 2>&1; then
   export PATH="$(brew --prefix fzf)/bin:$PATH"
 fi
 
-# Add Volta to PATH
-export PATH="$HOME/.volta/bin:$PATH"
 
 # Add Krew Kubernetes Plugin Manager to PATH
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

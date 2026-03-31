@@ -12,7 +12,7 @@ fi
 fpath+=$HOME/.zsh/ohmyzsh/plugins/docker
 fpath+=$HOME/.zsh/ohmyzsh/plugins/docker-compose
 fpath+=$HOME/.zsh/ohmyzsh/plugins/helm
-fpath+=$HOME/.zsh/ohmyzsh/plugins/volta
+fpath+=$HOME/.zsh/ohmyzsh/plugins/mise
 fpath+=$HOME/.zsh/zsh-users/zsh-completions/src
 fpath+=$HOME/.zsh/pure
 
@@ -29,7 +29,7 @@ source "$HOME/.zsh/ohmyzsh/plugins/copyfile/copyfile.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/docker-compose/docker-compose.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/docker/docker.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/helm/helm.plugin.zsh"
-source "$HOME/.zsh/ohmyzsh/plugins/volta/volta.plugin.zsh"
+source "$HOME/.zsh/ohmyzsh/plugins/mise/mise.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/git/git.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/gitignore/gitignore.plugin.zsh"
 source "$HOME/.zsh/ohmyzsh/plugins/history/history.plugin.zsh"
