@@ -175,8 +175,6 @@ brew "neovim", args: ["HEAD"]
 brew "nginx"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-# Fast, disk space efficient package manager
-brew "pnpm"
 # Password generator
 brew "pwgen"
 # Generic machine emulator and virtualizer
