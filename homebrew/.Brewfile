@@ -131,8 +131,6 @@ brew "httpie"
 brew "libraw"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
-# Manage your Java environment
-brew "jenv"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Handy way to save and run project-specific commands
