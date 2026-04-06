@@ -15,8 +15,9 @@ alias rgf='rg --files | rg'
 
 ## NPM
 #
-# Find npm package updates for current repository
-alias nu='npm-check-updates -i --format group,repo'
+# Find npm package updates for current repository with a minimum age of 1 week
+# https://www.npmjs.com/package/npm-check-updates#cooldown
+alias nu='npm-check-updates -i --format group,repo --cooldown "7d"'
 
 # Package installation
 alias npmg="npm i -g "
