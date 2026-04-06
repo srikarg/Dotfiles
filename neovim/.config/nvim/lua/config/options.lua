@@ -142,6 +142,11 @@ vim.opt.fillchars = {
 
 vim.opt.diffopt = 'internal,filler,closeoff,indent-heuristic,linematch:60,iwhiteall'
 
+-- Typescript Lazy Extra Configuration: https://www.lazyvim.org/extras/lang/typescript#options
+-- LSP Server to use for TypeScript.
+---@type "vtsls" | "tsgo"
+vim.g.lazyvim_ts_lsp = 'tsgo'
+
 -- Python Lazy Extra Configuration: https://www.lazyvim.org/extras/lang/python#options
 -- LSP Server to use for Python.
 -- Set to "basedpyright" to use basedpyright instead of pyright.
