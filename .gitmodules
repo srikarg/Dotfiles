@@ -24,7 +24,7 @@ url = https://github.com/zsh-users/zsh-completions.git
 
 [submodule "tmux/.tmux/plugins/tpm"]
 path = tmux/.tmux/plugins/tpm
-url = https://github.com/tmux-plugins/tpm
+url = https://github.com/tmuxpack/tpack
 
 [submodule "zsh/.zsh/zsh-vi-mode"]
 path = zsh/.zsh/zsh-vi-mode

@@ -16,8 +16,14 @@
 
 ### Update Git Submodules
 
+Update top-level submodules to latest, then checkout nested submodules at their
+pinned commits (for example, `tpack`'s internal `lib/tmux-test` submodule stays pinned
+to the commit that `tpack` records):
+
 ```shell
-git submodule update --recursive --remote
+git submodule init
+git submodule update --remote
+git submodule update --init --recursive
 ```
 
 ### Updating Homebrew Dump Bundle File
