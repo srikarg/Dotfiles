@@ -3,6 +3,7 @@ tap "azure/kubelogin"
 tap "derailed/k9s"
 tap "felixkratz/formulae"
 tap "nikitabobko/tap"
+tap "steipete/tap"
 # Software library to render fonts
 brew "freetype"
 # Toolkit for image loading and pixel buffer manipulation
@@ -273,6 +274,8 @@ cask "bitwarden"
 cask "brave-browser"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
+# Menu bar usage monitor for Codex and Claude
+cask "steipete/tap/codexbar"
 # Voice and text chat software
 cask "discord"
 # Launcher for *Epic Games* games
