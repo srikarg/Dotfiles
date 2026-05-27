@@ -5,6 +5,7 @@
   "watcher": {
     "ignore": ["node_modules/**", "dist/**", ".git/**"],
   },
+  "lsp": true,
   "command": {
     "test": {
       "template": "Run the full test suite with coverage report and show any failures.\nFocus on the failing tests and suggest fixes.",
