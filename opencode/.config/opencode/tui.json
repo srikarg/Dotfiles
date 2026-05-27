@@ -11,6 +11,6 @@
     "enabled": true,
     "notifications": true,
     "sound": true,
-    "volume": 0.8
+    "volume": 1.0
   }
 }
