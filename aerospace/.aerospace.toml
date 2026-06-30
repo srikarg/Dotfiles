@@ -1,10 +1,8 @@
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
 
-# You can use it to add commands that run after login to macOS user session.
-# 'start-at-login' needs to be 'true' for 'after-login-command' to work
-# Available commands: https://nikitabobko.github.io/AeroSpace/commands
-after-login-command = []
+# Config version
+config-version = 2
 
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
@@ -72,7 +70,6 @@ outer.right = 5
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
-
 # All possible keys:
 # - Letters.        a, b, c, ..., z
 # - Numbers.        0, 1, 2, ..., 9
@@ -173,88 +170,6 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 
-# mnemonics B - browsers
-[[on-window-detected]]
-if.app-id = 'com.google.Chrome'
-run = 'move-node-to-workspace B'
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.edgemac'
-run = 'move-node-to-workspace B'
-
-[[on-window-detected]]
-if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace B'
-
-[[on-window-detected]]
-if.app-id = 'org.mozilla.firefoxdeveloperedition'
-run = 'move-node-to-workspace B'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari'
-run = 'move-node-to-workspace B'
-
-[[on-window-detected]]
-if.app-id = 'com.brave.Browser'
-run = 'move-node-to-workspace B'
-
-[[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
-run = 'move-node-to-workspace B'
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.VSCodeInsiders'
-run = 'move-node-to-workspace B'
-
-# mnemonics E - email
-[[on-window-detected]]
-if.app-id = 'com.microsoft.Outlook'
-run = 'move-node-to-workspace E'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.mail'
-run = 'move-node-to-workspace E'
-
-# mnemonics N - notes
-[[on-window-detected]]
-if.app-id = 'md.obsidian'
-run = 'move-node-to-workspace N'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.Notes'
-run = 'move-node-to-workspace N'
-
-# mnemonics M - messages
-[[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace M'
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.teams2'
-run = 'move-node-to-workspace M'
-
-[[on-window-detected]]
-if.app-id = 'com.hnc.Discord'
-run = 'move-node-to-workspace M'
-
-[[on-window-detected]]
-if.app-id = 'org.whispersystems.signal-desktop'
-run = 'move-node-to-workspace M'
-
-[[on-window-detected]]
-if.app-id = 'net.whatsapp.WhatsApp'
-run = 'move-node-to-workspace M'
-
-# mnemonics S - spotify
-[[on-window-detected]]
-if.app-id = 'com.spotify.client'
-run = 'move-node-to-workspace S'
-
-[workspace-to-monitor-force-assignment]
-S = 'secondary'
-2 = 'secondary'
-3 = 'secondary'
-
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -269,7 +184,7 @@ f = ['layout floating tiling', 'mode main']
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-#s = ['layout sticky tiling', 'mode main']
+# s = ['layout sticky tiling', 'mode main']
 
 alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
@@ -279,3 +194,85 @@ alt-shift-l = ['join-with right', 'mode main']
 down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
+
+# mnemonics B - browsers
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.google.Chrome'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.microsoft.edgemac'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = org.mozilla.firefox'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = org.mozilla.firefoxdeveloperedition'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.apple.Safari'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.brave.Browser'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.github.wez.wezterm'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.microsoft.VSCodeInsiders'
+run = 'move-node-to-workspace B'
+
+# mnemonics E - email
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.microsoft.Outlook'
+run = 'move-node-to-workspace E'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.apple.mail'
+run = 'move-node-to-workspace E'
+
+# mnemonics N - notes
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = md.obsidian'
+run = 'move-node-to-workspace N'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.apple.Notes'
+run = 'move-node-to-workspace N'
+
+# mnemonics M - messages
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.microsoft.teams2'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.hnc.Discord'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = org.whispersystems.signal-desktop'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace M'
+
+# mnemonics S - spotify
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.spotify.client'
+run = 'move-node-to-workspace S'
+
+[workspace-to-monitor-force-assignment]
+S = 'secondary'
+2 = 'secondary'
+3 = 'secondary'
