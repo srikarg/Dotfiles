@@ -1,15 +1,15 @@
 [list]
-summary = false # Enable LLM branch summaries (requires [commit.generation])
+summary = false  # Enable LLM branch summaries (requires [commit.generation])
 
-full = false     # Show CI, main…± diffstat, and LLM summaries (--full)
-branches = false # Include branches without worktrees (--branches)
+full = false  # Show CI, main…± diffstat, and LLM summaries (--full)
+branches = false  # Include branches without worktrees (--branches)
 remotes = false  # Include remote-only branches (--remotes)
 
 [switch]
-cd = false # Skip directory change after switching (--cd to override)
+cd = false  # Skip directory change after switching (--cd to override)
 
 [switch.picker]
-pager = "delta --paging=never" # Pager command for diff preview (overrides git's core.pager)
+pager = "delta --paging=never"  # Pager command for diff preview (overrides git's core.pager)
 
 [[pre-start]]
 tmux = """
