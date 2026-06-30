@@ -246,8 +246,8 @@ function brewup() {
   brew update
   brew upgrade --fetch-HEAD
   # Upgrade Wezterm Nightly
-  brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest
+  brew upgrade --cask wezterm-nightly --greedy-latest
   brew cleanup
   brew doctor
-  brew bundle dump --describe --force --brews --casks --taps --mas --file "$HOME/.Dotfiles/homebrew/.Brewfile"
+  brew bundle dump --force --brews --casks --taps --mas --file "$HOME/.Dotfiles/homebrew/.Brewfile"
 }
