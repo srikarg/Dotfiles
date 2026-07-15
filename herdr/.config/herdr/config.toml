@@ -1,0 +1,78 @@
+onboarding = false
+
+[theme]
+name = "tokyo-night"
+auto_switch = false
+
+[terminal]
+default_shell = ""
+shell_mode = "auto"
+new_cwd = "follow"
+
+[update]
+channel = "stable"
+version_check = true
+manifest_check = true
+
+[keys]
+prefix = "ctrl+space"
+
+# Detach
+detach = "prefix+d"
+
+# Reload config
+reload_config = "prefix+R"
+
+# Close pane without confirmation
+close_pane = "prefix+x"
+
+# Scrollback in editor
+edit_scrollback = "prefix+e"
+
+# Split keybindings
+split_horizontal = "prefix+h"
+split_vertical = "prefix+v"
+
+# Vim-style pane navigation
+focus_pane_left = "ctrl+h"
+focus_pane_down = "ctrl+j"
+focus_pane_up = "ctrl+k"
+focus_pane_right = "ctrl+l"
+
+# Tab switching
+previous_tab = "alt+{"
+next_tab = "alt+}"
+
+# Change default goto keybind so prefix+g can be lazygit
+goto = "prefix+shift+g"
+
+# LazyGit
+[[keys.command]]
+key = "prefix+g"
+type = "pane"
+command = "lazygit"
+
+# Yazi
+[[keys.command]]
+key = "prefix+y"
+type = "pane"
+command = "yazi"
+
+# Generic popup
+[[keys.command]]
+key = "prefix+p"
+type = "pane"
+command = "$SHELL"
+
+[ui]
+mouse_capture = true
+pane_borders = true
+pane_gaps = true
+confirm_close = true
+show_agent_labels_on_pane_borders = true
+
+[ui.toast]
+delivery = "system"
+
+[session]
+resume_agents_on_restore = true

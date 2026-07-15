@@ -19,6 +19,10 @@ Thumbs.db
 # LazyGit state file
 lazygit/.config/lazygit/state.yml
 
+# herdr runtime/state
+herdr/.config/herdr/*.log
+herdr/.config/herdr/session.json
+
 # Worktrunk command approvals state
 /worktrunk/.config/worktrunk/approvals.toml*
 
