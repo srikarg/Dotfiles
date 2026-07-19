@@ -251,7 +251,7 @@ brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
 # The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode"
+brew "anomalyco/tap/opencode", trusted: true
 # A Kubernetes credential (exec) plugin implementing azure authentication
 brew "azure/kubelogin/kubelogin"
 # Kubernetes CLI To Manage Your Clusters In Style!
@@ -310,6 +310,8 @@ cask "moonlight"
 cask "mullvad-vpn"
 # Open-source software for live streaming and screen recording
 cask "obs"
+# AI coding agent desktop client
+cask "opencode-desktop"
 # Colour picker for colours onscreen
 cask "pika"
 # Control your tools with a few keystrokes
