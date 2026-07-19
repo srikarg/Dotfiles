@@ -339,7 +339,7 @@ cask "visual-studio-code@insiders"
 # Multimedia player
 cask "vlc"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
-cask "wezterm-nightly"
+cask "wezterm@nightly"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Video communication and virtual meeting platform
