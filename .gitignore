@@ -21,8 +21,10 @@ Thumbs.db
 /lazygit/.config/lazygit/github_pull_requests.json
 
 # herdr runtime/state
-herdr/.config/herdr/*.log
-herdr/.config/herdr/session.json
+/herdr/.config/herdr/*.log
+/herdr/.config/herdr/session.json
+/herdr/.config/herdr/.plugins.lock
+/herdr/.config/herdr/release-notes.json
 
 # Worktrunk command approvals state
 /worktrunk/.config/worktrunk/approvals.toml*
