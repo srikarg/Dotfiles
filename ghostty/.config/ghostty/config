@@ -1,0 +1,16 @@
+theme = TokyoNight Moon
+
+font-family = JetBrainsMono Nerd Font Mono
+font-style = Medium
+font-size = 18
+
+# Ghostty measures scrollback in bytes rather than lines.
+scrollback-limit = 200000000
+
+macos-titlebar-style = hidden
+macos-non-native-fullscreen = false
+macos-option-as-alt = true
+
+confirm-close-surface = false
+
+keybind = super+shift+j=text:\x00\x54
