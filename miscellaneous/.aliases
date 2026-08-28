@@ -28,7 +28,7 @@ alias npmD="npm i -D "
 alias npmR="npm run"
 
 # Open OpenCode
-alias oc='opencode'
+alias oc='opencode2'
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.

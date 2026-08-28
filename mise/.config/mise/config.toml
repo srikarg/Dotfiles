@@ -1,4 +1,5 @@
 [tools]
 node = "24"
+"npm:@opencode-ai/cli" = { version = "beta", allow_builds = ["@opencode-ai/cli"] }
 "npm:npm-check-updates" = "latest"
 pnpm = "latest"

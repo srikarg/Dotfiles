@@ -1,4 +1,4 @@
-// https://opencode.ai/docs/config/
+// https://opencode.ai/v2/docs/config
 {
   "$schema": "https://opencode.ai/config.json",
   "share": "disabled",
@@ -6,7 +6,7 @@
     "ignore": ["node_modules/**", "dist/**", ".git/**"],
   },
   "lsp": true,
-  "command": {
+  "commands": {
     "test": {
       "template": "Run the full test suite with coverage report and show any failures.\nFocus on the failing tests and suggest fixes.",
       "description": "Run tests with coverage",
@@ -14,37 +14,62 @@
     },
   },
   "instructions": ["CONTRIBUTING.md", ".github/*.md"],
-  "permission": {
-    "*": "ask",
+  "permissions": [
+    { "action": "*", "resource": "*", "effect": "ask" },
 
-    "glob": "allow",
+    { "action": "question", "resource": "*", "effect": "allow" },
+    { "action": "websearch", "resource": "*", "effect": "deny" },
 
-    "grep": "allow",
+    { "action": "glob", "resource": "*", "effect": "allow" },
+    { "action": "grep", "resource": "*", "effect": "allow" },
+    { "action": "lsp", "resource": "*", "effect": "allow" },
 
-    "lsp": "allow",
+    { "action": "todoread", "resource": "*", "effect": "allow" },
+    { "action": "todowrite", "resource": "*", "effect": "allow" },
 
-    "todoread": "allow",
-    "todowrite": "allow",
+    { "action": "shell", "resource": "*", "effect": "ask" },
 
-    "bash": {
-      "*": "ask",
+    { "action": "shell", "resource": "rm *", "effect": "deny" },
 
-      "rm *": "deny",
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "git branch *", "effect": "allow" },
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git show *", "effect": "allow" },
 
-      "git diff *": "allow",
-      "git log *": "allow",
-      "git branch *": "allow",
-      "git status *": "allow",
-      "git show *": "allow",
+    { "action": "shell", "resource": "rg *", "effect": "allow" },
+    { "action": "shell", "resource": "find *", "effect": "allow" },
 
-      "rg *": "allow",
-    },
+    { "action": "shell", "resource": "sort *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    { "action": "shell", "resource": "tail *", "effect": "allow" },
+    { "action": "shell", "resource": "cat *", "effect": "allow" },
 
-    "read": {
-      "*": "allow",
-      "*.env": "deny",
-      "*.env.*": "deny",
-      "*.env.example": "allow",
-    },
-  },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "wc *", "effect": "allow" },
+    { "action": "shell", "resource": "which *", "effect": "allow" },
+    { "action": "shell", "resource": "uniq *", "effect": "allow" },
+    { "action": "shell", "resource": "diff *", "effect": "allow" },
+    { "action": "shell", "resource": "pwd", "effect": "allow" },
+
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "edit", "resource": "*", "effect": "ask" },
+
+    { "action": "shell", "resource": "rg *.env", "effect": "deny" },
+    { "action": "shell", "resource": "rg *.env.*", "effect": "deny" },
+    { "action": "shell", "resource": "rg *.env.example", "effect": "allow" },
+    { "action": "shell", "resource": "grep *.env", "effect": "deny" },
+    { "action": "shell", "resource": "grep *.env.*", "effect": "deny" },
+    { "action": "shell", "resource": "grep *.env.example", "effect": "allow" },
+    { "action": "shell", "resource": "cat *.env", "effect": "deny" },
+    { "action": "shell", "resource": "cat *.env.*", "effect": "deny" },
+    { "action": "shell", "resource": "cat *.env.example", "effect": "allow" },
+    { "action": "read", "resource": "*.env", "effect": "deny" },
+    { "action": "read", "resource": "*.env.*", "effect": "deny" },
+    { "action": "read", "resource": "*.env.example", "effect": "allow" },
+    { "action": "edit", "resource": "*.env", "effect": "deny" },
+    { "action": "edit", "resource": "*.env.*", "effect": "deny" },
+    { "action": "edit", "resource": "*.env.example", "effect": "ask" },
+  ],
+  "shell": "/opt/homebrew/bin/zsh",
 }

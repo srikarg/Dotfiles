@@ -1,0 +1,37 @@
+{
+  "theme": {
+    "name": "tokyonight"
+  },
+  "keybinds": {
+    "app.exit": "shift+escape",
+    "agent.cycle": "tab"
+  },
+  "scroll": {
+    "acceleration": true
+  },
+  "attention": {
+    "enabled": true,
+    "notifications": true,
+    "sound": true,
+    "volume": 0.5
+  },
+  "diffs": {
+    "wrap": "word",
+    "view": "auto",
+    "single": false
+  },
+  "session": {
+    "sidebar": "auto",
+    "scrollbar": true,
+    "thinking": "hide",
+    "markdown": "rendered",
+    "grouping": "auto",
+    "image_preview": true
+  },
+  "animations": true,
+  "tabs": {
+    "layout": "vertical",
+    "enabled": true,
+    "scope": "cwd"
+  }
+}
