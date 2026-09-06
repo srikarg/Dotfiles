@@ -14,3 +14,8 @@ macos-option-as-alt = true
 confirm-close-surface = false
 
 keybind = super+shift+j=text:\x00\x54
+
+# Enables the tmux window switch keybind from tmux.conf:
+# Alt+Shift+[ / Alt+Shift+] 
+keybind = alt+shift+bracket_left=text:\x1b{
+keybind = alt+shift+bracket_right=text:\x1b}
