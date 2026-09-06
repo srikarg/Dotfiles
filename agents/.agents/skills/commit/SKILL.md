@@ -41,21 +41,33 @@ local commits. Preserve unrelated work and account for every in-scope hunk.
    Do not invent project commands. Completion: each group has a check that is
    passed, hook-managed, or explicitly unavailable.
 
-4. **Commit each group in dependency order.** For one group at a time:
+4. **Detect the message convention.** Run `git log -n 20 --format=%s` and read
+   several full messages (`git log -n 5 --no-patch`) to find the dominant
+   format: Conventional Commits, a plain imperative subject, a ticket prefix,
+   or another repo-specific pattern. Match the dominant format; treat mixed or
+   absent history as Conventional Commits. Completion: every message this run
+   writes follows one named format — Conventional Commits or the repo's
+   dominant pattern.
+
+5. **Commit each group in dependency order.** For one group at a time:
    - Arrange the index to contain exactly that group's hunks with `git add` or
      `git add -p`; remove unrelated staged hunks with
      `git restore --staged -p`.
    - Review `git diff --cached` and `git status --short`. Confirm the staged
      diff contains no secret or unrelated hunk, then run the group's checks and
      `git diff --cached --check`.
-   - Write the message with `caveman-commit`: conventional format, imperative
-     subject, and a body only when the why is non-obvious. Then run `git commit`.
+   - Write the message in the detected format, then run `git commit`. Follow
+     `caveman-commit` for Conventional Commits repos; mirror the observed
+     pattern for any other format. Every message meets the floor regardless of
+     format: imperative mood and a descriptive subject ≤50 chars (hard cap 72).
+     Add a body (wrapped at 72) explaining what changed and why whenever the
+     subject alone does not make the why clear.
    - If a hook fails or changes files, inspect the resulting index and worktree
      diff before fixing or accepting the commit.
    Completion: the new commit exists and `git show HEAD` matches exactly the
    intended group.
 
-5. **Reconcile the result.** Run `git log --oneline -n <N>` where `N` is the
+6. **Reconcile the result.** Run `git log --oneline -n <N>` where `N` is the
    number of commits created, then run `git status --short` and compare it with
    the baseline. Completion: every requested hunk is in exactly one new local
    commit, unrelated or blocked work remains uncommitted, and no worktree
