@@ -4,7 +4,8 @@
   },
   "keybinds": {
     "app.exit": "shift+escape",
-    "agent.cycle": "tab"
+    "agent.cycle": "tab",
+    "permission.mode": "<leader>p"
   },
   "scroll": {
     "acceleration": true
