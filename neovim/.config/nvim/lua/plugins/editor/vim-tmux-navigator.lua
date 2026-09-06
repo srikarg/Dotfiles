@@ -11,12 +11,6 @@ return {
     },
 
     {
-      '<C-l>',
-      '<CMD> TmuxNavigateRight <CR>',
-      desc = 'Navigate to Window on the Right',
-    },
-
-    {
       '<C-j>',
       '<CMD> TmuxNavigateDown <CR>',
       desc = 'Navigate to Window Below',
