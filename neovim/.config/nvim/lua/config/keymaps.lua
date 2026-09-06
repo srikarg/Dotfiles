@@ -16,5 +16,5 @@ vim.keymap.set('', '<leader>gp', function()
 end, { desc = '  Paste Git Commit Messages Since Develop' })
 
 vim.keymap.set('', '<leader>qr', function()
-  vim.cmd('restart lua require("persistence").load()')
+  vim.cmd('restart')
 end, { desc = 'Restart Neovim' })
