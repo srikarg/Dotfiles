@@ -91,11 +91,16 @@ return {
             {
               finder = 'files',
               format = 'file',
-              show_empty = true,
+              show_empty = false,
               hidden = true,
-              ignored = true,
+              ignored = false,
               follow = true,
               supports_live = true,
+            },
+          },
+          sort = {
+            fields = {
+              'source_id',
             },
           },
           filter = {
